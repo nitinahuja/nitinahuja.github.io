@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Forecasting on A programmer&#39;s viewpoint</title>
+    <link>https://nitinahuja.github.io/tags/forecasting/</link>
+    <description>Recent content in Forecasting on A programmer&#39;s viewpoint</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Oct 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://nitinahuja.github.io/tags/forecasting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Forecasting in R - Philadelphia crime data</title>
+      <link>https://nitinahuja.github.io/2016/forecasting-in-r-philadelphia-crime-data/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nitinahuja.github.io/2016/forecasting-in-r-philadelphia-crime-data/</guid>
+      <description>Exploring crime in Philadelphia This is a large and intersting dataset and has data points stretching back over 10 years. Several explorations have pointed out that crime seems to be seasonal and I wanted to explore this with a time series. Assuming that seasonal trends might repeat themselves, I am exploring this using the forecast package and using linear regression to predict trends.
+suppressPackageStartupMessages({ library(data.table) library(forecast) library(knitr) }) Data size and structure.</description>
+    </item>
+    
+  </channel>
+</rss>

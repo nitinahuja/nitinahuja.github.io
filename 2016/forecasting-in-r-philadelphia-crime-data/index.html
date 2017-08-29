@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.26">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
-    <title>Finding with find</title>
+    <title>Forecasting in R - Philadelphia crime data</title>
     <meta name="author" content="Nitin Ahuja">
     <meta name="keywords" content="">
 
@@ -31,18 +31,18 @@
     
 
     
-    <meta name="description" content="Find is a really versatile utility that can be used to enumerate files of different types, narrow the list by file types, dates, sizes, access times and a whole list of expressions. The output can be formatted with various switches to be csv.
-My goal was to list the sizes and access times for all video files in the system. I knew that there was over 3 TB of files but not how recently these were accessed/played.">
-    <meta property="og:description" content="Find is a really versatile utility that can be used to enumerate files of different types, narrow the list by file types, dates, sizes, access times and a whole list of expressions. The output can be formatted with various switches to be csv.
-My goal was to list the sizes and access times for all video files in the system. I knew that there was over 3 TB of files but not how recently these were accessed/played.">
+    <meta name="description" content="Exploring crime in Philadelphia This is a large and intersting dataset and has data points stretching back over 10 years. Several explorations have pointed out that crime seems to be seasonal and I wanted to explore this with a time series. Assuming that seasonal trends might repeat themselves, I am exploring this using the forecast package and using linear regression to predict trends.
+suppressPackageStartupMessages({ library(data.table) library(forecast) library(knitr) }) Data size and structure.">
+    <meta property="og:description" content="Exploring crime in Philadelphia This is a large and intersting dataset and has data points stretching back over 10 years. Several explorations have pointed out that crime seems to be seasonal and I wanted to explore this with a time series. Assuming that seasonal trends might repeat themselves, I am exploring this using the forecast package and using linear regression to predict trends.
+suppressPackageStartupMessages({ library(data.table) library(forecast) library(knitr) }) Data size and structure.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Finding with find">
-    <meta property="og:url" content="/2013/finding-with-find/">
+    <meta property="og:title" content="Forecasting in R - Philadelphia crime data">
+    <meta property="og:url" content="/2016/forecasting-in-r-philadelphia-crime-data/">
     <meta property="og:site_name" content="A programmer&#39;s viewpoint">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="A programmer&#39;s viewpoint">
-    <meta name="twitter:description" content="Find is a really versatile utility that can be used to enumerate files of different types, narrow the list by file types, dates, sizes, access times and a whole list of expressions. The output can be formatted with various switches to be csv.
-My goal was to list the sizes and access times for all video files in the system. I knew that there was over 3 TB of files but not how recently these were accessed/played.">
+    <meta name="twitter:description" content="Exploring crime in Philadelphia This is a large and intersting dataset and has data points stretching back over 10 years. Several explorations have pointed out that crime seems to be seasonal and I wanted to explore this with a time series. Assuming that seasonal trends might repeat themselves, I am exploring this using the forecast package and using linear regression to predict trends.
+suppressPackageStartupMessages({ library(data.table) library(forecast) library(knitr) }) Data size and structure.">
     
       <meta name="twitter:creator" content="@nitinahuja">
     
@@ -56,6 +56,10 @@ My goal was to list the sizes and access times for all video files in the system
     
 
     
+      <meta property="og:image" content="https://nitinahuja.github.io/img/philly_thumb.jpg">
+    
+    
+      <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/9/9c/City_hall_Philadelphia.jpg">
     
     
 
@@ -195,25 +199,23 @@ My goal was to list the sizes and access times for all video files in the system
 </nav>
 
       
-
-      <div id="main" data-behavior="4"
-        class="
-               hasCoverMetaIn
-               ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
-          
-          
-            <div class="post-header main-content-wrap text-left">
+  <div class="post-header-cover
+              text-left
+              "
+       style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/9/9c/City_hall_Philadelphia.jpg')"
+       data-behavior="4">
+    
+      <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Finding with find
+      Forecasting in R - Philadelphia crime data
     </h1>
   
   <div class="postShorten-meta post-meta">
   
-    <time itemprop="datePublished" datetime="2013-04-11T00:00:00Z">
+    <time itemprop="datePublished" datetime="2016-10-26T00:00:00Z">
       
-  April 11, 2013
+  October 26, 2016
 
     </time>
   
@@ -222,7 +224,7 @@ My goal was to list the sizes and access times for all video files in the system
   
     <span>in</span>
     
-      <a class="category-link" href="https://nitinahuja.github.io/categories/unix">Unix</a>
+      <a class="category-link" href="https://nitinahuja.github.io/categories/r">R</a>
     
   
 
@@ -230,31 +232,117 @@ My goal was to list the sizes and access times for all video files in the system
 </div>
 
 </div>
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p><a title="Man page for find" href="http://linuxmanpages.com/man1/find.1.php" target="_blank" rel="noopener">Find</a> is a really versatile utility that can be used to enumerate files of different types, narrow the list by file types, dates, sizes, access times and a whole list of expressions. The output can be formatted with various switches to be csv.</p>
-
-<p>My goal was to list the sizes and access times for all video files in the system. I knew that there was over 3 TB of files but not how recently these were accessed/played. I also needed to know at what rate these files were being added to the system.</p>
-
-<p>Here is a simple expression to list all these.</p>
-
-<p><code>find . -iname &lsquo;*.mp4&rsquo; -print</code></p>
-
-<p>This will print the names on each line. A good starting point for my list.</p>
-
-<p>The -exec switch will let you execute another utility on each file that you enumerate with find. The &lsquo;{}&rsquo; is substituted with the filenames that are found.</p>
-
-<p><code>find . -iname &lsquo;*.mp4&rsquo; -exec stat &ndash;printf=&ldquo;%n, %s, %y, %x\n&rdquo; &lsquo;{}&rsquo; \; | gawk &lsquo;{ split($0, a, &ldquo;_&ldquo;); print $0,&rdquo;,&ldquo;, a[4] }&rsquo; </code></p>
-
-<p>The &ndash;printf allows me to format the output; the %n prints the name %s prints the size and %y and %x print the access and create dates.</p>
-
-<p>The awk utility lets me further split the name since the files are named a certain way to identify different types of videos.</p>
-
-<p>Pretty powerful stuff - all in one line.
-Gotta know your shell utilities.</p>
-
-<p>Once I had the information into a CSV file - I opened it up in Excel and added a pivot table to see the rate at which these were added by grouping by month and quarter.</p>
+              <div id="exploring-crime-in-philadelphia" class="section level1">
+<h1>Exploring crime in Philadelphia</h1>
+<p>This is a large and intersting dataset and has data points stretching back over 10 years. Several explorations have pointed out that crime seems to be seasonal and I wanted to explore this with a time series. Assuming that seasonal trends might repeat themselves, I am exploring this using the forecast package and using linear regression to predict trends.</p>
+<pre class="r"><code>suppressPackageStartupMessages({
+  library(data.table)
+  library(forecast)
+  library(knitr)
+})</code></pre>
+<div id="data-size-and-structure." class="section level3">
+<h3>Data size and structure.</h3>
+<pre class="r"><code>mydt &lt;- fread(&quot;~/data/crime.csv&quot;, showProgress = FALSE)
+mydata &lt;- as.data.frame(mydt)
+dim(mydata)</code></pre>
+<pre><code>## [1] 2174774      14</code></pre>
+<pre class="r"><code>str(mydata)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    2174774 obs. of  14 variables:
+##  $ Dc_Dist           : int  18 14 25 35 9 17 23 77 35 23 ...
+##  $ Psa               : chr  &quot;3&quot; &quot;1&quot; &quot;J&quot; &quot;D&quot; ...
+##  $ Dispatch_Date_Time: chr  &quot;2009-10-02 14:24:00&quot; &quot;2009-05-10 00:55:00&quot; &quot;2009-08-07 15:40:00&quot; &quot;2009-07-19 01:09:00&quot; ...
+##  $ Dispatch_Date     : chr  &quot;2009-10-02&quot; &quot;2009-05-10&quot; &quot;2009-08-07&quot; &quot;2009-07-19&quot; ...
+##  $ Dispatch_Time     : chr  &quot;14:24:00&quot; &quot;00:55:00&quot; &quot;15:40:00&quot; &quot;01:09:00&quot; ...
+##  $ Hour              : int  14 0 15 1 0 12 14 18 1 20 ...
+##  $ Dc_Key            :integer64 200918067518 200914033994 200925083199 200935061008 200909030511 201517017705 200923006310 200977001770 ... 
+##  $ Location_Block    : chr  &quot;S 38TH ST  / MARKETUT ST&quot; &quot;8500 BLOCK MITCH&quot; &quot;6TH CAMBRIA&quot; &quot;5500 BLOCK N 5TH ST&quot; ...
+##  $ UCR_General       : int  800 2600 800 1500 2600 600 800 500 2600 2600 ...
+##  $ Text_General_Code : chr  &quot;Other Assaults&quot; &quot;All Other Offenses&quot; &quot;Other Assaults&quot; &quot;Weapon Violations&quot; ...
+##  $ Police_Districts  : int  NA NA NA 20 8 13 16 NA NA NA ...
+##  $ Month             : chr  &quot;2009-10&quot; &quot;2009-05&quot; &quot;2009-08&quot; &quot;2009-07&quot; ...
+##  $ Lon               : num  NA NA NA -75.1 -75.2 ...
+##  $ Lat               : num  NA NA NA 40 40 ...</code></pre>
+<p>Extract the month as a new column</p>
+<pre class="r"><code>mydata$Dispatch_Date_Time &lt;- as.POSIXct(mydata$Dispatch_Date_Time)
+mydata$Month &lt;- cut(mydata$Dispatch_Date_Time, breaks= &quot;month&quot;)</code></pre>
+</div>
+<div id="crimes-by-month" class="section level2">
+<h2>Crimes by month</h2>
+<p>We can clearly see a downward trend in overall crime rates and also the fact that there seem to be seasonal peaks and declines.</p>
+<pre class="r"><code>bymo &lt;- mydt[order(Month), .N, by=Month]
+dts &lt;- ts(bymo$N, start = c(2006,1), frequency = 12)
+dts_decomp &lt;- stl(dts, s.window = &quot;period&quot;, robust = TRUE)
+plot(dts,ylab=&quot;Total Crimes&quot;, main = &quot;Monthly crimes with trend&quot;)
+lines(dts_decomp$time.series[,2], col=&quot;tomato&quot;)</code></pre>
+<p><img src="https://nitinahuja.github.io/post/2017-08-29-forecasting-in-r-philadelphia-crime-data_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="seasonal-component-extracted-from-the-timeseries." class="section level2">
+<h2>Seasonal component extracted from the timeseries.</h2>
+<p><img src="https://nitinahuja.github.io/post/2017-08-29-forecasting-in-r-philadelphia-crime-data_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="how-seasonal-is-the-data" class="section level2">
+<h2>How seasonal is the data?</h2>
+<p>This autocorrelation shows a very high correalation every 12 months.</p>
+<pre class="r"><code>Acf(dts, main = &quot;ACF of crime&quot;)</code></pre>
+<p><img src="https://nitinahuja.github.io/post/2017-08-29-forecasting-in-r-philadelphia-crime-data_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="forecast-with-a-linear-model" class="section level2">
+<h2>Forecast with a linear model</h2>
+<p>The red line shows the model’s prediction against the actual numbers in black. The model seems quite close.</p>
+<pre class="r"><code>f_crime &lt;- tslm(dts ~ trend + season, lambda = 0.5)
+ff_crime &lt;- forecast(f_crime, h = 12)
+plot(ff_crime)
+lines(fitted(ff_crime), col = &quot;red&quot;)</code></pre>
+<p><img src="https://nitinahuja.github.io/post/2017-08-29-forecasting-in-r-philadelphia-crime-data_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="residuals-from-model" class="section level2">
+<h2>Residuals from model</h2>
+<p>This shows the residuals - these are quite low.</p>
+<pre class="r"><code>  res &lt;- residuals(ff_crime)
+  plot(res, ylab=&quot;Residuals&quot;,xlab=&quot;Year&quot;, main = &quot;Residuals&quot;) </code></pre>
+<p><img src="https://nitinahuja.github.io/post/2017-08-29-forecasting-in-r-philadelphia-crime-data_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>  summary(res)</code></pre>
+<pre><code>##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+## -19.4100  -3.6750  -0.6624   0.0000   3.3570  17.2300</code></pre>
+</div>
+<div id="predictions" class="section level2">
+<h2>Predictions</h2>
+<p>If such a thing were possible - here are the predicted overall crime numbers.</p>
+<pre class="r"><code>ff_crime</code></pre>
+<pre><code>##          Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
+## Nov 2016       13236.78 12244.74 14267.46 11728.32 14836.48
+## Dec 2016       12642.30 11673.23 13650.01 11169.13 14206.70
+## Jan 2017       12455.98 11496.12 13454.31 10996.91 14005.90
+## Feb 2017       11074.65 10170.69 12017.10  9701.46 12538.71
+## Mar 2017       13602.72 12598.79 14645.12 12075.92 15220.37
+## Apr 2017       14174.98 13149.75 15238.68 12615.45 15825.36
+## May 2017       14987.78 13933.02 16081.02 13382.88 16683.54
+## Jun 2017       14890.58 13839.31 15980.32 13291.04 16580.98
+## Jul 2017       15276.38 14211.33 16379.91 13655.67 16987.95
+## Aug 2017       15501.24 14428.24 16612.71 13868.30 17225.03
+## Sep 2017       14087.42 13065.43 15147.90 12532.86 15732.85
+## Oct 2017       14033.05 13013.06 15091.51 12481.58 15675.38</code></pre>
+</div>
+<div id="next-steps" class="section level2">
+<h2>Next steps</h2>
+<ul>
+<li>This took into account overall numbers but breaking down by category/Code and district might reveal other patterns.</li>
+</ul>
+</div>
+</div>
 
               
             </div>
@@ -267,7 +355,7 @@ Gotta know your shell utilities.</p>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://nitinahuja.github.io//tags/unix/">unix</a>
+  <a class="tag tag--primary tag--small" href="https://nitinahuja.github.io//tags/forecasting/">forecasting</a>
 
                   </div>
                 
@@ -279,7 +367,7 @@ Gotta know your shell utilities.</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2014/on-marketplaces-and-platforms/" data-tooltip="On Marketplaces and platforms">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/" data-tooltip="NPS - Exploratory analysis in R">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -287,7 +375,7 @@ Gotta know your shell utilities.</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/" data-tooltip="Access log parsing with Spark and schema extraction from query string">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -304,17 +392,17 @@ Gotta know your shell utilities.</p>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fnitinahuja.github.io%2f2013%2ffinding-with-find%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fnitinahuja.github.io%2f2016%2fforecasting-in-r-philadelphia-crime-data%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnitinahuja.github.io%2f2013%2ffinding-with-find%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnitinahuja.github.io%2f2016%2fforecasting-in-r-philadelphia-crime-data%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fnitinahuja.github.io%2f2013%2ffinding-with-find%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fnitinahuja.github.io%2f2016%2fforecasting-in-r-philadelphia-crime-data%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -360,7 +448,7 @@ Gotta know your shell utilities.</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2014/on-marketplaces-and-platforms/" data-tooltip="On Marketplaces and platforms">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/" data-tooltip="NPS - Exploratory analysis in R">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -368,7 +456,7 @@ Gotta know your shell utilities.</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/" data-tooltip="Access log parsing with Spark and schema extraction from query string">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -385,17 +473,17 @@ Gotta know your shell utilities.</p>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fnitinahuja.github.io%2f2013%2ffinding-with-find%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fnitinahuja.github.io%2f2016%2fforecasting-in-r-philadelphia-crime-data%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnitinahuja.github.io%2f2013%2ffinding-with-find%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnitinahuja.github.io%2f2016%2fforecasting-in-r-philadelphia-crime-data%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fnitinahuja.github.io%2f2013%2ffinding-with-find%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fnitinahuja.github.io%2f2016%2fforecasting-in-r-philadelphia-crime-data%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -422,17 +510,17 @@ Gotta know your shell utilities.</p>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fnitinahuja.github.io%2f2013%2ffinding-with-find%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fnitinahuja.github.io%2f2016%2fforecasting-in-r-philadelphia-crime-data%2f">
         <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnitinahuja.github.io%2f2013%2ffinding-with-find%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnitinahuja.github.io%2f2016%2fforecasting-in-r-philadelphia-crime-data%2f">
         <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fnitinahuja.github.io%2f2013%2ffinding-with-find%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fnitinahuja.github.io%2f2016%2fforecasting-in-r-philadelphia-crime-data%2f">
         <i class="fa fa-twitter"></i><span>Share on Twitter</span>
       </a>
     </li>
@@ -647,9 +735,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/nitinahuja.github.io\/2013\/finding-with-find\/';
+          this.page.url = 'https:\/\/nitinahuja.github.io\/2016\/forecasting-in-r-philadelphia-crime-data\/';
           
-            this.page.identifier = '\/2013\/finding-with-find\/'
+            this.page.identifier = '\/2016\/forecasting-in-r-philadelphia-crime-data\/'
           
         };
         (function() {

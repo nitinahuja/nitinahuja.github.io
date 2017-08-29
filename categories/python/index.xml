@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on A programmer&#39;s viewpoint</title>
+    <link>/categories/python/</link>
+    <description>Recent content in Python on A programmer&#39;s viewpoint</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Aug 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Access log parsing with Spark and schema extraction from query string</title>
+      <link>/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/</link>
+      <pubDate>Wed, 03 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/</guid>
+      <description>I needed to parse server logs and create Spark DataFrames to query information from the query string parameters. My naive version kept throwing errors about mismatched number of fields in schema and those in the row being queried.
+It turns out I was dealing with over 350 different query string params across the logs. This could change over time and there was no way I was going to add these programmatically by hand.</description>
+    </item>
+    
+  </channel>
+</rss>

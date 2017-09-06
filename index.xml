@@ -6,10 +6,20 @@
     <description>Recent content on A programmer&#39;s viewpoint</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://nitinahuja.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Managing managers - some thoughts</title>
+      <link>https://nitinahuja.github.io/2017/managing-managers-some-thoughts/</link>
+      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nitinahuja.github.io/2017/managing-managers-some-thoughts/</guid>
+      <description>When you are managing managers, you should have a single focus; they are learning to manage their teams well and as a secondary objective that they are contributing at high levels. There are several experts in this area and I do not claim to be anywhere close; these are just reminders for myself.
+Your team learns by modeling you. There is little doubt that what you do, your team will emulate.</description>
+    </item>
     
     <item>
       <title>NPS - Exploratory analysis in R</title>

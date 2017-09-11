@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nitinahuja.github.io/2017/heatmaps-in-r/</loc>
+    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nitinahuja.github.io/2017/managing-managers-some-thoughts/</loc>
     <lastmod>2017-08-30T00:00:00+00:00</lastmod>
   </url>
@@ -39,7 +44,7 @@
   
   <url>
     <loc>https://nitinahuja.github.io/</loc>
-    <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -61,7 +66,7 @@
   
   <url>
     <loc>https://nitinahuja.github.io/tags/learning/</loc>
-    <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -97,7 +102,7 @@
   
   <url>
     <loc>https://nitinahuja.github.io/post/</loc>
-    <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -115,7 +120,7 @@
   
   <url>
     <loc>https://nitinahuja.github.io/categories/r/</loc>
-    <lastmod>2017-08-28T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

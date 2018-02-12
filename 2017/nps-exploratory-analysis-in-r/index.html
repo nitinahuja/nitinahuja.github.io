@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.26">
+    <meta name="generator" content="Hugo 0.31.1">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
     <title>NPS - Exploratory analysis in R</title>
     <meta name="author" content="Nitin Ahuja">
@@ -273,7 +273,7 @@ library(lubridate)
 library(dplyr)
 library(tidyr)
 library(RColorBrewer)
-library(ggjoy)
+library(ggridges)
 library(reshape2)
 
 library(tidytext)
@@ -406,9 +406,9 @@ ggplot(daily) +
 <pre class="r"><code>ggplot(nps) + 
   geom_density(aes( x = Score,  group = weekday, fill = weekday), alpha = 0.3) </code></pre>
 <p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
-<p>Here is a joy plot for the score density by day. It’s harder to compare the relative heights of the score density compared to the density plot above. The bi-modal distribution of scores on Sunday is, however, quite clear here.</p>
+<p>Here is a ridges plot for the score density by day. It’s harder to compare the relative heights of the score density compared to the density plot above. The bi-modal distribution of scores on Sunday is, however, quite clear here.</p>
 <pre class="r"><code>ggplot(nps) + 
-  geom_joy(aes( x = Score, y = weekday, fill = weekday), scale = 3) +
+  geom_density_ridges(aes( x = Score, y = weekday, fill = weekday), scale = 3) +
   scale_fill_brewer(&quot;Response Day&quot;, palette = &quot;Set1&quot;)
 ## Picking joint bandwidth of 0.724</code></pre>
 <p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
@@ -446,17 +446,17 @@ ggplot(daily) +
   summarise(cat_count = length(cat)) %&gt;% mutate(pct = round((cat_count/sum(cat_count)*100),2)) 
 ## # A tibble: 9 x 4
 ## # Groups:   year [3]
-##     year       cat cat_count   pct
-##   &lt;fctr&gt;    &lt;fctr&gt;     &lt;int&gt; &lt;dbl&gt;
-## 1   2015 Detractor        94 23.44
-## 2   2015   Passive       112 27.93
-## 3   2015  Promoter       195 48.63
-## 4   2016 Detractor       196 22.43
-## 5   2016   Passive       239 27.35
-## 6   2016  Promoter       439 50.23
-## 7   2017 Detractor        72 22.22
-## 8   2017   Passive        72 22.22
-## 9   2017  Promoter       180 55.56</code></pre>
+##   year  cat       cat_count   pct
+##   &lt;fct&gt; &lt;fct&gt;         &lt;int&gt; &lt;dbl&gt;
+## 1 2015  Detractor        94  23.4
+## 2 2015  Passive         112  27.9
+## 3 2015  Promoter        195  48.6
+## 4 2016  Detractor       196  22.4
+## 5 2016  Passive         239  27.4
+## 6 2016  Promoter        439  50.2
+## 7 2017  Detractor        72  22.2
+## 8 2017  Passive          72  22.2
+## 9 2017  Promoter        180  55.6</code></pre>
 </div>
 <div id="tpy" class="section level3">
 <h3>TPY</h3>
@@ -557,36 +557,36 @@ comments &lt;- comments %&gt;% ungroup()</code></pre>
 <pre class="r"><code>nps_words &lt;- comments %&gt;% unnest_tokens(word, Comment)
 nps_words
 ## # A tibble: 24,460 x 3
-##         cat `row_number()`       word
-##      &lt;fctr&gt;          &lt;int&gt;      &lt;chr&gt;
-##  1 Promoter              1   customer
-##  2 Promoter              1    service
-##  3 Promoter              2  intuitive
-##  4 Promoter              2    program
-##  5 Promoter              2        and
+##    cat      `row_number()` word      
+##    &lt;fct&gt;             &lt;int&gt; &lt;chr&gt;     
+##  1 Promoter              1 customer  
+##  2 Promoter              1 service   
+##  3 Promoter              2 intuitive 
+##  4 Promoter              2 program   
+##  5 Promoter              2 and       
 ##  6 Promoter              2 accessible
-##  7 Promoter              2    support
-##  8 Promoter              3       easy
-##  9 Promoter              3         to
-## 10 Promoter              3        use
+##  7 Promoter              2 support   
+##  8 Promoter              3 easy      
+##  9 Promoter              3 to        
+## 10 Promoter              3 use       
 ## # ... with 24,450 more rows</code></pre>
 <p>Our next step is to remove some common words that are not useful for analysis. These include pronouns, articles and other common words. The tidytext package already includes a wide range of these in the <em>stop_words</em> dataset.</p>
 <p>We are left with about 2243 unique words with</p>
 <pre class="r"><code>nps_words &lt;-  nps_words %&gt;% anti_join(stop_words, by = c(&#39;word&#39;))
 nps_words %&gt;% count(word, sort = TRUE)
 ## # A tibble: 2,244 x 2
-##        word     n
-##       &lt;chr&gt; &lt;int&gt;
+##    word         n
+##    &lt;chr&gt;    &lt;int&gt;
 ##  1 platform   353
-##  2  service   280
+##  2 service    280
 ##  3 customer   229
-##  4   system   191
-##  5  support   187
-##  6     easy   155
-##  7     ease   142
-##  8   ticket    91
+##  4 system     191
+##  5 support    187
+##  6 easy       155
+##  7 ease       142
+##  8 ticket      91
 ##  9 friendly    89
-## 10     user    84
+## 10 user        84
 ## # ... with 2,234 more rows</code></pre>
 </div>
 </div>
@@ -608,18 +608,18 @@ nps_words %&gt;% count(word, sort = TRUE)
 <p>Let’s try another lexicon. This one is called <em>Bing</em> and was produced by Bing Liu et al. This classifies words with a label signifying positive or negative. Here is a sample of words from this lexicon.</p>
 <pre class="r"><code>get_sentiments(&quot;bing&quot;)
 ## # A tibble: 6,788 x 2
-##           word sentiment
-##          &lt;chr&gt;     &lt;chr&gt;
-##  1     2-faced  negative
-##  2     2-faces  negative
-##  3          a+  positive
-##  4    abnormal  negative
-##  5     abolish  negative
-##  6  abominable  negative
-##  7  abominably  negative
-##  8   abominate  negative
-##  9 abomination  negative
-## 10       abort  negative
+##    word        sentiment
+##    &lt;chr&gt;       &lt;chr&gt;    
+##  1 2-faced     negative 
+##  2 2-faces     negative 
+##  3 a+          positive 
+##  4 abnormal    negative 
+##  5 abolish     negative 
+##  6 abominable  negative 
+##  7 abominably  negative 
+##  8 abominate   negative 
+##  9 abomination negative 
+## 10 abort       negative 
 ## # ... with 6,778 more rows</code></pre>
 <p>Next, let’s look at the sentiments for each category using the <em>Bing</em> dictionary.</p>
 <pre class="r"><code>nps_words %&gt;% 
@@ -706,33 +706,33 @@ ggplot(aes(x=cat, y = sentiment, fill = cat)) +
 unnest_tokens(ngram, Comment, token = &quot;ngrams&quot;, n = 2) %&gt;%
 count(ngram, sort = TRUE)
 ## # A tibble: 13,714 x 2
-##               ngram     n
-##               &lt;chr&gt; &lt;int&gt;
+##    ngram                n
+##    &lt;chr&gt;            &lt;int&gt;
 ##  1 customer service   165
-##  2          ease of   134
-##  3           to use   122
-##  4          easy to   113
-##  5           of use   110
-##  6           of the    75
-##  7           i have    71
-##  8       the system    71
-##  9    user friendly    69
-## 10            it is    67
+##  2 ease of            134
+##  3 to use             122
+##  4 easy to            113
+##  5 of use             110
+##  6 of the              75
+##  7 i have              71
+##  8 the system          71
+##  9 user friendly       69
+## 10 it is               67
 ## # ... with 13,704 more rows</code></pre>
 <p>In this case we have not removed the stop words, let’s try looking at the trigrams to see if those provide more meaning. These are phrases that have the word <em>not</em> prefixed.</p>
 <pre class="r"><code>comments %&gt;% unnest_tokens(ngram, Comment, token = &quot;ngrams&quot;, n = 3) %&gt;% count(ngram, sort = TRUE) %&gt;% filter(str_detect(ngram, &#39;^not &#39;))
 ## # A tibble: 182 x 2
-##                     ngram     n
-##                     &lt;chr&gt; &lt;int&gt;
-##  1               not a 10     3
-##  2         not been fixed     3
-##  3         not being able     3
-##  4            not able to     2
-##  5        not as flexible     2
-##  6            not been as     2
-##  7    not flexible enough     2
-##  8             not give a     2
-##  9         not handle the     2
+##    ngram                      n
+##    &lt;chr&gt;                  &lt;int&gt;
+##  1 not a 10                   3
+##  2 not been fixed             3
+##  3 not being able             3
+##  4 not able to                2
+##  5 not as flexible            2
+##  6 not been as                2
+##  7 not flexible enough        2
+##  8 not give a                 2
+##  9 not handle the             2
 ## 10 not recommend platform     2
 ## # ... with 172 more rows</code></pre>
 <p>As a final step in this exploration, we will create a comparison word cloud</p>
@@ -773,18 +773,18 @@ nps_words %&gt;%
 
 nps_tf_idf
 ## # A tibble: 4,485 x 6
-##          cat            word     n           tf       idf       tf_idf
-##       &lt;fctr&gt;           &lt;chr&gt; &lt;int&gt;        &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;
-##  1 Detractor            lack    24 0.0025795357 0.4054651 0.0010459117
-##  2  Promoter      reasonable     7 0.0008431703 1.0986123 0.0009263173
-##  3   Passive           smith     5 0.0007295010 1.0986123 0.0008014388
-##  4   Passive           under     5 0.0007295010 1.0986123 0.0008014388
-##  5 Detractor        contract     6 0.0006448839 1.0986123 0.0007084774
-##  6 Detractor          income     6 0.0006448839 1.0986123 0.0007084774
-##  7 Detractor           won&#39;t     6 0.0006448839 1.0986123 0.0007084774
-##  8  Promoter professionalism     5 0.0006022645 1.0986123 0.0006616552
-##  9  Promoter         respond     5 0.0006022645 1.0986123 0.0006616552
-## 10   Passive            part     4 0.0005836008 1.0986123 0.0006411510
+##    cat       word                n       tf   idf   tf_idf
+##    &lt;fct&gt;     &lt;chr&gt;           &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
+##  1 Detractor lack               24 0.00258  0.405 0.00105 
+##  2 Promoter  reasonable          7 0.000843 1.10  0.000926
+##  3 Passive   smith               5 0.000730 1.10  0.000801
+##  4 Passive   under               5 0.000730 1.10  0.000801
+##  5 Detractor contract            6 0.000645 1.10  0.000708
+##  6 Detractor income              6 0.000645 1.10  0.000708
+##  7 Detractor won&#39;t               6 0.000645 1.10  0.000708
+##  8 Promoter  professionalism     5 0.000602 1.10  0.000662
+##  9 Promoter  respond             5 0.000602 1.10  0.000662
+## 10 Passive   part                4 0.000584 1.10  0.000641
 ## # ... with 4,475 more rows</code></pre>
 <p>Let’s plot this next by category.</p>
 <pre class="r"><code>nps_tf_idf %&gt;% 
@@ -813,18 +813,18 @@ nps_tf_idf
 
 nps_tf_idf_bigram
 ## # A tibble: 16,171 x 6
-##          cat          ngram     n           tf       idf       tf_idf
-##       &lt;fctr&gt;          &lt;chr&gt; &lt;int&gt;        &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;
-##  1  Promoter great customer    43 0.0055815161 0.4054651 0.0022631100
-##  2 Detractor        lack of    24 0.0026510549 0.4054651 0.0010749103
-##  3  Promoter friendly great     7 0.0009086189 1.0986123 0.0009982199
-##  4   Passive     would like    16 0.0024334601 0.4054651 0.0009866832
-##  5  Promoter      the staff     6 0.0007788162 1.0986123 0.0008556170
-##  6  Promoter      use great     6 0.0007788162 1.0986123 0.0008556170
-##  7  Promoter      very easy     6 0.0007788162 1.0986123 0.0008556170
-##  8 Detractor      follow up     7 0.0007732243 1.0986123 0.0008494738
-##  9  Promoter  great product    16 0.0020768432 0.4054651 0.0008420875
-## 10   Passive      great but     5 0.0007604563 1.0986123 0.0008354466
+##    cat       ngram              n       tf   idf   tf_idf
+##    &lt;fct&gt;     &lt;chr&gt;          &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
+##  1 Promoter  great customer    43 0.00558  0.405 0.00226 
+##  2 Detractor lack of           24 0.00265  0.405 0.00107 
+##  3 Promoter  friendly great     7 0.000909 1.10  0.000998
+##  4 Passive   would like        16 0.00243  0.405 0.000987
+##  5 Promoter  the staff          6 0.000779 1.10  0.000856
+##  6 Promoter  use great          6 0.000779 1.10  0.000856
+##  7 Promoter  very easy          6 0.000779 1.10  0.000856
+##  8 Detractor follow up          7 0.000773 1.10  0.000849
+##  9 Promoter  great product     16 0.00208  0.405 0.000842
+## 10 Passive   great but          5 0.000760 1.10  0.000835
 ## # ... with 16,161 more rows</code></pre>
 <p>Break this up by category.</p>
 <pre class="r"><code>nps_tf_idf_bigram %&gt;% group_by(cat) %&gt;% 
@@ -948,7 +948,7 @@ nps_tf_idf_bigram
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2017 Nitin Ahuja. All Rights Reserved
+    &copy; 2018 Nitin Ahuja. All Rights Reserved
   </span>
 </footer>
 
@@ -1088,6 +1088,24 @@ nps_tf_idf_bigram
       <div class="no-result text-color-light text-center">no post found</div>
       <div class="results">
         
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nitinahuja.github.io/2017/nps-exploratory-text-analysis/">
+                <h3 class="media-heading">NPS - Exploratory analysis in R - Text analysis</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">NPS analysis NPS - Comment analysis In an previous post we performed some EDA on the NPS data we have. Recall that as part of the question about the likelihood of recommending a service or business there is an optional text response about why they picked this score.
+Let’s try and see what those responses are all about. We had already performed some sentiment analysis on this text we are now going to attempt to classify this text into topics.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
         
           <div class="media">
             
@@ -1237,15 +1255,15 @@ My goal was to list the sizes and access times for all video files in the system
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/post/">
-                <h3 class="media-heading">Posts</h3>
+              <a class="link-unstyled" href="https://nitinahuja.github.io/1/">
+                <h3 class="media-heading"></h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  Sep 9, 2017
+                  Jan 1, 0001
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"></div>
+              <div class="media-content hide-xs font-merryweather">NPS - Exploratory analysis in R          code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState && document.readyState === "complete") { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -1258,7 +1276,7 @@ My goal was to list the sizes and access times for all video files in the system
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         9 posts found
+         12 posts found
       </p>
     </div>
   </div>

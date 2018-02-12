@@ -1,0 +1,1092 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.31.1">
+    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+    <title>NPS - Exploratory analysis in R - Text analysis</title>
+    <meta name="author" content="Nitin Ahuja">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://nitinahuja.github.io/favicon.png">
+    
+
+    
+    <meta name="description" content="NPS analysis NPS - Comment analysis In an previous post we performed some EDA on the NPS data we have. Recall that as part of the question about the likelihood of recommending a service or business there is an optional text response about why they picked this score.
+Let’s try and see what those responses are all about. We had already performed some sentiment analysis on this text we are now going to attempt to classify this text into topics.">
+    <meta property="og:description" content="NPS analysis NPS - Comment analysis In an previous post we performed some EDA on the NPS data we have. Recall that as part of the question about the likelihood of recommending a service or business there is an optional text response about why they picked this score.
+Let’s try and see what those responses are all about. We had already performed some sentiment analysis on this text we are now going to attempt to classify this text into topics.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="NPS - Exploratory analysis in R - Text analysis">
+    <meta property="og:url" content="/2017/nps-exploratory-text-analysis/">
+    <meta property="og:site_name" content="A programmer&#39;s viewpoint">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="A programmer&#39;s viewpoint">
+    <meta name="twitter:description" content="NPS analysis NPS - Comment analysis In an previous post we performed some EDA on the NPS data we have. Recall that as part of the question about the likelihood of recommending a service or business there is an optional text response about why they picked this score.
+Let’s try and see what those responses are all about. We had already performed some sentiment analysis on this text we are now going to attempt to classify this text into topics.">
+    
+      <meta name="twitter:creator" content="@nitinahuja">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=640">
+    
+
+    
+      <meta property="og:image" content="//d1u9biwaxjngwg.cloudfront.net/cover-image-showcase/city-750.jpg">
+    
+    
+      <meta property="og:image" content="https://lh3.googleusercontent.com/xHOxMqLRDtrTyu_ipxOWHY3I49Hyzaql9KBgqVuUIXd0YkDjTZl4EzueIAYsRMux_ISvtjmv_q2XbAOf1e90Kiy9jsLCH1Nt7RIJrTxCeyM8jjHxGSrNo7BoNjF1pJFpVAwSbrV1G4Q">
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    
+    
+    <link rel="stylesheet" href="https://nitinahuja.github.io/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    
+    
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-105634890-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://nitinahuja.github.io/">A programmer&#39;s viewpoint</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://nitinahuja.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://nitinahuja.github.io/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Nitin Ahuja</h4>
+        
+          <h5 class="sidebar-profile-bio">A programmer&rsquo;s viewpoint</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/nitinahuja" target="_blank">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-left
+              "
+       style="background-image:url('https://lh3.googleusercontent.com/xHOxMqLRDtrTyu_ipxOWHY3I49Hyzaql9KBgqVuUIXd0YkDjTZl4EzueIAYsRMux_ISvtjmv_q2XbAOf1e90Kiy9jsLCH1Nt7RIJrTxCeyM8jjHxGSrNo7BoNjF1pJFpVAwSbrV1G4Q')"
+       data-behavior="4">
+    
+      <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      NPS - Exploratory analysis in R - Text analysis
+    </h1>
+  
+  <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-10-22T00:00:00Z">
+      
+  October 22, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://nitinahuja.github.io/categories/r">R</a>, 
+    
+      <a class="category-link" href="https://nitinahuja.github.io/categories/nlp">NLP</a>
+    
+  
+
+
+</div>
+
+</div>
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <div id="nps-analysis" class="section level1">
+<h1>NPS analysis</h1>
+<div id="nps---comment-analysis" class="section level2">
+<h2>NPS - Comment analysis</h2>
+<p>In an <a href="https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/">previous post</a> we performed some EDA on the NPS data we have. Recall that as part of the question about the likelihood of recommending a service or business there is an optional text response about <strong>why</strong> they picked this score.</p>
+<p>Let’s try and see what those responses are all about. We had already performed some sentiment analysis on this text we are now going to attempt to classify this text into topics. Topic modeling is a method for <strong>unsupervised classification</strong> of such documents, similar to clustering on numeric data, which finds natural groups of items even when we’re not sure what we’re looking for.</p>
+<p>Latent Dirichlet allocation (LDA) is a particularly popular method for fitting a topic model. It treats each document as a mixture of topics, and each topic as a mixture of words.</p>
+<p>LDA has two key tenets - Every document is a mixture of topics - Every topic is a mixture of words.</p>
+<p>In our NPS comment data, we will treat each comment as a document and we’ll try and see how many topics we can identify. Since LDA is unsupervised classification, and we do not have any a priori knowledge of the possible number of topics, we’ll need to do some trial and error.</p>
+<p>Let’s start by loading the required libraries</p>
+<pre class="r"><code>library(irlba)
+
+library(tidytext)
+library(topicmodels)
+library(ggplot2)
+
+library(tidyr)
+library(dplyr)
+library(RColorBrewer)
+library(lubridate)
+library(stringr)
+
+library(widyr)
+library(broom)
+
+library(tidygraph)
+library(ggraph)
+library(ggrepel)</code></pre>
+<p>LDA needs a term document matrix, let’s start by reading in the data and remove the rows that do not have any comments.</p>
+<pre class="r"><code>nps &lt;- read.csv(&#39;~/data/nps.csv&#39;, header = TRUE, quote = &#39;&quot;&#39;
+                , na.strings=c(&quot;&quot;, &quot;NA&quot;, &quot;#N/A&quot;)
+                , colClasses = c(&quot;Feedback.Received&quot;= &quot;Date&quot;
+                               , &quot;Comment&quot;=&quot;character&quot;
+                               , &quot;Survey.Sent&quot;=&quot;Date&quot;
+                               , &quot;TPY&quot;=&quot;integer&quot;
+                               ))
+nps&lt;- nps %&gt;% drop_na(Comment)</code></pre>
+<p>That leaves us with 1130 rows.</p>
+<p>Let’s also enrich the data with some additional fields and add the category like we did in the last post. The category is dependent on the score and scores from 0 through 6 are considered <em>detractors</em>, 7 - 8 are <em>passives</em> and 9 and 10 are <em>promorters</em>.</p>
+<pre class="r"><code>nps$year &lt;- as.factor(year(nps$Received))
+nps$month &lt;- cut(nps$Received, breaks = &quot;month&quot;)
+nps$days &lt;- nps$Received - nps$Sent
+nps$weekday &lt;- weekdays(nps$Received)
+nps$weekday &lt;- factor(nps$weekday, levels = c(&quot;Sunday&quot;, &quot;Monday&quot;,&quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;))
+nps$cat &lt;- cut(nps$Score, breaks = c(-1,6,8,10), labels = c(&quot;Detractor&quot;, &quot;Passive&quot;, &quot;Promoter&quot;))</code></pre>
+<p>Extract out the comments while keeping the category</p>
+<pre class="r"><code>comments &lt;- nps %&gt;%
+  select(Comment, cat) %&gt;%
+  group_by(row_number())</code></pre>
+<div id="lda-using-per-comment-as-a-document" class="section level3">
+<h3>LDA using per comment as a document</h3>
+<p>The LDA function takes a TermDocumentMatrix object as an input; let’s convert our text into a DFM</p>
+<pre class="r"><code>nps_count &lt;- comments %&gt;%
+  unnest_tokens(word, Comment) %&gt;%
+  anti_join(stop_words, by = c(&#39;word&#39;)) %&gt;%
+  count(`row_number()`, word, sort = TRUE) %&gt;%
+  ungroup()</code></pre>
+<p>Now convert to a DTM and perform the LDA</p>
+<pre class="r"><code>nps_dtm &lt;- nps_count %&gt;%
+  cast_dtm(`row_number()`, word, n)</code></pre>
+<p>LDA on the matrix. This produces a row per topic with each word and its probability of the word being generated by that topic. We picked seven topics but we will experiment with a few more combinations.</p>
+<pre class="r"><code>topic_count &lt;- 25
+nps_lda &lt;- LDA(nps_dtm, k = topic_count, control = list(seed=1234))
+nps_topics &lt;- tidy(nps_lda, matrix = &quot;beta&quot;)</code></pre>
+<p>Next - let’s find out the top 5 words per topic and plot those.</p>
+<pre class="r"><code>top_terms &lt;- nps_topics %&gt;%
+  group_by(topic) %&gt;%
+  top_n(5, beta) %&gt;%
+  ungroup() %&gt;%
+  arrange(topic, -beta)</code></pre>
+<p>Plot the terms and topics.</p>
+<pre class="r"><code>top_terms %&gt;% 
+  mutate(term = reorder(term, beta)) %&gt;%
+  ggplot(aes(term, beta, fill=factor(topic))) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ topic, scales = &quot;free&quot; ) +
+  coord_flip() +
+  guides(fill=FALSE) +
+  labs(title = &quot;Terms in topics - By Comment&quot;, x = &quot;Term&quot;, y = &quot;Probability&quot;)</code></pre>
+<p><img src="https://nitinahuja.github.io/post/2017-10-20-nps-exploratory-analysis-text-analysis_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>In this model, we treated each comment as it’s own document and picked 20 topics to classify the text, we assume that each responder roughly commented across the same 20 topics; how does this change if we treat each category as it’s own document. Are respondents per category talking about the same topics.</p>
+</div>
+<div id="lda-by-category" class="section level3">
+<h3>LDA By Category</h3>
+<p>There are three categories and we will try to classify the text into three topics but this time let’s try to use bigrams for this.</p>
+<pre class="r"><code>nps_count &lt;- comments %&gt;%
+  unnest_tokens(word ,Comment, token = &quot;ngrams&quot;, n = 2) %&gt;% 
+  count(cat, word, sort = TRUE) %&gt;%
+  ungroup()</code></pre>
+<p>Now convert to a DTM and perform the LDA</p>
+<pre class="r"><code>nps_dtm &lt;- nps_count %&gt;%
+  cast_dtm(cat, word, n)</code></pre>
+<p><em>LDA on the matrix. </em></p>
+<p>This produces a row per topic with each word and its probability of the word being generated by that topic. We picked three topics but we will experiment with a few more combinations.</p>
+<pre class="r"><code>nps_lda &lt;- LDA(nps_dtm, k = 3, control = list(seed=1234))
+nps_topics &lt;- tidy(nps_lda, matrix = &quot;beta&quot;)</code></pre>
+<p>Next - let’s find out the top words per topic and plot those.</p>
+<pre class="r"><code>top_terms &lt;- nps_topics %&gt;%
+  group_by(topic) %&gt;%
+  top_n(10, beta) %&gt;%
+  ungroup() %&gt;%
+  arrange(topic, -beta)</code></pre>
+<p>Plot the bigrams and topics; looking at the top terms, these seem to map well to the three categories - Promoters, Passives and detractors as 1, 2 and 3 respectively.</p>
+<pre class="r"><code>top_terms %&gt;% 
+  mutate(term = reorder(term, beta)) %&gt;%
+  ggplot(aes(term, beta, fill=factor(topic))) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap( ~ topic, scales = &quot;free&quot; ) +
+  coord_flip() +
+  guides(fill=FALSE) +
+  labs(title = &quot;Bigrams in topics - By Category&quot;, x = &quot;Term&quot;, y = &quot;Probability&quot;)</code></pre>
+<p><img src="https://nitinahuja.github.io/post/2017-10-20-nps-exploratory-analysis-text-analysis_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>LDA can also model each document as a mixture of topics. We can examine the per-document-per-topic probabilities, called Y (“gamma”), with the matrix = “gamma” argument to tidy()</p>
+<pre class="r"><code>nps_docs &lt;- tidy(nps_lda, matrix = &quot;gamma&quot;)
+nps_docs</code></pre>
+<pre><code>## # A tibble: 9 x 3
+##    document topic        gamma
+##       &lt;chr&gt; &lt;int&gt;        &lt;dbl&gt;
+## 1 Detractor     1 2.859153e-06
+## 2   Passive     1 9.999921e-01
+## 3  Promoter     1 3.403279e-06
+## 4 Detractor     2 9.999943e-01
+## 5   Passive     2 3.951867e-06
+## 6  Promoter     2 3.403279e-06
+## 7 Detractor     3 2.859153e-06
+## 8   Passive     3 3.951867e-06
+## 9  Promoter     3 9.999932e-01</code></pre>
+<p>Each of these values is an estimated proportion of words from that document that are generated from that topic. This confirms what we suspected - that topic 1 words were almost entirely (99%) generated of words from the promoters sections and topic 2’s words were generated from the passive documents.</p>
+</div>
+</div>
+<div id="zipfs-law" class="section level2">
+<h2>Zipf’s Law</h2>
+<p>Let’s take a short detour before moving ahead. George Zipf, in the 1940’s, by hand took all the words in Ulysses and found that the frequency of a word was inversely proportinal to it’s rank. This observation applies to many phenomenon, including populations in cities.</p>
+<pre class="r"><code>nps_count &lt;- nps %&gt;%
+  select(Comment, cat) %&gt;%
+  unnest_tokens(word, Comment) %&gt;%
+  count(cat, word, sort = TRUE) %&gt;%
+  ungroup()
+
+cat_count &lt;- nps_count %&gt;%
+  group_by(cat) %&gt;%
+  summarise( total = sum(n))
+
+nps_count &lt;- left_join(nps_count, cat_count, by = &#39;cat&#39;)
+
+freq_by_rank &lt;- nps_count %&gt;%
+  group_by(cat) %&gt;%
+  mutate(rank = row_number(), freq = n/total)</code></pre>
+<p>Now let’s plot the log-log plot for the rank and frequency.</p>
+<pre class="r"><code>freq_by_rank %&gt;% 
+  ggplot(aes(rank, freq, color = cat)) +
+  geom_line() +
+  scale_x_log10() + 
+  scale_y_log10() +
+  scale_fill_brewer(&quot;category&quot;, palette = &quot;Set1&quot;) +
+  labs(title = &quot;Zipf&#39;s law&quot;)</code></pre>
+<p><img src="https://nitinahuja.github.io/post/2017-10-20-nps-exploratory-analysis-text-analysis_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>It’s quite amazing to see that even a fragmented set of comments follows Zipf’s law. The slope is not quite -1 but close. We can find out what the linear fit is. Really close to -1.</p>
+<pre class="r"><code>lm(log10(freq) ~ log10(rank), data = freq_by_rank %&gt;% filter(rank &gt; 10))</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = log10(freq) ~ log10(rank), data = freq_by_rank %&gt;% 
+##     filter(rank &gt; 10))
+## 
+## Coefficients:
+## (Intercept)  log10(rank)  
+##     -0.7715      -1.0264</code></pre>
+</div>
+<div id="word-vectors" class="section level2">
+<h2>Word Vectors</h2>
+<p>Word vectors are typically calculated using neural networks; that is what <a href="https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/">word2vec</a> is. We will try to find word vectors in our own collection using some linear algebra. A lot of this is influenced by the excellent post by <a href="https://juliasilge.com/blog/tidy-word-vectors/">Julia Silge</a></p>
+<p>We’ll start by counting unigram probabilities</p>
+<pre class="r"><code>comments &lt;- nps %&gt;%
+  select(Comment, cat) %&gt;%
+  mutate(docID = row_number())
+  
+unigram_probs &lt;- comments %&gt;%
+  unnest_tokens(word, Comment) %&gt;%
+  count(word, sort = TRUE) %&gt;%
+  mutate(p = n /sum(n))
+
+unigram_probs</code></pre>
+<pre><code>## # A tibble: 2,735 x 3
+##     word     n          p
+##    &lt;chr&gt; &lt;int&gt;      &lt;dbl&gt;
+##  1   the   913 0.03785084
+##  2    to   881 0.03652419
+##  3   and   843 0.03494880
+##  4    of   523 0.02168235
+##  5    is   503 0.02085320
+##  6     a   481 0.01994113
+##  7     i   418 0.01732930
+##  8   for   367 0.01521496
+##  9    it   312 0.01293479
+## 10    we   301 0.01247875
+## # ... with 2,725 more rows</code></pre>
+<p>Next we will calculate the skipgram probabilities, how often we find a word near another word. To do this we will create a sliding window of words around a word and then use pairwise_count to count cooccuring pairs within each sliding window. Essentially we will be doing this P(word1, word2) /P(word1)/ P(word2). We’ll take a window of 8 words for each sliding window. I reached this number after some experimentation.</p>
+<pre class="r"><code>skipgrams &lt;- comments %&gt;%
+  unnest_tokens(ngram, Comment, token = &quot;ngrams&quot;, n = 8) %&gt;%
+  mutate(ngramID = row_number()) %&gt;%
+  unite(skipgramID, docID, ngramID) %&gt;%
+  unnest_tokens(word, ngram)</code></pre>
+<p>Next we do a pairwise count of the terms and find the relative probabilities.</p>
+<pre class="r"><code>skipgram_probs &lt;- skipgrams %&gt;%
+  pairwise_count(word, skipgramID, sort = TRUE, diag = TRUE) %&gt;%
+  mutate(p = n /sum(n))</code></pre>
+<p>Normalized skipgram probability</p>
+<pre class="r"><code>normalized_prob &lt;- skipgram_probs %&gt;%
+    filter(n &gt; 20) %&gt;%
+    rename(word1 = item1, word2 = item2) %&gt;%
+    left_join(unigram_probs %&gt;%
+                  select(word1 = word, p1 = p),
+              by = &quot;word1&quot;) %&gt;%
+    left_join(unigram_probs %&gt;%
+                  select(word2 = word, p2 = p),
+              by = &quot;word2&quot;) %&gt;%
+    mutate(p_together = p / p1 / p2)</code></pre>
+<p>Just with this information we can try and find some word associations - which words are most closely associated with <em>service</em></p>
+<pre class="r"><code>normalized_prob %&gt;% 
+  filter(word1 == &quot;service&quot;) %&gt;% 
+  arrange(-p_together)</code></pre>
+<pre><code>## # A tibble: 39 x 7
+##      word1     word2     n            p         p1          p2 p_together
+##      &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt;
+##  1 service   service   718 6.750093e-04 0.01160814 0.011608142  5.0093841
+##  2 service  customer   336 3.158818e-04 0.01160814 0.009493802  2.8663005
+##  3 service excellent    37 3.478460e-05 0.01160814 0.001533933  1.9535203
+##  4 service     their    25 2.350311e-05 0.01160814 0.001492475  1.3566113
+##  5 service   product    40 3.760498e-05 0.01160814 0.002694747  1.2021663
+##  6 service     great   116 1.090544e-04 0.01160814 0.008332988  1.1274047
+##  7 service      good    48 4.512597e-05 0.01160814 0.003689731  1.0535840
+##  8 service      your    49 4.606610e-05 0.01160814 0.003979934  0.9971093
+##  9 service       but    66 6.204821e-05 0.01160814 0.005928444  0.9016247
+## 10 service       get    25 2.350311e-05 0.01160814 0.002570374  0.7877098
+## # ... with 29 more rows</code></pre>
+<p>How about <em>customer</em></p>
+<pre class="r"><code>normalized_prob %&gt;% 
+  filter(word1 == &quot;customer&quot;) %&gt;% 
+  arrange(-p_together)</code></pre>
+<pre><code>## # A tibble: 31 x 7
+##       word1     word2     n            p          p1          p2
+##       &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+##  1 customer  customer   588 5.527932e-04 0.009493802 0.009493802
+##  2 customer   service   336 3.158818e-04 0.009493802 0.011608142
+##  3 customer        by    22 2.068274e-05 0.009493802 0.001077899
+##  4 customer excellent    25 2.350311e-05 0.009493802 0.001533933
+##  5 customer   support   109 1.024736e-04 0.009493802 0.007752581
+##  6 customer     great    78 7.332970e-05 0.009493802 0.008332988
+##  7 customer      good    31 2.914386e-05 0.009493802 0.003689731
+##  8 customer      very    43 4.042535e-05 0.009493802 0.005555325
+##  9 customer  friendly    24 2.256299e-05 0.009493802 0.003689731
+## 10 customer       and   208 1.955459e-04 0.009493802 0.034948800
+## # ... with 21 more rows, and 1 more variables: p_together &lt;dbl&gt;</code></pre>
+<p>How about the negative qualifier <em>not</em></p>
+<pre class="r"><code>normalized_prob %&gt;% 
+  filter(word1 == &quot;not&quot;) %&gt;% 
+  arrange(-p_together)</code></pre>
+<pre><code>## # A tibble: 79 x 7
+##    word1    word2     n            p          p1           p2 p_together
+##    &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;
+##  1   not      not  1314 1.235323e-03 0.008664649 0.0086646491  16.454275
+##  2   not      did    50 4.700622e-05 0.008664649 0.0004974918  10.904818
+##  3   not     sure    26 2.444323e-05 0.008664649 0.0003316612   8.505758
+##  4   not   enough    23 2.162286e-05 0.008664649 0.0003316612   7.524324
+##  5   not     does    56 5.264697e-05 0.008664649 0.0008291530   7.328038
+##  6   not    fixed    26 2.444323e-05 0.008664649 0.0004145765   6.804606
+##  7   not flexible    27 2.538336e-05 0.008664649 0.0004974918   5.888602
+##  8   not      i&#39;m    32 3.008398e-05 0.008664649 0.0006633224   5.234313
+##  9   not      may    23 2.162286e-05 0.008664649 0.0004974918   5.016216
+## 10   not  perfect    41 3.854510e-05 0.008664649 0.0009120683   4.877428
+## # ... with 69 more rows</code></pre>
+<p>Next we want to perform matrix factorization, cast to a matrix. This produces a matrix of m x m size with most of values being 0.</p>
+<pre class="r"><code>pmi_matrix &lt;- normalized_prob %&gt;%
+    mutate(pmi = log10(p_together)) %&gt;%
+    cast_sparse(word1, word2, pmi)</code></pre>
+<p>Next, produce a sparse matrix to reduce dimesionality.</p>
+<pre class="r"><code>pmi_svd &lt;- irlba(pmi_matrix, 256, maxit = 1e3)</code></pre>
+<p>Next we get the word vectors</p>
+<pre class="r"><code>word_vectors &lt;- pmi_svd$u
+rownames(word_vectors) &lt;- rownames(pmi_matrix)</code></pre>
+<p>Here is function to tidy the output</p>
+<pre class="r"><code>search_synonyms &lt;- function(word_vectors, selected_vector) {
+    
+    similarities &lt;- word_vectors * selected_vector %&gt;%
+        tidy() %&gt;%
+        as_tibble() %&gt;%
+        rename(token = .rownames,
+               similarity = unrowname.x.)
+    
+    similarities %&gt;%
+        arrange(-similarity)    
+}</code></pre>
+</div>
+<div id="graph-analysis" class="section level2">
+<h2>Graph Analysis</h2>
+<p>Next, we will look at the bigrams again, but this time create a graph of co-occuence and other similar graph operations. Start by creating bigrams and creating a graph of linked words.</p>
+<pre class="r"><code>bigram_graph &lt;- comments %&gt;%
+  unnest_tokens(bigram ,Comment, token = &quot;ngrams&quot;, n = 2) %&gt;%
+  separate(bigram, c(&quot;word1&quot;, &quot;word2&quot;), sep = &quot; &quot; ) %&gt;%
+  anti_join(stop_words, by = c(&quot;word1&quot; = &quot;word&quot;)) %&gt;%
+  anti_join(stop_words, by = c(&quot;word2&quot; = &quot;word&quot;)) %&gt;%
+  group_by(cat) %&gt;%
+  count(word1, word2, sort = TRUE) %&gt;%
+  select(word1, word2, cat, n) %&gt;%
+  filter(n&gt;2) %&gt;%
+  as_tbl_graph()</code></pre>
+<p>Now let’s plot out the central themes here.</p>
+<div id="centrality-of-words" class="section level3">
+<h3>Centrality of words</h3>
+<pre class="r"><code>bigram_graph %&gt;%
+  mutate(centrality = centrality_degree()) %&gt;% 
+    ggraph(layout = &#39;kk&#39;) + 
+    geom_edge_link() + 
+    geom_node_point(aes(size = centrality, color = centrality)) + 
+    geom_node_text(aes(label = name), repel = TRUE) +
+    theme_graph() +
+   theme(legend.position = &quot;none&quot;) </code></pre>
+<p><img src="https://nitinahuja.github.io/post/2017-10-20-nps-exploratory-analysis-text-analysis_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+</div>
+<div id="clusters" class="section level3">
+<h3>Clusters</h3>
+<pre class="r"><code>bigram_graph %&gt;%
+  mutate(community = as.factor(group_infomap())) %&gt;% 
+    ggraph(layout = &#39;kk&#39;) + 
+    geom_edge_link(aes(alpha = ..index..), show.legend = FALSE) + 
+    geom_node_point(aes(colour = community), size = 5) + 
+    geom_node_text(aes(label = name),  repel = TRUE) +
+    theme_graph()</code></pre>
+<p><img src="https://nitinahuja.github.io/post/2017-10-20-nps-exploratory-analysis-text-analysis_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+</div>
+</div>
+<div id="final-thoughts" class="section level2">
+<h2>Final Thoughts</h2>
+<p>In these two posts we explored NPS quite deeply. We saw that the score had moved up consistently over the years, we saw that respondents clearly gave higher scores on certain days of the week, the platform is serving certain types of business better than others, comments are generally positive and customer service is loved accross the board but is also blamed for system shortcomings. We had a limted corpus of comments and having more would have helped with LDA and topic modeling.</p>
+</div>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://nitinahuja.github.io//tags/nlp/">nlp</a>
+
+  <a class="tag tag--primary tag--small" href="https://nitinahuja.github.io//tags/text-analysis/">text analysis</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2017/heatmaps-in-r/" data-tooltip="Heat maps in R">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-text-analysis%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-text-analysis%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-text-analysis%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Nitin Ahuja. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2017/heatmaps-in-r/" data-tooltip="Heat maps in R">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+      <li class="post-action hide-lg hide-md hide-sm">
+        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+          <i class="fa fa-share-alt"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-text-analysis%2f">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-text-analysis%2f">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+      </li>
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-text-analysis%2f">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <ul class="share-options">
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-text-analysis%2f">
+        <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-text-analysis%2f">
+        <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-text-analysis%2f">
+        <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Nitin Ahuja</h4>
+    
+      <div id="about-card-bio">A programmer&rsquo;s viewpoint</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Forever learning
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        California
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nitinahuja.github.io/2017/nps-exploratory-text-analysis/">
+                <h3 class="media-heading">NPS - Exploratory analysis in R - Text analysis</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">NPS analysis NPS - Comment analysis In an previous post we performed some EDA on the NPS data we have. Recall that as part of the question about the likelihood of recommending a service or business there is an optional text response about why they picked this score.
+Let’s try and see what those responses are all about. We had already performed some sentiment analysis on this text we are now going to attempt to classify this text into topics.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nitinahuja.github.io/2017/heatmaps-in-r/">
+                <h3 class="media-heading">Heat maps in R</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Heatmaps Heat maps are invaluable in displaying a large amount of continuous data contained in a 2d matrix. This post is meant to show a way to create a print worthy heat map in R.
+Let’s start by loading the required packages.
+suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like. We have observations (count of calls) for each day of the week and each hour of the day.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nitinahuja.github.io/2017/managing-managers-some-thoughts/">
+                <h3 class="media-heading">Managing managers - some thoughts</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">When you are managing managers, you should have a single focus; they are learning to manage their teams well and as a secondary objective that they are contributing at high levels. There are several experts in this area and I do not claim to be anywhere close; these are just reminders for myself.
+Your team learns by modeling you. There is little doubt that what you do, your team will emulate.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/">
+                <h3 class="media-heading">NPS - Exploratory analysis in R</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question. &gt; How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being “most likely” to recommend and 0 being “least likely”.
+An additional optional question is asked about why they picked this score and the response to that is usually a text comment.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nitinahuja.github.io/2016/forecasting-in-r-philadelphia-crime-data/">
+                <h3 class="media-heading">Forecasting in R - Philadelphia crime data</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Exploring crime in Philadelphia This is a large and intersting dataset and has data points stretching back over 10 years. Several explorations have pointed out that crime seems to be seasonal and I wanted to explore this with a time series. Assuming that seasonal trends might repeat themselves, I am exploring this using the forecast package and using linear regression to predict trends.
+suppressPackageStartupMessages({ library(data.table) library(forecast) library(knitr) }) Data size and structure.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nitinahuja.github.io/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/">
+                <h3 class="media-heading">Access log parsing with Spark and schema extraction from query string</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">I needed to parse server logs and create Spark DataFrames to query information from the query string parameters. My naive version kept throwing errors about mismatched number of fields in schema and those in the row being queried.
+It turns out I was dealing with over 350 different query string params across the logs. This could change over time and there was no way I was going to add these programmatically by hand.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nitinahuja.github.io/2016/revenue-forecast-for-seasonal-business/">
+                <h3 class="media-heading">Revenue forecast for seasonal business</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Revenue forecasting with linear methods. This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let’s dive into the data. Load up the required packages.
+suppressPackageStartupMessages({ library(forecast) }) Load the data, we have two columns with weekly revenue numbers from two different sources. Online and Phone; these correspond to sales online and via phone call to the business.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nitinahuja.github.io/2014/on-marketplaces-and-platforms/">
+                <h3 class="media-heading">On Marketplaces and platforms</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2014
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Marketplaces are all the rage these days, in truth, marketplaces have been around since ancient times. A marketplace usually exists to connect sellers of goods or services with buyers. The marketplace itself usually benefits by selling space to sellers or by taking a cut of the transaction.
+This post is focused on service marketplaces that are connecting and democratizing human capital in a way that has never been possible. Things like vetting, payments, reviews and support have been researched and A/B tested to an art.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nitinahuja.github.io/2013/finding-with-find/">
+                <h3 class="media-heading">Finding with find</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2013
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Find is a really versatile utility that can be used to enumerate files of different types, narrow the list by file types, dates, sizes, access times and a whole list of expressions. The output can be formatted with various switches to be csv.
+My goal was to list the sizes and access times for all video files in the system. I knew that there was over 3 TB of files but not how recently these were accessed/played.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://nitinahuja.github.io/1/">
+                <h3 class="media-heading"></h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">NPS - Exploratory analysis in R          code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState && document.readyState === "complete") { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         12 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://nitinahuja.github.io/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+
+
+<script src="https://nitinahuja.github.io/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight').each(function(i, block) {
+    var code = "";
+    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
+      code += "<span class=\"line\">" + line + "</span><br>";
+    });
+    if (code.length > 0) {
+      block.innerHTML = code;  
+    }
+  });
+  $('pre > code').each(function(i, block) {
+    $(this).addClass('codeblock');
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/nitinahuja.github.io\/2017\/nps-exploratory-text-analysis\/';
+          
+            this.page.identifier = '\/2017\/nps-exploratory-text-analysis\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'viewstate-1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+
+    
+  </body>
+</html>
+

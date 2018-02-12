@@ -6,10 +6,20 @@
     <description>Recent content on A programmer&#39;s viewpoint</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://nitinahuja.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NPS - Exploratory analysis in R - Text analysis</title>
+      <link>https://nitinahuja.github.io/2017/nps-exploratory-text-analysis/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nitinahuja.github.io/2017/nps-exploratory-text-analysis/</guid>
+      <description>NPS analysis NPS - Comment analysis In an previous post we performed some EDA on the NPS data we have. Recall that as part of the question about the likelihood of recommending a service or business there is an optional text response about why they picked this score.
+Let’s try and see what those responses are all about. We had already performed some sentiment analysis on this text we are now going to attempt to classify this text into topics.</description>
+    </item>
     
     <item>
       <title>Heat maps in R</title>
@@ -90,6 +100,24 @@ This post is focused on service marketplaces that are connecting and democratizi
       <guid>https://nitinahuja.github.io/2013/finding-with-find/</guid>
       <description>Find is a really versatile utility that can be used to enumerate files of different types, narrow the list by file types, dates, sizes, access times and a whole list of expressions. The output can be formatted with various switches to be csv.
 My goal was to list the sizes and access times for all video files in the system. I knew that there was over 3 TB of files but not how recently these were accessed/played.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://nitinahuja.github.io/1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nitinahuja.github.io/1/</guid>
+      <description>NPS - Exploratory analysis in R          code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://nitinahuja.github.io/1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nitinahuja.github.io/1/</guid>
+      <description>NPS - Exploratory analysis in R - Text analysis          code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
     </item>
     
   </channel>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nitinahuja.github.io/2017/nps-exploratory-text-analysis/</loc>
+    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nitinahuja.github.io/2017/heatmaps-in-r/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
   </url>
@@ -43,8 +48,16 @@
   </url>
   
   <url>
+    <loc>https://nitinahuja.github.io/1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://nitinahuja.github.io/1/</loc>
+  </url>
+  
+  <url>
     <loc>https://nitinahuja.github.io/</loc>
-    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -65,32 +78,26 @@
   </url>
   
   <url>
-    <loc>https://nitinahuja.github.io/categories/learning/</loc>
-    <lastmod>2017-08-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://nitinahuja.github.io/tags/learning/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nitinahuja.github.io/categories/nlp/</loc>
-    <lastmod>2017-08-28T00:00:00+00:00</lastmod>
+    <loc>https://nitinahuja.github.io/categories/learning/</loc>
+    <lastmod>2017-08-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nitinahuja.github.io/tags/nlp/</loc>
-    <lastmod>2017-08-28T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nitinahuja.github.io/categories/platforms/</loc>
-    <lastmod>2014-02-17T00:00:00+00:00</lastmod>
+    <loc>https://nitinahuja.github.io/categories/nlp/</loc>
+    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -101,14 +108,14 @@
   </url>
   
   <url>
-    <loc>https://nitinahuja.github.io/post/</loc>
-    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
+    <loc>https://nitinahuja.github.io/categories/platforms/</loc>
+    <lastmod>2014-02-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nitinahuja.github.io/categories/python/</loc>
-    <lastmod>2016-08-03T00:00:00+00:00</lastmod>
+    <loc>https://nitinahuja.github.io/post/</loc>
+    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -119,8 +126,14 @@
   </url>
   
   <url>
+    <loc>https://nitinahuja.github.io/categories/python/</loc>
+    <lastmod>2016-08-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://nitinahuja.github.io/categories/r/</loc>
-    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -131,13 +144,13 @@
   </url>
   
   <url>
-    <loc>https://nitinahuja.github.io/categories/spark/</loc>
+    <loc>https://nitinahuja.github.io/tags/spark/</loc>
     <lastmod>2016-08-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nitinahuja.github.io/tags/spark/</loc>
+    <loc>https://nitinahuja.github.io/categories/spark/</loc>
     <lastmod>2016-08-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -149,13 +162,19 @@
   </url>
   
   <url>
-    <loc>https://nitinahuja.github.io/categories/unix/</loc>
-    <lastmod>2013-04-11T00:00:00+00:00</lastmod>
+    <loc>https://nitinahuja.github.io/tags/text-analysis/</loc>
+    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nitinahuja.github.io/tags/unix/</loc>
+    <lastmod>2013-04-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nitinahuja.github.io/categories/unix/</loc>
     <lastmod>2013-04-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

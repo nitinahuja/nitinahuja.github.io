@@ -6,10 +6,20 @@
     <description>Recent content in Nlp on A programmer&#39;s viewpoint</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://nitinahuja.github.io/categories/nlp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NPS - Exploratory analysis in R - Text analysis</title>
+      <link>https://nitinahuja.github.io/2017/nps-exploratory-text-analysis/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nitinahuja.github.io/2017/nps-exploratory-text-analysis/</guid>
+      <description>NPS analysis NPS - Comment analysis In an previous post we performed some EDA on the NPS data we have. Recall that as part of the question about the likelihood of recommending a service or business there is an optional text response about why they picked this score.
+Let’s try and see what those responses are all about. We had already performed some sentiment analysis on this text we are now going to attempt to classify this text into topics.</description>
+    </item>
     
     <item>
       <title>NPS - Exploratory analysis in R</title>

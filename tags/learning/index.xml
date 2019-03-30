@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Learning on A programmer&#39;s viewpoint</title>
-    <link>https://nitinahuja.github.io/tags/learning/</link>
+    <link>/tags/learning/</link>
     <description>Recent content in Learning on A programmer&#39;s viewpoint</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 11 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://nitinahuja.github.io/tags/learning/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/learning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Heat maps in R</title>
-      <link>https://nitinahuja.github.io/2017/heatmaps-in-r/</link>
+      <link>/2017/heatmaps-in-r/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://nitinahuja.github.io/2017/heatmaps-in-r/</guid>
+      <guid>/2017/heatmaps-in-r/</guid>
       <description>Heatmaps Heat maps are invaluable in displaying a large amount of continuous data contained in a 2d matrix. This post is meant to show a way to create a print worthy heat map in R.
 Let’s start by loading the required packages.
-suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like. We have observations (count of calls) for each day of the week and each hour of the day.</description>
+suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like.</description>
     </item>
     
     <item>
       <title>Managing managers - some thoughts</title>
-      <link>https://nitinahuja.github.io/2017/managing-managers-some-thoughts/</link>
+      <link>/2017/managing-managers-some-thoughts/</link>
       <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://nitinahuja.github.io/2017/managing-managers-some-thoughts/</guid>
+      <guid>/2017/managing-managers-some-thoughts/</guid>
       <description>When you are managing managers, you should have a single focus; they are learning to manage their teams well and as a secondary objective that they are contributing at high levels. There are several experts in this area and I do not claim to be anywhere close; these are just reminders for myself.
 Your team learns by modeling you. There is little doubt that what you do, your team will emulate.</description>
     </item>

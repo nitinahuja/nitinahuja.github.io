@@ -21,13 +21,13 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.31.1">
+    <meta name="generator" content="Hugo 0.51">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
     <title>NPS - Exploratory analysis in R</title>
     <meta name="author" content="Nitin Ahuja">
     <meta name="keywords" content="">
 
-    <link rel="icon" href="https://nitinahuja.github.io/favicon.png">
+    <link rel="icon" href="/favicon.png">
     
 
     
@@ -71,20 +71,23 @@ An additional optional question is asked about why they picked this score and th
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
     
     
-    <link rel="stylesheet" href="https://nitinahuja.github.io/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    <link rel="stylesheet" href="/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
     
     
 
     
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-105634890-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-105634890-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     
@@ -96,12 +99,12 @@ ga('send', 'pageview');
       <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="https://nitinahuja.github.io/">A programmer&#39;s viewpoint</a>
+    <a class="header-title-link" href="/">A programmer&#39;s viewpoint</a>
   </div>
   
     
       <a class="header-right-picture "
-         href="https://nitinahuja.github.io/#about">
+         href="/#about">
     
     
     
@@ -117,7 +120,7 @@ ga('send', 'pageview');
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="https://nitinahuja.github.io/#about">
+        <a href="/#about">
           <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Nitin Ahuja</h4>
@@ -130,7 +133,7 @@ ga('send', 'pageview');
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://nitinahuja.github.io/">
+      <a class="sidebar-button-link " href="/">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -140,7 +143,7 @@ ga('send', 'pageview');
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://nitinahuja.github.io/categories">
+      <a class="sidebar-button-link " href="/categories">
     
       <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
       
@@ -150,7 +153,7 @@ ga('send', 'pageview');
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://nitinahuja.github.io/tags">
+      <a class="sidebar-button-link " href="/tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -160,7 +163,7 @@ ga('send', 'pageview');
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://nitinahuja.github.io/archives">
+      <a class="sidebar-button-link " href="/archives">
     
       <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
       
@@ -170,7 +173,7 @@ ga('send', 'pageview');
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://nitinahuja.github.io/#about">
+      <a class="sidebar-button-link " href="/#about">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -183,7 +186,7 @@ ga('send', 'pageview');
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://github.com/nitinahuja" target="_blank">
+      <a class="sidebar-button-link " href="https://github.com/nitinahuja">
     
       <i class="sidebar-button-icon fa fa-lg fa-github"></i>
       
@@ -196,7 +199,7 @@ ga('send', 'pageview');
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://nitinahuja.github.io/index.xml">
+      <a class="sidebar-button-link " href="/index.xml">
     
       <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
       
@@ -234,9 +237,9 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://nitinahuja.github.io/categories/r">R</a>, 
+      <a class="category-link" href="/categories/r">R</a>, 
     
-      <a class="category-link" href="https://nitinahuja.github.io/categories/nlp">NLP</a>
+      <a class="category-link" href="/categories/nlp">NLP</a>
     
   
 
@@ -257,11 +260,16 @@ ga('send', 'pageview');
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <div id="nps-analysis" class="section level1">
+              
+
+
+<div id="nps-analysis" class="section level1">
 <h1>NPS analysis</h1>
 <div id="what-is-net-promorter-score-nps" class="section level2">
 <h2>What is net promorter score (NPS)?</h2>
-<p>Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question. &gt; How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being “most likely” to recommend and 0 being “least likely”.</p>
+<p>Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question.
+&gt; How likely are you to recommend this product?
+The respondents are asked to score between 0 and 10. 10 being “most likely” to recommend and 0 being “least likely”.</p>
 <p>An additional optional question is asked about why they picked this score and the response to that is usually a text comment. We will make an attempt to summarize the text as well.</p>
 <p>I have NPS scores from customers of a platform that allows them to sell widgets. These scores were collected over a two year period Jun 2015 - Jun 2017, and this is an attempt to perform some exploratory data analysis and see if some more value can be extracted from this data.</p>
 <p>Note that some of this data has been sanitized of proprietary information but the scores have been left untouched.</p>
@@ -294,7 +302,8 @@ theme_set(theme_minimal())</code></pre>
                                , &quot;Survey.Sent&quot;=&quot;Date&quot;
                                , &quot;TPY&quot;=&quot;integer&quot;
                                ))</code></pre>
-<p>Let’s take a look at the data. Here is some summarized information for this data</p>
+<p>Let’s take a look at the data.
+Here is some summarized information for this data</p>
 <ul>
 <li>8423 total rows</li>
 <li>(TPY) range from 0 - 230,000 - TPY is a measure of the widgets sold per year on the platform by the respondent.</li>
@@ -329,7 +338,9 @@ theme_set(theme_minimal())</code></pre>
 </div>
 <div id="nps" class="section level2">
 <h2>NPS</h2>
-<p>Let’s start by getting the NPS for this data. NPS scores can vary from -100 (all detractors) to 100 (all promoters). Note that the while NPS is expressed as a number between -100 and 100, the CRAN NPS package returns results from [-1,1]. All plots use the returned results and ideally should be multiplied by 100 and rounded. Before we can calculate that number we will need to ensure that our data actually has scores.</p>
+<p>Let’s start by getting the NPS for this data. NPS scores can vary from -100 (all detractors) to 100 (all promoters).
+Note that the while NPS is expressed as a number between -100 and 100, the CRAN NPS package returns results from [-1,1]. All plots use the returned results and ideally should be multiplied by 100 and rounded.
+Before we can calculate that number we will need to ensure that our data actually has scores.</p>
 <p>Let’s drop all rows that don’t have Scores.</p>
 <pre class="r"><code>nps &lt;- nps %&gt;% drop_na(Score)</code></pre>
 <p>That leaves us with 1599 rows.</p>
@@ -360,7 +371,7 @@ ggplot(yearly) +
   geom_text(aes(x=as.factor(Group.1), y=x, label=round(x,2)),  vjust = 1, hjust = 1)  +
   coord_flip()  + 
   scale_fill_brewer(&quot;Year&quot;, palette = &quot;Set1&quot;)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Looks like there has been a consistent improvement over the years.</p>
 </div>
 <div id="monthly-changes" class="section level3">
@@ -376,7 +387,7 @@ ggplot(np, aes(x=as.Date( Group.1), y=x)) +
   ylab(&quot;NPS&quot;) + 
   geom_text(aes( y=x, label=round(x,2)), position = position_dodge(width = 1), vjust = 0.5, hjust=1)  + 
   theme_minimal() </code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
 </div>
 <div id="exploring-some-other-dimensions" class="section level2">
@@ -397,7 +408,7 @@ ggplot(daily) +
   geom_text(aes(x=as.factor(Group.1), y=x, label=round(x,2)),  vjust = 0.5, hjust = 1.5)  + 
   coord_flip()  + 
   scale_fill_brewer(&quot;Response Day&quot;, palette = &quot;Set1&quot;)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>One more view of the scores by day; do respondents leave higher score on some days?</p>
 </div>
 <div id="day-of-week-vs-scores" class="section level3">
@@ -405,13 +416,13 @@ ggplot(daily) +
 <p>This plot shows the kernel density of the scores (0-10) received by day. It seems that respondents who leave scores on Wednesday seem to provide more 10s compared to Sunday. In fact, there seems to be a bi-modal distribution on Sunday with 5s and 10s.</p>
 <pre class="r"><code>ggplot(nps) + 
   geom_density(aes( x = Score,  group = weekday, fill = weekday), alpha = 0.3) </code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Here is a ridges plot for the score density by day. It’s harder to compare the relative heights of the score density compared to the density plot above. The bi-modal distribution of scores on Sunday is, however, quite clear here.</p>
 <pre class="r"><code>ggplot(nps) + 
   geom_density_ridges(aes( x = Score, y = weekday, fill = weekday), scale = 3) +
   scale_fill_brewer(&quot;Response Day&quot;, palette = &quot;Set1&quot;)
 ## Picking joint bandwidth of 0.724</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 <div id="time-to-respond." class="section level3">
 <h3>Time to respond.</h3>
@@ -420,7 +431,7 @@ ggplot(daily) +
 <pre class="r"><code>ggplot(nps) + 
   geom_histogram(aes(as.numeric( days)), binwidth = 1, fill = &quot;tomato&quot;) + labs(title = &quot;Days to respond&quot;, x = &quot;Days to respond&quot;, y = &quot;Count of responses&quot;)  +
   coord_cartesian(xlim = c(0,30)) </code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </div>
 <div id="scores-over-the-years" class="section level3">
 <h3>Scores over the years</h3>
@@ -430,16 +441,17 @@ ggplot(daily) +
   geom_boxplot() + 
   geom_point( position = &quot;jitter&quot;, alpha = 0.4, aes(color=as.factor(Score))) + 
   guides(color=FALSE) </code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<p>We can see that 2017 seems to show a higher median score, but how much higher? This plot shows the kernel density of the scores.</p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>We can see that 2017 seems to show a higher median score, but how much higher?
+This plot shows the kernel density of the scores.</p>
 <pre class="r"><code>ggplot(nps) + geom_density(aes(x=Score, fill = year, binwidth =1 ), alpha = 0.5) + coord_cartesian(xlim = c(0,10)) + 
    scale_fill_brewer(&quot;Year&quot;, palette = &quot;Set1&quot;)
 ## Warning: Ignoring unknown aesthetics: binwidth</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>To see a percentage distribution, we can plot the cumulative frequency distribution of the Score categories grouped by year. The plot shows what percentage of Scores fall into which category groups.</p>
 <pre class="r"><code>ggplot(nps) + 
   stat_ecdf(aes(x=cat, group = year, colour = year))</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p>The table below shows the exact percentage of category groups by year. One can see that while the percentage of <em>detractors</em> has remained somewhat static over the years, some of the <em>passive</em> group has shifted to being <em>promorters</em>.</p>
 <pre class="r"><code>nps %&gt;% 
   group_by(year, cat) %&gt;% 
@@ -460,7 +472,9 @@ ggplot(daily) +
 </div>
 <div id="tpy" class="section level3">
 <h3>TPY</h3>
-<p>Recall that TPY is a measure of the widgets sold on the platform. Does the TPY affect score? We are going to create some groups based on the TPY number. It seems clear that the customers at 20,000 and below TPY levels are happier than the larger sized customers.</p>
+<p>Recall that TPY is a measure of the widgets sold on the platform.
+Does the TPY affect score?
+We are going to create some groups based on the TPY number. It seems clear that the customers at 20,000 and below TPY levels are happier than the larger sized customers.</p>
 <pre class="r"><code># Add TPY levels
 nps$tp_level &lt;- cut(nps$TPY, breaks=c(-1,5000, 10000, 15000, 20000, 50000, +Inf), labels = c(&quot;0-5,000&quot;, &quot;10,000&quot;, &quot;15,000&quot;, &quot;20,000&quot;, &quot;50,000&quot;, &quot;50,000+&quot;))
 
@@ -474,7 +488,7 @@ ggplot(tix) +
   geom_text(aes(x=as.factor(Group.1), y=x, label=round(x,2)), position = position_dodge(width = 1), hjust=1.5) +
   scale_fill_brewer(&quot;TPY&quot;, palette = &quot;Set1&quot;) + 
   coord_flip()</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 </div>
 <div id="for-profit-vs-non-profit-customers" class="section level3">
 <h3>For profit vs non-profit customers</h3>
@@ -491,7 +505,7 @@ ggplot(profit) +
   geom_text(aes(x=Non.Profit, y=nps, label=round(nps,2)), position = position_dodge(width = 1), hjust=1.5) +  
   scale_fill_brewer(&quot;For Profit&quot;, palette = &quot;Set1&quot;) + 
   coord_flip()</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 </div>
 <div id="verticals" class="section level3">
 <h3>Verticals</h3>
@@ -510,7 +524,7 @@ ggplot(vertical, aes(x=reorder(Vertical, n), y = n)) +
   ggtitle(&quot;Top 10 Verticals&quot;) + 
   xlab(&quot;&quot;) +ylab(&quot;count&quot;) + 
   coord_flip()</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 </div>
 <div id="score-by-vertical" class="section level3">
 <h3>Score by Vertical</h3>
@@ -518,6 +532,8 @@ ggplot(vertical, aes(x=reorder(Vertical, n), y = n)) +
 <pre class="r"><code>vert_score &lt;- nps  %&gt;% 
   group_by(Vertical) %&gt;% 
   summarise(nps = nps(Score))
+## Warning: Factor `Vertical` contains implicit NA, consider using
+## `forcats::fct_explicit_na`
 
 ggplot(vert_score) + 
   geom_col(aes(x=reorder(Vertical, nps), y=nps, fill=Vertical)) + 
@@ -526,7 +542,7 @@ ggplot(vert_score) +
   scale_fill_discrete(name = &quot;Vertical&quot;) +
   ylab(&quot;NPS&quot;) + xlab(&quot;Vertical&quot;) +
   geom_text(aes(x=Vertical, y=nps, label=round(nps,2)), position = position_dodge(width = 1),vjust = 0.5, hjust=1) </code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <p>As evident from this that there are several dimensions to guide us about the respondents and what they like about the platform. The next steps here would be to try and perform classification and machine learning techniques to examine this data further.</p>
 <p>Before we get into ML, let’s perform some more exploration on the text included in the data.</p>
 </div>
@@ -534,7 +550,8 @@ ggplot(vert_score) +
 </div>
 <div id="text-analysis" class="section level1">
 <h1>Text Analysis</h1>
-<p>This part will try to analyze the sentiment of the comments to perhaps try and understand what the detractors don’t like and what the promoters like. To do this we will try and perform the following tasks.</p>
+<p>This part will try to analyze the sentiment of the comments to perhaps try and understand what the detractors don’t like and what the promoters like.
+To do this we will try and perform the following tasks.</p>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <ul>
@@ -546,7 +563,8 @@ ggplot(vert_score) +
 </ul>
 <div id="tokenization" class="section level3">
 <h3>Tokenization</h3>
-<p>We will keep the categories in place to see how the sentiment correlates to the scores. Let’s see how many comments we have from each category.</p>
+<p>We will keep the categories in place to see how the sentiment correlates to the scores.
+Let’s see how many comments we have from each category.</p>
 <pre class="r"><code>comments &lt;- nps %&gt;% 
   filter(!is.na(Comment)) %&gt;% 
   select(cat, Comment) %&gt;% 
@@ -569,7 +587,7 @@ nps_words
 ##  8 Promoter              3 easy      
 ##  9 Promoter              3 to        
 ## 10 Promoter              3 use       
-## # ... with 24,450 more rows</code></pre>
+## # … with 24,450 more rows</code></pre>
 <p>Our next step is to remove some common words that are not useful for analysis. These include pronouns, articles and other common words. The tidytext package already includes a wide range of these in the <em>stop_words</em> dataset.</p>
 <p>We are left with about 2243 unique words with</p>
 <pre class="r"><code>nps_words &lt;-  nps_words %&gt;% anti_join(stop_words, by = c(&#39;word&#39;))
@@ -587,13 +605,14 @@ nps_words %&gt;% count(word, sort = TRUE)
 ##  8 ticket      91
 ##  9 friendly    89
 ## 10 user        84
-## # ... with 2,234 more rows</code></pre>
+## # … with 2,234 more rows</code></pre>
 </div>
 </div>
 <div id="sentiment-analysis" class="section level2">
 <h2>Sentiment Analysis</h2>
 <p>We will be using three different sentiment dictionaries to test out the sentiments for each comment.</p>
-<p>The plot below shows the sentiments grouped by the category using the <em>Afinn</em> dictionary. The Afinn dictionary assigns a score from -5 to 5 with -5 being negative words and 5 being positive. It’s clear that the detractor comments are less positive than the promoters.</p>
+<p>The plot below shows the sentiments grouped by the category using the <em>Afinn</em> dictionary. The Afinn dictionary assigns a score from -5 to 5 with -5 being negative words and 5 being positive.
+It’s clear that the detractor comments are less positive than the promoters.</p>
 <pre class="r"><code>nps_words %&gt;% inner_join(get_sentiments(&quot;afinn&quot;), by = c(&#39;word&#39;)) %&gt;% 
   group_by(cat) %&gt;% 
   summarise(sentiment = sum(score)) %&gt;%
@@ -604,8 +623,9 @@ nps_words %&gt;% count(word, sort = TRUE)
   scale_fill_brewer(palette = &quot;Set1&quot;) +
   guides(fill=FALSE) +
   labs(title = &quot;Sentiments from Comments by Category - Afinn&quot;, x = &quot;Category&quot;, y = &quot;Sentiment&quot;)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
-<p>Let’s try another lexicon. This one is called <em>Bing</em> and was produced by Bing Liu et al. This classifies words with a label signifying positive or negative. Here is a sample of words from this lexicon.</p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p>Let’s try another lexicon. This one is called <em>Bing</em> and was produced by Bing Liu et
+al. This classifies words with a label signifying positive or negative. Here is a sample of words from this lexicon.</p>
 <pre class="r"><code>get_sentiments(&quot;bing&quot;)
 ## # A tibble: 6,788 x 2
 ##    word        sentiment
@@ -620,7 +640,7 @@ nps_words %&gt;% count(word, sort = TRUE)
 ##  8 abominate   negative 
 ##  9 abomination negative 
 ## 10 abort       negative 
-## # ... with 6,778 more rows</code></pre>
+## # … with 6,778 more rows</code></pre>
 <p>Next, let’s look at the sentiments for each category using the <em>Bing</em> dictionary.</p>
 <pre class="r"><code>nps_words %&gt;% 
   inner_join(get_sentiments(&quot;bing&quot;), by = c(&#39;word&#39;)) %&gt;%
@@ -634,9 +654,11 @@ ggplot(aes(x=cat, y = sentiment, fill = cat)) +
   scale_fill_brewer(palette = &quot;Set1&quot;) +
   guides(fill=FALSE) +
   labs(title = &quot;Sentiments from Comments by Category - Bing&quot;, x = &quot;Category&quot;, y = &quot;Sentiment&quot;)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
-<p>While both lexicons show the same relative trends and proportions, the absolute numbers vary significantly. It might be worth taking a quick look at the words that are contributing to each sentiment.</p>
-<p>This can be achieved by plotting the positive and negative words from the previous set. It’s clear from this list that if we had used some kind of stemmer before creating this list, some of the words with the same roots would have been eliminated, these are words like <em>ease</em> and <em>easy</em> and <em>issues</em> and <em>issue</em>.</p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>While both lexicons show the same relative trends and proportions, the absolute numbers vary significantly.
+It might be worth taking a quick look at the words that are contributing to each sentiment.</p>
+<p>This can be achieved by plotting the positive and negative words from the previous set.
+It’s clear from this list that if we had used some kind of stemmer before creating this list, some of the words with the same roots would have been eliminated, these are words like <em>ease</em> and <em>easy</em> and <em>issues</em> and <em>issue</em>.</p>
 <pre class="r"><code>nps_words %&gt;% 
   inner_join(get_sentiments(&quot;bing&quot;), by = c(&#39;word&#39;)) %&gt;%
   count(word, sentiment) %&gt;%
@@ -649,8 +671,9 @@ ggplot(aes(x=cat, y = sentiment, fill = cat)) +
   scale_fill_brewer(palette = &quot;Set1&quot;) +
   labs(title = &quot;Word counts by Sentiment - Bing&quot;, x = &quot;Word&quot;, y = &quot;Count&quot;)
 ## Selecting by n</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
-<p>Before we run the stemmer, let’s examine the top sentiment contributor words by category as well to illustrate one more potential gotcha. A word like <em>helpful</em> in the detractors column could, depending on the context, have a negative connotation if preceded by the word <em>not</em>. In fact unigrams (word tokens) will have this issue with negation in most cases.</p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p>Before we run the stemmer, let’s examine the top sentiment contributor words by category as well to illustrate one more potential gotcha.
+A word like <em>helpful</em> in the detractors column could, depending on the context, have a negative connotation if preceded by the word <em>not</em>. In fact unigrams (word tokens) will have this issue with negation in most cases.</p>
 <pre class="r"><code>nps_words %&gt;% 
   inner_join(get_sentiments(&quot;bing&quot;), by = c(&#39;word&#39;)) %&gt;%
   count(cat, word, sentiment) %&gt;%
@@ -664,7 +687,7 @@ ggplot(aes(x=cat, y = sentiment, fill = cat)) +
   scale_fill_brewer(palette = &quot;Set1&quot;) +
   labs(title = &quot;Word counts by Sentiment by Category - Bing&quot;, x = &quot;Words&quot;, y = &quot;Count&quot;)
 ## Selecting by n</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 <div id="stemming" class="section level3">
 <h3>Stemming</h3>
 <p>We ran the Porter stemmer from the SnowballC package on both the comments and the sentiment lexicon to enable us to join on the same words. The words <em>issue</em> and <em>issues</em> have now been stemmed to the root word <em>issu</em>.</p>
@@ -681,7 +704,7 @@ ggplot(aes(x=cat, y = sentiment, fill = cat)) +
   scale_fill_brewer(palette = &quot;Set1&quot;) +
   labs(title = &quot;Word counts by Sentiment - Bing (Stemmed)&quot;, x = &quot;Words&quot;, y = &quot;Count&quot;)
 ## Selecting by n</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 <p>Let’s try to group by catgory with stemming. It’s clear that there is a larger proportion of negative sentiment words in the <em>detractor</em> comments and a smaller proportion for <em>promorters</em>. This line of exploration has confirmed our belief that detractors are leaving negative comments and promorters are generally upbeat and positive.</p>
 <pre class="r"><code>nps_words %&gt;% 
   mutate(word = wordStem(word)) %&gt;% 
@@ -697,15 +720,16 @@ ggplot(aes(x=cat, y = sentiment, fill = cat)) +
   scale_fill_brewer(palette = &quot;Set1&quot;) +
   labs(title = &quot;Word counts by Sentiment by Category - Bing (Stemmed)&quot;, x = &quot;Words&quot;, y = &quot;Count&quot;)
 ## Selecting by n</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 </div>
 <div id="ngrams" class="section level3">
 <h3>ngrams</h3>
-<p>Ngrams are series of words in sequence; bigrams are two words together and trigrams are three. Lets take a quick look at the bigrams in the comments to see what those phrases are.</p>
+<p>Ngrams are series of words in sequence; bigrams are two words together and trigrams are three.
+Lets take a quick look at the bigrams in the comments to see what those phrases are.</p>
 <pre class="r"><code>comments %&gt;% 
 unnest_tokens(ngram, Comment, token = &quot;ngrams&quot;, n = 2) %&gt;%
 count(ngram, sort = TRUE)
-## # A tibble: 13,714 x 2
+## # A tibble: 13,715 x 2
 ##    ngram                n
 ##    &lt;chr&gt;            &lt;int&gt;
 ##  1 customer service   165
@@ -718,7 +742,7 @@ count(ngram, sort = TRUE)
 ##  8 the system          71
 ##  9 user friendly       69
 ## 10 it is               67
-## # ... with 13,704 more rows</code></pre>
+## # … with 13,705 more rows</code></pre>
 <p>In this case we have not removed the stop words, let’s try looking at the trigrams to see if those provide more meaning. These are phrases that have the word <em>not</em> prefixed.</p>
 <pre class="r"><code>comments %&gt;% unnest_tokens(ngram, Comment, token = &quot;ngrams&quot;, n = 3) %&gt;% count(ngram, sort = TRUE) %&gt;% filter(str_detect(ngram, &#39;^not &#39;))
 ## # A tibble: 182 x 2
@@ -734,7 +758,7 @@ count(ngram, sort = TRUE)
 ##  8 not give a                 2
 ##  9 not handle the             2
 ## 10 not recommend platform     2
-## # ... with 172 more rows</code></pre>
+## # … with 172 more rows</code></pre>
 <p>As a final step in this exploration, we will create a comparison word cloud</p>
 <pre class="r"><code>par(mar=rep(0, 4))
 plot.new()
@@ -744,7 +768,7 @@ nps_words %&gt;%
   count(word, sentiment, sort = TRUE) %&gt;%
     acast(word ~ sentiment, value.var = &quot;n&quot;, fill = 0) %&gt;%
   comparison.cloud( random.order=FALSE,title.size=1.5, max.words=150, colors = brewer.pal(8, &quot;Set1&quot;))</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
 <p>And another one grouped by the categories.</p>
 <pre class="r"><code>par(mar=rep(0, 4))
 plot.new()
@@ -753,7 +777,7 @@ nps_words %&gt;%
   count(word, cat, sort = TRUE) %&gt;%
   acast(word ~ cat, value.var = &quot;n&quot;, fill = 0) %&gt;%
   comparison.cloud( random.order=FALSE,title.size=1.5, max.words=250, colors = brewer.pal(8, &quot;Set1&quot;))</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
 </div>
 <div id="ranking-and-tf-idf" class="section level3">
 <h3>Ranking and tf-idf</h3>
@@ -785,7 +809,7 @@ nps_tf_idf
 ##  8 Promoter  professionalism     5 0.000602 1.10  0.000662
 ##  9 Promoter  respond             5 0.000602 1.10  0.000662
 ## 10 Passive   part                4 0.000584 1.10  0.000641
-## # ... with 4,475 more rows</code></pre>
+## # … with 4,475 more rows</code></pre>
 <p>Let’s plot this next by category.</p>
 <pre class="r"><code>nps_tf_idf %&gt;% 
   group_by(cat) %&gt;% 
@@ -798,7 +822,7 @@ nps_tf_idf
   scale_fill_brewer(palette = &quot;Set1&quot;) +
   facet_wrap(~cat, scales = &quot;free&quot;)
 ## Selecting by tf_idf</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
 <p>This shows some proper nouns and pronouns, which is to be expected as only few comments would have those relative to the others.</p>
 </div>
 <div id="tf-idf-with-bigrams" class="section level3">
@@ -812,20 +836,20 @@ nps_tf_idf
   arrange(desc(tf_idf))
 
 nps_tf_idf_bigram
-## # A tibble: 16,171 x 6
+## # A tibble: 16,174 x 6
 ##    cat       ngram              n       tf   idf   tf_idf
 ##    &lt;fct&gt;     &lt;chr&gt;          &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
-##  1 Promoter  great customer    43 0.00558  0.405 0.00226 
+##  1 Promoter  great customer    43 0.00557  0.405 0.00226 
 ##  2 Detractor lack of           24 0.00265  0.405 0.00107 
-##  3 Promoter  friendly great     7 0.000909 1.10  0.000998
-##  4 Passive   would like        16 0.00243  0.405 0.000987
-##  5 Promoter  the staff          6 0.000779 1.10  0.000856
-##  6 Promoter  use great          6 0.000779 1.10  0.000856
-##  7 Promoter  very easy          6 0.000779 1.10  0.000856
+##  3 Promoter  friendly great     7 0.000907 1.10  0.000997
+##  4 Passive   would like        16 0.00243  0.405 0.000985
+##  5 Promoter  the staff          6 0.000778 1.10  0.000854
+##  6 Promoter  use great          6 0.000778 1.10  0.000854
+##  7 Promoter  very easy          6 0.000778 1.10  0.000854
 ##  8 Detractor follow up          7 0.000773 1.10  0.000849
-##  9 Promoter  great product     16 0.00208  0.405 0.000842
-## 10 Passive   great but          5 0.000760 1.10  0.000835
-## # ... with 16,161 more rows</code></pre>
+##  9 Promoter  great product     16 0.00207  0.405 0.000841
+## 10 Passive   great but          5 0.000759 1.10  0.000834
+## # … with 16,164 more rows</code></pre>
 <p>Break this up by category.</p>
 <pre class="r"><code>nps_tf_idf_bigram %&gt;% group_by(cat) %&gt;% 
   top_n(15) %&gt;% 
@@ -837,7 +861,7 @@ nps_tf_idf_bigram
   scale_fill_brewer(palette = &quot;Set1&quot;) +
   facet_wrap(~cat, scales = &quot;free&quot;, ncol = 3)
 ## Selecting by tf_idf</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<p><img src="/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
 </div>
 </div>
 <div id="conclusion" class="section level2">
@@ -865,9 +889,9 @@ nps_tf_idf_bigram
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://nitinahuja.github.io//tags/nlp/">nlp</a>
+  <a class="tag tag--primary tag--small" href="//tags/nlp/">nlp</a>
 
-  <a class="tag tag--primary tag--small" href="https://nitinahuja.github.io//tags/sentiment-analysis/">sentiment analysis</a>
+  <a class="tag tag--primary tag--small" href="//tags/sentiment-analysis/">sentiment analysis</a>
 
                   </div>
                 
@@ -879,7 +903,7 @@ nps_tf_idf_bigram
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2017/managing-managers-some-thoughts/" data-tooltip="Managing managers - some thoughts">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2017/managing-managers-some-thoughts/" data-tooltip="Managing managers - some thoughts">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -887,7 +911,7 @@ nps_tf_idf_bigram
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2016/forecasting-in-r-philadelphia-crime-data/" data-tooltip="Forecasting in R - Philadelphia crime data">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2016/forecasting-in-r-philadelphia-crime-data/" data-tooltip="Forecasting in R - Philadelphia crime data">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -904,17 +928,17 @@ nps_tf_idf_bigram
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-analysis-in-r%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=%2f2017%2fnps-exploratory-analysis-in-r%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-analysis-in-r%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2017%2fnps-exploratory-analysis-in-r%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-analysis-in-r%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=%2f2017%2fnps-exploratory-analysis-in-r%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -948,7 +972,7 @@ nps_tf_idf_bigram
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Nitin Ahuja. All Rights Reserved
+    &copy; 2019 Nitin Ahuja. All Rights Reserved
   </span>
 </footer>
 
@@ -960,7 +984,7 @@ nps_tf_idf_bigram
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2017/managing-managers-some-thoughts/" data-tooltip="Managing managers - some thoughts">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2017/managing-managers-some-thoughts/" data-tooltip="Managing managers - some thoughts">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -968,7 +992,7 @@ nps_tf_idf_bigram
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2016/forecasting-in-r-philadelphia-crime-data/" data-tooltip="Forecasting in R - Philadelphia crime data">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2016/forecasting-in-r-philadelphia-crime-data/" data-tooltip="Forecasting in R - Philadelphia crime data">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -985,17 +1009,17 @@ nps_tf_idf_bigram
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-analysis-in-r%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=%2f2017%2fnps-exploratory-analysis-in-r%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-analysis-in-r%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2017%2fnps-exploratory-analysis-in-r%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-analysis-in-r%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=%2f2017%2fnps-exploratory-analysis-in-r%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -1022,17 +1046,17 @@ nps_tf_idf_bigram
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-analysis-in-r%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2f2017%2fnps-exploratory-analysis-in-r%2f">
         <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-analysis-in-r%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2017%2fnps-exploratory-analysis-in-r%2f">
         <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fnitinahuja.github.io%2f2017%2fnps-exploratory-analysis-in-r%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2f2017%2fnps-exploratory-analysis-in-r%2f">
         <i class="fa fa-twitter"></i><span>Share on Twitter</span>
       </a>
     </li>
@@ -1092,7 +1116,25 @@ nps_tf_idf_bigram
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2017/nps-exploratory-text-analysis/">
+              <a class="link-unstyled" href="/2018/vehicle-fuel-economy-exploratory-analysis/">
+                <h3 class="media-heading">Vehicle Fuel Economy - exploratory analysis</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. I am going to start by fetching some data from the inter webs, this data is available at the FuelEconomy.gov site. This file has fuel economy data for all cars sold in the United States for several years.
+Let’s start by loading the libraries we need:</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2017/nps-exploratory-text-analysis/">
                 <h3 class="media-heading">NPS - Exploratory analysis in R - Text analysis</h3>
               </a>
               <span class="media-meta">
@@ -1110,7 +1152,7 @@ Let’s try and see what those responses are all about. We had already performed
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2017/heatmaps-in-r/">
+              <a class="link-unstyled" href="/2017/heatmaps-in-r/">
                 <h3 class="media-heading">Heat maps in R</h3>
               </a>
               <span class="media-meta">
@@ -1120,7 +1162,7 @@ Let’s try and see what those responses are all about. We had already performed
               </span>
               <div class="media-content hide-xs font-merryweather">Heatmaps Heat maps are invaluable in displaying a large amount of continuous data contained in a 2d matrix. This post is meant to show a way to create a print worthy heat map in R.
 Let’s start by loading the required packages.
-suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like. We have observations (count of calls) for each day of the week and each hour of the day.</div>
+suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -1129,7 +1171,7 @@ suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viri
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2017/managing-managers-some-thoughts/">
+              <a class="link-unstyled" href="/2017/managing-managers-some-thoughts/">
                 <h3 class="media-heading">Managing managers - some thoughts</h3>
               </a>
               <span class="media-meta">
@@ -1147,7 +1189,7 @@ Your team learns by modeling you. There is little doubt that what you do, your t
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/">
+              <a class="link-unstyled" href="/2017/nps-exploratory-analysis-in-r/">
                 <h3 class="media-heading">NPS - Exploratory analysis in R</h3>
               </a>
               <span class="media-meta">
@@ -1165,7 +1207,7 @@ An additional optional question is asked about why they picked this score and th
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2016/forecasting-in-r-philadelphia-crime-data/">
+              <a class="link-unstyled" href="/2016/forecasting-in-r-philadelphia-crime-data/">
                 <h3 class="media-heading">Forecasting in R - Philadelphia crime data</h3>
               </a>
               <span class="media-meta">
@@ -1183,7 +1225,7 @@ suppressPackageStartupMessages({ library(data.table) library(forecast) library(k
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/">
+              <a class="link-unstyled" href="/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/">
                 <h3 class="media-heading">Access log parsing with Spark and schema extraction from query string</h3>
               </a>
               <span class="media-meta">
@@ -1201,7 +1243,7 @@ It turns out I was dealing with over 350 different query string params across th
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2016/revenue-forecast-for-seasonal-business/">
+              <a class="link-unstyled" href="/2016/revenue-forecast-for-seasonal-business/">
                 <h3 class="media-heading">Revenue forecast for seasonal business</h3>
               </a>
               <span class="media-meta">
@@ -1219,7 +1261,7 @@ suppressPackageStartupMessages({ library(forecast) }) Load the data, we have two
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2014/on-marketplaces-and-platforms/">
+              <a class="link-unstyled" href="/2014/on-marketplaces-and-platforms/">
                 <h3 class="media-heading">On Marketplaces and platforms</h3>
               </a>
               <span class="media-meta">
@@ -1237,7 +1279,7 @@ This post is focused on service marketplaces that are connecting and democratizi
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2013/finding-with-find/">
+              <a class="link-unstyled" href="/2013/finding-with-find/">
                 <h3 class="media-heading">Finding with find</h3>
               </a>
               <span class="media-meta">
@@ -1252,23 +1294,6 @@ My goal was to list the sizes and access times for all video files in the system
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/1/">
-                <h3 class="media-heading"></h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 0001
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">NPS - Exploratory analysis in R          code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState && document.readyState === "complete") { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -1276,7 +1301,7 @@ My goal was to list the sizes and access times for all video files in the system
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         12 posts found
+         14 posts found
       </p>
     </div>
   </div>
@@ -1284,7 +1309,7 @@ My goal was to list the sizes and access times for all video files in the system
     
   
     
-    <div id="cover" style="background-image:url('https://nitinahuja.github.io/images/cover.jpg');"></div>
+    <div id="cover" style="background-image:url('/images/cover.jpg');"></div>
   
 
 
@@ -1295,7 +1320,7 @@ My goal was to list the sizes and access times for all video files in the system
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
 
 
-<script src="https://nitinahuja.github.io/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+<script src="/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
 
 <script>
 $(document).ready(function() {
@@ -1320,7 +1345,7 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/nitinahuja.github.io\/2017\/nps-exploratory-analysis-in-r\/';
+          this.page.url = '\/2017\/nps-exploratory-analysis-in-r\/';
           
             this.page.identifier = '\/2017\/nps-exploratory-analysis-in-r\/'
           

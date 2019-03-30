@@ -21,13 +21,13 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.31.1">
+    <meta name="generator" content="Hugo 0.51">
     <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
     <title>Revenue forecast for seasonal business</title>
     <meta name="author" content="Nitin Ahuja">
     <meta name="keywords" content="">
 
-    <link rel="icon" href="https://nitinahuja.github.io/favicon.png">
+    <link rel="icon" href="/favicon.png">
     
 
     
@@ -56,10 +56,10 @@ suppressPackageStartupMessages({ library(forecast) }) Load the data, we have two
     
 
     
-      <meta property="og:image" content="https://nitinahuja.github.io/img/forecast_thumb.jpg">
+      <meta property="og:image" content="/img/forecast_thumb.jpg">
     
     
-      <meta property="og:image" content="https://nitinahuja.github.io/img/forecast.jpg">
+      <meta property="og:image" content="/img/forecast.jpg">
     
     
 
@@ -71,20 +71,23 @@ suppressPackageStartupMessages({ library(forecast) }) Load the data, we have two
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
     
     
-    <link rel="stylesheet" href="https://nitinahuja.github.io/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    <link rel="stylesheet" href="/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
     
     
 
     
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-105634890-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-105634890-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     
@@ -96,12 +99,12 @@ ga('send', 'pageview');
       <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="https://nitinahuja.github.io/">A programmer&#39;s viewpoint</a>
+    <a class="header-title-link" href="/">A programmer&#39;s viewpoint</a>
   </div>
   
     
       <a class="header-right-picture "
-         href="https://nitinahuja.github.io/#about">
+         href="/#about">
     
     
     
@@ -117,7 +120,7 @@ ga('send', 'pageview');
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="https://nitinahuja.github.io/#about">
+        <a href="/#about">
           <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Nitin Ahuja</h4>
@@ -130,7 +133,7 @@ ga('send', 'pageview');
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://nitinahuja.github.io/">
+      <a class="sidebar-button-link " href="/">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -140,7 +143,7 @@ ga('send', 'pageview');
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://nitinahuja.github.io/categories">
+      <a class="sidebar-button-link " href="/categories">
     
       <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
       
@@ -150,7 +153,7 @@ ga('send', 'pageview');
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://nitinahuja.github.io/tags">
+      <a class="sidebar-button-link " href="/tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -160,7 +163,7 @@ ga('send', 'pageview');
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://nitinahuja.github.io/archives">
+      <a class="sidebar-button-link " href="/archives">
     
       <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
       
@@ -170,7 +173,7 @@ ga('send', 'pageview');
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://nitinahuja.github.io/#about">
+      <a class="sidebar-button-link " href="/#about">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -183,7 +186,7 @@ ga('send', 'pageview');
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://github.com/nitinahuja" target="_blank">
+      <a class="sidebar-button-link " href="https://github.com/nitinahuja">
     
       <i class="sidebar-button-icon fa fa-lg fa-github"></i>
       
@@ -196,7 +199,7 @@ ga('send', 'pageview');
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://nitinahuja.github.io/index.xml">
+      <a class="sidebar-button-link " href="/index.xml">
     
       <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
       
@@ -234,7 +237,7 @@ ga('send', 'pageview');
   
     <span>in</span>
     
-      <a class="category-link" href="https://nitinahuja.github.io/categories/r">R</a>
+      <a class="category-link" href="/categories/r">R</a>
     
   
 
@@ -255,9 +258,13 @@ ga('send', 'pageview');
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <div id="revenue-forecasting-with-linear-methods." class="section level2">
+              
+
+
+<div id="revenue-forecasting-with-linear-methods." class="section level2">
 <h2>Revenue forecasting with linear methods.</h2>
-<p>This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let’s dive into the data. Load up the required packages.</p>
+<p>This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let’s dive into the data.
+Load up the required packages.</p>
 <pre class="r"><code>suppressPackageStartupMessages({
   library(forecast)
 })</code></pre>
@@ -278,7 +285,8 @@ ga('send', 'pageview');
 <h2>The weekly revenue for <em>BikeTours</em></h2>
 <div id="timeseries" class="section level3">
 <h3>Timeseries</h3>
-<p>Let start by creating a timeseries object using the <code>ts()</code> function and has the signature <code>ts(vector, start=,end=,frequency)</code> where start and end are times of the first and last observation and frequency is the number of observations per unit time (1=annual, 4=quarterly, 12=monthly). In our case we have weekly data, therefore we will set our frequncy to 52.</p>
+<p>Let start by creating a timeseries object using the <code>ts()</code> function and has the signature <code>ts(vector, start=,end=,frequency)</code> where start and end are times of the first and last observation and frequency is the number of observations per unit time (1=annual, 4=quarterly, 12=monthly).
+In our case we have weekly data, therefore we will set our frequncy to 52.</p>
 <pre class="r"><code>  d_ts &lt;- ts(d, start = c(2012,1), frequency = 52)
 summary(d_ts)</code></pre>
 <pre><code>##      Online             Phone         
@@ -295,27 +303,28 @@ summary(d_ts)</code></pre>
 <pre class="r"><code>  title &lt;- paste(&quot; Seasonal decompsition for &quot;, sellerName) 
   ts.plot(d_ts, gpars = list(col=c(&quot;tomato&quot;, &quot;magenta&quot;), lwd=2, ylab=&quot;Gross Sales&quot;, xlab=&quot;year&quot;, main = title))
     legend(&#39;topleft&#39; ,legend=c(&quot;Online&quot;, &quot;Phone&quot;), lty=1, col=c(&quot;tomato&quot;, &quot;magenta&quot;), bty=&#39;n&#39;, cex=.75)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 <div id="online-revenue" class="section level3">
 <h3>Online Revenue</h3>
 <div id="seasonal-component-extraction." class="section level4">
 <h4>Seasonal component extraction.</h4>
-<p>When a time series varies according to a periodic component, we can extract the periodicty using classical statistical methods. The <strong>stl()</strong> function in core R uses <em>loess</em> to effectively take the means of each period. The seasonal component is removed and the remainder is smoothed to find the trend. The sales are clearly seasonal with peaks in the middle of the year starting near spring break and ending near thanksgiving.</p>
+<p>When a time series varies according to a periodic component, we can extract the periodicty using classical statistical methods. The <strong>stl()</strong> function in core R uses <em>loess</em> to effectively take the means of each period. The seasonal component is removed and the remainder is smoothed to find the trend.
+The sales are clearly seasonal with peaks in the middle of the year starting near spring break and ending near thanksgiving.</p>
 <p>Weekly revenue with the seasonal component extracted</p>
 <pre class="r"><code>  d_online &lt;- d$Online
   d_ts_online &lt;- ts(d_online, start = c(2012,1), frequency = params$freq)
   d_ts_comp_online &lt;- stl(d_ts_online, s.window = &quot;period&quot;, robust = TRUE)            
 
   plot(d_ts_comp_online, main = title)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Let’s combine this into a single plot. We have also extracted the seasonally adjusted numbers to show the actual variations and trends.</p>
 <pre class="r"><code>  plot(d_ts_online, ylab=&quot;Gross Revenue&quot;, main = &quot;Online gross revenue with trend and seasonal parts&quot;)
   lines(d_ts_comp_online$time.series[,2], col=&quot;tomato&quot;)
   lines(seasadj(d_ts_comp_online), col=&quot;green&quot;)
   lines(d_ts_comp_online$time.series[,1], col=&quot;blue&quot;)
   legend(&#39;topleft&#39; ,legend=c(&quot;Actual&quot;, &quot;trend&quot;, &quot;seasonal adj&quot;, &quot;seasonal&quot;), lty=1, col=c(&quot;black&quot;, &quot;tomato&quot;, &quot;green&quot;, &quot;blue&quot;), bty=&#39;n&#39;, cex=.75)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 </div>
 <div id="forecast-using-linear-regression" class="section level3">
@@ -327,24 +336,26 @@ summary(d_ts)</code></pre>
     plot(ff_online,  ylab=&quot;Online Gross Revenue&quot;)
     lines(fitted(ff_online), col=&quot;red&quot;)
     lines(d_ts_comp_online$time.series[,2], col=&quot;tomato&quot;)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
 <div id="forecast-using-arima-models" class="section level3">
 <h3>Forecast using ARIMA models</h3>
-<p>Let’s also use the <a href="https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average%20Wikipedia">ARIMA</a> model to get a forecast. Note that the <em>D=1</em> parameter forces the model to take seasonality into account.</p>
+<p>Let’s also use the <a href="https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average%20Wikipedia">ARIMA</a> model to get a forecast.
+Note that the <em>D=1</em> parameter forces the model to take seasonality into account.</p>
 <pre class="r"><code>    f_online_arima &lt;-auto.arima(d_ts_online, lambda = 0.5, D=1)
     ff_online_arima &lt;- forecast(f_online_arima, h=params$freq)
     plot(ff_online_arima,  ylab=&quot;Online Gross Revenue&quot;)
     lines(fitted(ff_online_arima), col=&quot;red&quot;)
     lines(d_ts_comp_online$time.series[,2], col=&quot;tomato&quot;)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 <div id="residuals" class="section level3">
 <h3>Residuals</h3>
-<p>The residuals - the difference between the actual and predicted values back fitted. Low numbers are indicative of a good fit. A 0 mean is indicative of an unbiased forecast.</p>
+<p>The residuals - the difference between the actual and predicted values back fitted. Low numbers are indicative of a good fit.
+A 0 mean is indicative of an unbiased forecast.</p>
 <pre class="r"><code>  res &lt;- residuals(ff_online)
   plot(res, ylab=&quot;Residuals&quot;,xlab=&quot;Year&quot;, main = paste(&quot;Residuals for &quot;, sellerName) )</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/5.1-1.png" width="672" /></p>
+<p><img src="/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/5.1-1.png" width="672" /></p>
 <pre class="r"><code>  summary(res)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ## -41.166  -9.406  -1.330   0.000   8.180  45.450</code></pre>
@@ -353,7 +364,7 @@ summary(d_ts)</code></pre>
 <h3>Autocorrelation</h3>
 <p>The <em>autocorrelation</em> shows the correlation between seasonal data, peaks show positive correlation at the marked intervals. ( 52 weeks, so yearly correlation is statistically signficant - i.e. above the blue line)</p>
 <pre class="r"><code>  Acf(d_ts_online , main=&quot;ACF of revenue&quot;)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/5.2-1.png" width="672" /></p>
+<p><img src="/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/5.2-1.png" width="672" /></p>
 <p>This is the weekly revenue prediction using this model</p>
 <pre class="r"><code>  ff_online</code></pre>
 <pre><code>##          Point Forecast        Lo 80     Hi 80       Lo 95      Hi 95
@@ -423,7 +434,7 @@ summary(d_ts)</code></pre>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://nitinahuja.github.io//tags/forecasting/">forecasting</a>
+  <a class="tag tag--primary tag--small" href="//tags/forecasting/">forecasting</a>
 
                   </div>
                 
@@ -435,7 +446,7 @@ summary(d_ts)</code></pre>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/" data-tooltip="Access log parsing with Spark and schema extraction from query string">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/" data-tooltip="Access log parsing with Spark and schema extraction from query string">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -443,7 +454,7 @@ summary(d_ts)</code></pre>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2014/on-marketplaces-and-platforms/" data-tooltip="On Marketplaces and platforms">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2014/on-marketplaces-and-platforms/" data-tooltip="On Marketplaces and platforms">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -460,17 +471,17 @@ summary(d_ts)</code></pre>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fnitinahuja.github.io%2f2016%2frevenue-forecast-for-seasonal-business%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=%2f2016%2frevenue-forecast-for-seasonal-business%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnitinahuja.github.io%2f2016%2frevenue-forecast-for-seasonal-business%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2016%2frevenue-forecast-for-seasonal-business%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fnitinahuja.github.io%2f2016%2frevenue-forecast-for-seasonal-business%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=%2f2016%2frevenue-forecast-for-seasonal-business%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -504,7 +515,7 @@ summary(d_ts)</code></pre>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Nitin Ahuja. All Rights Reserved
+    &copy; 2019 Nitin Ahuja. All Rights Reserved
   </span>
 </footer>
 
@@ -516,7 +527,7 @@ summary(d_ts)</code></pre>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/" data-tooltip="Access log parsing with Spark and schema extraction from query string">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/" data-tooltip="Access log parsing with Spark and schema extraction from query string">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -524,7 +535,7 @@ summary(d_ts)</code></pre>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2014/on-marketplaces-and-platforms/" data-tooltip="On Marketplaces and platforms">
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2014/on-marketplaces-and-platforms/" data-tooltip="On Marketplaces and platforms">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -541,17 +552,17 @@ summary(d_ts)</code></pre>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fnitinahuja.github.io%2f2016%2frevenue-forecast-for-seasonal-business%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=%2f2016%2frevenue-forecast-for-seasonal-business%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnitinahuja.github.io%2f2016%2frevenue-forecast-for-seasonal-business%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2016%2frevenue-forecast-for-seasonal-business%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fnitinahuja.github.io%2f2016%2frevenue-forecast-for-seasonal-business%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=%2f2016%2frevenue-forecast-for-seasonal-business%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -578,17 +589,17 @@ summary(d_ts)</code></pre>
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fnitinahuja.github.io%2f2016%2frevenue-forecast-for-seasonal-business%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2f2016%2frevenue-forecast-for-seasonal-business%2f">
         <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fnitinahuja.github.io%2f2016%2frevenue-forecast-for-seasonal-business%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2016%2frevenue-forecast-for-seasonal-business%2f">
         <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fnitinahuja.github.io%2f2016%2frevenue-forecast-for-seasonal-business%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2f2016%2frevenue-forecast-for-seasonal-business%2f">
         <i class="fa fa-twitter"></i><span>Share on Twitter</span>
       </a>
     </li>
@@ -648,7 +659,25 @@ summary(d_ts)</code></pre>
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2017/nps-exploratory-text-analysis/">
+              <a class="link-unstyled" href="/2018/vehicle-fuel-economy-exploratory-analysis/">
+                <h3 class="media-heading">Vehicle Fuel Economy - exploratory analysis</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. I am going to start by fetching some data from the inter webs, this data is available at the FuelEconomy.gov site. This file has fuel economy data for all cars sold in the United States for several years.
+Let’s start by loading the libraries we need:</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2017/nps-exploratory-text-analysis/">
                 <h3 class="media-heading">NPS - Exploratory analysis in R - Text analysis</h3>
               </a>
               <span class="media-meta">
@@ -666,7 +695,7 @@ Let’s try and see what those responses are all about. We had already performed
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2017/heatmaps-in-r/">
+              <a class="link-unstyled" href="/2017/heatmaps-in-r/">
                 <h3 class="media-heading">Heat maps in R</h3>
               </a>
               <span class="media-meta">
@@ -676,7 +705,7 @@ Let’s try and see what those responses are all about. We had already performed
               </span>
               <div class="media-content hide-xs font-merryweather">Heatmaps Heat maps are invaluable in displaying a large amount of continuous data contained in a 2d matrix. This post is meant to show a way to create a print worthy heat map in R.
 Let’s start by loading the required packages.
-suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like. We have observations (count of calls) for each day of the week and each hour of the day.</div>
+suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -685,7 +714,7 @@ suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viri
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2017/managing-managers-some-thoughts/">
+              <a class="link-unstyled" href="/2017/managing-managers-some-thoughts/">
                 <h3 class="media-heading">Managing managers - some thoughts</h3>
               </a>
               <span class="media-meta">
@@ -703,7 +732,7 @@ Your team learns by modeling you. There is little doubt that what you do, your t
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/">
+              <a class="link-unstyled" href="/2017/nps-exploratory-analysis-in-r/">
                 <h3 class="media-heading">NPS - Exploratory analysis in R</h3>
               </a>
               <span class="media-meta">
@@ -721,7 +750,7 @@ An additional optional question is asked about why they picked this score and th
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2016/forecasting-in-r-philadelphia-crime-data/">
+              <a class="link-unstyled" href="/2016/forecasting-in-r-philadelphia-crime-data/">
                 <h3 class="media-heading">Forecasting in R - Philadelphia crime data</h3>
               </a>
               <span class="media-meta">
@@ -739,7 +768,7 @@ suppressPackageStartupMessages({ library(data.table) library(forecast) library(k
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/">
+              <a class="link-unstyled" href="/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/">
                 <h3 class="media-heading">Access log parsing with Spark and schema extraction from query string</h3>
               </a>
               <span class="media-meta">
@@ -757,7 +786,7 @@ It turns out I was dealing with over 350 different query string params across th
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2016/revenue-forecast-for-seasonal-business/">
+              <a class="link-unstyled" href="/2016/revenue-forecast-for-seasonal-business/">
                 <h3 class="media-heading">Revenue forecast for seasonal business</h3>
               </a>
               <span class="media-meta">
@@ -775,7 +804,7 @@ suppressPackageStartupMessages({ library(forecast) }) Load the data, we have two
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2014/on-marketplaces-and-platforms/">
+              <a class="link-unstyled" href="/2014/on-marketplaces-and-platforms/">
                 <h3 class="media-heading">On Marketplaces and platforms</h3>
               </a>
               <span class="media-meta">
@@ -793,7 +822,7 @@ This post is focused on service marketplaces that are connecting and democratizi
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/2013/finding-with-find/">
+              <a class="link-unstyled" href="/2013/finding-with-find/">
                 <h3 class="media-heading">Finding with find</h3>
               </a>
               <span class="media-meta">
@@ -808,23 +837,6 @@ My goal was to list the sizes and access times for all video files in the system
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://nitinahuja.github.io/1/">
-                <h3 class="media-heading"></h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 0001
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">NPS - Exploratory analysis in R          code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState && document.readyState === "complete") { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -832,7 +844,7 @@ My goal was to list the sizes and access times for all video files in the system
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         12 posts found
+         14 posts found
       </p>
     </div>
   </div>
@@ -840,7 +852,7 @@ My goal was to list the sizes and access times for all video files in the system
     
   
     
-    <div id="cover" style="background-image:url('https://nitinahuja.github.io/images/cover.jpg');"></div>
+    <div id="cover" style="background-image:url('/images/cover.jpg');"></div>
   
 
 
@@ -851,7 +863,7 @@ My goal was to list the sizes and access times for all video files in the system
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
 
 
-<script src="https://nitinahuja.github.io/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+<script src="/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
 
 <script>
 $(document).ready(function() {
@@ -876,7 +888,7 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/nitinahuja.github.io\/2016\/revenue-forecast-for-seasonal-business\/';
+          this.page.url = '\/2016\/revenue-forecast-for-seasonal-business\/';
           
             this.page.identifier = '\/2016\/revenue-forecast-for-seasonal-business\/'
           

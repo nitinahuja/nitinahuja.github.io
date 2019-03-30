@@ -2,93 +2,111 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on A programmer&#39;s viewpoint</title>
-    <link>https://nitinahuja.github.io/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on A programmer&#39;s viewpoint</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Oct 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://nitinahuja.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Eda</title>
+      <link>/tags/eda/</link>
+      <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/eda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Forecasting</title>
-      <link>https://nitinahuja.github.io/tags/forecasting/</link>
+      <link>/tags/forecasting/</link>
       <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://nitinahuja.github.io/tags/forecasting/</guid>
+      <guid>/tags/forecasting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Learning</title>
-      <link>https://nitinahuja.github.io/tags/learning/</link>
+      <link>/tags/learning/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://nitinahuja.github.io/tags/learning/</guid>
+      <guid>/tags/learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>/tags/machine-learning/</link>
+      <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nlp</title>
-      <link>https://nitinahuja.github.io/tags/nlp/</link>
+      <link>/tags/nlp/</link>
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://nitinahuja.github.io/tags/nlp/</guid>
+      <guid>/tags/nlp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Platforms</title>
-      <link>https://nitinahuja.github.io/tags/platforms/</link>
+      <link>/tags/platforms/</link>
       <pubDate>Mon, 17 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://nitinahuja.github.io/tags/platforms/</guid>
+      <guid>/tags/platforms/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://nitinahuja.github.io/tags/python/</link>
+      <link>/tags/python/</link>
       <pubDate>Wed, 03 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://nitinahuja.github.io/tags/python/</guid>
+      <guid>/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sentiment Analysis</title>
-      <link>https://nitinahuja.github.io/tags/sentiment-analysis/</link>
+      <link>/tags/sentiment-analysis/</link>
       <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://nitinahuja.github.io/tags/sentiment-analysis/</guid>
+      <guid>/tags/sentiment-analysis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Spark</title>
-      <link>https://nitinahuja.github.io/tags/spark/</link>
+      <link>/tags/spark/</link>
       <pubDate>Wed, 03 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://nitinahuja.github.io/tags/spark/</guid>
+      <guid>/tags/spark/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Text Analysis</title>
-      <link>https://nitinahuja.github.io/tags/text-analysis/</link>
+      <link>/tags/text-analysis/</link>
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://nitinahuja.github.io/tags/text-analysis/</guid>
+      <guid>/tags/text-analysis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unix</title>
-      <link>https://nitinahuja.github.io/tags/unix/</link>
+      <link>/tags/unix/</link>
       <pubDate>Thu, 11 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://nitinahuja.github.io/tags/unix/</guid>
+      <guid>/tags/unix/</guid>
       <description></description>
     </item>
     

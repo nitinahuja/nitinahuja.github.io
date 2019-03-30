@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sentiment Analysis on A programmer&#39;s viewpoint</title>
-    <link>https://nitinahuja.github.io/tags/sentiment-analysis/</link>
+    <link>/tags/sentiment-analysis/</link>
     <description>Recent content in Sentiment Analysis on A programmer&#39;s viewpoint</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 28 Aug 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://nitinahuja.github.io/tags/sentiment-analysis/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/sentiment-analysis/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>NPS - Exploratory analysis in R</title>
-      <link>https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/</link>
+      <link>/2017/nps-exploratory-analysis-in-r/</link>
       <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/</guid>
+      <guid>/2017/nps-exploratory-analysis-in-r/</guid>
       <description>NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question. &amp;gt; How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being “most likely” to recommend and 0 being “least likely”.
 An additional optional question is asked about why they picked this score and the response to that is usually a text comment.</description>
     </item>

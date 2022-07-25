@@ -1119,7 +1119,7 @@ leo %&gt;%
   scale_x_continuous(breaks = scales::breaks_pretty(20))</code></pre>
 <p><img src="https://nitinahuja.github.io/post/2022-05-20-low-earth-orbits_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 <p>Let’s try to visualize this in relation to earth, the blue circle represents the earth and the green line, the equator; the length of the line represents the relative number of objects at a particular inclination. The label shows the inclinations rounded to the nearest integer angle in degrees.</p>
-<p>A large proportion of the objects can be seen at 0 degree inclination, signifying an equatorial orbit, while</p>
+<p>A large proportion of the objects can be seen at 0 degree inclination, signifying an equatorial orbit, and another popular inclination is between 50 and 54 degrees. This seems to be a popular place for debris.</p>
 <pre class="r"><code>leo %&gt;% 
   filter(OBJECT_TYPE == &quot;Payload&quot;) %&gt;% 
   mutate(Inc_rounded = round_any(Inc,1)) %&gt;% 

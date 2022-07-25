@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Art on A programmer&#39;s viewpoint</title>
+    <link>https://nitinahuja.github.io/categories/art/</link>
+    <description>Recent content in Art on A programmer&#39;s viewpoint</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 07 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nitinahuja.github.io/categories/art/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generative Art</title>
+      <link>https://nitinahuja.github.io/2021/generative-art/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nitinahuja.github.io/2021/generative-art/</guid>
+      <description>Introduction Just experimenting with some generated art in R. Code is heavily borrowed from the web.
+library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) library(deldir) disturbance = expand.grid(c = 1:25, r = 1:49) %&amp;gt;% mutate( c = ifelse(r %% 2 == 0, c + 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964) ) %&amp;gt;% filter(c &amp;lt;= 50) ggplot(disturbance) + geom_text(aes(c, r, label = &amp;quot;0&amp;quot;, angle = a, color = a), family = &amp;quot;Times&amp;quot;, size = 10, show.</description>
+    </item>
+    
+  </channel>
+</rss>

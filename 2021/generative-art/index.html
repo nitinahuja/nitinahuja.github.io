@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/nitinahuja.github.io\/",
+  "author": {
+    "@type": "Person",
+    "name": "Nitin Ahuja",
+    
+    "image": "https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d"
+    
+  },
+  "name":"A programmer\u0027s viewpoint",
+  "description":"Introduction Just experimenting with some generated art in R. Code is heavily borrowed from the web.\nlibrary(tidyverse) library(ambient) library(randomcoloR) library(ggforce) library(deldir) disturbance = expand.grid(c = 1:25, r = 1:49) %\u0026gt;% mutate( c = ifelse(r %% 2 == 0, c \u002b 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964) ) %\u0026gt;% filter(c \u0026lt;= 50) ggplot(disturbance) \u002b geom_text(aes(c, r, label = \u0026quot;0\u0026quot;, angle = a, color = a), family = \u0026quot;Times\u0026quot;, size = 10, show.",
+  "url":"https:\/\/nitinahuja.github.io\/2021\/generative-art\/",
+  "keywords":"[]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.98.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Nitin Ahuja">
+<meta name="keywords" content="">
+<meta name="description" content="Introduction Just experimenting with some generated art in R. Code is heavily borrowed from the web.
+library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) library(deldir) disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% mutate( c = ifelse(r %% 2 == 0, c &#43; 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964) ) %&gt;% filter(c &lt;= 50) ggplot(disturbance) &#43; geom_text(aes(c, r, label = &quot;0&quot;, angle = a, color = a), family = &quot;Times&quot;, size = 10, show.">
+
+
+<meta property="og:description" content="Introduction Just experimenting with some generated art in R. Code is heavily borrowed from the web.
+library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) library(deldir) disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% mutate( c = ifelse(r %% 2 == 0, c &#43; 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964) ) %&gt;% filter(c &lt;= 50) ggplot(disturbance) &#43; geom_text(aes(c, r, label = &quot;0&quot;, angle = a, color = a), family = &quot;Times&quot;, size = 10, show.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Generative Art">
+<meta name="twitter:title" content="Generative Art">
+<meta property="og:url" content="https://nitinahuja.github.io/2021/generative-art/">
+<meta property="twitter:url" content="https://nitinahuja.github.io/2021/generative-art/">
+<meta property="og:site_name" content="A programmer&#39;s viewpoint">
+<meta property="og:description" content="Introduction Just experimenting with some generated art in R. Code is heavily borrowed from the web.
+library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) library(deldir) disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% mutate( c = ifelse(r %% 2 == 0, c &#43; 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964) ) %&gt;% filter(c &lt;= 50) ggplot(disturbance) &#43; geom_text(aes(c, r, label = &quot;0&quot;, angle = a, color = a), family = &quot;Times&quot;, size = 10, show.">
+<meta name="twitter:description" content="Introduction Just experimenting with some generated art in R. Code is heavily borrowed from the web.
+library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) library(deldir) disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% mutate( c = ifelse(r %% 2 == 0, c &#43; 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964) ) %&gt;% filter(c &lt;= 50) ggplot(disturbance) &#43; geom_text(aes(c, r, label = &quot;0&quot;, angle = a, color = a), family = &quot;Times&quot;, size = 10, show.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2021-03-07T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2021-03-07T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="Art">
+    
+      <meta property="article:section" content="R">
+    
+  
+  
+    
+      <meta property="article:tag" content="generative art">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@nitinahuja">
+
+
+  <meta name="twitter:creator" content="@nitinahuja">
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=640">
+
+
+
+
+  <meta property="og:image" content="https://nitinahuja.github.io/img/generative.jpg">
+  <meta property="twitter:image" content="https://nitinahuja.github.io/img/generative.jpg">
+
+
+  <meta property="og:image" content="https://nitinahuja.github.io/img/generative_thumb.jpg">
+  <meta property="twitter:image" content="https://nitinahuja.github.io/img/generative_thumb.jpg">
+
+
+    <title>Generative Art</title>
+
+    <link rel="icon" href="https://nitinahuja.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://nitinahuja.github.io/2021/generative-art/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://nitinahuja.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-105634890-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+    
+    
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+      <link rel="stylesheet" href="https://nitinahuja.github.io/css/codefolding.css" />
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://nitinahuja.github.io/" aria-label="Go to homepage">A programmer&#39;s viewpoint</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://nitinahuja.github.io/#about" aria-label="Open the link: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://nitinahuja.github.io/#about" aria-label="Read more about the author">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Nitin Ahuja</h4>
+        
+          <h5 class="sidebar-profile-bio">A programmer&rsquo;s viewpoint</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/nitinahuja" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-left
+              "
+       style="background-image:url('/img/generative.jpg')"
+       data-behavior="4">
+    
+      <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      Generative Art
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2021-03-07T00:00:00Z">
+        
+  March 7, 2021
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://nitinahuja.github.io/categories/art">Art</a>, 
+    
+      <a class="category-link" href="https://nitinahuja.github.io/categories/r">R</a>
+    
+  
+
+  </div>
+
+  
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
+</div>
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              
+
+
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>Just experimenting with some generated art in R. Code is heavily borrowed from the web.</p>
+<pre class="r"><code>library(tidyverse)
+library(ambient)
+library(randomcoloR)
+library(ggforce)
+library(deldir)
+
+
+disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% 
+  mutate(
+    c = ifelse(r %% 2 == 0, c + 0.5, c),
+    a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964)
+    ) %&gt;% 
+  filter(c &lt;= 50)
+  
+  
+ggplot(disturbance) +
+  geom_text(aes(c, r, label = &quot;0&quot;, angle = a, color = a), family = &quot;Times&quot;, size = 10, show.legend = F) +
+  coord_fixed(ratio = 0.5, expand = TRUE) +
+  scale_color_gradient2(low = &quot;orange&quot;, high = &quot;red&quot;, mid = &quot;tomato&quot;) +
+  theme_void()</code></pre>
+<p><img src="https://nitinahuja.github.io/post/2021-03-07-generative-art_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code>set.seed(1993)
+
+nataraja &lt;- expand.grid(c = 1:20, r = 0:24) %&gt;% 
+  mutate(
+    short = if_else(row_number() %in% sample(1:500, 5), 0.3, 0)
+    # long = if_else(row_number() %in% sample(1:500, 5), 0.3, 0)
+  ) %&gt;% 
+  rowwise() %&gt;% 
+  mutate(
+    x = list(c(c + short, c + 1.01, c + 1.01, c + short)),
+    y = list(c(r + short, r + 1.01, r + 2.02, r + 1.01 + short)),
+    col = round(runif(1, 1, 13), 0)
+    ) %&gt;% 
+  ungroup() %&gt;% 
+  unnest(c(x, y))
+
+
+pal &lt;- c(
+  &quot;#C2644F&quot;, # dark orange
+  &quot;#A24D50&quot;, # brown
+  &quot;#DFA45B&quot;, # ochre
+  &quot;#E8DCB0&quot;, # light ochre
+  &quot;#4167A5&quot;, # dark blue
+  &quot;#639ED5&quot;, # light blue
+  &quot;#ABC0E2&quot;, # very light blue
+  &quot;#3F6854&quot;, # dark green
+  &quot;#70884F&quot;, # green
+  &quot;#86BA84&quot;, # light green
+  &quot;#C8C866&quot;, # green-yellow
+  &quot;#BD81AC&quot;, # pink
+  &quot;#7B76B6&quot; # purple
+  )
+
+ggplot(nataraja) +
+  geom_polygon(aes(x = x, y = y, fill = factor(col), group = interaction(c, r)), color = NA) +
+  scale_fill_manual(values = pal) +
+  coord_cartesian(xlim = c(1, 21), ylim = c(1.5, 19.8), expand = FALSE) +
+  theme_void() +
+  theme(
+    legend.position = &quot;none&quot;,
+    plot.margin = margin(2, 2, 2, 2)
+    ) </code></pre>
+<p><img src="https://nitinahuja.github.io/post/2021-03-07-generative-art_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>fall &lt;- data.frame(n = 0:105) %&gt;% 
+  rowwise() %&gt;% 
+  mutate(
+    x = list(seq(2, 45, 0.1)),
+    s = runif(1, 0.35, 0.55)
+    ) %&gt;% 
+  ungroup() %&gt;% 
+  unnest(x) %&gt;% 
+  mutate(
+    y = n + 2.2 * sin(6 * pi * x^(1/4)),
+    s = abs(y - n)/5 + s
+    )
+
+ggplot(fall) +
+  geom_line(aes(x = x, y = y, group = n, size = s, color = x), lineend = &quot;round&quot;) +
+ #scale_size_continuous(range = c(0.4, 0.8)) +
+  scale_size_identity() +
+  coord_flip(clip = &quot;off&quot;) +
+  ylim(5, 100) +
+  theme_void() +
+  scale_color_viridis_c() +
+  #scale_color_gradient2(low = &quot;yellow&quot;, high = &quot;purple&quot;, mid = &quot;tomato&quot;) +
+  theme(legend.position = &quot;none&quot;)</code></pre>
+<p><img src="https://nitinahuja.github.io/post/2021-03-07-generative-art_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>del &lt;- data.frame(x = 1:250 * sin(1:50), y = 1:250 * cos(1:50)) %&gt;% 
+  mutate(n = row_number())
+
+ggplot(del, aes(x, y)) +
+  geom_delaunay_tile(fill = &quot;grey20&quot;) +
+  geom_delaunay_segment2(aes(color = -n)) +
+  scale_color_gradient(low = &quot;grey25&quot;, high = &quot;white&quot;) +
+  coord_fixed() +
+  xlim(-250, 250) +
+  ylim(-250, 250) +
+  theme_void() +
+  theme(
+    legend.position = &quot;none&quot;,
+    plot.background = element_rect(fill = &quot;grey65&quot;, color = NA)
+  ) </code></pre>
+<p><img src="https://nitinahuja.github.io/post/2021-03-07-generative-art_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://nitinahuja.github.io/tags/generative-art/">generative art</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2022/low-earth-orbits-exploraration/" data-tooltip="Let&#39;s explore Near Earth Orbit - exploratory analysis" aria-label="NEXT: Let&#39;s explore Near Earth Orbit - exploratory analysis">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2018/vehicle-fuel-economy-exploratory-analysis/" data-tooltip="Vehicle Fuel Economy - exploratory analysis" aria-label="PREVIOUS: Vehicle Fuel Economy - exploratory analysis">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2022 Nitin Ahuja. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2022/low-earth-orbits-exploraration/" data-tooltip="Let&#39;s explore Near Earth Orbit - exploratory analysis" aria-label="NEXT: Let&#39;s explore Near Earth Orbit - exploratory analysis">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2018/vehicle-fuel-economy-exploratory-analysis/" data-tooltip="Vehicle Fuel Economy - exploratory analysis" aria-label="PREVIOUS: Vehicle Fuel Economy - exploratory analysis">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Nitin Ahuja</h4>
+    
+      <div id="about-card-bio">A programmer&rsquo;s viewpoint</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Forever learning
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        California
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      
+      <div id="cover" style="background-image:url('https://nitinahuja.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+<script src="https://nitinahuja.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+
+
+
+     
+  <script>
+  $(document).ready(function () {
+    window.initializeCodeFolding("show" === "hide");
+  });
+  </script>
+  <script src="https://nitinahuja.github.io/js/codefolding.js"></script>
+
+    
+  </body>
+</html>
+

@@ -1,112 +1,117 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on A programmer&#39;s viewpoint</title>
-    <link>/tags/</link>
+    <link>https://nitinahuja.github.io/tags/</link>
     <description>Recent content in Tags on A programmer&#39;s viewpoint</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Nov 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://nitinahuja.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EDA</title>
+      <link>https://nitinahuja.github.io/tags/eda/</link>
+      <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://nitinahuja.github.io/tags/eda/</guid>
+      <description></description>
+    </item>
     
     <item>
-      <title>Eda</title>
-      <link>/tags/eda/</link>
+      <title>generative art</title>
+      <link>https://nitinahuja.github.io/tags/generative-art/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nitinahuja.github.io/tags/generative-art/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine learning</title>
+      <link>https://nitinahuja.github.io/tags/machine-learning/</link>
       <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/eda/</guid>
+      <guid>https://nitinahuja.github.io/tags/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Forecasting</title>
-      <link>/tags/forecasting/</link>
-      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      <title>nlp</title>
+      <link>https://nitinahuja.github.io/tags/nlp/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/forecasting/</guid>
+      <guid>https://nitinahuja.github.io/tags/nlp/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Learning</title>
-      <link>/tags/learning/</link>
+      <title>text analysis</title>
+      <link>https://nitinahuja.github.io/tags/text-analysis/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://nitinahuja.github.io/tags/text-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>learning</title>
+      <link>https://nitinahuja.github.io/tags/learning/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/learning/</guid>
+      <guid>https://nitinahuja.github.io/tags/learning/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Machine Learning</title>
-      <link>/tags/machine-learning/</link>
-      <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nlp</title>
-      <link>/tags/nlp/</link>
-      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/nlp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Platforms</title>
-      <link>/tags/platforms/</link>
-      <pubDate>Mon, 17 Feb 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/platforms/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>/tags/python/</link>
-      <pubDate>Wed, 03 Aug 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sentiment Analysis</title>
-      <link>/tags/sentiment-analysis/</link>
+      <title>sentiment analysis</title>
+      <link>https://nitinahuja.github.io/tags/sentiment-analysis/</link>
       <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/sentiment-analysis/</guid>
+      <guid>https://nitinahuja.github.io/tags/sentiment-analysis/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Spark</title>
-      <link>/tags/spark/</link>
+      <title>forecasting</title>
+      <link>https://nitinahuja.github.io/tags/forecasting/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://nitinahuja.github.io/tags/forecasting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://nitinahuja.github.io/tags/python/</link>
       <pubDate>Wed, 03 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/spark/</guid>
+      <guid>https://nitinahuja.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Text Analysis</title>
-      <link>/tags/text-analysis/</link>
-      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
+      <title>spark</title>
+      <link>https://nitinahuja.github.io/tags/spark/</link>
+      <pubDate>Wed, 03 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>/tags/text-analysis/</guid>
+      <guid>https://nitinahuja.github.io/tags/spark/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Unix</title>
-      <link>/tags/unix/</link>
+      <title>platforms</title>
+      <link>https://nitinahuja.github.io/tags/platforms/</link>
+      <pubDate>Mon, 17 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://nitinahuja.github.io/tags/platforms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unix</title>
+      <link>https://nitinahuja.github.io/tags/unix/</link>
       <pubDate>Thu, 11 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>/tags/unix/</guid>
+      <guid>https://nitinahuja.github.io/tags/unix/</guid>
       <description></description>
     </item>
     

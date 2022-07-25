@@ -1,209 +1,121 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>/2018/vehicle-fuel-economy-exploratory-analysis/</loc>
+    <loc>https://nitinahuja.github.io/</loc>
+    <lastmod>2022-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/categories/</loc>
+    <lastmod>2022-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/tags/eda/</loc>
+    <lastmod>2022-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/2022/low-earth-orbits-exploraration/</loc>
+    <lastmod>2022-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/post/</loc>
+    <lastmod>2022-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/categories/r/</loc>
+    <lastmod>2022-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/tags/</loc>
+    <lastmod>2022-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/categories/visualization/</loc>
+    <lastmod>2022-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/categories/art/</loc>
+    <lastmod>2021-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/tags/generative-art/</loc>
+    <lastmod>2021-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/2021/generative-art/</loc>
+    <lastmod>2021-03-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/categories/classification/</loc>
     <lastmod>2018-11-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/nps-exploratory-text-analysis/</loc>
+  </url><url>
+    <loc>https://nitinahuja.github.io/tags/machine-learning/</loc>
+    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/2018/vehicle-fuel-economy-exploratory-analysis/</loc>
+    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/tags/nlp/</loc>
     <lastmod>2017-10-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/heatmaps-in-r/</loc>
+  </url><url>
+    <loc>https://nitinahuja.github.io/categories/nlp/</loc>
+    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/2017/nps-exploratory-text-analysis/</loc>
+    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/tags/text-analysis/</loc>
+    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/2017/heatmaps-in-r/</loc>
     <lastmod>2017-09-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/managing-managers-some-thoughts/</loc>
+  </url><url>
+    <loc>https://nitinahuja.github.io/tags/learning/</loc>
+    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/categories/learning/</loc>
     <lastmod>2017-08-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/nps-exploratory-analysis-in-r/</loc>
+  </url><url>
+    <loc>https://nitinahuja.github.io/2017/managing-managers-some-thoughts/</loc>
+    <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/</loc>
     <lastmod>2017-08-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/forecasting-in-r-philadelphia-crime-data/</loc>
+  </url><url>
+    <loc>https://nitinahuja.github.io/tags/sentiment-analysis/</loc>
+    <lastmod>2017-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/tags/forecasting/</loc>
     <lastmod>2016-10-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/</loc>
+  </url><url>
+    <loc>https://nitinahuja.github.io/2016/forecasting-in-r-philadelphia-crime-data/</loc>
+    <lastmod>2016-10-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/</loc>
     <lastmod>2016-08-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/revenue-forecast-for-seasonal-business/</loc>
+  </url><url>
+    <loc>https://nitinahuja.github.io/tags/python/</loc>
+    <lastmod>2016-08-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/categories/python/</loc>
+    <lastmod>2016-08-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/tags/spark/</loc>
+    <lastmod>2016-08-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/categories/spark/</loc>
+    <lastmod>2016-08-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/2016/revenue-forecast-for-seasonal-business/</loc>
     <lastmod>2016-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/on-marketplaces-and-platforms/</loc>
+  </url><url>
+    <loc>https://nitinahuja.github.io/2014/on-marketplaces-and-platforms/</loc>
     <lastmod>2014-02-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2013/finding-with-find/</loc>
-    <lastmod>2013-04-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/1/</loc>
-  </url>
-  
-  <url>
-    <loc>/1/</loc>
-  </url>
-  
-  <url>
-    <loc>/1/</loc>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/archives/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/classification/</loc>
-    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/eda/</loc>
-    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/forecasting/</loc>
-    <lastmod>2016-10-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/learning/</loc>
-    <lastmod>2017-08-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/learning/</loc>
-    <lastmod>2017-09-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/machine-learning/</loc>
-    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/nlp/</loc>
-    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/nlp/</loc>
-    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/platforms/</loc>
+  </url><url>
+    <loc>https://nitinahuja.github.io/tags/platforms/</loc>
     <lastmod>2014-02-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/platforms/</loc>
+  </url><url>
+    <loc>https://nitinahuja.github.io/categories/platforms/</loc>
     <lastmod>2014-02-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/python/</loc>
-    <lastmod>2016-08-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/python/</loc>
-    <lastmod>2016-08-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/sentiment-analysis/</loc>
-    <lastmod>2017-08-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/spark/</loc>
-    <lastmod>2016-08-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/spark/</loc>
-    <lastmod>2016-08-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/text-analysis/</loc>
-    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/unix/</loc>
+  </url><url>
+    <loc>https://nitinahuja.github.io/2013/finding-with-find/</loc>
     <lastmod>2013-04-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/unix/</loc>
+  </url><url>
+    <loc>https://nitinahuja.github.io/tags/unix/</loc>
     <lastmod>2013-04-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+  </url><url>
+    <loc>https://nitinahuja.github.io/categories/unix/</loc>
+    <lastmod>2013-04-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nitinahuja.github.io/archives/</loc>
   </url>
-  
 </urlset>

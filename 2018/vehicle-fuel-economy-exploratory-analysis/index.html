@@ -1,77 +1,116 @@
-
-
-  
-    
-  
-
-
-  
-
-
-
-
-  
-
-
-  
-
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
     
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/nitinahuja.github.io\/",
+  "author": {
+    "@type": "Person",
+    "name": "Nitin Ahuja",
+    
+    "image": "https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d"
+    
+  },
+  "name":"A programmer\u0027s viewpoint",
+  "description":"Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. I am going to start by fetching some data from the inter webs, this data is available at the FuelEconomy.gov site. This file has fuel economy data for all cars sold in the United States for several years.\nLet’s start by loading the libraries we need:",
+  "url":"https:\/\/nitinahuja.github.io\/2018\/vehicle-fuel-economy-exploratory-analysis\/",
+  "keywords":"[]"
+}
+
+</script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.51">
-    <meta name="theme" content="Tranquilpeak 0.3.1-BETA">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.98.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Nitin Ahuja">
+<meta name="keywords" content="">
+<meta name="description" content="Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. I am going to start by fetching some data from the inter webs, this data is available at the FuelEconomy.gov site. This file has fuel economy data for all cars sold in the United States for several years.
+Let’s start by loading the libraries we need:">
+
+
+<meta property="og:description" content="Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. I am going to start by fetching some data from the inter webs, this data is available at the FuelEconomy.gov site. This file has fuel economy data for all cars sold in the United States for several years.
+Let’s start by loading the libraries we need:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vehicle Fuel Economy - exploratory analysis">
+<meta name="twitter:title" content="Vehicle Fuel Economy - exploratory analysis">
+<meta property="og:url" content="https://nitinahuja.github.io/2018/vehicle-fuel-economy-exploratory-analysis/">
+<meta property="twitter:url" content="https://nitinahuja.github.io/2018/vehicle-fuel-economy-exploratory-analysis/">
+<meta property="og:site_name" content="A programmer&#39;s viewpoint">
+<meta property="og:description" content="Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. I am going to start by fetching some data from the inter webs, this data is available at the FuelEconomy.gov site. This file has fuel economy data for all cars sold in the United States for several years.
+Let’s start by loading the libraries we need:">
+<meta name="twitter:description" content="Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. I am going to start by fetching some data from the inter webs, this data is available at the FuelEconomy.gov site. This file has fuel economy data for all cars sold in the United States for several years.
+Let’s start by loading the libraries we need:">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2018-11-21T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2018-11-21T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="Classification">
+    
+      <meta property="article:section" content="R">
+    
+  
+  
+    
+      <meta property="article:tag" content="EDA">
+    
+      <meta property="article:tag" content="machine learning">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@nitinahuja">
+
+
+  <meta name="twitter:creator" content="@nitinahuja">
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=640">
+
+
+
+
+  <meta property="og:image" content="https://nitinahuja.github.io/img/car.jpg">
+  <meta property="twitter:image" content="https://nitinahuja.github.io/img/car.jpg">
+
+
+  <meta property="og:image" content="https://nitinahuja.github.io/img/car_thumb.jpg">
+  <meta property="twitter:image" content="https://nitinahuja.github.io/img/car_thumb.jpg">
+
+
     <title>Vehicle Fuel Economy - exploratory analysis</title>
-    <meta name="author" content="Nitin Ahuja">
-    <meta name="keywords" content="">
 
-    <link rel="icon" href="/favicon.png">
-    
-
-    
-    <meta name="description" content="Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. I am going to start by fetching some data from the inter webs, this data is available at the FuelEconomy.gov site. This file has fuel economy data for all cars sold in the United States for several years.
-Let’s start by loading the libraries we need:">
-    <meta property="og:description" content="Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. I am going to start by fetching some data from the inter webs, this data is available at the FuelEconomy.gov site. This file has fuel economy data for all cars sold in the United States for several years.
-Let’s start by loading the libraries we need:">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="Vehicle Fuel Economy - exploratory analysis">
-    <meta property="og:url" content="/2018/vehicle-fuel-economy-exploratory-analysis/">
-    <meta property="og:site_name" content="A programmer&#39;s viewpoint">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="A programmer&#39;s viewpoint">
-    <meta name="twitter:description" content="Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. I am going to start by fetching some data from the inter webs, this data is available at the FuelEconomy.gov site. This file has fuel economy data for all cars sold in the United States for several years.
-Let’s start by loading the libraries we need:">
-    
-      <meta name="twitter:creator" content="@nitinahuja">
-    
-    
-
-    
-    
-
-    
-      <meta property="og:image" content="//www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=640">
-    
-
-    
-      <meta property="og:image" content="/img/car_thumb.jpg">
-    
-    
-      <meta property="og:image" content="/img/car.jpg">
-    
+    <link rel="icon" href="https://nitinahuja.github.io/favicon.png">
     
 
     
 
+    <link rel="canonical" href="https://nitinahuja.github.io/2018/vehicle-fuel-economy-exploratory-analysis/">
+
     
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     
-    <link rel="stylesheet" href="/css/style-u6mk0ojoywresbx8iepslrmmhl4stuhrsxuwhkpwrkrx7mryjcaimasnk4pi.min.css" />
+    
+    <link rel="stylesheet" href="https://nitinahuja.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
 
@@ -89,8 +128,11 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
+    
+    
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+      <link rel="stylesheet" href="https://nitinahuja.github.io/css/codefolding.css" />
     
   </head>
 
@@ -99,17 +141,17 @@ if (!doNotTrack) {
       <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="/">A programmer&#39;s viewpoint</a>
+    <a class="header-title-link" href="https://nitinahuja.github.io/" aria-label="Go to homepage">A programmer&#39;s viewpoint</a>
   </div>
   
     
       <a class="header-right-picture "
-         href="/#about">
+         href="https://nitinahuja.github.io/#about" aria-label="Open the link: /#about">
     
     
     
       
-        <img class="header-picture" src="//www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=90" alt="Author&#39;s picture" />
+        <img class="header-picture" src="https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -120,8 +162,8 @@ if (!doNotTrack) {
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="/#about">
-          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=110" alt="Author&#39;s picture" />
+        <a href="https://nitinahuja.github.io/#about" aria-label="Read more about the author">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Nitin Ahuja</h4>
         
@@ -133,7 +175,7 @@ if (!doNotTrack) {
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="/">
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/" title="Home">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -143,7 +185,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="/categories">
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/categories" title="Categories">
     
       <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
       
@@ -153,7 +195,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="/tags">
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/tags" title="Tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -163,7 +205,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="/archives">
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/archives" title="Archives">
     
       <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
       
@@ -173,7 +215,7 @@ if (!doNotTrack) {
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="/#about">
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/#about" title="About">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -181,12 +223,13 @@ if (!doNotTrack) {
     </a>
   </li>
 
+
     </ul>
     <ul class="sidebar-buttons">
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://github.com/nitinahuja">
+      <a class="sidebar-button-link " href="https://github.com/nitinahuja" target="_blank" rel="noopener" title="GitHub">
     
       <i class="sidebar-button-icon fa fa-lg fa-github"></i>
       
@@ -194,18 +237,20 @@ if (!doNotTrack) {
     </a>
   </li>
 
+
     </ul>
     <ul class="sidebar-buttons">
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="/index.xml">
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/index.xml" title="RSS">
     
       <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
       
       <span class="sidebar-button-desc">RSS</span>
     </a>
   </li>
+
 
     </ul>
   </div>
@@ -220,31 +265,45 @@ if (!doNotTrack) {
     
       <div class="post-header main-content-wrap text-left">
   
-    <h1 class="post-title" itemprop="headline">
+    <h1 class="post-title">
       Vehicle Fuel Economy - exploratory analysis
     </h1>
   
-  <div class="postShorten-meta post-meta">
   
-    <time itemprop="datePublished" datetime="2018-11-21T00:00:00Z">
-      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2018-11-21T00:00:00Z">
+        
   November 21, 2018
 
-    </time>
-  
-  
+      </time>
+    
+    
   
   
     <span>in</span>
     
-      <a class="category-link" href="/categories/classification">Classification</a>, 
+      <a class="category-link" href="https://nitinahuja.github.io/categories/classification">Classification</a>, 
     
-      <a class="category-link" href="/categories/r">R</a>
+      <a class="category-link" href="https://nitinahuja.github.io/categories/r">R</a>
     
   
 
+  </div>
 
+  
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
 </div>
+
 
 </div>
     
@@ -255,10 +314,10 @@ if (!doNotTrack) {
         class="hasCover
                hasCoverMetaIn
                ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="post" id="top">
           
           
-          <div class="post-content markdown" itemprop="articleBody">
+          <div class="post-content markdown">
             <div class="main-content-wrap">
               
 
@@ -273,172 +332,1136 @@ This file has fuel economy data for all cars sold in the United States for sever
 <pre class="r"><code>#temp &lt;- tempfile()
 #download.file(&quot;http://www.fueleconomy.gov/feg/epadata/vehicles.csv.zip&quot;, temp)
 #unz(temp, &quot;~/Downloads/vehicles.csv&quot;)
-dt &lt;- data.table::fread(&quot;~/Downloads/vehicles.csv&quot;, fill = TRUE)
+dt &lt;- data.table::fread(&quot;~/data/vehicles.csv&quot;, fill = TRUE)
 #unlink(temp)
 
 vehicles &lt;- as_tibble(dt)</code></pre>
-<p>We have 40691 rows - that’s a lot of make and models.</p>
+<p>We have 44889 rows - that’s a lot of make and models.</p>
 <p>Let’s take a look at what this data looks like using the excellent Skimr library for a succinct look.</p>
 <pre class="r"><code>skim(vehicles)</code></pre>
-<pre><code>## Skim summary statistics
-##  n obs: 40691 
-##  n variables: 83 
-## 
-## ── Variable type:character ─────────────────────────────────────────────────────────────────────────────────────────────────
-##    variable missing complete     n min max empty n_unique
-##     atvType       0    40691 40691   0  14 37219        9
-##   c240bDscr       0    40691 40691   0  19 40628        5
-##    c240Dscr       0    40691 40691   0  16 40626        6
-##   createdOn       0    40691 40691  28  28     0      247
-##       drive       0    40691 40691   0  26  1189        9
-##    eng_dscr       0    40691 40691   0  40 16034      556
-##     evMotor       0    40691 40691   0  51 39900      143
-##    fuelType       0    40691 40691   3  27     0       14
-##   fuelType1       0    40691 40691   6  17     0        6
-##   fuelType2       0    40691 40691   0  11 39108        5
-##     guzzler       0    40691 40691   0   1 38284        4
-##        make       0    40691 40691   3  34     0      135
-##     mfrCode       0    40691 40691   0   3 30818       48
-##       model       0    40691 40691   1  47     0     4018
-##  modifiedOn       0    40691 40691  28  28     0      120
-##     mpgData       0    40691 40691   1   1     0        2
-##      rangeA       0    40691 40691   0  11 39113      227
-##    sCharger       0    40691 40691   0   1 39874        2
-##   startStop       0    40691 40691   0   1 31704        3
-##    tCharger       0    40691 40691   0   1 34071        2
-##  trans_dscr       0    40691 40691   0  15 25644       53
-##       trany       0    40691 40691   0  32    11       38
-##      VClass       0    40691 40691   4  34     0       34
-## 
-## ── Variable type:integer ───────────────────────────────────────────────────────────────────────────────────────────────────
-##      variable missing complete     n     mean       sd     p0     p25
-##        city08       0    40691 40691    18.27     7.5       6    15  
-##       cityA08       0    40691 40691     0.64     4.92      0     0  
-##           co2       0    40691 40691    84.95   172.88     -1    -1  
-##          co2A       0    40691 40691     5.91    57.34     -1    -1  
-##        comb08       0    40691 40691    20.52     7.32      7    17  
-##       combA08       0    40691 40691     0.7      4.98      0     0  
-##     cylinders     177    40514 40691     5.72     1.76      2     4  
-##         engId       0    40691 40691  8255.07 17335.46      0     0  
-##       feScore       0    40691 40691     0.3      2.65     -1    -1  
-##    fuelCost08       0    40691 40691  2314.91   639.31    500  1850  
-##   fuelCostA08       0    40691 40691   100.77   528.2       0     0  
-##      ghgScore       0    40691 40691     0.3      2.65     -1    -1  
-##     ghgScoreA       0    40691 40691    -0.92     0.66     -1    -1  
-##     highway08       0    40691 40691    24.41     7.45      9    20  
-##    highwayA08       0    40691 40691     0.8      5.23      0     0  
-##           hlv       0    40691 40691     2.01     5.93      0     0  
-##           hpv       0    40691 40691    10.28    28.03      0     0  
-##            id       0    40691 40691 20462.37 11872.44      1 10173.5
-##           lv2       0    40691 40691     1.81     4.37      0     0  
-##           lv4       0    40691 40691     6.12     9.65      0     0  
-##      phevCity       0    40691 40691     0.13     2.72      0     0  
-##      phevComb       0    40691 40691     0.13     2.66      0     0  
-##       phevHwy       0    40691 40691     0.13     2.63      0     0  
-##           pv2       0    40691 40691    13.55    31.11      0     0  
-##           pv4       0    40691 40691    33.79    46.01      0     0  
-##         range       0    40691 40691     0.63    11.3       0     0  
-##          year       0    40691 40691  2001.34    11.04   1984  1991  
-##  youSaveSpend       0    40691 40691 -4069.94  3202.33 -28750 -6000  
-##    p50     p75  p100     hist
-##     17    20     150 ▇▁▁▁▁▁▁▁
-##      0     0     145 ▇▁▁▁▁▁▁▁
-##     -1    -1     847 ▇▁▁▁▁▁▁▁
-##     -1    -1     713 ▇▁▁▁▁▁▁▁
-##     20    23     136 ▇▂▁▁▁▁▁▁
-##      0     0     133 ▇▁▁▁▁▁▁▁
-##      6     6      16 ▁▇▇▅▁▁▁▁
-##    183  4216   69102 ▇▁▁▁▁▁▁▁
-##     -1    -1      10 ▇▁▁▁▁▁▁▁
-##   2300  2700    7250 ▁▇▇▂▁▁▁▁
-##      0     0    3900 ▇▁▁▁▁▁▁▁
-##     -1    -1      10 ▇▁▁▁▁▁▁▁
-##     -1    -1       8 ▇▁▁▁▁▁▁▁
-##     24    28     123 ▇▇▁▁▁▁▁▁
-##      0     0     121 ▇▁▁▁▁▁▁▁
-##      0     0      49 ▇▁▁▁▁▁▁▁
-##      0     0     195 ▇▁▁▁▁▁▁▁
-##  20347 30788.5 41046 ▇▇▇▇▇▇▇▇
-##      0     0      41 ▇▁▁▁▁▁▁▁
-##      0    13      55 ▇▂▂▁▁▁▁▁
-##      0     0      97 ▇▁▁▁▁▁▁▁
-##      0     0      88 ▇▁▁▁▁▁▁▁
-##      0     0      81 ▇▁▁▁▁▁▁▁
-##      0     0     194 ▇▁▁▁▁▁▁▁
-##      0    91     192 ▇▁▁▂▂▁▁▁
-##      0     0     335 ▇▁▁▁▁▁▁▁
-##   2002  2011    2019 ▇▅▅▃▅▆▅▇
-##  -4000 -1750    5000 ▁▁▁▁▂▇▇▁
-## 
-## ── Variable type:logical ───────────────────────────────────────────────────────────────────────────────────────────────────
-##     variable missing complete     n   mean                      count
-##  phevBlended       0    40691 40691 0.0021 FAL: 40607, TRU: 84, NA: 0
-## 
-## ── Variable type:numeric ───────────────────────────────────────────────────────────────────────────────────────────────────
-##         variable missing complete     n      mean      sd   p0    p25
-##        barrels08       0    40691 40691  17.33      4.6   0.06  14.33
-##       barrelsA08       0    40691 40691   0.22      1.14  0      0   
-##        charge120       0    40691 40691   0         0     0      0   
-##        charge240       0    40691 40691   0.037     0.54  0      0   
-##       charge240b       0    40691 40691   0.0074    0.19  0      0   
-##          city08U       0    40691 40691   5.74     11.22  0      0   
-##         cityA08U       0    40691 40691   0.49      4.75  0      0   
-##           cityCD       0    40691 40691   0.00046   0.039 0      0   
-##            cityE       0    40691 40691   0.28      3.55  0      0   
-##           cityUF       0    40691 40691   0.0014    0.027 0      0   
-##  co2TailpipeAGpm       0    40691 40691  17.75     93.56  0      0   
-##   co2TailpipeGpm       0    40691 40691 467.55    122.97  0    386.39
-##          comb08U       0    40691 40691   6.42     11.95  0      0   
-##         combA08U       0    40691 40691   0.53      4.76  0      0   
-##            combE       0    40691 40691   0.29      3.61  0      0   
-##       combinedCD       0    40691 40691   0.00036   0.034 0      0   
-##       combinedUF       0    40691 40691   0.0014    0.027 0      0   
-##            displ     175    40516 40691   3.3       1.36  0      2.2 
-##       highway08U       0    40691 40691   7.6      13.52  0      0   
-##      highwayA08U       0    40691 40691   0.6       4.93  0      0   
-##        highwayCD       0    40691 40691   0.00024   0.029 0      0   
-##         highwayE       0    40691 40691   0.3       3.7   0      0   
-##        highwayUF       0    40691 40691   0.0013    0.026 0      0   
-##        rangeCity       0    40691 40691   0.6      11.19  0      0   
-##       rangeCityA       0    40691 40691   0.073     1.69  0      0   
-##         rangeHwy       0    40691 40691   0.58     11.19  0      0   
-##        rangeHwyA       0    40691 40691   0.067     1.52  0      0   
-##            UCity       0    40691 40691  23.06     10.63  0     18.18
-##           UCityA       0    40691 40691   0.82      6.88  0      0   
-##         UHighway       0    40691 40691  34.2      10.88  0     27.79
-##        UHighwayA       0    40691 40691   1.1       7.42  0      0   
-##     p50    p75    p100     hist
-##   16.48  19.39   47.09 ▁▁▇▅▁▁▁▁
-##    0      0      18.31 ▇▁▁▁▁▁▁▁
-##    0      0       0    ▁▁▁▇▁▁▁▁
-##    0      0      13    ▇▁▁▁▁▁▁▁
-##    0      0       8.5  ▇▁▁▁▁▁▁▁
-##    0     13.29  150    ▇▁▁▁▁▁▁▁
-##    0      0     145.08 ▇▁▁▁▁▁▁▁
-##    0      0       5.35 ▇▁▁▁▁▁▁▁
-##    0      0     122    ▇▁▁▁▁▁▁▁
-##    0      0       0.9  ▇▁▁▁▁▁▁▁
-##    0      0     713    ▇▁▁▁▁▁▁▁
-##  444.35 522.76 1269.57 ▁▁▇▅▁▁▁▁
-##    0     15.47  136    ▇▂▁▁▁▁▁▁
-##    0      0     133.27 ▇▁▁▁▁▁▁▁
-##    0      0     121    ▇▁▁▁▁▁▁▁
-##    0      0       4.8  ▇▁▁▁▁▁▁▁
-##    0      0       0.89 ▇▁▁▁▁▁▁▁
-##    3      4.3     8.4  ▁▆▇▅▃▃▁▁
-##    0     19.01  123.34 ▇▂▁▁▁▁▁▁
-##    0      0     121.2  ▇▁▁▁▁▁▁▁
-##    0      0       4.06 ▇▁▁▁▁▁▁▁
-##    0      0     120    ▇▁▁▁▁▁▁▁
-##    0      0       0.88 ▇▁▁▁▁▁▁▁
-##    0      0     333.11 ▇▁▁▁▁▁▁▁
-##    0      0     103.03 ▇▁▁▁▁▁▁▁
-##    0      0     346.9  ▇▁▁▁▁▁▁▁
-##    0      0      90.55 ▇▁▁▁▁▁▁▁
-##   21.32  25.8   224.8  ▇▂▁▁▁▁▁▁
-##    0      0     207.26 ▇▁▁▁▁▁▁▁
-##   33.15  39     182.7  ▁▇▁▁▁▁▁▁
-##    0      0     173.14 ▇▁▁▁▁▁▁▁</code></pre>
+<table>
+<caption><span id="tab:unnamed-chunk-3">Table 1: </span>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">vehicles</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">44889</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">83</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">character</td>
+<td align="left">23</td>
+</tr>
+<tr class="odd">
+<td align="left">logical</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">numeric</td>
+<td align="left">59</td>
+</tr>
+<tr class="odd">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table>
+<colgroup>
+<col width="19%" />
+<col width="13%" />
+<col width="19%" />
+<col width="5%" />
+<col width="5%" />
+<col width="8%" />
+<col width="12%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">empty</th>
+<th align="right">n_unique</th>
+<th align="right">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">drive</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">26</td>
+<td align="right">1186</td>
+<td align="right">8</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">eng_dscr</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">46</td>
+<td align="right">16803</td>
+<td align="right">574</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">fuelType</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">27</td>
+<td align="right">0</td>
+<td align="right">14</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">fuelType1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">17</td>
+<td align="right">0</td>
+<td align="right">6</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">make</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">34</td>
+<td align="right">0</td>
+<td align="right">141</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">model</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">47</td>
+<td align="right">0</td>
+<td align="right">4628</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">mpgData</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">trany</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">32</td>
+<td align="right">11</td>
+<td align="right">41</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">VClass</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">34</td>
+<td align="right">0</td>
+<td align="right">34</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">guzzler</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">42261</td>
+<td align="right">4</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">trans_dscr</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">15</td>
+<td align="right">29845</td>
+<td align="right">53</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">tCharger</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">35955</td>
+<td align="right">2</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">sCharger</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">43922</td>
+<td align="right">2</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">atvType</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">14</td>
+<td align="right">40546</td>
+<td align="right">9</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">fuelType2</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">11</td>
+<td align="right">43088</td>
+<td align="right">5</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">rangeA</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">11</td>
+<td align="right">43093</td>
+<td align="right">238</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">evMotor</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">51</td>
+<td align="right">43360</td>
+<td align="right">268</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">mfrCode</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">30808</td>
+<td align="right">53</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">c240Dscr</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">16</td>
+<td align="right">44758</td>
+<td align="right">6</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">c240bDscr</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">44</td>
+<td align="right">44764</td>
+<td align="right">8</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">createdOn</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">28</td>
+<td align="right">28</td>
+<td align="right">0</td>
+<td align="right">409</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">modifiedOn</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">28</td>
+<td align="right">28</td>
+<td align="right">0</td>
+<td align="right">251</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">startStop</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">31689</td>
+<td align="right">3</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: logical</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="left">count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">phevBlended</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">FAL: 44673, TRU: 216</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="9%" />
+<col width="12%" />
+<col width="8%" />
+<col width="8%" />
+<col width="9%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+<th align="left">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">barrels08</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">15.39</td>
+<td align="right">4.28</td>
+<td align="right">0.05</td>
+<td align="right">12.94</td>
+<td align="right">14.88</td>
+<td align="right">17.50</td>
+<td align="right">42.50</td>
+<td align="left">▁▇▃▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">barrelsA08</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.19</td>
+<td align="right">0.98</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">16.53</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">charge120</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="left">▁▁▇▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">charge240</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.09</td>
+<td align="right">0.88</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">15.30</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">city08</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">18.90</td>
+<td align="right">9.54</td>
+<td align="right">6.00</td>
+<td align="right">15.00</td>
+<td align="right">17.00</td>
+<td align="right">21.00</td>
+<td align="right">150.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">city08U</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">7.54</td>
+<td align="right">13.48</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">16.55</td>
+<td align="right">150.20</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">cityA08</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.84</td>
+<td align="right">6.40</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">145.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">cityA08U</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.70</td>
+<td align="right">6.31</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">145.08</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">cityCD</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.00</td>
+<td align="right">0.04</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">5.35</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">cityE</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.60</td>
+<td align="right">5.27</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">122.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">cityUF</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.00</td>
+<td align="right">0.04</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.93</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">co2</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">112.91</td>
+<td align="right">190.79</td>
+<td align="right">-1.00</td>
+<td align="right">-1.00</td>
+<td align="right">-1.00</td>
+<td align="right">292.00</td>
+<td align="right">979.00</td>
+<td align="left">▇▂▂▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">co2A</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">5.89</td>
+<td align="right">57.23</td>
+<td align="right">-1.00</td>
+<td align="right">-1.00</td>
+<td align="right">-1.00</td>
+<td align="right">-1.00</td>
+<td align="right">713.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">co2TailpipeAGpm</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">16.85</td>
+<td align="right">91.57</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">713.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">co2TailpipeGpm</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">459.57</td>
+<td align="right">126.87</td>
+<td align="right">0.00</td>
+<td align="right">386.00</td>
+<td align="right">444.35</td>
+<td align="right">522.76</td>
+<td align="right">1269.57</td>
+<td align="left">▁▇▃▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">comb08</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">21.12</td>
+<td align="right">9.10</td>
+<td align="right">7.00</td>
+<td align="right">17.00</td>
+<td align="right">20.00</td>
+<td align="right">23.00</td>
+<td align="right">142.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">comb08U</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">8.35</td>
+<td align="right">14.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">18.99</td>
+<td align="right">141.95</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">combA08</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.89</td>
+<td align="right">6.37</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">133.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">combA08U</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.74</td>
+<td align="right">6.24</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">133.27</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">combE</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.61</td>
+<td align="right">5.29</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">121.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">combinedCD</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.00</td>
+<td align="right">0.03</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">4.80</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">combinedUF</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.00</td>
+<td align="right">0.04</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.92</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">cylinders</td>
+<td align="right">378</td>
+<td align="right">0.99</td>
+<td align="right">5.71</td>
+<td align="right">1.77</td>
+<td align="right">2.00</td>
+<td align="right">4.00</td>
+<td align="right">6.00</td>
+<td align="right">6.00</td>
+<td align="right">16.00</td>
+<td align="left">▇▇▅▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">displ</td>
+<td align="right">376</td>
+<td align="right">0.99</td>
+<td align="right">3.28</td>
+<td align="right">1.36</td>
+<td align="right">0.00</td>
+<td align="right">2.20</td>
+<td align="right">3.00</td>
+<td align="right">4.20</td>
+<td align="right">8.40</td>
+<td align="left">▁▇▅▂▁</td>
+</tr>
+<tr class="odd">
+<td align="left">engId</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">7507.96</td>
+<td align="right">16668.25</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">164.00</td>
+<td align="right">4110.00</td>
+<td align="right">69102.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">feScore</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.74</td>
+<td align="right">2.93</td>
+<td align="right">-1.00</td>
+<td align="right">-1.00</td>
+<td align="right">-1.00</td>
+<td align="right">3.00</td>
+<td align="right">10.00</td>
+<td align="left">▇▁▂▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">fuelCost08</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">3556.53</td>
+<td align="right">986.75</td>
+<td align="right">450.00</td>
+<td align="right">2900.00</td>
+<td align="right">3450.00</td>
+<td align="right">4050.00</td>
+<td align="right">10850.00</td>
+<td align="left">▂▇▂▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">fuelCostA08</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">110.64</td>
+<td align="right">595.22</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">4550.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">ghgScore</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.74</td>
+<td align="right">2.93</td>
+<td align="right">-1.00</td>
+<td align="right">-1.00</td>
+<td align="right">-1.00</td>
+<td align="right">3.00</td>
+<td align="right">10.00</td>
+<td align="left">▇▁▂▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">ghgScoreA</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">-0.92</td>
+<td align="right">0.65</td>
+<td align="right">-1.00</td>
+<td align="right">-1.00</td>
+<td align="right">-1.00</td>
+<td align="right">-1.00</td>
+<td align="right">8.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">highway08</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">24.98</td>
+<td align="right">8.84</td>
+<td align="right">9.00</td>
+<td align="right">20.00</td>
+<td align="right">24.00</td>
+<td align="right">28.00</td>
+<td align="right">133.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">highway08U</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">9.74</td>
+<td align="right">15.32</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">23.11</td>
+<td align="right">133.03</td>
+<td align="left">▇▂▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">highwayA08</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.99</td>
+<td align="right">6.49</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">121.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">highwayA08U</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.80</td>
+<td align="right">6.30</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">121.20</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">highwayCD</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.00</td>
+<td align="right">0.03</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">4.06</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">highwayE</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.62</td>
+<td align="right">5.35</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">120.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">highwayUF</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.00</td>
+<td align="right">0.04</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.91</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">hlv</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">1.97</td>
+<td align="right">5.91</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">49.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">hpv</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">9.99</td>
+<td align="right">27.76</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">195.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">id</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">22592.27</td>
+<td align="right">13108.17</td>
+<td align="right">1.00</td>
+<td align="right">11223.00</td>
+<td align="right">22450.00</td>
+<td align="right">33974.00</td>
+<td align="right">45322.00</td>
+<td align="left">▇▇▇▇▇</td>
+</tr>
+<tr class="odd">
+<td align="left">lv2</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">1.76</td>
+<td align="right">4.30</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">41.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">lv4</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">5.99</td>
+<td align="right">9.53</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">13.00</td>
+<td align="right">55.00</td>
+<td align="left">▇▃▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">pv2</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">13.24</td>
+<td align="right">30.79</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">194.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">pv4</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">33.31</td>
+<td align="right">45.96</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">91.00</td>
+<td align="right">192.00</td>
+<td align="left">▇▁▅▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">range</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">1.74</td>
+<td align="right">21.10</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">520.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">rangeCity</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">1.53</td>
+<td align="right">20.26</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">520.80</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">rangeCityA</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.17</td>
+<td align="right">2.71</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">135.28</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">rangeHwy</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">1.43</td>
+<td align="right">19.14</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">520.50</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">rangeHwyA</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.15</td>
+<td align="right">2.43</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">114.76</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">UCity</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">23.96</td>
+<td align="right">13.57</td>
+<td align="right">0.00</td>
+<td align="right">18.50</td>
+<td align="right">21.80</td>
+<td align="right">26.21</td>
+<td align="right">224.80</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">UCityA</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">1.11</td>
+<td align="right">9.05</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">207.26</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">UHighway</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">35.07</td>
+<td align="right">12.75</td>
+<td align="right">0.00</td>
+<td align="right">28.00</td>
+<td align="right">33.50</td>
+<td align="right">39.64</td>
+<td align="right">187.10</td>
+<td align="left">▇▃▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">UHighwayA</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.89</td>
+<td align="right">5.66</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">173.14</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">year</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">2003.17</td>
+<td align="right">11.97</td>
+<td align="right">1984.00</td>
+<td align="right">1992.00</td>
+<td align="right">2004.00</td>
+<td align="right">2014.00</td>
+<td align="right">2023.00</td>
+<td align="left">▇▆▆▇▇</td>
+</tr>
+<tr class="odd">
+<td align="left">youSaveSpend</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">-5758.40</td>
+<td align="right">4962.51</td>
+<td align="right">-42250.00</td>
+<td align="right">-8250.00</td>
+<td align="right">-5250.00</td>
+<td align="right">-2500.00</td>
+<td align="right">9750.00</td>
+<td align="left">▁▁▂▇▂</td>
+</tr>
+<tr class="even">
+<td align="left">charge240b</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.02</td>
+<td align="right">0.33</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">9.60</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">phevCity</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.27</td>
+<td align="right">3.75</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">97.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">phevHwy</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.27</td>
+<td align="right">3.63</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">81.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">phevComb</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.27</td>
+<td align="right">3.67</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">88.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="data-exploration" class="section level1">
 <h1>Data Exploration</h1>
@@ -455,19 +1478,20 @@ theme_set(theme_glob)</code></pre>
 vehicles &lt;- vehicles %&gt;% 
   mutate(fuelType_f = gsub(fuelType1, pattern = regex(&#39;.*Gasoline&#39;, ignore_case = TRUE), replacement = &#39;Gasoline&#39;))
 
-current_model_year &lt;- max(vehicles$year)
+#current_model_year &lt;- max(vehicles$year)
+current_model_year &lt;- as.integer( format(Sys.Date(), &quot;%Y&quot;))
 
 vehicles %&gt;% 
   ggplot(aes(x=year)) +
   geom_bar( aes(fill = year), stat = &quot;count&quot;, show.legend = FALSE) + 
   labs(title = &quot;Models by Year&quot;, y = &quot;Count of models&quot;, x = &quot;Year&quot;) +
   scale_x_continuous(breaks =  seq( min(vehicles$year), max(vehicles$year), by = 2) )</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>
 <div id="vehicles-and-manufacturers" class="section level2">
 <h2>Vehicles and Manufacturers</h2>
 <p>How many manufacturers do we have?
-We have 135 total number of manufacturers in our list. Here are the top 20.</p>
+We have 141 total number of manufacturers in our list. Here are the top 20.</p>
 <pre class="r"><code>vehicles %&gt;% 
   count(make) %&gt;% 
   top_n(20, wt = n ) %&gt;% 
@@ -477,7 +1501,7 @@ We have 135 total number of manufacturers in our list. Here are the top 20.</p>
   geom_bar( aes(fill = make), stat = &quot;identity&quot;, show.legend = FALSE) + 
     labs(title = &quot;Top manufacturers by number of models&quot;, y = &quot;Count of models&quot;, x = &quot;Make&quot;) +
   coord_flip()</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>WTF, Chevrolet has close to 4000 models - this is not a real number because each manufacturer (make) has the same model coming back in a different year. We will need to identify truly unique models.</p>
 <pre class="r"><code>vehicles %&gt;% 
   count(make, model) %&gt;% count(make) %&gt;% top_n(20, wt = n) %&gt;% 
@@ -485,7 +1509,7 @@ We have 135 total number of manufacturers in our list. Here are the top 20.</p>
   geom_bar( aes(fill = make), stat = &quot;identity&quot;, show.legend = FALSE) + 
     labs(title = &quot;Top manufacturers by number of models - adjusted for model year&quot;, y = &quot;Count of models&quot;, x = &quot;Make&quot;) +
   coord_flip() </code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>This looks a lot better - Mercedes and BMW are the most prolific manufacturers with over 300 models.</p>
 </div>
 </div>
@@ -495,21 +1519,21 @@ We have 135 total number of manufacturers in our list. Here are the top 20.</p>
 The other issue is that this data contains other types of alternative fuels, we need to adjust for different fuel types.</p>
 <pre class="r"><code>vehicles %&gt;% 
   group_by(year) %&gt;% 
-  summarise(avgMPG = mean(comb08)) %&gt;% 
+  summarise(avgMPG = mean(comb08), .groups = &quot;drop&quot;) %&gt;% 
   ggplot(aes(x=year, y = avgMPG)) +
   geom_line(aes(color = avgMPG), alpha = 0.5, show.legend = FALSE) +
   geom_point(aes(color = avgMPG), show.legend = FALSE) +
   scale_x_continuous(breaks =  seq( min(vehicles$year), max(vehicles$year), by = 2) ) +
   scale_color_gradientn(colours=c(&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;)) +
   labs(title = &quot;Average fuel economy over the years&quot;, y = &quot;Avg MPG&quot;, x = &quot;Year&quot;)</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <div id="by-fuel-type" class="section level2">
 <h2>By Fuel type</h2>
 <p>Let’s look at the vehicles by the type of fuel - we had previously added an additional column that describes the different fuel types for these vehicles.
 Clearly, electric powered vehicles have an edge over other forms of fuel.</p>
 <pre class="r"><code>vehicles %&gt;% 
   group_by(year, fuelType_f) %&gt;% 
-  summarise(avgMPG = mean(comb08)) %&gt;% 
+  summarise(avgMPG = mean(comb08), .groups = &quot;drop&quot;) %&gt;% 
   ggplot(aes(x=year, y = avgMPG)) +
   geom_line(aes(color = avgMPG), alpha = 0.7, show.legend = FALSE) +
   geom_point(aes(color = avgMPG), alpha = 0.5, show.legend = FALSE) +
@@ -518,7 +1542,7 @@ Clearly, electric powered vehicles have an edge over other forms of fuel.</p>
   labs(title = &quot;Average fuel economy over the years by fuel type&quot;, y = &quot;Avg MPG&quot;, x = &quot;Year&quot;) +
   facet_wrap(~ fuelType_f, scales = &quot;free&quot;) +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1), legend.direction = &quot;horizontal&quot;, legend.position = &quot;top&quot;)</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
 <div id="by-vehicle-class" class="section level2">
 <h2>By Vehicle class</h2>
@@ -526,11 +1550,11 @@ Clearly, electric powered vehicles have an edge over other forms of fuel.</p>
 <pre class="r"><code>vehicles %&gt;% 
   filter(fuelType_f == &#39;Gasoline&#39;) %&gt;% 
   group_by(year, VClass) %&gt;% 
-  summarise(avgMPG = mean(comb08)) %&gt;% 
+  summarise(avgMPG = mean(comb08), .groups = &quot;drop&quot;) %&gt;% 
   ggplot() +
   ggridges::geom_density_ridges(aes(x = avgMPG, y = as.factor(VClass), fill = VClass), rel_min_height = 0.001, scale = 1, show.legend = FALSE) +
   labs(title = &quot;Fuel economy density by Vehicle class&quot;, y = &quot;Vehicle Class&quot;, x = &quot;Avg MPG&quot;) </code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>It’s clear that we are comparing apples to oranges - let’s roll up the data to create some vehicle classes and try this again.</p>
 <pre class="r"><code>vehicles &lt;- vehicles %&gt;% 
   mutate(VClass_f = case_when(str_detect(VClass, pattern = &quot;Trucks&quot;) ~ &quot;Pickup Trucks&quot;,
@@ -546,7 +1570,7 @@ Clearly, electric powered vehicles have an edge over other forms of fuel.</p>
   ggplot(aes(x = avgMPG, y = as.factor(VClass_f))) +
   geom_density_ridges(aes(fill = VClass_f), rel_min_height = 0.001, show.legend = FALSE, alpha = 0.7) +
   labs(title = &quot;Fuel economy density by Vehicle class&quot;, y = &quot;Vehicle Class&quot;, x = &quot;Avg MPG&quot;) </code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>Let’s see what kind of engine displacements we are talking about in this set. It’s clear that there is a correlation between displacement and fuel economy. We will explore that later.</p>
 <pre class="r"><code>vehicles %&gt;% 
   filter(fuelType_f == &#39;Gasoline&#39;, fuelType2 != &quot;Electricity&quot;) %&gt;% 
@@ -556,7 +1580,7 @@ Clearly, electric powered vehicles have an edge over other forms of fuel.</p>
   geom_density_ridges(aes(fill = VClass_f), rel_min_height = 0.001, show.legend = FALSE, alpha = 0.7) +
   labs(title = &quot;Engine displacement density by Vehicle class&quot;, y = &quot;Vehicle Class&quot;, x = &quot;Engine displacement (litres)&quot;) +
   scale_x_continuous(breaks = seq(1.6,6, by = 0.4))</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </div>
 <div id="engine-displacement-vs-fuel-economy" class="section level2">
 <h2>Engine displacement vs fuel economy</h2>
@@ -570,7 +1594,7 @@ Clearly, electric powered vehicles have an edge over other forms of fuel.</p>
   scale_color_brewer(palette = &quot;Set1&quot;) + 
   labs(title = &quot;Engine displacement vs Fuel Economy&quot;, y = &quot;Avg MPG&quot;, x = &quot;Engine displacement (litres)&quot;) +
   guides(color = guide_legend(title=&quot;Vehicle class&quot;))  </code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>Let’s also see how has economy improved over the years for each of these segments; cars and Vans have had the most improvement over time and SUVs are a relatively new segment and were only defined near 2000.
 The second chart shows the relative numbers of models in each class.</p>
 <pre class="r"><code>vehicles %&gt;% 
@@ -584,7 +1608,7 @@ The second chart shows the relative numbers of models in each class.</p>
   labs(title = &quot;Fuel economy by Vehicle class over time&quot;, y = &quot;Avg MPG&quot;, x = &quot;Year&quot;) +
   guides(color = guide_legend(title=&quot;Vehicle class&quot;)) +
   scale_color_brewer(palette = &quot;Set1&quot;)</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <pre class="r"><code>vehicles %&gt;% 
   filter(fuelType_f == &#39;Gasoline&#39;,VClass_f != &quot;Other&quot;) %&gt;% 
   group_by(year, VClass_f) %&gt;% 
@@ -595,7 +1619,7 @@ The second chart shows the relative numbers of models in each class.</p>
   guides(fill = guide_legend(title=&quot;Vehicle class&quot;)) +
   scale_y_continuous(labels = scales::percent, breaks = seq(0,1, by = .25)) +
   scale_fill_brewer(palette = &quot;Set1&quot;)</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 </div>
 <div id="by-manufacturers" class="section level2">
 <h2>By manufacturers</h2>
@@ -604,7 +1628,7 @@ We can see a wide swing in range between different models from a manufacturer. H
 <pre class="r"><code>vehicles %&gt;% 
   filter(fuelType_f == &#39;Gasoline&#39;,VClass_f == &quot;Cars&quot;, between(year, current_model_year-3, current_model_year)) %&gt;% 
   group_by(make) %&gt;% 
-  summarise(min = min(comb08), max = max(comb08)) %&gt;% 
+  summarise(min = min(comb08), max = max(comb08), .groups = &quot;drop&quot;) %&gt;% 
   
   ggplot() +
     geom_point(aes(x = reorder(make, -(max - min), order = TRUE ), y = max, color = make), size = 2, show.legend = FALSE)  +
@@ -613,7 +1637,7 @@ We can see a wide swing in range between different models from a manufacturer. H
     coord_flip() +
     scale_y_continuous(breaks = seq(10,60, by = 5)) +
     labs(title = paste0(&quot;Range of Avg MPG (&quot;, current_model_year -3, &quot;-&quot;, current_model_year, &quot; models)&quot;), x = &quot;Make&quot;, y = &quot;Min &lt;--MPG --&gt; Max&quot;)</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
 <div id="most-improved" class="section level2">
 <h2>Most Improved</h2>
@@ -624,8 +1648,7 @@ vehicles %&gt;%
   distinct(make, model, fuelType_f, trany, fuelType, cylinders) %&gt;% 
   inner_join(vehicles, by = c(&quot;make&quot;, &quot;model&quot;, &quot;trany&quot;, &quot;fuelType&quot;, &quot;cylinders&quot;)) %&gt;% 
   group_by(make, model, trany, fuelType, cylinders) %&gt;% 
-  summarise(years_sold = n_distinct(year), mpg_start = comb08[which.min(year)], mpg_end = comb08[which.max(year)], mpg_range = mpg_end - mpg_start, min_year = year[which.min(year)], max_year = year[which.max(year)]) %&gt;% 
-  ungroup() %&gt;% 
+  summarise(years_sold = n_distinct(year), mpg_start = comb08[which.min(year)], mpg_end = comb08[which.max(year)], mpg_range = mpg_end - mpg_start, min_year = year[which.min(year)], max_year = year[which.max(year)], .groups = &quot;drop&quot;) %&gt;% 
   mutate(avg_range = mean(mpg_range), sd_range = sd(mpg_range), shift = if_else(mpg_range &gt; 0, &quot;Better&quot;, &quot;Worse&quot;)) %&gt;% 
   filter(years_sold &gt; 2, mpg_range &gt; 3 * sd_range | mpg_range &lt; -2* sd_range) %&gt;% 
   
@@ -638,7 +1661,7 @@ vehicles %&gt;%
     labs(title =&quot;Change in Avg MPG&quot;, x = &quot;Model&quot;, y = &quot;MPG&quot;) +
     facet_wrap(~shift, scales = &quot;free&quot;) +
   coord_flip()</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 </div>
 <div id="most-fuel-efficient-models-in-class" class="section level2">
 <h2>Most fuel efficient Models in class</h2>
@@ -655,7 +1678,7 @@ vehicles %&gt;%
   labs(title =&quot;Highest MPG overall (combined)&quot;, x = &quot;Model&quot;, y = &quot;MPG&quot;) +
   scale_y_continuous(breaks = seq(30,60, by = 2)) +
   scale_color_brewer(palette = &quot;Dark2&quot;)</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 </div>
 <div id="by-vehicle-type" class="section level3">
 <h3>By Vehicle type</h3>
@@ -674,7 +1697,7 @@ Only look for full gasoline or hybrid vehicles, exclude any plug in hybrids</p>
   scale_y_continuous(breaks = seq(30,60, by = 2)) +
   #scale_color_brewer(palette = &quot;Dark2&quot;) +
   facet_wrap(~ VClass_f, scales =&quot;free&quot;)</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <p>Before we move on, let’s take a quick look at the worst overall MPG</p>
 </div>
 <div id="worst-mpg" class="section level3">
@@ -694,7 +1717,10 @@ Looking at this, at least Rolls Royce is constiently bad across most of it’s m
   scale_y_continuous(breaks = seq(0,20, by = 2)) +
   scale_color_brewer(palette = &quot;Dark2&quot;) +
   facet_wrap(~ VClass_f, scales =&quot;free&quot;)</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<pre><code>## Warning in RColorBrewer::brewer.pal(n, pal): n too large, allowed maximum for palette Dark2 is 8
+## Returning the palette you asked for with that many colors</code></pre>
+<pre><code>## Warning: Removed 11 rows containing missing values (geom_point).</code></pre>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 </div>
 </div>
 <div id="electric-vehicles" class="section level2">
@@ -716,7 +1742,7 @@ Looking at this, at least Rolls Royce is constiently bad across most of it’s m
   guides(fill = guide_legend(title=&quot;Vehicle class&quot;)) +
   geom_label(stat = &quot;count&quot;, aes(label = ..count.., y = ..count..)) +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1), legend.direction = &quot;horizontal&quot;, legend.position = &quot;top&quot;)</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <p>While EVs are still an extremely small segment of the total passenger vehicle segment, they are certainly starting to be noticed.
 Let’s look at the electric vehicle stats before we move to some machine learning.</p>
 </div>
@@ -733,10 +1759,9 @@ Let’s look at the electric vehicle stats before we move to some machine learni
   
   coord_flip() +
   labs(title =&quot;Highest MPG overall (Plug in hybrids)&quot;, x = &quot;Model&quot;, y = &quot;MPG&quot;) +
-  scale_y_continuous(breaks = seq(30,60, by = 2)) +
-  scale_color_brewer(palette = &quot;Dark2&quot;) +
-  facet_wrap(~ VClass_f, scales =&quot;free&quot;)</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+  #scale_y_continuous(breaks = seq(30,60, by = 2)) +
+  scale_color_brewer(palette = &quot;Dark2&quot;) </code></pre>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 </div>
 <div id="fully-electric" class="section level3">
 <h3>Fully electric</h3>
@@ -753,7 +1778,7 @@ Let’s look at the electric vehicle stats before we move to some machine learni
   labs(title =&quot;Highest MPGe overall (Full electric)&quot;, x = &quot;Model&quot;, y = &quot;MPG&quot;) +
   facet_wrap(~ VClass_f, scales =&quot;free&quot;) +
   scale_x_discrete(labels = function(x) abbreviate(x, minlength = 11L))</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 </div>
 <div id="fully-electric-range" class="section level3">
 <h3>Fully electric range</h3>
@@ -770,7 +1795,7 @@ Let’s look at the electric vehicle stats before we move to some machine learni
   labs(title =&quot;Longest Range (Full electric)&quot;, x = &quot;Model&quot;, y = &quot;Range (miles)&quot;) +
   facet_wrap(~ VClass_f, scales =&quot;free&quot;) +
   scale_x_discrete(labels = function(x) abbreviate(x, minlength = 11L))</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 </div>
 </div>
 </div>
@@ -790,33 +1815,27 @@ We’ll use a technique called Principal Component Analysis. Let’s take a look
   select(model, barrels08, co2TailpipeGpm, comb08, cylinders, displ, fuelCost08, highway08, city08, youSaveSpend)
  
 data &lt;- na.omit(data)
-rownames(data) &lt;- data$model</code></pre>
-<pre><code>## Warning: Setting row names on a tibble is deprecated.</code></pre>
-<pre class="r"><code>data &lt;- select(data, -model)
+data &lt;- column_to_rownames(data, var = &quot;model&quot;)
 data &lt;- as.data.frame(data)
 plot(data)</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <p>Before we run the principal components, we’ll scale the data to normalize it - that will ensure that the data ranges are normalized and one single element does not have a large range and does not dominate.</p>
 <pre class="r"><code>df &lt;- scale(data)
 pc &lt;- princomp(df)
 plot(pc)</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 <pre class="r"><code>plot(pc, type=&#39;l&#39;)</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-27-2.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-27-2.png" width="672" /></p>
 <pre class="r"><code>summary(pc)</code></pre>
 <pre><code>## Importance of components:
-##                          Comp.1     Comp.2     Comp.3    Comp.4
-## Standard deviation     2.812022 0.83975270 0.44481614 0.2540906
-## Proportion of Variance 0.880327 0.07850718 0.02202762 0.0071876
-## Cumulative Proportion  0.880327 0.95883416 0.98086178 0.9880494
-##                             Comp.5      Comp.6       Comp.7       Comp.8
-## Standard deviation     0.249338199 0.203219368 0.0560124163 2.721122e-02
-## Proportion of Variance 0.006921244 0.004597659 0.0003492812 8.243325e-05
-## Cumulative Proportion  0.994970627 0.999568286 0.9999175667 1.000000e+00
-##                        Comp.9
-## Standard deviation          0
-## Proportion of Variance      0
-## Cumulative Proportion       1</code></pre>
+##                           Comp.1     Comp.2     Comp.3      Comp.4      Comp.5
+## Standard deviation     2.8156032 0.87606082 0.38949760 0.263522444 0.196286100
+## Proportion of Variance 0.8827493 0.08546002 0.01689289 0.007732674 0.004290161
+## Cumulative Proportion  0.8827493 0.96820931 0.98510221 0.992834881 0.997125042
+##                             Comp.6      Comp.7       Comp.8       Comp.9
+## Standard deviation     0.151249481 0.048503553 2.428706e-02 2.126276e-08
+## Proportion of Variance 0.002547313 0.000261964 6.568172e-05 5.034237e-17
+## Cumulative Proportion  0.999672354 0.999934318 1.000000e+00 1.000000e+00</code></pre>
 <p>Given these charts, we will use the first three components from this data since most variation is present in these three.
 We have now simplified the data into fewer dimensions that have the most variance and are therefore the most important in deciding clusters.
 The columns we have selected are barrels08, co2TailpipeGpm, comb08</p>
@@ -824,7 +1843,7 @@ The columns we have selected are barrels08, co2TailpipeGpm, comb08</p>
 comp &lt;- data.frame(pc$x[,1:3])
 # Plot
 plot(comp, pch=16, col=rgb(0,0,0,0.5))</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 <div id="k-means" class="section level3">
 <h3>K-means</h3>
 <p>The k means algorithm tries to create groups of observatons by minimizing the distance between the observations, the other question to answer as we do this is to find out the optimal number of clusters.
@@ -837,14 +1856,14 @@ for (i in 2:15) wss[i] &lt;- sum(kmeans(comp,
                                      centers=i)$withinss)
 plot(1:15, wss, type=&quot;b&quot;, xlab=&quot;Number of Clusters&quot;,
      ylab=&quot;Within groups sum of squares&quot;)</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 <p>Based on the scree plot above, let’s go with 5 clusters within this data.</p>
 <pre class="r"><code># Only do this for gasoline cars initially
 set.seed(1215)
 k &lt;- kmeans(data, 5, nstart=25, iter.max=1000)
 palette(alpha(brewer.pal(9,&#39;Set1&#39;), 0.5))
 plot(comp, col=k$clust, pch=16)</code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
 <p>Finally, we can identify the vehicles that have been clustered together.</p>
 <pre class="r"><code>clust &lt;- names(table(k$clust))
 
@@ -854,526 +1873,478 @@ map(clust, function(x) {
   row.names(data[k$clust==x,])
 })</code></pre>
 <pre><code>## [[1]]
-##   [1] &quot;TLX FWD A-SPEC-Automatic (AM-S8)-4&quot;             
-##   [2] &quot;Cooper Convertible-Automatic (S6)-3&quot;            
-##   [3] &quot;Cooper Convertible-Manual 6-spd-3&quot;              
-##   [4] &quot;Cooper S Convertible-Automatic (S6)-4&quot;          
-##   [5] &quot;Cooper S Convertible-Manual 6-spd-4&quot;            
-##   [6] &quot;John Cooper Works Convertible-Automatic (S6)-4&quot; 
-##   [7] &quot;430i Convertible-Automatic (S8)-4&quot;              
-##   [8] &quot;430i xDrive Convertible-Automatic (S8)-4&quot;       
-##   [9] &quot;Cooper Hardtop 2 door-Automatic (S6)-3&quot;         
-##  [10] &quot;Cooper Hardtop 2 door-Manual 6-spd-3&quot;           
-##  [11] &quot;Cooper Hardtop 4 door-Automatic (S6)-3&quot;         
-##  [12] &quot;Cooper Hardtop 4 door-Manual 6-spd-3&quot;           
-##  [13] &quot;Cooper S Hardtop 2 door-Automatic (S6)-4&quot;       
-##  [14] &quot;Cooper S Hardtop 2 door-Manual 6-spd-4&quot;         
-##  [15] &quot;Cooper S Hardtop 4 door-Automatic (S6)-4&quot;       
-##  [16] &quot;Cooper S Hardtop 4 door-Manual 6-spd-4&quot;         
-##  [17] &quot;John Cooper Works Hardtop-Automatic (S6)-4&quot;     
-##  [18] &quot;John Cooper Works Hardtop-Manual 6-spd-4&quot;       
-##  [19] &quot;TLX FWD-Automatic (AM-S8)-4&quot;                    
-##  [20] &quot;430i Coupe-Automatic (S8)-4&quot;                    
-##  [21] &quot;430i xDrive Coupe-Automatic (S8)-4&quot;             
-##  [22] &quot;430i Gran Coupe-Automatic (S8)-4&quot;               
-##  [23] &quot;430i xDrive Gran Coupe-Automatic (S8)-4&quot;        
-##  [24] &quot;530i-Automatic (S8)-4&quot;                          
-##  [25] &quot;Cooper Clubman-Automatic (S6)-3&quot;                
-##  [26] &quot;Cooper Clubman-Manual 6-spd-3&quot;                  
-##  [27] &quot;Cooper Countryman-Automatic (S6)-3&quot;             
-##  [28] &quot;Cooper Countryman-Manual 6-spd-3&quot;               
-##  [29] &quot;Cooper Clubman All4-Automatic (S8)-3&quot;           
-##  [30] &quot;Cooper Clubman All4-Manual 6-spd-3&quot;             
-##  [31] &quot;Cooper Countryman All4-Manual 6-spd-3&quot;          
-##  [32] &quot;Cooper S Clubman-Automatic (S8)-4&quot;              
-##  [33] &quot;Cooper S Countryman-Automatic (S8)-4&quot;           
-##  [34] &quot;Cooper S Countryman All4-Automatic (S8)-4&quot;      
-##  [35] &quot;Cooper S Clubman All4-Automatic (S8)-4&quot;         
-##  [36] &quot;John Cooper Works Clubman All4-Automatic (S8)-4&quot;
-##  [37] &quot;XE-Automatic (S8)-4&quot;                            
-##  [38] &quot;XE AWD-Automatic (S8)-4&quot;                        
-##  [39] &quot;XF-Automatic (S8)-4&quot;                            
-##  [40] &quot;XF AWD-Automatic (S8)-4&quot;                        
-##  [41] &quot;Avalon-Automatic (S8)-6&quot;                        
-##  [42] &quot;Avalon XLE-Automatic (S8)-6&quot;                    
-##  [43] &quot;Cadenza-Automatic (S8)-6&quot;                       
-##  [44] &quot;Impreza Sport 4-Door-Manual 5-spd-4&quot;            
-##  [45] &quot;S90 AWD-Automatic (S8)-4&quot;                       
-##  [46] &quot;XTS-Automatic (S6)-6&quot;                           
-##  [47] &quot;Impala-Automatic (S6)-6&quot;                        
-##  [48] &quot;Impreza 5-Door-Manual 5-spd-4&quot;                  
-##  [49] &quot;Impreza Sport 5-Door-Manual 5-spd-4&quot;            
-##  [50] &quot;S60 FWD-Automatic (S8)-4&quot;                       
-##  [51] &quot;LaCrosse-Automatic (S9)-6&quot;                      
-##  [52] &quot;S90 FWD-Automatic (S8)-4&quot;                       
-##  [53] &quot;Impala-Automatic (S6)-4&quot;                        
-##  [54] &quot;V60 FWD-Automatic (S8)-4&quot;                       
-##  [55] &quot;V90 FWD-Automatic (S8)-4&quot;                       
-##  [56] &quot;Mustang-Manual 6-spd-4&quot;                         
-##  [57] &quot;Mustang Convertible-Manual 6-spd-4&quot;             
-##  [58] &quot;Mustang-Automatic (S10)-4&quot;                      
-##  [59] &quot;Mustang Convertible-Automatic (S10)-4&quot;          
-##  [60] &quot;Mustang Performance Package-Manual 6-spd-4&quot;     
-##  [61] &quot;Mustang Performance Package-Automatic (S10)-4&quot;  
-##  [62] &quot;Optima-Automatic (S6)-4&quot;                        
-##  [63] &quot;RLX Hybrid-Automatic (AM-S7)-6&quot;                 
-##  [64] &quot;Legacy AWD-Automatic (AV-S6)-6&quot;                 
-##  [65] &quot;ATS-Automatic (S8)-6&quot;                           
-##  [66] &quot;ATS AWD-Automatic (S8)-6&quot;                       
-##  [67] &quot;LaCrosse AWD-Automatic (S9)-6&quot;                  
-##  [68] &quot;Regal AWD-Automatic (S9)-6&quot;                     
-##  [69] &quot;CTS AWD-Automatic (S8)-6&quot;                       
-##  [70] &quot;230i Coupe-Automatic (S8)-4&quot;                    
-##  [71] &quot;230i xDrive Coupe-Automatic (S8)-4&quot;             
-##  [72] &quot;230i Convertible-Automatic (S8)-4&quot;              
-##  [73] &quot;230i xDrive Convertible-Automatic (S8)-4&quot;       
-##  [74] &quot;Camaro-Automatic (S8)-6&quot;                        
-##  [75] &quot;530i xDrive-Automatic (S8)-4&quot;                   
-##  [76] &quot;330i xDrive Gran Turismo-Automatic (S8)-4&quot;      
-##  [77] &quot;330i xDrive Sports Wagon-Automatic (S8)-4&quot;      
-##  [78] &quot;86-Automatic (S6)-4&quot;                            
-##  [79] &quot;CLA250 4matic-Automatic (AM7)-4&quot;                
-##  [80] &quot;CLA250-Automatic (AM7)-4&quot;                       
-##  [81] &quot;Sonata-Automatic (S8)-4&quot;                        
-##  [82] &quot;BRZ-Automatic (S6)-4&quot;                           
-##  [83] &quot;Malibu-Automatic 9-spd-4&quot;                       
-##  [84] &quot;Sentra Nismo-Manual 6-spd-4&quot;                    
-##  [85] &quot;Sentra-Automatic (AV-S7)-4&quot;                     
-##  [86] &quot;Sentra Nismo-Automatic (AV-S7)-4&quot;               
-##  [87] &quot;Challenger-Automatic 8-spd-6&quot;                   
-##  [88] &quot;Challenger GT-Automatic 8-spd-6&quot;                
-##  [89] &quot;Camry-Automatic (S8)-6&quot;                         
-##  [90] &quot;Camry XSE-Automatic (S8)-6&quot;                     
-##  [91] &quot;300-Automatic 8-spd-6&quot;                          
-##  [92] &quot;300 AWD-Automatic 8-spd-6&quot;                      
-##  [93] &quot;Charger-Automatic 8-spd-6&quot;                      
-##  [94] &quot;Charger AWD-Automatic 8-spd-6&quot;                  
-##  [95] &quot;AMG CLA45 4matic-Automatic (AM7)-4&quot;             
-##  [96] &quot;Giulia-Automatic 8-spd-4&quot;                       
-##  [97] &quot;Giulia AWD-Automatic 8-spd-4&quot;                   
-##  [98] &quot;Veloster N-Manual 6-spd-4&quot;                      
-##  [99] &quot;Regal-Automatic (S9)-4&quot;                         
-## [100] &quot;Fusion FWD-Automatic 6-spd-4&quot;                   
-## [101] &quot;Fusion AWD-Automatic (S6)-4&quot;                    
-## [102] &quot;ES 350-Automatic (S8)-6&quot;                        
-## [103] &quot;ES 350 F Sport-Automatic (S8)-6&quot;                
-## [104] &quot;MKZ AWD-Automatic (S6)-4&quot;                       
-## [105] &quot;MKZ FWD-Automatic (S6)-4&quot;                       
-## [106] &quot;MKZ FWD-Automatic (S6)-6&quot;                       
-## [107] &quot;C300 4matic-Automatic 9-spd-4&quot;                  
-## [108] &quot;C300-Automatic 9-spd-4&quot;                         
-## [109] &quot;CT6 AWD-Automatic (S10)-6&quot;                      
-## [110] &quot;CT6-Automatic (S10)-4&quot;                          
-## [111] &quot;Taurus FWD-Automatic (S6)-6&quot;                    
-## [112] &quot;Taurus FWD FFV-Automatic (S6)-6&quot;                
-## [113] &quot;LC 500h-Automatic (AV-S10)-6&quot;                   
-## [114] &quot;ILX-Automatic (AM-S8)-4&quot;                        
-## [115] &quot;Civic 2Dr-Manual 6-spd-4&quot;                       
-## [116] &quot;Civic 4Dr-Manual 6-spd-4&quot;                       
-## [117] &quot;A5 quattro-Automatic (AM-S7)-4&quot;                 
-## [118] &quot;A5 Cabriolet quattro-Automatic (AM-S7)-4&quot;       
-## [119] &quot;A4 quattro-Automatic (AM-S7)-4&quot;                 
-## [120] &quot;A5 Sportback quattro-Automatic (AM-S7)-4&quot;       
-## [121] &quot;Accord 2.0T Sport/Touring-Automatic 10-spd-4&quot;   
-## [122] &quot;LS 500h-Automatic (AV-S10)-6&quot;                   
-## [123] &quot;LS 500h AWD-Automatic (AV-S10)-6&quot;               
-## [124] &quot;GS 300-Automatic (S8)-4&quot;                        
-## [125] &quot;Elantra GT-Manual 6-spd-4&quot;                      
-## [126] &quot;Continental  FWD-Automatic (S6)-6&quot;              
-## [127] &quot;CLS450-Automatic 9-spd-6&quot;                       
-## [128] &quot;CLS450 4matic-Automatic 9-spd-6&quot;                
+##  [1] &quot;Spark-Automatic (variable gear ratios)-4&quot;                      
+##  [2] &quot;Spark ACTIV-Automatic (variable gear ratios)-4&quot;                
+##  [3] &quot;Spark-Manual 5-spd-4&quot;                                          
+##  [4] &quot;Insight Touring-Automatic (variable gear ratios)-4&quot;            
+##  [5] &quot;Insight-Automatic (variable gear ratios)-4&quot;                    
+##  [6] &quot;Sonata Hybrid-Automatic (AM-S6)-4&quot;                             
+##  [7] &quot;Sonata Hybrid Blue-Automatic (AM-S6)-4&quot;                        
+##  [8] &quot;Elantra-Automatic (AV-S1)-4&quot;                                   
+##  [9] &quot;Niro-Automatic (AM-S6)-4&quot;                                      
+## [10] &quot;Niro FE-Automatic (AM-S6)-4&quot;                                   
+## [11] &quot;Niro Touring-Automatic (AM-S6)-4&quot;                              
+## [12] &quot;Elantra Hybrid-Automatic (AM-S6)-4&quot;                            
+## [13] &quot;Elantra Hybrid Blue-Automatic (AM-S6)-4&quot;                       
+## [14] &quot;Corolla-Automatic (variable gear ratios)-4&quot;                    
+## [15] &quot;Corolla-Manual 6-spd-4&quot;                                        
+## [16] &quot;Corolla Hybrid-Automatic (variable gear ratios)-4&quot;             
+## [17] &quot;Corolla-Automatic (AV-S10)-4&quot;                                  
+## [18] &quot;Corolla XSE-Automatic (AV-S10)-4&quot;                              
+## [19] &quot;Corolla APEX-Automatic (AV-S10)-4&quot;                             
+## [20] &quot;Prius-Automatic (variable gear ratios)-4&quot;                      
+## [21] &quot;Prius AWD-Automatic (variable gear ratios)-4&quot;                  
+## [22] &quot;Prius Eco-Automatic (variable gear ratios)-4&quot;                  
+## [23] &quot;Accent-Automatic (AV-S1)-4&quot;                                    
+## [24] &quot;Civic 4Dr-Automatic (variable gear ratios)-4&quot;                  
+## [25] &quot;Civic 4Dr-Automatic (AV-S7)-4&quot;                                 
+## [26] &quot;Ioniq-Automatic (AM-S6)-4&quot;                                     
+## [27] &quot;Ioniq Blue-Automatic (AM-S6)-4&quot;                                
+## [28] &quot;Corolla Hatchback-Automatic (AV-S10)-4&quot;                        
+## [29] &quot;Corolla Hatchback XSE-Automatic (AV-S10)-4&quot;                    
+## [30] &quot;Mirage-Manual 5-spd-3&quot;                                         
+## [31] &quot;Mirage-Automatic (variable gear ratios)-3&quot;                     
+## [32] &quot;Mirage G4-Manual 5-spd-3&quot;                                      
+## [33] &quot;Mirage G4-Automatic (variable gear ratios)-3&quot;                  
+## [34] &quot;Camry Hybrid LE-Automatic (AV-S6)-4&quot;                           
+## [35] &quot;Camry Hybrid SE/XLE/XSE-Automatic (AV-S6)-4&quot;                   
+## [36] &quot;Avalon Hybrid-Automatic (AV-S6)-4&quot;                             
+## [37] &quot;Avalon Hybrid XLE-Automatic (AV-S6)-4&quot;                         
+## [38] &quot;ES 300h-Automatic (AV-S6)-4&quot;                                   
+## [39] &quot;UX 250h-Automatic (AV-S6)-4&quot;                                   
+## [40] &quot;UX 250h AWD-Automatic (AV-S6)-4&quot;                               
+## [41] &quot;Civic 5Dr-Automatic (variable gear ratios)-4&quot;                  
+## [42] &quot;Civic 5Dr-Automatic (AV-S7)-4&quot;                                 
+## [43] &quot;Rio-Automatic (AV-S1)-4&quot;                                       
+## [44] &quot;Forte FE-Automatic (variable gear ratios)-4&quot;                   
+## [45] &quot;Forte-Automatic (variable gear ratios)-4&quot;                      
+## [46] &quot;Accord-Automatic (variable gear ratios)-4&quot;                     
+## [47] &quot;Accord Hybrid-Automatic (variable gear ratios)-4&quot;              
+## [48] &quot;Accord Hybrid Sport/Touring-Automatic (variable gear ratios)-4&quot;
+## [49] &quot;Jetta-Manual 6-spd-4&quot;                                          
+## [50] &quot;Jetta SE/SEL-Automatic (S8)-4&quot;                                 
+## [51] &quot;Jetta-Automatic (S8)-4&quot;                                        
+## [52] &quot;Versa-Automatic (variable gear ratios)-4&quot;                      
+## [53] &quot;Sentra-Automatic (variable gear ratios)-4&quot;                     
+## [54] &quot;Kicks-Automatic (variable gear ratios)-4&quot;                      
 ## 
 ## [[2]]
-##   [1] &quot;G70 RWD-Automatic (S8)-6&quot;                         
-##   [2] &quot;G70 AWD-Automatic (S8)-4&quot;                         
-##   [3] &quot;G70 RWD-Automatic (S8)-4&quot;                         
-##   [4] &quot;G70 RWD-Manual 6-spd-4&quot;                           
-##   [5] &quot;TLX FWD A-SPEC-Automatic (S9)-6&quot;                  
-##   [6] &quot;TLX AWD-Automatic (S9)-6&quot;                         
-##   [7] &quot;TLX AWD A-SPEC-Automatic (S9)-6&quot;                  
-##   [8] &quot;John Cooper Works Convertible-Manual 6-spd-4&quot;     
-##   [9] &quot;440i Convertible-Automatic (S8)-6&quot;                
-##  [10] &quot;440i xDrive Convertible-Automatic (S8)-6&quot;         
-##  [11] &quot;TLX FWD-Automatic (S9)-6&quot;                         
-##  [12] &quot;430i Coupe-Manual 6-spd-4&quot;                        
-##  [13] &quot;440i Coupe-Automatic (S8)-6&quot;                      
-##  [14] &quot;440i Coupe-Manual 6-spd-6&quot;                        
-##  [15] &quot;440i xDrive Coupe-Automatic (S8)-6&quot;               
-##  [16] &quot;440i xDrive Coupe-Manual 6-spd-6&quot;                 
-##  [17] &quot;440i Gran Coupe-Automatic (S8)-6&quot;                 
-##  [18] &quot;440i xDrive Gran Coupe-Automatic (S8)-6&quot;          
-##  [19] &quot;640i Gran Coupe-Automatic (S8)-6&quot;                 
-##  [20] &quot;640i xDrive Gran Coupe-Automatic (S8)-6&quot;          
-##  [21] &quot;650i Gran Coupe-Automatic (S8)-8&quot;                 
-##  [22] &quot;Q70-Automatic (S7)-6&quot;                             
-##  [23] &quot;Cooper Countryman All4-Automatic (S8)-3&quot;          
-##  [24] &quot;Cooper S Clubman-Manual 6-spd-4&quot;                  
-##  [25] &quot;Cooper S Countryman All4-Manual 6-spd-4&quot;          
-##  [26] &quot;Cooper S Clubman All4-Manual 6-spd-4&quot;             
-##  [27] &quot;John Cooper Works Clubman All4-Manual 6-spd-4&quot;    
-##  [28] &quot;JCW Countryman All4-Manual 6-spd-4&quot;               
-##  [29] &quot;740i-Automatic (S8)-6&quot;                            
-##  [30] &quot;740i xDrive-Automatic (S8)-6&quot;                     
-##  [31] &quot;750i-Automatic (S8)-8&quot;                            
-##  [32] &quot;JCW Countryman All4-Automatic (S8)-4&quot;             
-##  [33] &quot;WRX-Manual 6-spd-4&quot;                               
-##  [34] &quot;WRX-Automatic (AV-S8)-4&quot;                          
-##  [35] &quot;911 Carrera-Automatic (AM-S7)-6&quot;                  
-##  [36] &quot;911 Carrera Cabriolet-Manual 7-spd-6&quot;             
-##  [37] &quot;911 Carrera Cabriolet-Automatic (AM-S7)-6&quot;        
-##  [38] &quot;911 Carrera S-Manual 7-spd-6&quot;                     
-##  [39] &quot;911 Carrera S-Automatic (AM-S7)-6&quot;                
-##  [40] &quot;911 Carrera S Cabriolet-Automatic (AM-S7)-6&quot;      
-##  [41] &quot;911 Carrera 4-Manual 7-spd-6&quot;                     
-##  [42] &quot;911 Carrera 4 Cabriolet-Manual 7-spd-6&quot;           
-##  [43] &quot;911 Carrera 4 Cabriolet-Automatic (AM-S7)-6&quot;      
-##  [44] &quot;911 Carrera 4S-Manual 7-spd-6&quot;                    
-##  [45] &quot;911 Carrera 4S-Automatic (AM-S7)-6&quot;               
-##  [46] &quot;911 Targa 4-Manual 7-spd-6&quot;                       
-##  [47] &quot;911 Targa 4-Automatic (AM-S7)-6&quot;                  
-##  [48] &quot;911 Targa 4S-Manual 7-spd-6&quot;                      
-##  [49] &quot;911 Targa 4S-Automatic (AM-S7)-6&quot;                 
-##  [50] &quot;911 Carrera 4 GTS Cabriolet-Manual 7-spd-6&quot;       
-##  [51] &quot;911 Carrera 4 GTS Cabriolet-Automatic (AM-S7)-6&quot;  
-##  [52] &quot;911 Targa 4 GTS-Manual 7-spd-6&quot;                   
-##  [53] &quot;911 Targa 4 GTS-Automatic (AM-S7)-6&quot;              
-##  [54] &quot;911 Carrera T-Automatic (AM-S7)-6&quot;                
-##  [55] &quot;911 Carrera-Manual 7-spd-6&quot;                       
-##  [56] &quot;911 Carrera S Cabriolet-Manual 7-spd-6&quot;           
-##  [57] &quot;911 Carrera 4-Automatic (AM-S7)-6&quot;                
-##  [58] &quot;911 Carrera 4S Cabriolet-Manual 7-spd-6&quot;          
-##  [59] &quot;911 Carrera 4S Cabriolet-Automatic (AM-S7)-6&quot;     
-##  [60] &quot;911 Carrera GTS-Manual 7-spd-6&quot;                   
-##  [61] &quot;911 Carrera GTS-Automatic (AM-S7)-6&quot;              
-##  [62] &quot;911 Carrera GTS Cabriolet-Manual 7-spd-6&quot;         
-##  [63] &quot;911 Carrera GTS Cabriolet-Automatic (AM-S7)-6&quot;    
-##  [64] &quot;911 Carrera 4 GTS-Manual 7-spd-6&quot;                 
-##  [65] &quot;911 Carrera 4 GTS-Automatic (AM-S7)-6&quot;            
-##  [66] &quot;XE-Automatic (S8)-6&quot;                              
-##  [67] &quot;XE AWD-Automatic (S8)-6&quot;                          
-##  [68] &quot;XF-Automatic (S8)-6&quot;                              
-##  [69] &quot;XF AWD-Automatic (S8)-6&quot;                          
-##  [70] &quot;XJ-Automatic (S8)-6&quot;                              
-##  [71] &quot;XJL-Automatic (S8)-6&quot;                             
-##  [72] &quot;XF Sportbrake AWD-Automatic (S8)-6&quot;               
-##  [73] &quot;Cascada-Automatic (S6)-4&quot;                         
-##  [74] &quot;S60 AWD-Automatic (S8)-4&quot;                         
-##  [75] &quot;V60 AWD-Automatic (S8)-4&quot;                         
-##  [76] &quot;V90 AWD-Automatic (S8)-4&quot;                         
-##  [77] &quot;V90 CC AWD-Automatic (S8)-4&quot;                      
-##  [78] &quot;Mustang-Manual 6-spd-8&quot;                           
-##  [79] &quot;Mustang Convertible-Automatic (S10)-8&quot;            
-##  [80] &quot;Mustang-Automatic (S10)-8&quot;                        
-##  [81] &quot;Mustang Bullitt-Manual 6-spd-8&quot;                   
-##  [82] &quot;RLX-Automatic (S10)-6&quot;                            
-##  [83] &quot;911 Turbo-Automatic (AM-S7)-6&quot;                    
-##  [84] &quot;911 Turbo Cabriolet-Automatic (AM-S7)-6&quot;          
-##  [85] &quot;911 Turbo S-Automatic (AM-S7)-6&quot;                  
-##  [86] &quot;911 Turbo S Cabriolet-Automatic (AM-S7)-6&quot;        
-##  [87] &quot;ATS AWD-Automatic (S8)-4&quot;                         
-##  [88] &quot;ATS-Automatic (S8)-4&quot;                             
-##  [89] &quot;CTS AWD-Automatic (S8)-4&quot;                         
-##  [90] &quot;CTS-Automatic (S8)-4&quot;                             
-##  [91] &quot;500 L-Automatic 6-spd-4&quot;                          
-##  [92] &quot;230i Coupe-Manual 6-spd-4&quot;                        
-##  [93] &quot;M240i Coupe M Performance-Automatic (S8)-6&quot;       
-##  [94] &quot;M240i Coupe M Performance-Manual 6-spd-6&quot;         
-##  [95] &quot;M240i xDrive Coupe M Performance-Automatic (S8)-6&quot;
-##  [96] &quot;M240i Coupe-Automatic (S8)-6&quot;                     
-##  [97] &quot;M240i Coupe-Manual 6-spd-6&quot;                       
-##  [98] &quot;M240i xDrive Coupe-Automatic (S8)-6&quot;              
-##  [99] &quot;M240i Convertible-Automatic (S8)-6&quot;               
-## [100] &quot;M240i Convertible-Manual 6-spd-6&quot;                 
-## [101] &quot;M240i xDrive Convertible-Automatic (S8)-6&quot;        
-## [102] &quot;Camaro-Manual 6-spd-6&quot;                            
-## [103] &quot;Camaro-Manual 6-spd-4&quot;                            
-## [104] &quot;Camaro-Automatic (S8)-4&quot;                          
-## [105] &quot;540i-Automatic (S8)-6&quot;                            
-## [106] &quot;540i xDrive-Automatic (S8)-6&quot;                     
-## [107] &quot;Stinger AWD-Automatic (S8)-4&quot;                     
-## [108] &quot;Stinger RWD-Automatic (S8)-4&quot;                     
-## [109] &quot;Stinger AWD-Automatic (S8)-6&quot;                     
-## [110] &quot;Stinger RWD-Automatic (S8)-6&quot;                     
-## [111] &quot;340i xDrive Gran Turismo-Automatic (S8)-6&quot;        
-## [112] &quot;640i xDrive Gran Turismo-Automatic (S8)-6&quot;        
-## [113] &quot;86-Manual 6-spd-4&quot;                                
-## [114] &quot;BRZ-Manual 6-spd-4&quot;                               
-## [115] &quot;Regal AWD-Automatic (S8)-4&quot;                       
-## [116] &quot;Regal TourX AWD-Automatic (S8)-4&quot;                 
-## [117] &quot;C300 Coupe-Automatic 9-spd-4&quot;                     
-## [118] &quot;C300 4matic Coupe-Automatic 9-spd-4&quot;              
-## [119] &quot;C300 Convertible-Automatic 9-spd-4&quot;               
-## [120] &quot;E300-Automatic 9-spd-4&quot;                           
-## [121] &quot;E300 4matic-Automatic 9-spd-4&quot;                    
-## [122] &quot;AMG GLA45 4matic-Automatic (AM7)-4&quot;               
-## [123] &quot;C300 4matic Convertible-Automatic 9-spd-4&quot;        
-## [124] &quot;E450 Coupe-Automatic 9-spd-6&quot;                     
-## [125] &quot;E450 4matic Coupe-Automatic 9-spd-6&quot;              
-## [126] &quot;E450 Convertible-Automatic 9-spd-6&quot;               
-## [127] &quot;E450 4matic Convertible-Automatic 9-spd-6&quot;        
-## [128] &quot;Fusion AWD-Automatic (S6)-6&quot;                      
-## [129] &quot;Q50-Automatic (S7)-6&quot;                             
-## [130] &quot;Q50 AWD-Automatic (S7)-6&quot;                         
-## [131] &quot;Q50 Red Sport-Automatic (S7)-6&quot;                   
-## [132] &quot;Q50 Red Sport  AWD-Automatic (S7)-6&quot;              
-## [133] &quot;MKZ AWD-Automatic (S6)-6&quot;                         
-## [134] &quot;E450 4matic-Automatic 9-spd-6&quot;                    
-## [135] &quot;S450-Automatic 9-spd-6&quot;                           
-## [136] &quot;S450 4matic-Automatic 9-spd-6&quot;                    
-## [137] &quot;E400 4matic (station wagon)-Automatic 9-spd-6&quot;    
-## [138] &quot;Taurus AWD-Automatic (S6)-6&quot;                      
-## [139] &quot;Taurus AWD FFV-Automatic (S6)-6&quot;                  
-## [140] &quot;S560 4matic-Automatic 9-spd-8&quot;                    
-## [141] &quot;K900-Automatic (S8)-6&quot;                            
-## [142] &quot;V60 CC AWD-Automatic (S8)-4&quot;                      
-## [143] &quot;IS 300 AWD-Automatic (S6)-6&quot;                      
-## [144] &quot;IS 350-Automatic (S8)-6&quot;                          
-## [145] &quot;IS 350 AWD-Automatic (S6)-6&quot;                      
-## [146] &quot;IS 300-Automatic (S8)-4&quot;                          
-## [147] &quot;GS 350-Automatic (S8)-6&quot;                          
-## [148] &quot;GS 350 AWD-Automatic (S6)-6&quot;                      
-## [149] &quot;GS 350 F Sport-Automatic (S8)-6&quot;                  
-## [150] &quot;GS 300 F Sport-Automatic (S8)-4&quot;                  
-## [151] &quot;LS 500-Automatic (S10)-6&quot;                         
-## [152] &quot;LS 500 AWD-Automatic (S10)-6&quot;                     
-## [153] &quot;Continental  AWD-Automatic (S6)-6&quot;                
-## [154] &quot;S560-Automatic 9-spd-8&quot;                           
-## [155] &quot;RC 300 AWD-Automatic (S6)-6&quot;                      
-## [156] &quot;RC 350-Automatic (S8)-6&quot;                          
-## [157] &quot;RC 350 AWD-Automatic (S6)-6&quot;                      
-## [158] &quot;RC 300-Automatic (S8)-4&quot;                          
-## [159] &quot;AMG E53 4matic Plus Coupe-Automatic 9-spd-6&quot;      
-## [160] &quot;AMG CLS53 4matic Plus-Automatic 9-spd-6&quot;          
-## [161] &quot;AMG E53 4matic Plus-Automatic 9-spd-6&quot;            
-## [162] &quot;A8 L-Automatic (S8)-6&quot;                            
-## [163] &quot;S5-Automatic (S8)-6&quot;                              
-## [164] &quot;S5 Cabriolet-Automatic (S8)-6&quot;                    
-## [165] &quot;RS 5-Automatic (S8)-6&quot;                            
-## [166] &quot;S3-Automatic (AM-S7)-4&quot;                           
-## [167] &quot;Q60-Automatic (S7)-6&quot;                             
-## [168] &quot;Q60 Red Sport-Automatic (S7)-6&quot;                   
-## [169] &quot;Q60-Automatic (S7)-4&quot;                             
-## [170] &quot;Q60 AWD-Automatic (S7)-4&quot;                         
-## [171] &quot;Q60 Red Sport AWD-Automatic (S7)-6&quot;               
-## [172] &quot;Q60 AWD-Automatic (S7)-6&quot;                         
-## [173] &quot;AMG E53 4matic Plus Convertible-Automatic 9-spd-6&quot;
-## [174] &quot;S4-Automatic (S8)-6&quot;                              
-## [175] &quot;S5 Sportback-Automatic (S8)-6&quot;                    
-## [176] &quot;A7 quattro-Automatic (AM-S7)-6&quot;                   
-## [177] &quot;A6 quattro-Automatic (AM-S7)-6&quot;                   
-## [178] &quot;Q50-Automatic (S7)-4&quot;                             
-## [179] &quot;Q50 AWD-Automatic (S7)-4&quot;                         
+##   [1] &quot;Stinger AWD-Automatic (S8)-6&quot;                        
+##   [2] &quot;Stinger RWD-Automatic (S8)-6&quot;                        
+##   [3] &quot;G70 RWD-Automatic (S8)-6&quot;                            
+##   [4] &quot;G70 AWD-Automatic (S8)-6&quot;                            
+##   [5] &quot;M850i xDrive Coupe-Automatic (S8)-8&quot;                 
+##   [6] &quot;M850i xDrive Convertible-Automatic (S8)-8&quot;           
+##   [7] &quot;M850i xDrive Gran Coupe-Automatic (S8)-8&quot;            
+##   [8] &quot;Alpina B8 Gran Coupe-Automatic (S8)-8&quot;               
+##   [9] &quot;750i xDrive Sedan-Automatic (S8)-8&quot;                  
+##  [10] &quot;Alpina B7 xDrive-Automatic (S8)-8&quot;                   
+##  [11] &quot;Veloster N-Automatic (AM-S8)-4&quot;                      
+##  [12] &quot;G90 AWD-Automatic (S8)-6&quot;                            
+##  [13] &quot;G90 RWD-Automatic (S8)-6&quot;                            
+##  [14] &quot;G90 AWD-Automatic (S8)-8&quot;                            
+##  [15] &quot;G90 RWD-Automatic (S8)-8&quot;                            
+##  [16] &quot;CT4 V-Automatic (S10)-6&quot;                             
+##  [17] &quot;CT4 V-Manual 6-spd-6&quot;                                
+##  [18] &quot;Continental GT V8 Convertible-Automatic (AM-S8)-8&quot;   
+##  [19] &quot;RS 5 Coupe-Automatic (S8)-6&quot;                         
+##  [20] &quot;Continental GT-Automatic (AM-S8)-8&quot;                  
+##  [21] &quot;RS 5 Sportback-Automatic (S8)-6&quot;                     
+##  [22] &quot;CT5 AWD-Automatic (S10)-6&quot;                           
+##  [23] &quot;CT5 V AWD-Automatic (S10)-6&quot;                         
+##  [24] &quot;CT5-Automatic (S10)-6&quot;                               
+##  [25] &quot;CT5 V-Automatic (S10)-6&quot;                             
+##  [26] &quot;M4 Coupe-Manual 6-spd-6&quot;                             
+##  [27] &quot;M4 Competition Coupe-Automatic (S8)-6&quot;               
+##  [28] &quot;M4 Competition M xDrive Convertible-Automatic (S8)-6&quot;
+##  [29] &quot;M3 Sedan-Manual 6-spd-6&quot;                             
+##  [30] &quot;M3 Competition Sedan-Automatic (S8)-6&quot;               
+##  [31] &quot;S6-Automatic (S8)-6&quot;                                 
+##  [32] &quot;S7-Automatic (S8)-6&quot;                                 
+##  [33] &quot;Camaro-Manual 6-spd-4&quot;                               
+##  [34] &quot;Giulia-Automatic 8-spd-6&quot;                            
+##  [35] &quot;M550i xDrive Sedan-Automatic (S8)-8&quot;                 
+##  [36] &quot;BRZ-Manual 6-spd-4&quot;                                  
+##  [37] &quot;M4 Competition M xDrive Coupe-Automatic (S8)-6&quot;      
+##  [38] &quot;M3 Competition M xDrive Sedan-Automatic (S8)-6&quot;      
+##  [39] &quot;Ghibli Modena AWD-Automatic 8-spd-6&quot;                 
+##  [40] &quot;Ghibli GT-Automatic 8-spd-6&quot;                         
+##  [41] &quot;Ghibli Modena RWD-Automatic 8-spd-6&quot;                 
+##  [42] &quot;G80 AWD-Automatic (S8)-6&quot;                            
+##  [43] &quot;Quattroporte Modena AWD-Automatic 8-spd-6&quot;           
+##  [44] &quot;Quattroporte Modena RWD-Automatic 8-spd-6&quot;           
+##  [45] &quot;Quattroporte GT-Automatic 8-spd-6&quot;                   
+##  [46] &quot;911 Carrera-Automatic (AM-S8)-6&quot;                     
+##  [47] &quot;911 Carrera Cabriolet-Automatic (AM-S8)-6&quot;           
+##  [48] &quot;911 Carrera S-Manual 7-spd-6&quot;                        
+##  [49] &quot;911 Carrera S-Automatic (AM-S8)-6&quot;                   
+##  [50] &quot;911 Carrera S Cabriolet-Manual 7-spd-6&quot;              
+##  [51] &quot;911 Carrera S Cabriolet-Automatic (AM-S8)-6&quot;         
+##  [52] &quot;911 Carrera 4S-Manual 7-spd-6&quot;                       
+##  [53] &quot;911 Carrera 4S-Automatic (AM-S8)-6&quot;                  
+##  [54] &quot;911 Carrera 4S Cabriolet-Manual 7-spd-6&quot;             
+##  [55] &quot;911 Carrera 4S Cabriolet-Automatic (AM-S8)-6&quot;        
+##  [56] &quot;911 Carrera 4-Automatic (AM-S8)-6&quot;                   
+##  [57] &quot;911 Carrera 4 Cabriolet-Automatic (AM-S8)-6&quot;         
+##  [58] &quot;911 Targa 4S-Automatic (AM-S8)-6&quot;                    
+##  [59] &quot;911 Targa 4S-Manual 7-spd-6&quot;                         
+##  [60] &quot;911 Targa 4-Automatic (AM-S8)-6&quot;                     
+##  [61] &quot;Roma-Automatic (AM8)-8&quot;                              
+##  [62] &quot;Portofino M-Automatic (AM8)-8&quot;                       
+##  [63] &quot;Q60-Automatic (S7)-6&quot;                                
+##  [64] &quot;Q60 Red Sport-Automatic (S7)-6&quot;                      
+##  [65] &quot;Q60 Red Sport AWD-Automatic (S7)-6&quot;                  
+##  [66] &quot;Q60 AWD-Automatic (S7)-6&quot;                            
+##  [67] &quot;RC F-Automatic (S8)-8&quot;                               
+##  [68] &quot;RC 300 AWD-Automatic (S6)-6&quot;                         
+##  [69] &quot;RC 350 AWD-Automatic (S6)-6&quot;                         
+##  [70] &quot;IS 300 AWD-Automatic (S6)-6&quot;                         
+##  [71] &quot;IS 350 AWD-Automatic (S6)-6&quot;                         
+##  [72] &quot;IS 500-Automatic (S8)-8&quot;                             
+##  [73] &quot;Q50 AWD-Automatic (S7)-6&quot;                            
+##  [74] &quot;Q50 Red Sport-Automatic (S7)-6&quot;                      
+##  [75] &quot;Q50 Red Sport  AWD-Automatic (S7)-6&quot;                 
+##  [76] &quot;A8 L quattro-Automatic (S8)-6&quot;                       
+##  [77] &quot;Panamera-Automatic (AM-S8)-6&quot;                        
+##  [78] &quot;Panamera 4S-Automatic (AM-S8)-6&quot;                     
+##  [79] &quot;Panamera 4S Executive-Automatic (AM-S8)-6&quot;           
+##  [80] &quot;Panamera 4S ST-Automatic (AM-S8)-6&quot;                  
+##  [81] &quot;Panamera 4-Automatic (AM-S8)-6&quot;                      
+##  [82] &quot;Panamera 4 Executive-Automatic (AM-S8)-6&quot;            
+##  [83] &quot;Panamera 4 ST-Automatic (AM-S8)-6&quot;                   
+##  [84] &quot;GR 86-Manual 6-spd-4&quot;                                
+##  [85] &quot;TLX Type-S-Automatic (S10)-6&quot;                        
+##  [86] &quot;TLX Type-S Perf Tire-Automatic (S10)-6&quot;              
+##  [87] &quot;LC 500 Convertible-Automatic (S10)-8&quot;                
+##  [88] &quot;LC 500-Automatic (S10)-8&quot;                            
+##  [89] &quot;AMG E53 4matic Plus Convertible-Automatic 9-spd-6&quot;   
+##  [90] &quot;AMG GT 53 4matic Plus-Automatic 9-spd-6&quot;             
+##  [91] &quot;AMG GT 43 4matic Plus-Automatic 9-spd-6&quot;             
+##  [92] &quot;AMG GLB35 4matic-Automatic (AM8)-4&quot;                  
+##  [93] &quot;AMG C43 4matic Coupe-Automatic 9-spd-6&quot;              
+##  [94] &quot;AMG C43 4matic Convertible-Automatic 9-spd-6&quot;        
+##  [95] &quot;LS 500-Automatic (S10)-6&quot;                            
+##  [96] &quot;LS 500 AWD-Automatic (S10)-6&quot;                        
+##  [97] &quot;DB11 V8-Automatic 8-spd-8&quot;                           
+##  [98] &quot;S580 4matic Maybach-Automatic 9-spd-8&quot;               
+##  [99] &quot;S580 4matic-Automatic 9-spd-8&quot;                       
+## [100] &quot;Mustang-Manual 6-spd-8&quot;                              
+## [101] &quot;Mustang-Automatic (S10)-8&quot;                           
+## [102] &quot;Mustang Mach 1-Automatic (S10)-8&quot;                    
+## [103] &quot;Mustang Mach 1-Manual 6-spd-8&quot;                       
+## [104] &quot;Mustang Convertible-Automatic (S10)-8&quot;               
+## [105] &quot;WRX-Manual 6-spd-4&quot;                                  
+## [106] &quot;WRX-Automatic (AV-S8)-4&quot;                             
+## [107] &quot;Challenger-Automatic 8-spd-8&quot;                        
+## [108] &quot;Challenger-Manual 6-spd-8&quot;                           
+## [109] &quot;Challenger Widebody-Automatic 8-spd-8&quot;               
+## [110] &quot;300-Automatic 8-spd-8&quot;                               
+## [111] &quot;Charger-Automatic 8-spd-8&quot;                           
+## [112] &quot;Charger Widebody-Automatic 8-spd-8&quot;                  
+## [113] &quot;AMG GLA45 4matic-Automatic (AM8)-4&quot;                  
+## [114] &quot;911 Carrera GTS-Manual 7-spd-6&quot;                      
+## [115] &quot;911 Carrera 4 GTS-Automatic (AM-S8)-6&quot;               
+## [116] &quot;911 Carrera 4 GTS-Manual 7-spd-6&quot;                    
+## [117] &quot;911 Carrera 4 GTS Cabriolet-Automatic (AM-S8)-6&quot;     
+## [118] &quot;911 Carrera 4 GTS Cabriolet-Manual 7-spd-6&quot;          
+## [119] &quot;911 Targa 4 GTS-Automatic (AM-S8)-6&quot;                 
+## [120] &quot;911 Targa 4 GTS-Manual 7-spd-6&quot;                      
+## [121] &quot;911 Carrera GTS-Automatic (AM-S8)-6&quot;                 
+## [122] &quot;911 Carrera GTS Cabriolet-Automatic (AM-S8)-6&quot;       
+## [123] &quot;911 Carrera GTS Cabriolet-Manual 7-spd-6&quot;            
 ## 
 ## [[3]]
-##  [1] &quot;G70 AWD-Automatic (S8)-6&quot;                      
-##  [2] &quot;650i xDrive Gran Coupe-Automatic (S8)-8&quot;       
-##  [3] &quot;Alpina B6 xDrive Gran Coupe-Automatic (S8)-8&quot;  
-##  [4] &quot;M6 Gran Coupe-Manual 6-spd-8&quot;                  
-##  [5] &quot;Q70-Automatic (S7)-8&quot;                          
-##  [6] &quot;Q70 AWD-Automatic (S7)-8&quot;                      
-##  [7] &quot;Q70 AWD-Automatic (S7)-6&quot;                      
-##  [8] &quot;750i xDrive-Automatic (S8)-8&quot;                  
-##  [9] &quot;Alpina B7 xDrive-Automatic (S8)-8&quot;             
-## [10] &quot;G90 AWD-Automatic (S8)-6&quot;                      
-## [11] &quot;G90 RWD-Automatic (S8)-6&quot;                      
-## [12] &quot;G90 AWD-Automatic (S8)-8&quot;                      
-## [13] &quot;G90 RWD-Automatic (S8)-8&quot;                      
-## [14] &quot;G80 AWD-Automatic (S8)-6&quot;                      
-## [15] &quot;G80 RWD-Automatic (S8)-6&quot;                      
-## [16] &quot;G80 AWD-Automatic (S8)-8&quot;                      
-## [17] &quot;G80 RWD-Automatic (S8)-8&quot;                      
-## [18] &quot;GTC4Lusso T-Automatic (AM7)-8&quot;                 
-## [19] &quot;Portofino-Automatic (AM7)-8&quot;                   
-## [20] &quot;911 Carrera T-Manual 7-spd-6&quot;                  
-## [21] &quot;DB11 V12-Automatic (S8)-12&quot;                    
-## [22] &quot;DB11 V8-Automatic (S8)-8&quot;                      
-## [23] &quot;RC F-Automatic (S8)-8&quot;                         
-## [24] &quot;XTS AWD-Automatic (S6)-6&quot;                      
-## [25] &quot;XJ AWD-Automatic (S8)-6&quot;                       
-## [26] &quot;XJL AWD-Automatic (S8)-6&quot;                      
-## [27] &quot;ATS-V-Manual 6-spd-6&quot;                          
-## [28] &quot;ATS-V-Automatic (S8)-6&quot;                        
-## [29] &quot;GS F-Automatic (S8)-8&quot;                         
-## [30] &quot;CTS-Automatic (S8)-6&quot;                          
-## [31] &quot;XJ-Automatic (S8)-8&quot;                           
-## [32] &quot;XJL-Automatic (S8)-8&quot;                          
-## [33] &quot;M2 Competition-Manual 6-spd-6&quot;                 
-## [34] &quot;M2 Competition-Automatic (AM-S7)-6&quot;            
-## [35] &quot;M4 Convertible-Manual 6-spd-6&quot;                 
-## [36] &quot;M4 Convertible-Automatic (AM-S7)-6&quot;            
-## [37] &quot;M4 Convertible Competition-Manual 6-spd-6&quot;     
-## [38] &quot;M4 Convertible Competition-Automatic (AM-S7)-6&quot;
-## [39] &quot;Camaro-Manual 6-spd-8&quot;                         
-## [40] &quot;M4 Coupe-Manual 6-spd-6&quot;                       
-## [41] &quot;M4 Coupe-Automatic (AM-S7)-6&quot;                  
-## [42] &quot;M4 CS-Automatic (AM-S7)-6&quot;                     
-## [43] &quot;M4 Coupe Competition-Manual 6-spd-6&quot;           
-## [44] &quot;M4 Coupe Competition-Automatic (AM-S7)-6&quot;      
-## [45] &quot;M550i xDrive-Automatic (S8)-8&quot;                 
-## [46] &quot;M5-Automatic (S8)-8&quot;                           
-## [47] &quot;M5 Competition-Automatic (S8)-8&quot;               
-## [48] &quot;Ghibli  V6 RWD-Automatic 8-spd-6&quot;              
-## [49] &quot;Quattroporte SQ4 V6-Automatic 8-spd-6&quot;         
-## [50] &quot;Ghibli V6 SQ4 AWD-Automatic 8-spd-6&quot;           
-## [51] &quot;Ghibli  S RWD-Automatic 8-spd-6&quot;               
-## [52] &quot;Quattroporte V8-Automatic 8-spd-8&quot;             
-## [53] &quot;Quattroporte S-Automatic 8-spd-6&quot;              
-## [54] &quot;XE AWD-Automatic (S8)-8&quot;                       
-## [55] &quot;Challenger-Automatic 8-spd-8&quot;                  
-## [56] &quot;Challenger-Manual 6-spd-8&quot;                     
-## [57] &quot;300-Automatic 8-spd-8&quot;                         
-## [58] &quot;Charger-Automatic 8-spd-8&quot;                     
-## [59] &quot;Giulia-Automatic 8-spd-6&quot;                      
-## [60] &quot;S560 Convertible-Automatic 9-spd-8&quot;            
-## [61] &quot;AMG S63 4matic Convertible-Automatic 9-spd-8&quot;  
-## [62] &quot;AMG S63 4matic Coupe-Automatic 9-spd-8&quot;        
-## [63] &quot;AMG S63 4matic-Automatic 9-spd-8&quot;              
-## [64] &quot;Maybach S560 4matic-Automatic 9-spd-8&quot;         
-## [65] &quot;LC 500-Automatic (S10)-8&quot;                      
-## [66] &quot;DBS-Automatic (S8)-12&quot;                         
-## [67] &quot;S560 4matic Coupe-Automatic 9-spd-8&quot;           
-## [68] &quot;RS 5 Sportback-Automatic (S8)-6&quot;               
+##  [1] &quot;M8 Competition Coupe-Automatic (S8)-8&quot;                
+##  [2] &quot;M8 Competition Convertible-Automatic (S8)-8&quot;          
+##  [3] &quot;M5 CS Sedan-Automatic (S8)-8&quot;                         
+##  [4] &quot;M8 Competition Gran Coupe-Automatic (S8)-8&quot;           
+##  [5] &quot;M760i xDrive Sedan-Automatic (S8)-12&quot;                 
+##  [6] &quot;CT5 V-Manual 6-spd-8&quot;                                 
+##  [7] &quot;CT5 V-Automatic (S10)-8&quot;                              
+##  [8] &quot;Camaro-Automatic (S10)-8&quot;                             
+##  [9] &quot;Camaro-Manual 6-spd-8&quot;                                
+## [10] &quot;RS 7-Automatic (S8)-8&quot;                                
+## [11] &quot;Flying Spur-Automatic (AM-S8)-8&quot;                      
+## [12] &quot;RS 6 Avant-Automatic (S8)-8&quot;                          
+## [13] &quot;M5 Sedan-Automatic (S8)-8&quot;                            
+## [14] &quot;M5 Competition Sedan-Automatic (S8)-8&quot;                
+## [15] &quot;Phantom-Automatic (S8)-12&quot;                            
+## [16] &quot;Phantom Extended-Automatic (S8)-12&quot;                   
+## [17] &quot;Cullinan-Automatic (S8)-12&quot;                           
+## [18] &quot;Cullinan Black Badge-Automatic (S8)-12&quot;               
+## [19] &quot;Ghibli Trofeo-Automatic 8-spd-8&quot;                      
+## [20] &quot;Quattroporte Trofeo-Automatic 8-spd-8&quot;                
+## [21] &quot;Ghost-Automatic (S8)-12&quot;                              
+## [22] &quot;Ghost Extended-Automatic (S8)-12&quot;                     
+## [23] &quot;Ghost Black Badge-Automatic (S8)-12&quot;                  
+## [24] &quot;911 Turbo-Automatic (AM-S8)-6&quot;                        
+## [25] &quot;911 Turbo Cabriolet-Automatic (AM-S8)-6&quot;              
+## [26] &quot;911 Turbo S-Automatic (AM-S8)-6&quot;                      
+## [27] &quot;911 Turbo S Cabriolet-Automatic (AM-S8)-6&quot;            
+## [28] &quot;Continental GT Speed Convertible-Automatic (AM-S8)-12&quot;
+## [29] &quot;Continental GT Speed-Automatic (AM-S8)-12&quot;            
+## [30] &quot;Flying Spur-Automatic (AM-S8)-12&quot;                     
+## [31] &quot;Panamera Turbo S/Exec/ST-Automatic (AM-S8)-8&quot;         
+## [32] &quot;Panamera GTS-Automatic (AM-S8)-8&quot;                     
+## [33] &quot;Panamera GTS ST-Automatic (AM-S8)-8&quot;                  
+## [34] &quot;S8-Automatic (S8)-8&quot;                                  
+## [35] &quot;DBS-Automatic (S8)-12&quot;                                
+## [36] &quot;DB11 V12-Automatic (S8)-12&quot;                           
+## [37] &quot;Challenger SRT-Automatic 8-spd-8&quot;                     
+## [38] &quot;Challenger SRT-Manual 6-spd-8&quot;                        
+## [39] &quot;Challenger Widebody-Manual 6-spd-8&quot;                   
+## [40] &quot;Challenger SRT Widebody-Automatic 8-spd-8&quot;            
+## [41] &quot;Challenger SRT Widebody-Manual 6-spd-8&quot;               
+## [42] &quot;Charger SRT Widebody-Automatic 8-spd-8&quot;               
+## [43] &quot;Shelby GT500 Mustang-Automatic (AM-S7)-8&quot;             
 ## 
 ## [[4]]
-##  [1] &quot;M6 Gran Coupe-Automatic (AM-S7)-8&quot;        
-##  [2] &quot;M760i xDrive-Automatic (S8)-12&quot;           
-##  [3] &quot;GTC4Lusso-Automatic (AM7)-12&quot;             
-##  [4] &quot;CTS-V-Automatic (S8)-8&quot;                   
-##  [5] &quot;Camaro-Automatic (S10)-8&quot;                 
-##  [6] &quot;Dawn-Automatic (S8)-12&quot;                   
-##  [7] &quot;Wraith-Automatic (S8)-12&quot;                 
-##  [8] &quot;Ghost-Automatic (S8)-12&quot;                  
-##  [9] &quot;Ghost EWB-Automatic (S8)-12&quot;              
-## [10] &quot;Challenger SRT-Automatic 8-spd-8&quot;         
-## [11] &quot;Challenger SRT-Manual 6-spd-8&quot;            
-## [12] &quot;Charger SRT-Automatic 8-spd-8&quot;            
-## [13] &quot;Phantom-Automatic (S8)-12&quot;                
-## [14] &quot;Phantom EWB-Automatic (S8)-12&quot;            
-## [15] &quot;Cullinan-Automatic (S8)-12&quot;               
-## [16] &quot;GranTurismo Convertible-Automatic 6-spd-8&quot;
-## [17] &quot;Mulsanne-Automatic (S8)-8&quot;                
-## [18] &quot;Stage 3 Mustang-Manual 6-spd-8&quot;           
+##  [1] &quot;Cooper Convertible-Automatic (AM-S7)-3&quot;                   
+##  [2] &quot;Cooper Convertible-Manual 6-spd-3&quot;                        
+##  [3] &quot;Cooper Hardtop 2 door-Automatic (AM-S7)-3&quot;                
+##  [4] &quot;Cooper Hardtop 2 door-Manual 6-spd-3&quot;                     
+##  [5] &quot;Cooper Hardtop 4 door-Automatic (AM-S7)-3&quot;                
+##  [6] &quot;Cooper Hardtop 4 door-Manual 6-spd-3&quot;                     
+##  [7] &quot;Cooper Countryman-Automatic (AM-S7)-3&quot;                    
+##  [8] &quot;Cooper S Convertible-Automatic (AM-S7)-4&quot;                 
+##  [9] &quot;Cooper S Hardtop 2 door-Automatic (AM-S7)-4&quot;              
+## [10] &quot;Cooper S Hardtop 4 door-Automatic (AM-S7)-4&quot;              
+## [11] &quot;John Cooper Works Hardtop 2 door-Automatic (S8)-4&quot;        
+## [12] &quot;Cooper S Clubman-Automatic (AM-S7)-4&quot;                     
+## [13] &quot;Legacy AWD-Automatic (AV-S8)-4&quot;                           
+## [14] &quot;Malibu-Automatic (variable gear ratios)-4&quot;                
+## [15] &quot;K5-Automatic (S8)-4&quot;                                      
+## [16] &quot;K5 AWD-Automatic (S8)-4&quot;                                  
+## [17] &quot;K5-Automatic (AM-S8)-4&quot;                                   
+## [18] &quot;Spark ACTIV-Manual 5-spd-4&quot;                               
+## [19] &quot;Soul-Automatic (variable gear ratios)-4&quot;                  
+## [20] &quot;Soul Eco dynamics-Automatic (variable gear ratios)-4&quot;     
+## [21] &quot;Soul-Automatic (AM-S7)-4&quot;                                 
+## [22] &quot;Elantra-Automatic (AM-S7)-4&quot;                              
+## [23] &quot;Elantra-Manual 6-spd-4&quot;                                   
+## [24] &quot;Sonata-Automatic (S8)-4&quot;                                  
+## [25] &quot;Sonata-Automatic (AM-S8)-4&quot;                               
+## [26] &quot;Impreza 4-Door-Manual 5-spd-4&quot;                            
+## [27] &quot;Impreza 4-Door-Automatic (AV-S7)-4&quot;                       
+## [28] &quot;Impreza Sport 4-Door-Automatic (AV-S7)-4&quot;                 
+## [29] &quot;Impreza 5-Door-Manual 5-spd-4&quot;                            
+## [30] &quot;Impreza 5-Door-Automatic (AV-S7)-4&quot;                       
+## [31] &quot;Impreza Sport 5-Door-Manual 5-spd-4&quot;                      
+## [32] &quot;Impreza Sport 5-Door-Automatic (AV-S7)-4&quot;                 
+## [33] &quot;Corolla XLE-Automatic (variable gear ratios)-4&quot;           
+## [34] &quot;Corolla APEX-Manual 6-spd-4&quot;                              
+## [35] &quot;TT Coupe quattro-Automatic (AM-S7)-4&quot;                     
+## [36] &quot;A4 quattro-Automatic (AM-S7)-4&quot;                           
+## [37] &quot;A5 Sportback quattro-Automatic (AM-S7)-4&quot;                 
+## [38] &quot;Venue-Automatic (AV-S1)-4&quot;                                
+## [39] &quot;Passat-Automatic (S6)-4&quot;                                  
+## [40] &quot;330i Sedan-Automatic (S8)-4&quot;                              
+## [41] &quot;S60 B5-Automatic (S8)-4&quot;                                  
+## [42] &quot;A3 quattro-Automatic (AM-S7)-4&quot;                           
+## [43] &quot;Corolla Hatchback-Manual 6-spd-4&quot;                         
+## [44] &quot;GLI-Automatic (AM-S7)-4&quot;                                  
+## [45] &quot;GLI-Manual 6-spd-4&quot;                                       
+## [46] &quot;HR-V AWD-Automatic (variable gear ratios)-4&quot;              
+## [47] &quot;HR-V AWD-Automatic (AV-S7)-4&quot;                             
+## [48] &quot;HR-V FWD-Automatic (variable gear ratios)-4&quot;              
+## [49] &quot;HR-V FWD-Automatic (AV-S7)-4&quot;                             
+## [50] &quot;A3-Automatic (AM-S7)-4&quot;                                   
+## [51] &quot;230i Coupe-Automatic (S8)-4&quot;                              
+## [52] &quot;GTI-Manual 6-spd-4&quot;                                       
+## [53] &quot;Camry-Automatic (S8)-6&quot;                                   
+## [54] &quot;Camry TRD-Automatic (S8)-6&quot;                               
+## [55] &quot;Camry XSE-Automatic (S8)-6&quot;                               
+## [56] &quot;Camry AWD LE/SE-Automatic (S8)-4&quot;                         
+## [57] &quot;Camry AWD XLE/XSE-Automatic (S8)-4&quot;                       
+## [58] &quot;Camry LE/SE-Automatic (S8)-4&quot;                             
+## [59] &quot;Camry XLE/XSE-Automatic (S8)-4&quot;                           
+## [60] &quot;Avalon XLE-Automatic (S8)-6&quot;                              
+## [61] &quot;Avalon-Automatic (S8)-6&quot;                                  
+## [62] &quot;ES 350-Automatic (S8)-6&quot;                                  
+## [63] &quot;ES 350 F Sport-Automatic (S8)-6&quot;                          
+## [64] &quot;ES 250 AWD-Automatic (S8)-4&quot;                              
+## [65] &quot;CLA250-Automatic (AM7)-4&quot;                                 
+## [66] &quot;UX 200-Automatic (AV-S10)-4&quot;                              
+## [67] &quot;GTI-Automatic (AM7)-4&quot;                                    
+## [68] &quot;Civic 5Dr-Manual 6-spd-4&quot;                                 
+## [69] &quot;Forte-Manual 6-spd-4&quot;                                     
+## [70] &quot;Forte-Automatic (AM-S7)-4&quot;                                
+## [71] &quot;Accord Sport/Touring-Automatic (AV-S7)-4&quot;                 
+## [72] &quot;Accord Sport/Touring-Automatic (S10)-4&quot;                   
+## [73] &quot;LC 500h-Automatic (AV-S10)-6&quot;                             
+## [74] &quot;Altima-Automatic (variable gear ratios)-4&quot;                
+## [75] &quot;Altima SR-Automatic (variable gear ratios)-4&quot;             
+## [76] &quot;Altima AWD-Automatic (variable gear ratios)-4&quot;            
+## [77] &quot;Altima AWD SR/Platinum-Automatic (variable gear ratios)-4&quot;
+## [78] &quot;Altima SV/SL-Automatic (variable gear ratios)-4&quot;          
+## [79] &quot;Altima SR-Automatic (AV-S8)-4&quot;                            
+## [80] &quot;Civic 4Dr-Manual 6-spd-4&quot;                                 
+## [81] &quot;Versa-Manual 5-spd-4&quot;                                     
+## [82] &quot;Sentra SR-Automatic (variable gear ratios)-4&quot;             
+## [83] &quot;C-HR-Automatic (AV-S7)-4&quot;                                 
+## [84] &quot;3 4-Door 2WD-Automatic (S6)-4&quot;                            
+## [85] &quot;3 4-Door 4WD-Automatic (S6)-4&quot;                            
+## [86] &quot;3 5-Door 2WD-Manual 6-spd-4&quot;                              
+## [87] &quot;3 5-Door 2WD-Automatic (S6)-4&quot;                            
+## [88] &quot;3 5-Door 4WD-Automatic (S6)-4&quot;                            
+## [89] &quot;Mustang-Automatic 10-spd-4&quot;                               
+## [90] &quot;Mustang-Automatic (S10)-4&quot;                                
+## [91] &quot;Rogue Sport AWD-Automatic (AV-S8)-4&quot;                      
+## [92] &quot;Rogue Sport-Automatic (AV-S8)-4&quot;                          
+## [93] &quot;C300-Automatic 9-spd-4&quot;                                   
 ## 
 ## [[5]]
-##   [1] &quot;Jetta-Automatic (S8)-4&quot;                                   
-##   [2] &quot;Jetta-Manual 6-spd-4&quot;                                     
-##   [3] &quot;Veloster-Automatic (S6)-4&quot;                                
-##   [4] &quot;Veloster-Manual 6-spd-4&quot;                                  
-##   [5] &quot;Veloster-Automatic (AM7)-4&quot;                               
-##   [6] &quot;CX-3 2WD-Automatic (S6)-4&quot;                                
-##   [7] &quot;CX-3 4WD-Automatic (S6)-4&quot;                                
-##   [8] &quot;Fit-Automatic (variable gear ratios)-4&quot;                   
-##   [9] &quot;Fit-Automatic (AV-S7)-4&quot;                                  
-##  [10] &quot;Fit-Manual 6-spd-4&quot;                                       
-##  [11] &quot;Avalon Hybrid-Automatic (AV-S6)-4&quot;                        
-##  [12] &quot;Avalon Hybrid XLE-Automatic (AV-S6)-4&quot;                    
-##  [13] &quot;C-HR-Automatic (AV-S7)-4&quot;                                 
-##  [14] &quot;Impreza 4-Door-Manual 5-spd-4&quot;                            
-##  [15] &quot;Impreza 4-Door-Automatic (AV-S7)-4&quot;                       
-##  [16] &quot;Impreza Sport 4-Door-Automatic (AV-S7)-4&quot;                 
-##  [17] &quot;Soul-Automatic (AM7)-4&quot;                                   
-##  [18] &quot;Soul-Automatic (S6)-4&quot;                                    
-##  [19] &quot;Impreza 5-Door-Automatic (AV-S7)-4&quot;                       
-##  [20] &quot;Impreza Sport 5-Door-Automatic (AV-S7)-4&quot;                 
-##  [21] &quot;Spark-Automatic (variable gear ratios)-4&quot;                 
-##  [22] &quot;Spark-Manual 5-spd-4&quot;                                     
-##  [23] &quot;LaCrosse eAssist-Automatic (S6)-4&quot;                        
-##  [24] &quot;Corolla-Automatic (variable gear ratios)-4&quot;               
-##  [25] &quot;Corolla-Automatic (AV-S7)-4&quot;                              
-##  [26] &quot;Corolla-Manual 6-spd-4&quot;                                   
-##  [27] &quot;Corolla LE Eco-Automatic (variable gear ratios)-4&quot;        
-##  [28] &quot;Soul-Manual 6-spd-4&quot;                                      
-##  [29] &quot;Accent-Automatic (S6)-4&quot;                                  
-##  [30] &quot;Accent-Manual 6-spd-4&quot;                                    
-##  [31] &quot;Corolla Hatchback-Manual 6-spd-4&quot;                         
-##  [32] &quot;Corolla Hatchback-Automatic (AV-S10)-4&quot;                   
-##  [33] &quot;Corolla Hatchback XSE-Automatic (AV-S10)-4&quot;               
-##  [34] &quot;Optima-Automatic (AM7)-4&quot;                                 
-##  [35] &quot;Optima FE-Automatic (S6)-4&quot;                               
-##  [36] &quot;Spark ACTIV-Automatic (variable gear ratios)-4&quot;           
-##  [37] &quot;Spark ACTIV-Manual 5-spd-4&quot;                               
-##  [38] &quot;Insight-Automatic (variable gear ratios)-4&quot;               
-##  [39] &quot;Insight Touring-Automatic (variable gear ratios)-4&quot;       
-##  [40] &quot;Elantra SE-Automatic (S6)-4&quot;                              
-##  [41] &quot;Elantra-Automatic (S6)-4&quot;                                 
-##  [42] &quot;Elantra-Manual 6-spd-4&quot;                                   
-##  [43] &quot;Legacy AWD-Automatic (AV-S7)-4&quot;                           
-##  [44] &quot;HR-V FWD-Automatic (variable gear ratios)-4&quot;              
-##  [45] &quot;HR-V FWD-Automatic (AV-S7)-4&quot;                             
-##  [46] &quot;HR-V AWD-Automatic (variable gear ratios)-4&quot;              
-##  [47] &quot;HR-V AWD-Automatic (AV-S7)-4&quot;                             
-##  [48] &quot;Beetle Convertible-Automatic (S6)-4&quot;                      
-##  [49] &quot;Cruze-Automatic (variable gear ratios)-4&quot;                 
-##  [50] &quot;Cruze-Automatic (S6)-4&quot;                                   
-##  [51] &quot;Beetle-Automatic (S6)-4&quot;                                  
-##  [52] &quot;Cruze Hatchback-Automatic (S6)-4&quot;                         
-##  [53] &quot;Forte FE-Automatic (variable gear ratios)-4&quot;              
-##  [54] &quot;Forte-Automatic (variable gear ratios)-4&quot;                 
-##  [55] &quot;Forte-Manual 6-spd-4&quot;                                     
-##  [56] &quot;Passat-Automatic (S6)-4&quot;                                  
-##  [57] &quot;Sonata-Automatic (S6)-4&quot;                                  
-##  [58] &quot;Sonata SE-Automatic (S6)-4&quot;                               
-##  [59] &quot;Sonata-Automatic (AM7)-4&quot;                                 
-##  [60] &quot;Ioniq-Automatic (AM6)-4&quot;                                  
-##  [61] &quot;Ioniq Blue-Automatic (AM6)-4&quot;                             
-##  [62] &quot;Sentra-Manual 6-spd-4&quot;                                    
-##  [63] &quot;Sentra-Automatic (variable gear ratios)-4&quot;                
-##  [64] &quot;Cruze Premier Hatchback-Automatic (S6)-4&quot;                 
-##  [65] &quot;Prius c-Automatic (variable gear ratios)-4&quot;               
-##  [66] &quot;Camry LE/SE-Automatic (S8)-4&quot;                             
-##  [67] &quot;Camry XLE/XSE-Automatic (S8)-4&quot;                           
-##  [68] &quot;Camry-Automatic (S8)-4&quot;                                   
-##  [69] &quot;Cruze Premier-Automatic (S6)-4&quot;                           
-##  [70] &quot;Versa-Automatic (variable gear ratios)-4&quot;                 
-##  [71] &quot;Versa-Manual 5-spd-4&quot;                                     
-##  [72] &quot;Sonic-Automatic (S6)-4&quot;                                   
-##  [73] &quot;Sonic-Manual 6-spd-4&quot;                                     
-##  [74] &quot;Rio-Automatic (S6)-4&quot;                                     
-##  [75] &quot;Rio-Manual 6-spd-4&quot;                                       
-##  [76] &quot;Yaris-Manual 6-spd-4&quot;                                     
-##  [77] &quot;Yaris-Automatic (S6)-4&quot;                                   
-##  [78] &quot;Fusion FWD-Automatic (S6)-4&quot;                              
-##  [79] &quot;Fusion Hybrid FWD-Automatic (variable gear ratios)-4&quot;     
-##  [80] &quot;Fusion Hybrid Taxi-Automatic (variable gear ratios)-4&quot;    
-##  [81] &quot;Elantra-Automatic (AM7)-4&quot;                                
-##  [82] &quot;ES 300h-Automatic (AV-S6)-4&quot;                              
-##  [83] &quot;MKZ Hybrid FWD-Automatic (variable gear ratios)-4&quot;        
-##  [84] &quot;Camry Hybrid LE-Automatic (AV-S6)-4&quot;                      
-##  [85] &quot;Camry Hybrid XLE/SE-Automatic (AV-S6)-4&quot;                  
-##  [86] &quot;Sonic 5-Automatic (S6)-4&quot;                                 
-##  [87] &quot;Sonic 5-Manual 6-spd-4&quot;                                   
-##  [88] &quot;Malibu-Automatic (variable gear ratios)-4&quot;                
-##  [89] &quot;Optima Hybrid-Automatic (AM6)-4&quot;                          
-##  [90] &quot;Niro-Automatic (AM6)-4&quot;                                   
-##  [91] &quot;Niro Touring-Automatic (AM6)-4&quot;                           
-##  [92] &quot;Niro FE-Automatic (AM6)-4&quot;                                
-##  [93] &quot;Fiesta FWD-Automatic (AM-S6)-4&quot;                           
-##  [94] &quot;Fiesta FWD-Manual 5-spd-4&quot;                                
-##  [95] &quot;Fiesta ST FWD-Manual 6-spd-4&quot;                             
-##  [96] &quot;Civic 2Dr-Automatic (AV-S7)-4&quot;                            
-##  [97] &quot;Civic 2Dr-Automatic (variable gear ratios)-4&quot;             
-##  [98] &quot;Malibu Hybrid-Automatic (variable gear ratios)-4&quot;         
-##  [99] &quot;Civic 4Dr-Automatic (AV-S7)-4&quot;                            
-## [100] &quot;Civic 4Dr-Automatic (variable gear ratios)-4&quot;             
-## [101] &quot;Altima-Automatic (variable gear ratios)-4&quot;                
-## [102] &quot;Altima SR/Platinum-Automatic (variable gear ratios)-4&quot;    
-## [103] &quot;Altima AWD-Automatic (variable gear ratios)-4&quot;            
-## [104] &quot;Altima AWD SR/Platinum-Automatic (variable gear ratios)-4&quot;
-## [105] &quot;Accord-Manual 6-spd-4&quot;                                    
-## [106] &quot;Accord-Automatic (variable gear ratios)-4&quot;                
-## [107] &quot;Accord-Automatic (AV-S7)-4&quot;                               
-## [108] &quot;Accord-Automatic 10-spd-4&quot;                                
-## [109] &quot;Elantra GT-Automatic (S6)-4&quot;                              
-## [110] &quot;Elantra GT-Automatic (AM7)-4&quot;                             
-## [111] &quot;Mirage-Manual 5-spd-3&quot;                                    
-## [112] &quot;Mirage-Automatic (variable gear ratios)-3&quot;                
-## [113] &quot;Mirage G4-Manual 5-spd-3&quot;                                 
-## [114] &quot;Mirage G4-Automatic (variable gear ratios)-3&quot;             
-## [115] &quot;Golf-Automatic (S8)-4&quot;                                    
-## [116] &quot;Golf-Manual 6-spd-4&quot;                                      
-## [117] &quot;GTI-Manual 6-spd-4&quot;                                       
-## [118] &quot;Golf SportWagen-Automatic (S8)-4&quot;                         
-## [119] &quot;Golf SportWagen-Manual 6-spd-4&quot;</code></pre>
+##   [1] &quot;Stinger AWD-Automatic (S8)-4&quot;                     
+##   [2] &quot;Stinger RWD-Automatic (S8)-4&quot;                     
+##   [3] &quot;Cooper S Convertible-Manual 6-spd-4&quot;              
+##   [4] &quot;Cooper S Hardtop 2 door-Manual 6-spd-4&quot;           
+##   [5] &quot;Cooper S Hardtop 4 door-Manual 6-spd-4&quot;           
+##   [6] &quot;John Cooper Works Hardtop 2 door-Manual 6-spd-4&quot;  
+##   [7] &quot;X2 xDrive28i-Automatic (S8)-4&quot;                    
+##   [8] &quot;X2 M35i-Automatic (S8)-4&quot;                         
+##   [9] &quot;Cooper Countryman All4-Automatic (S8)-3&quot;          
+##  [10] &quot;Cooper S Clubman-Manual 6-spd-4&quot;                  
+##  [11] &quot;John Cooper Works Convertible-Automatic (S8)-4&quot;   
+##  [12] &quot;840i Coupe-Automatic (S8)-6&quot;                      
+##  [13] &quot;840i xDrive Coupe-Automatic (S8)-6&quot;               
+##  [14] &quot;840i Convertible-Automatic (S8)-6&quot;                
+##  [15] &quot;840i xDrive Convertible-Automatic (S8)-6&quot;         
+##  [16] &quot;Veloster N-Manual 6-spd-4&quot;                        
+##  [17] &quot;X2 sDrive28i-Automatic (S8)-4&quot;                    
+##  [18] &quot;840i Gran Coupe-Automatic (S8)-6&quot;                 
+##  [19] &quot;840i xDrive Gran Coupe-Automatic (S8)-6&quot;          
+##  [20] &quot;Cooper S Countryman-Automatic (AM-S7)-4&quot;          
+##  [21] &quot;Cooper S Countryman All4-Automatic (S8)-4&quot;        
+##  [22] &quot;Cooper S Clubman All4-Automatic (S8)-4&quot;           
+##  [23] &quot;John Cooper Works Clubman All4-Automatic (S8)-4&quot;  
+##  [24] &quot;JCW Countryman All4-Automatic (S8)-4&quot;             
+##  [25] &quot;740i Sedan-Automatic (S8)-6&quot;                      
+##  [26] &quot;740i xDrive Sedan-Automatic (S8)-6&quot;               
+##  [27] &quot;Malibu-Automatic 9-spd-4&quot;                         
+##  [28] &quot;G70 AWD-Automatic (S8)-4&quot;                         
+##  [29] &quot;G70 RWD-Automatic (S8)-4&quot;                         
+##  [30] &quot;G80 AWD-Automatic (S8)-4&quot;                         
+##  [31] &quot;G80 RWD-Automatic (S8)-4&quot;                         
+##  [32] &quot;A5 Coupe quattro-Automatic (AM-S7)-4&quot;             
+##  [33] &quot;A5 Cabriolet quattro-Automatic (AM-S7)-4&quot;         
+##  [34] &quot;S5 Coupe-Automatic (S8)-6&quot;                        
+##  [35] &quot;S5 Cabriolet-Automatic (S8)-6&quot;                    
+##  [36] &quot;A4 S line quattro-Automatic (AM-S7)-4&quot;            
+##  [37] &quot;S4-Automatic (S8)-6&quot;                              
+##  [38] &quot;CT4-Automatic (S8)-4&quot;                             
+##  [39] &quot;CT4 AWD-Automatic (S8)-4&quot;                         
+##  [40] &quot;A6 quattro-Automatic (AM-S7)-4&quot;                   
+##  [41] &quot;A5 Sportback S line quattro-Automatic (AM-S7)-4&quot;  
+##  [42] &quot;S5 Sportback-Automatic (S8)-6&quot;                    
+##  [43] &quot;A6 quattro-Automatic (AM-S7)-6&quot;                   
+##  [44] &quot;A7 quattro-Automatic (AM-S7)-6&quot;                   
+##  [45] &quot;A4 allroad quattro-Automatic (AM-S7)-4&quot;           
+##  [46] &quot;430i xDrive Coupe-Automatic (S8)-4&quot;               
+##  [47] &quot;430i xDrive Convertible-Automatic (S8)-4&quot;         
+##  [48] &quot;M440i Coupe-Automatic (S8)-6&quot;                     
+##  [49] &quot;M440i Convertible-Automatic (S8)-6&quot;               
+##  [50] &quot;ILX-Automatic (AM-S8)-4&quot;                          
+##  [51] &quot;228i xDrive Gran Coupe-Automatic (S8)-4&quot;          
+##  [52] &quot;228i Gran Coupe-Automatic (S8)-4&quot;                 
+##  [53] &quot;330i xDrive Sedan-Automatic (S8)-4&quot;               
+##  [54] &quot;M440i xDrive Gran Coupe-Automatic (S8)-6&quot;         
+##  [55] &quot;S60 B5 AWD-Automatic (S8)-4&quot;                      
+##  [56] &quot;530i Sedan-Automatic (S8)-4&quot;                      
+##  [57] &quot;540i xDrive Sedan-Automatic (S8)-6&quot;               
+##  [58] &quot;S90 B6 AWD-Automatic (S8)-4&quot;                      
+##  [59] &quot;V60CC T5 AWD-Automatic (S8)-4&quot;                    
+##  [60] &quot;A6 Allroad quattro-Automatic (AM-S7)-6&quot;           
+##  [61] &quot;V90CC B6 AWD-Automatic (S8)-4&quot;                    
+##  [62] &quot;Camaro-Automatic (S8)-4&quot;                          
+##  [63] &quot;CT5-Automatic (S10)-4&quot;                            
+##  [64] &quot;CT5 AWD-Automatic (S10)-4&quot;                        
+##  [65] &quot;S3-Automatic (AM-S7)-4&quot;                           
+##  [66] &quot;Camaro-Automatic (S10)-6&quot;                         
+##  [67] &quot;Camaro-Manual 6-spd-6&quot;                            
+##  [68] &quot;CT4-Automatic (S10)-4&quot;                            
+##  [69] &quot;CT4 V-Automatic (S10)-4&quot;                          
+##  [70] &quot;CT4 AWD-Automatic (S10)-4&quot;                        
+##  [71] &quot;CT4 V AWD-Automatic (S10)-4&quot;                      
+##  [72] &quot;BRZ-Automatic (S6)-4&quot;                             
+##  [73] &quot;TTS Coupe quattro-Automatic (AM-S7)-4&quot;            
+##  [74] &quot;M240i xDrive Coupe-Automatic (S8)-6&quot;              
+##  [75] &quot;430i Coupe-Automatic (S8)-4&quot;                      
+##  [76] &quot;430i Convertible-Automatic (S8)-4&quot;                
+##  [77] &quot;M440i xDrive Coupe-Automatic (S8)-6&quot;              
+##  [78] &quot;M440i xDrive Convertible-Automatic (S8)-6&quot;        
+##  [79] &quot;M235i xDrive Gran Coupe-Automatic (S8)-4&quot;         
+##  [80] &quot;M340i Sedan-Automatic (S8)-6&quot;                     
+##  [81] &quot;M340i xDrive Sedan-Automatic (S8)-6&quot;              
+##  [82] &quot;430i Gran Coupe-Automatic (S8)-4&quot;                 
+##  [83] &quot;530i xDrive Sedan-Automatic (S8)-4&quot;               
+##  [84] &quot;540i Sedan-Automatic (S8)-6&quot;                      
+##  [85] &quot;A220 4matic-Automatic (AM7)-4&quot;                    
+##  [86] &quot;A220-Automatic (AM7)-4&quot;                           
+##  [87] &quot;CLA250 4matic-Automatic (AM7)-4&quot;                  
+##  [88] &quot;Elantra N-Automatic (AM-S8)-4&quot;                    
+##  [89] &quot;Elantra N-Manual 6-spd-4&quot;                         
+##  [90] &quot;RC 350-Automatic (S8)-6&quot;                          
+##  [91] &quot;RC 300-Automatic (S8)-4&quot;                          
+##  [92] &quot;IS 350-Automatic (S8)-6&quot;                          
+##  [93] &quot;IS 300-Automatic (S8)-4&quot;                          
+##  [94] &quot;Q50-Automatic (S7)-6&quot;                             
+##  [95] &quot;TT RS Coupe-Automatic (AM-S7)-5&quot;                  
+##  [96] &quot;GR 86-Automatic (S6)-4&quot;                           
+##  [97] &quot;AMG A35 4matic-Automatic (AM7)-4&quot;                 
+##  [98] &quot;TLX AWD-Automatic (S10)-4&quot;                        
+##  [99] &quot;TLX FWD-Automatic (S10)-4&quot;                        
+## [100] &quot;TLX AWD A-SPEC-Automatic (S10)-4&quot;                 
+## [101] &quot;TLX FWD A-SPEC-Automatic (S10)-4&quot;                 
+## [102] &quot;CLS450 4matic-Automatic 9-spd-6&quot;                  
+## [103] &quot;E450 4matic-Automatic 9-spd-6&quot;                    
+## [104] &quot;AMG GLA35 4matic-Automatic (AM8)-4&quot;               
+## [105] &quot;E450 4matic All-Terrain (wagon)-Automatic 9-spd-6&quot;
+## [106] &quot;E450 Coupe-Automatic 9-spd-6&quot;                     
+## [107] &quot;E450 4matic Coupe-Automatic 9-spd-6&quot;              
+## [108] &quot;E450 Convertible-Automatic 9-spd-6&quot;               
+## [109] &quot;E450 4matic Convertible-Automatic 9-spd-6&quot;        
+## [110] &quot;XF P250-Automatic (S8)-4&quot;                         
+## [111] &quot;XF P250 AWD-Automatic (S8)-4&quot;                     
+## [112] &quot;XF P300 AWD-Automatic (S8)-4&quot;                     
+## [113] &quot;E350 4matic-Automatic 9-spd-4&quot;                    
+## [114] &quot;Golf-R-Automatic (AM7)-4&quot;                         
+## [115] &quot;Golf-R-Manual 6-spd-4&quot;                            
+## [116] &quot;AMG CLA35 4matic-Automatic (AM7)-4&quot;               
+## [117] &quot;E350-Automatic 9-spd-4&quot;                           
+## [118] &quot;X1 xDrive28i-Automatic (S8)-4&quot;                    
+## [119] &quot;S500 4matic-Automatic 9-spd-6&quot;                    
+## [120] &quot;AMG E53 4matic Plus Coupe-Automatic 9-spd-6&quot;      
+## [121] &quot;AMG E53 4matic Plus-Automatic 9-spd-6&quot;            
+## [122] &quot;X1 sDrive28i-Automatic (S8)-4&quot;                    
+## [123] &quot;C300 4matic Coupe-Automatic 9-spd-4&quot;              
+## [124] &quot;C300 4matic Convertible-Automatic 9-spd-4&quot;        
+## [125] &quot;Maxima-Automatic (AV-S7)-6&quot;                       
+## [126] &quot;Murano FWD-Automatic (AV-S7)-6&quot;                   
+## [127] &quot;Murano AWD-Automatic (AV-S7)-6&quot;                   
+## [128] &quot;C300 Convertible-Automatic 9-spd-4&quot;               
+## [129] &quot;LS 500h AWD-Automatic (AV-S10)-6&quot;                 
+## [130] &quot;C300 Coupe-Automatic 9-spd-4&quot;                     
+## [131] &quot;Giulia-Automatic 8-spd-4&quot;                         
+## [132] &quot;Giulia AWD-Automatic 8-spd-4&quot;                     
+## [133] &quot;Mustang-Manual 6-spd-4&quot;                           
+## [134] &quot;Mustang HO Coupe-Manual 6-spd-4&quot;                  
+## [135] &quot;Mustang HO Coupe-Automatic (S10)-4&quot;               
+## [136] &quot;Mustang HO Convertible-Manual 6-spd-4&quot;            
+## [137] &quot;Mustang Convertible-Automatic 10-spd-4&quot;           
+## [138] &quot;Mustang Convertible-Manual 6-spd-4&quot;               
+## [139] &quot;Mustang Convertible-Automatic (S10)-4&quot;            
+## [140] &quot;Mustang HO Convertible-Automatic (S10)-4&quot;         
+## [141] &quot;AMG CLA45 4matic-Automatic (AM8)-4&quot;               
+## [142] &quot;Challenger-Automatic 8-spd-6&quot;                     
+## [143] &quot;Challenger AWD-Automatic 8-spd-6&quot;                 
+## [144] &quot;300-Automatic 8-spd-6&quot;                            
+## [145] &quot;300 AWD-Automatic 8-spd-6&quot;                        
+## [146] &quot;Charger-Automatic 8-spd-6&quot;                        
+## [147] &quot;Charger AWD-Automatic 8-spd-6&quot;                    
+## [148] &quot;Arteon-Automatic (AM7)-4&quot;                         
+## [149] &quot;Arteon 4motion-Automatic (AM7)-4&quot;                 
+## [150] &quot;RS3-Automatic (AM-S7)-5&quot;                          
+## [151] &quot;C300 4matic-Automatic 9-spd-4&quot;</code></pre>
 <p>Just as a visual confirmation, let’s see what the ranges of the MPG is for these groups.</p>
 <p>It’s quite clear that cluster 5 are the highest MPG vehicles, cluster 4 are the low MPG vehicles and include the Rolls Royce models.
 Kmeans is one of easiest clustering algorithm and there are many other unsupervised learning algorithms that will perform clustering. More on those in future posts.</p>
@@ -1381,7 +2352,7 @@ Kmeans is one of easiest clustering algorithm and there are many other unsupervi
   geom_boxplot(aes(group = k$cluster, fill = as.factor(k$cluster)), show.legend = FALSE) +
   scale_fill_brewer(palette = &quot;Set1&quot;) +
   labs(title = &quot;Clusters and Avg MPG&quot;, x = &quot;Cluster&quot;, y = &quot;MPG&quot;) </code></pre>
-<p><img src="/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p><img src="https://nitinahuja.github.io/post/2018-11-21-vehicle-fuel-economy_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 </div>
 </div>
 <div id="conclusion" class="section level2">
@@ -1391,6 +2362,8 @@ Kmeans is one of easiest clustering algorithm and there are many other unsupervi
 </div>
 
               
+
+
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
@@ -1401,189 +2374,130 @@ Kmeans is one of easiest clustering algorithm and there are many other unsupervi
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="//tags/machine-learning/">machine learning</a>
+  <a class="tag tag--primary tag--small" href="https://nitinahuja.github.io/tags/eda/">EDA</a>
 
-  <a class="tag tag--primary tag--small" href="//tags/eda/">EDA</a>
+  <a class="tag tag--primary tag--small" href="https://nitinahuja.github.io/tags/machine-learning/">machine learning</a>
 
                   </div>
                 
               
             
-            <div class="post-actions-wrap">
-  <nav>
+            
+<div class="post-actions-wrap">
+  <nav >
     <ul class="post-actions post-action-nav">
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2021/generative-art/" data-tooltip="Generative Art" aria-label="NEXT: Generative Art">
           
-            <i class="fa fa-angle-left"></i>
-            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
-          </a>
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="/2017/nps-exploratory-text-analysis/" data-tooltip="NPS - Exploratory analysis in R - Text analysis">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2017/nps-exploratory-text-analysis/" data-tooltip="NPS - Exploratory analysis in R - Text analysis" aria-label="PREVIOUS: NPS - Exploratory analysis in R - Text analysis">
           
-            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
-            <i class="fa fa-angle-right"></i>
-          </a>
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
     </ul>
   </nav>
-  <ul class="post-actions post-action-share">
-    
-      <li class="post-action hide-lg hide-md hide-sm">
-        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-          <i class="fa fa-share-alt"></i>
-        </a>
-      </li>
-      <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=%2f2018%2fvehicle-fuel-economy-exploratory-analysis%2f">
-          <i class="fa fa-google-plus"></i>
-        </a>
-      </li>
-      <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2018%2fvehicle-fuel-economy-exploratory-analysis%2f">
-          <i class="fa fa-facebook-official"></i>
-        </a>
-      </li>
-      <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=%2f2018%2fvehicle-fuel-economy-exploratory-analysis%2f">
-          <i class="fa fa-twitter"></i>
-        </a>
-      </li>
-    
-    
-      <li class="post-action">
-        <a class="post-action-btn btn btn--default" href="#disqus_thread">
-          <i class="fa fa-comment-o"></i>
-        </a>
-      </li>
-    
-    <li class="post-action">
-      
-        <a class="post-action-btn btn btn--default" href="#">
-      
-        <i class="fa fa-list"></i>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
       </a>
     </li>
-  </ul>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
 
             
-              
-                <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-              
-            
+  
+
+
           </div>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2019 Nitin Ahuja. All Rights Reserved
+    &copy; 2022 Nitin Ahuja. All Rights Reserved
   </span>
 </footer>
 
       </div>
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        <div class="post-actions-wrap">
-  <nav>
+        
+<div class="post-actions-wrap">
+  <nav >
     <ul class="post-actions post-action-nav">
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2021/generative-art/" data-tooltip="Generative Art" aria-label="NEXT: Generative Art">
           
-            <i class="fa fa-angle-left"></i>
-            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
-          </a>
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="/2017/nps-exploratory-text-analysis/" data-tooltip="NPS - Exploratory analysis in R - Text analysis">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2017/nps-exploratory-text-analysis/" data-tooltip="NPS - Exploratory analysis in R - Text analysis" aria-label="PREVIOUS: NPS - Exploratory analysis in R - Text analysis">
           
-            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
-            <i class="fa fa-angle-right"></i>
-          </a>
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
         </li>
       
     </ul>
   </nav>
-  <ul class="post-actions post-action-share">
-    
-      <li class="post-action hide-lg hide-md hide-sm">
-        <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-          <i class="fa fa-share-alt"></i>
-        </a>
-      </li>
-      <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=%2f2018%2fvehicle-fuel-economy-exploratory-analysis%2f">
-          <i class="fa fa-google-plus"></i>
-        </a>
-      </li>
-      <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2018%2fvehicle-fuel-economy-exploratory-analysis%2f">
-          <i class="fa fa-facebook-official"></i>
-        </a>
-      </li>
-      <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=%2f2018%2fvehicle-fuel-economy-exploratory-analysis%2f">
-          <i class="fa fa-twitter"></i>
-        </a>
-      </li>
-    
-    
-      <li class="post-action">
-        <a class="post-action-btn btn btn--default" href="#disqus_thread">
-          <i class="fa fa-comment-o"></i>
-        </a>
-      </li>
-    
-    <li class="post-action">
-      
-        <a class="post-action-btn btn btn--default" href="#">
-      
-        <i class="fa fa-list"></i>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
       </a>
     </li>
-  </ul>
+    
+  
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
 </div>
 
 
       </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
-  <ul class="share-options">
-    <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2f2018%2fvehicle-fuel-economy-exploratory-analysis%2f">
-        <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
-      </a>
-    </li>
-    <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2018%2fvehicle-fuel-economy-exploratory-analysis%2f">
-        <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
-      </a>
-    </li>
-    <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2f2018%2fvehicle-fuel-economy-exploratory-analysis%2f">
-        <i class="fa fa-twitter"></i><span>Share on Twitter</span>
-      </a>
-    </li>
-  </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
+      
+
     </div>
     
     <div id="about">
   <div id="about-card">
     <div id="about-btn-close">
-      <i class="fa fa-remove"></i>
+      <i class="fa fa-times"></i>
     </div>
     
-      <img id="about-card-picture" src="//www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=110" alt="Author&#39;s picture" />
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Nitin Ahuja</h4>
     
@@ -1598,7 +2512,7 @@ Kmeans is one of easiest clustering algorithm and there are many other unsupervi
     
     
       <div id="about-card-location">
-        <i class="fa fa-map-marker"></i>
+        <i class="fa fa-map-marker-alt"></i>
         <br/>
         California
       </div>
@@ -1606,282 +2520,40 @@ Kmeans is one of easiest clustering algorithm and there are many other unsupervi
   </div>
 </div>
 
-    <div id="algolia-search-modal" class="modal-container">
-  <div class="modal">
-    <div class="modal-header">
-      <span class="close-button"><i class="fa fa-close"></i></span>
-      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
-        <span class="searchby-algolia-text text-color-light text-small">by</span>
-        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
-      </a>
-      <i class="search-icon fa fa-search"></i>
-      <form id="algolia-search-form">
-        <input type="text" id="algolia-search-input" name="search"
-          class="form-control input--large search-input" placeholder="Search" />
-      </form>
-    </div>
-    <div class="modal-body">
-      <div class="no-result text-color-light text-center">no post found</div>
-      <div class="results">
-        
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/2018/vehicle-fuel-economy-exploratory-analysis/">
-                <h3 class="media-heading">Vehicle Fuel Economy - exploratory analysis</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. I am going to start by fetching some data from the inter webs, this data is available at the FuelEconomy.gov site. This file has fuel economy data for all cars sold in the United States for several years.
-Let’s start by loading the libraries we need:</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/2017/nps-exploratory-text-analysis/">
-                <h3 class="media-heading">NPS - Exploratory analysis in R - Text analysis</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">NPS analysis NPS - Comment analysis In an previous post we performed some EDA on the NPS data we have. Recall that as part of the question about the likelihood of recommending a service or business there is an optional text response about why they picked this score.
-Let’s try and see what those responses are all about. We had already performed some sentiment analysis on this text we are now going to attempt to classify this text into topics.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/2017/heatmaps-in-r/">
-                <h3 class="media-heading">Heat maps in R</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Sep 9, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">Heatmaps Heat maps are invaluable in displaying a large amount of continuous data contained in a 2d matrix. This post is meant to show a way to create a print worthy heat map in R.
-Let’s start by loading the required packages.
-suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/2017/managing-managers-some-thoughts/">
-                <h3 class="media-heading">Managing managers - some thoughts</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">When you are managing managers, you should have a single focus; they are learning to manage their teams well and as a secondary objective that they are contributing at high levels. There are several experts in this area and I do not claim to be anywhere close; these are just reminders for myself.
-Your team learns by modeling you. There is little doubt that what you do, your team will emulate.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/2017/nps-exploratory-analysis-in-r/">
-                <h3 class="media-heading">NPS - Exploratory analysis in R</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question. &gt; How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being “most likely” to recommend and 0 being “least likely”.
-An additional optional question is asked about why they picked this score and the response to that is usually a text comment.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/2016/forecasting-in-r-philadelphia-crime-data/">
-                <h3 class="media-heading">Forecasting in R - Philadelphia crime data</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Oct 10, 2016
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">Exploring crime in Philadelphia This is a large and intersting dataset and has data points stretching back over 10 years. Several explorations have pointed out that crime seems to be seasonal and I wanted to explore this with a time series. Assuming that seasonal trends might repeat themselves, I am exploring this using the forecast package and using linear regression to predict trends.
-suppressPackageStartupMessages({ library(data.table) library(forecast) library(knitr) }) Data size and structure.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/2016/access-log-parsing-with-spark-and-schema-extraction-from-query-string/">
-                <h3 class="media-heading">Access log parsing with Spark and schema extraction from query string</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2016
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">I needed to parse server logs and create Spark DataFrames to query information from the query string parameters. My naive version kept throwing errors about mismatched number of fields in schema and those in the row being queried.
-It turns out I was dealing with over 350 different query string params across the logs. This could change over time and there was no way I was going to add these programmatically by hand.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/2016/revenue-forecast-for-seasonal-business/">
-                <h3 class="media-heading">Revenue forecast for seasonal business</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2016
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">Revenue forecasting with linear methods. This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let’s dive into the data. Load up the required packages.
-suppressPackageStartupMessages({ library(forecast) }) Load the data, we have two columns with weekly revenue numbers from two different sources. Online and Phone; these correspond to sales online and via phone call to the business.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/2014/on-marketplaces-and-platforms/">
-                <h3 class="media-heading">On Marketplaces and platforms</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2014
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">Marketplaces are all the rage these days, in truth, marketplaces have been around since ancient times. A marketplace usually exists to connect sellers of goods or services with buyers. The marketplace itself usually benefits by selling space to sellers or by taking a cut of the transaction.
-This post is focused on service marketplaces that are connecting and democratizing human capital in a way that has never been possible. Things like vetting, payments, reviews and support have been researched and A/B tested to an art.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/2013/finding-with-find/">
-                <h3 class="media-heading">Finding with find</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2013
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather">Find is a really versatile utility that can be used to enumerate files of different types, narrow the list by file types, dates, sizes, access times and a whole list of expressions. The output can be formatted with various switches to be csv.
-My goal was to list the sizes and access times for all video files in the system. I knew that there was over 3 TB of files but not how recently these were accessed/played.</div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-      </div>
-    </div>
-    <div class="modal-footer">
-      <p class="results-count text-medium"
-         data-message-zero="no post found"
-         data-message-one="1 post found"
-         data-message-other="{n} posts found">
-         14 posts found
-      </p>
-    </div>
-  </div>
-</div>
+    
+
     
   
     
-    <div id="cover" style="background-image:url('/images/cover.jpg');"></div>
+      
+      <div id="cover" style="background-image:url('https://nitinahuja.github.io/images/cover.jpg');"></div>
+    
   
 
 
     
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-<script src="/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
 
-<script>
-$(document).ready(function() {
-  hljs.configure({ classPrefix: '', useBR: false });
-  $('pre.code-highlight').each(function(i, block) {
-    var code = "";
-    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
-      code += "<span class=\"line\">" + line + "</span><br>";
-    });
-    if (code.length > 0) {
-      block.innerHTML = code;  
-    }
+<script src="https://nitinahuja.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+
+
+
+
+     
+  <script>
+  $(document).ready(function () {
+    window.initializeCodeFolding("show" === "hide");
   });
-  $('pre > code').each(function(i, block) {
-    $(this).addClass('codeblock');
-    hljs.highlightBlock(block);
-  });
-});
-</script>
-
-  
-    
-      <script>
-        var disqus_config = function () {
-          this.page.url = '\/2018\/vehicle-fuel-economy-exploratory-analysis\/';
-          
-            this.page.identifier = '\/2018\/vehicle-fuel-economy-exploratory-analysis\/'
-          
-        };
-        (function() {
-          
-          
-          if (window.location.hostname == "localhost") {
-            return;
-          }
-          var d = document, s = d.createElement('script');
-          var disqus_shortname = 'viewstate-1';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    
-  
-
-
-
-
+  </script>
+  <script src="https://nitinahuja.github.io/js/codefolding.js"></script>
 
     
   </body>

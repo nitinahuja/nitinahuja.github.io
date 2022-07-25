@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unix on A programmer&#39;s viewpoint</title>
-    <link>/tags/unix/</link>
-    <description>Recent content in Unix on A programmer&#39;s viewpoint</description>
+    <title>unix on A programmer&#39;s viewpoint</title>
+    <link>https://nitinahuja.github.io/tags/unix/</link>
+    <description>Recent content in unix on A programmer&#39;s viewpoint</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Apr 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/unix/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 11 Apr 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://nitinahuja.github.io/tags/unix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Finding with find</title>
-      <link>/2013/finding-with-find/</link>
+      <link>https://nitinahuja.github.io/2013/finding-with-find/</link>
       <pubDate>Thu, 11 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>/2013/finding-with-find/</guid>
+      <guid>https://nitinahuja.github.io/2013/finding-with-find/</guid>
       <description>Find is a really versatile utility that can be used to enumerate files of different types, narrow the list by file types, dates, sizes, access times and a whole list of expressions. The output can be formatted with various switches to be csv.
 My goal was to list the sizes and access times for all video files in the system. I knew that there was over 3 TB of files but not how recently these were accessed/played.</description>
     </item>

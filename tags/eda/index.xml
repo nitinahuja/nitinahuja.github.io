@@ -1,22 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Eda on A programmer&#39;s viewpoint</title>
-    <link>/tags/eda/</link>
-    <description>Recent content in Eda on A programmer&#39;s viewpoint</description>
+    <title>EDA on A programmer&#39;s viewpoint</title>
+    <link>https://nitinahuja.github.io/tags/eda/</link>
+    <description>Recent content in EDA on A programmer&#39;s viewpoint</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Nov 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/eda/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://nitinahuja.github.io/tags/eda/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Let&#39;s explore Near Earth Orbit - exploratory analysis</title>
+      <link>https://nitinahuja.github.io/2022/low-earth-orbits-exploraration/</link>
+      <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://nitinahuja.github.io/2022/low-earth-orbits-exploraration/</guid>
+      <description>Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. We’ll look at some data from Jonathan McDowell’s Catalog site.
+This site has data about man-made objects launched into space and all the debris we have created in near earth orbits.
+We’ll try to load the file directly from the site. This allows us to get the most recent data from the internet.</description>
+    </item>
     
     <item>
       <title>Vehicle Fuel Economy - exploratory analysis</title>
-      <link>/2018/vehicle-fuel-economy-exploratory-analysis/</link>
+      <link>https://nitinahuja.github.io/2018/vehicle-fuel-economy-exploratory-analysis/</link>
       <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/vehicle-fuel-economy-exploratory-analysis/</guid>
+      <guid>https://nitinahuja.github.io/2018/vehicle-fuel-economy-exploratory-analysis/</guid>
       <description>Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. I am going to start by fetching some data from the inter webs, this data is available at the FuelEconomy.gov site. This file has fuel economy data for all cars sold in the United States for several years.
 Let’s start by loading the libraries we need:</description>
     </item>

@@ -334,12 +334,12 @@ We’ll look at some data from <a href="https://www.planet4589.org/space/gcat/in
 <pre class="r"><code>#This is data from the Jonathan database https://www.planet4589.org/space/gcat/ https://www.planet4589.org/space/gcat/tsv/cat/satcat.tsv
 # Going to unify the column names so that the same code can be executed
 
-dt &lt;- data.table::fread(&quot;~/data/satcat.tsv&quot;, fill = TRUE, na.strings = c(&quot;-&quot;,NA),
+dt &lt;- data.table::fread(&quot;~/data/satcat.tsv&quot;, fill = TRUE, na.strings = c(&quot;-&quot;,NA), sep=&quot;\t&quot;,
                         colClasses = list(factor = c( &quot;Status&quot;, &quot;Primary&quot;, &quot;Owner&quot;, &quot;OpOrbit&quot;, &quot;State&quot;, &quot;Shape&quot; ), numeric = c(&quot;Apogee&quot;, &quot;Perigee&quot;, &quot;Mass&quot;, &quot;Diameter&quot;, &quot;TotMass&quot; )) )
 
 leo &lt;- as_tibble(dt)
 # Drop the first row - it seems to be coming in empty
-leo &lt;- leo[-c(1),]
+#leo &lt;- leo[-c(1),]
 
 leo$ODate &lt;- as.Date(leo$ODate, tz = &quot;GMT&quot;, format = &quot;%Y %b %e&quot;)
 leo$SDate &lt;- as.Date(leo$SDate, tz = &quot;GMT&quot;, format = &quot;%Y %b %e&quot;)
@@ -359,7 +359,8 @@ leo &lt;- leo %&gt;%
   
   
 # Jonathan has org data in a separate file - read that and join with data to get owner details
-dt_org &lt;- data.table::fread(&quot;~/data/orgs.tsv&quot;, fill = TRUE, drop = c( &quot;Name&quot;, &quot;Parent&quot;),  colClasses = list(factor = c(&quot;StateCode&quot;, &quot;ShortEName&quot;, &quot;Class&quot;)))
+dt_org &lt;- data.table::fread(&quot;~/data/orgs.tsv&quot;, fill = TRUE, drop = c( &quot;Name&quot;, &quot;Parent&quot;),  sep = &quot;\t&quot;,
+                            colClasses = list(factor = c(&quot;StateCode&quot;, &quot;ShortEName&quot;, &quot;Class&quot;)))
 
 org &lt;- as_tibble(dt_org)
 
@@ -385,7 +386,7 @@ leo &lt;- leo %&gt;% rename(own = State, JCAT = `#JCAT`)
 
 ## Read the celestrack catalog as well - this is useful to get periods
 
-dt &lt;- data.table::fread(&quot;~/data/satcat_celestrack.csv&quot;, fill = TRUE, 
+dt &lt;- data.table::fread(&quot;~/data/satcat_celestrack.csv&quot;, fill = TRUE, sep = &quot;,&quot;,
                         colClasses = list(factor=c(&quot;LAUNCH_SITE&quot;, &quot;OBJECT_TYPE&quot;, &quot;OWNER&quot;, &quot;ORBIT_CENTER&quot;, &quot;ORBIT_TYPE&quot;, &quot;OBJECT_NAME&quot;, &quot;OPS_STATUS_CODE&quot;, &quot;DATA_STATUS_CODE&quot;    )))
 
 gbd &lt;- as_tibble(dt)</code></pre>
@@ -543,7 +544,7 @@ VTNM= &quot;Vietnam&quot;)
 
 
 leo$year &lt;- year(leo$LAUNCH_DATE)</code></pre>
-<p>We have 53248 rows - that’s a lot of tracked objects in space.</p>
+<p>We have 53766 rows - that’s a lot of tracked objects in space.</p>
 </div>
 <div id="data-exploration" class="section level1">
 <h1>Data Exploration</h1>
@@ -1040,7 +1041,7 @@ leo %&gt;%
 <p>These are useful to understand breakup events and we will create one such diagram for the Cosmos 1408 breakup event. Surprisingly, Jonathan’s satcat does not seem to have the period of these objects and this is an essential piece of data for this diagram. We’ll use the satcat from celestrack for this.</p>
 <div id="cosmos-1408" class="section level3">
 <h3>Cosmos 1408</h3>
-<p>This figure shows the Gabbard diagram for Cosmos 1405 as of 2022-07-25.</p>
+<p>This figure shows the Gabbard diagram for Cosmos 1405 as of 2022-10-28.</p>
 <pre class="r"><code>gbd %&gt;% 
   filter(OBJECT_NAME %in% c(&quot;COSMOS 1408&quot;, &quot;COSMOS 1408 DEB&quot;),  is.na(DECAY_DATE)) %&gt;% 
   ggplot(aes(x = PERIOD)) +
@@ -1226,7 +1227,7 @@ leo %&gt;%
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 Nitin Ahuja. All Rights Reserved
+    &copy; 2023 Nitin Ahuja. All Rights Reserved
   </span>
 </footer>
 

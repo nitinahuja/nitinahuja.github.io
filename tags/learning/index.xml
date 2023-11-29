@@ -14,8 +14,8 @@
       
       <guid>https://nitinahuja.github.io/2017/heatmaps-in-r/</guid>
       <description>Heatmaps Heat maps are invaluable in displaying a large amount of continuous data contained in a 2d matrix. This post is meant to show a way to create a print worthy heat map in R.
-Let’s start by loading the required packages.
-suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like.</description>
+Let&amp;rsquo;s start by loading the required packages.
+suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let&amp;rsquo;s read and see what the data looks like. We have observations (count of calls) for each day of the week and each hour of the day.</description>
     </item>
     
     <item>

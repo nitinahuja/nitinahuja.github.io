@@ -13,7 +13,8 @@
       <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/</guid>
-      <description>NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question. &amp;gt; How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being “most likely” to recommend and 0 being “least likely”.
+      <description>NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question.
+How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being &amp;ldquo;most likely&amp;rdquo; to recommend and 0 being &amp;ldquo;least likely&amp;rdquo;.
 An additional optional question is asked about why they picked this score and the response to that is usually a text comment.</description>
     </item>
     

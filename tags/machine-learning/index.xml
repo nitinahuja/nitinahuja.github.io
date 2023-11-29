@@ -14,7 +14,7 @@
       
       <guid>https://nitinahuja.github.io/2018/vehicle-fuel-economy-exploratory-analysis/</guid>
       <description>Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. I am going to start by fetching some data from the inter webs, this data is available at the FuelEconomy.gov site. This file has fuel economy data for all cars sold in the United States for several years.
-Let’s start by loading the libraries we need:</description>
+Let&amp;rsquo;s start by loading the libraries we need:</description>
     </item>
     
   </channel>

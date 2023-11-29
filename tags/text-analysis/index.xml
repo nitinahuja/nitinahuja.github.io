@@ -13,7 +13,7 @@
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://nitinahuja.github.io/2017/nps-exploratory-text-analysis/</guid>
-      <description>NPS analysis NPS - Comment analysis In an previous post we performed some EDA on the NPS data we have. Recall that as part of the question about the likelihood of recommending a service or business there is an optional text response about why they picked this score.
+      <description>NPS analysis NPS - Comment analysis In an [previous post](https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/) we performed some EDA on the NPS data we have. Recall that as part of the question about the likelihood of recommending a service or business there is an optional text response about why they picked this score.
 Let’s try and see what those responses are all about. We had already performed some sentiment analysis on this text we are now going to attempt to classify this text into topics.</description>
     </item>
     

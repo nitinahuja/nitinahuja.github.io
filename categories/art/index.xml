@@ -13,8 +13,7 @@
       <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://nitinahuja.github.io/2021/generative-art/</guid>
-      <description>Introduction Just experimenting with some generated art in R. Code is heavily borrowed from the web.
-library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) library(deldir) disturbance = expand.grid(c = 1:25, r = 1:49) %&amp;gt;% mutate( c = ifelse(r %% 2 == 0, c + 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964) ) %&amp;gt;% filter(c &amp;lt;= 50) ggplot(disturbance) + geom_text(aes(c, r, label = &amp;quot;0&amp;quot;, angle = a, color = a), family = &amp;quot;Times&amp;quot;, size = 10, show.</description>
+      <description>library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) disturbance = expand.grid(c = 1:25, r = 1:49) %&amp;gt;% mutate( c = ifelse(r %% 2 == 0, c + 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.1, seed = 1964) ) %&amp;gt;% filter(c &amp;lt;= 50) ggplot(disturbance) + geom_text(aes(c, r, label = &amp;#34;0&amp;#34;, angle = a, color = a), family = &amp;#34;Times&amp;#34;, size = 16, show.legend = F) + coord_fixed(ratio = 0.5, expand = TRUE) + scale_color_gradient2(low = &amp;#34;orange&amp;#34;, high = &amp;#34;red&amp;#34;, mid = &amp;#34;tomato&amp;#34;) + theme_void() set.</description>
     </item>
     
   </channel>

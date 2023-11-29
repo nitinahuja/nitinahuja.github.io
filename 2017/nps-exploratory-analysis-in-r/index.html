@@ -2,6 +2,19 @@
 <html lang="en-us">
   <head>
     
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
     <script type="application/ld+json">
 
 {  
@@ -16,7 +29,7 @@
     
   },
   "name":"A programmer\u0027s viewpoint",
-  "description":"NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question. \u0026gt; How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being “most likely” to recommend and 0 being “least likely”.\nAn additional optional question is asked about why they picked this score and the response to that is usually a text comment.",
+  "description":"NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question.\nHow likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being \u0026ldquo;most likely\u0026rdquo; to recommend and 0 being \u0026ldquo;least likely\u0026rdquo;.\nAn additional optional question is asked about why they picked this score and the response to that is usually a text comment.",
   "url":"https:\/\/nitinahuja.github.io\/2017\/nps-exploratory-analysis-in-r\/",
   "keywords":"[]"
 }
@@ -25,14 +38,16 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.98.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.118.2 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Nitin Ahuja">
 <meta name="keywords" content="">
-<meta name="description" content="NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question. &gt; How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being “most likely” to recommend and 0 being “least likely”.
+<meta name="description" content="NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question.
+How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being &ldquo;most likely&rdquo; to recommend and 0 being &ldquo;least likely&rdquo;.
 An additional optional question is asked about why they picked this score and the response to that is usually a text comment.">
 
 
-<meta property="og:description" content="NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question. &gt; How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being “most likely” to recommend and 0 being “least likely”.
+<meta property="og:description" content="NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question.
+How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being &ldquo;most likely&rdquo; to recommend and 0 being &ldquo;least likely&rdquo;.
 An additional optional question is asked about why they picked this score and the response to that is usually a text comment.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NPS - Exploratory analysis in R">
@@ -40,9 +55,11 @@ An additional optional question is asked about why they picked this score and th
 <meta property="og:url" content="https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/">
 <meta property="twitter:url" content="https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/">
 <meta property="og:site_name" content="A programmer&#39;s viewpoint">
-<meta property="og:description" content="NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question. &gt; How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being “most likely” to recommend and 0 being “least likely”.
+<meta property="og:description" content="NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question.
+How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being &ldquo;most likely&rdquo; to recommend and 0 being &ldquo;least likely&rdquo;.
 An additional optional question is asked about why they picked this score and the response to that is usually a text comment.">
-<meta name="twitter:description" content="NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question. &gt; How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being “most likely” to recommend and 0 being “least likely”.
+<meta name="twitter:description" content="NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question.
+How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being &ldquo;most likely&rdquo; to recommend and 0 being &ldquo;least likely&rdquo;.
 An additional optional question is asked about why they picked this score and the response to that is usually a text comment.">
 <meta property="og:locale" content="en-us">
 
@@ -113,6 +130,14 @@ An additional optional question is asked about why they picked this score and th
     <link rel="stylesheet" href="https://nitinahuja.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
+      
+        <link rel="stylesheet"  href="https://nitinahuja.github.io/css/codefolding.css">
+      
+    
+      
+        <link rel="stylesheet"  crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+      
+    
 
     
       
@@ -129,10 +154,6 @@ if (!doNotTrack) {
 }
 </script>
     
-    
-    
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-      <link rel="stylesheet" href="https://nitinahuja.github.io/css/codefolding.css" />
     
   </head>
 
@@ -156,6 +177,20 @@ if (!doNotTrack) {
     
     </a>
   
+  
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
 </header>
 
       <nav id="sidebar" data-behavior="4">
@@ -291,20 +326,6 @@ if (!doNotTrack) {
 
   </div>
 
-  
-
-<div id="code-folding-buttons" class="dropdown btn-group pull-right">
-  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
-     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Code
-  </a>
-  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
-    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
-    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
-  </div>
-</div>
-
-
 </div>
     
   </div>
@@ -319,49 +340,44 @@ if (!doNotTrack) {
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              
-
-
-<div id="nps-analysis" class="section level1">
-<h1>NPS analysis</h1>
-<div id="what-is-net-promorter-score-nps" class="section level2">
-<h2>What is net promorter score (NPS)?</h2>
-<p>Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question.
-&gt; How likely are you to recommend this product?
-The respondents are asked to score between 0 and 10. 10 being “most likely” to recommend and 0 being “least likely”.</p>
+              <h1 id="nps-analysis">NPS analysis</h1>
+<h2 id="what-is-net-promorter-score-nps">What is net promorter score (NPS)?</h2>
+<p>Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question.</p>
+<blockquote>
+<p>How likely are you to recommend this product?
+The respondents are asked to score between 0 and 10. 10 being &ldquo;most likely&rdquo; to recommend and 0 being &ldquo;least likely&rdquo;.</p>
+</blockquote>
 <p>An additional optional question is asked about why they picked this score and the response to that is usually a text comment. We will make an attempt to summarize the text as well.</p>
 <p>I have NPS scores from customers of a platform that allows them to sell widgets. These scores were collected over a two year period Jun 2015 - Jun 2017, and this is an attempt to perform some exploratory data analysis and see if some more value can be extracted from this data.</p>
 <p>Note that some of this data has been sanitized of proprietary information but the scores have been left untouched.</p>
-<p>First, let’s load up some packages.</p>
-<pre class="r"><code>library(NPS)
-
-library(ggplot2)
-library(lubridate)
-library(dplyr)
-library(tidyr)
-library(RColorBrewer)
-library(ggridges)
-library(reshape2)
-
-library(tidytext)
-library(wordcloud)
-library(tm)
-library(stringr)
-library(SnowballC)
-
-theme_set(theme_minimal())</code></pre>
-</div>
-<div id="analyze-the-data." class="section level2">
-<h2>Analyze the data.</h2>
+<p>First, let&rsquo;s load up some packages.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(NPS)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(ggplot2)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(lubridate)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(dplyr)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(tidyr)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(RColorBrewer)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(ggridges)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(reshape2)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(tidytext)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(wordcloud)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(tm)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(stringr)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(SnowballC)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme_set</span>(<span style="color:#a6e22e">theme_minimal</span>())
+</span></span></code></pre></div><h2 id="analyze-the-data">Analyze the data.</h2>
 <p>Next load up the data and take a look.</p>
-<pre class="r"><code>nps &lt;- read.csv(&#39;~/data/nps.csv&#39;, header = TRUE, quote = &#39;&quot;&#39;
-                , na.strings=c(&quot;&quot;, &quot;NA&quot;, &quot;#N/A&quot;)
-                , colClasses = c(&quot;Feedback.Received&quot;= &quot;Date&quot;
-                               , &quot;Comment&quot;=&quot;character&quot;
-                               , &quot;Survey.Sent&quot;=&quot;Date&quot;
-                               , &quot;TPY&quot;=&quot;integer&quot;
-                               ))</code></pre>
-<p>Let’s take a look at the data.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read.csv</span>(<span style="color:#e6db74">&#39;~/data/nps.csv&#39;</span>, header <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, quote <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>                , na.strings<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">&#34;NA&#34;</span>, <span style="color:#e6db74">&#34;#N/A&#34;</span>)
+</span></span><span style="display:flex;"><span>                , colClasses <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Feedback.Received&#34;</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Date&#34;</span>
+</span></span><span style="display:flex;"><span>                               , <span style="color:#e6db74">&#34;Comment&#34;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;character&#34;</span>
+</span></span><span style="display:flex;"><span>                               , <span style="color:#e6db74">&#34;Survey.Sent&#34;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Date&#34;</span>
+</span></span><span style="display:flex;"><span>                               , <span style="color:#e6db74">&#34;TPY&#34;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;integer&#34;</span>
+</span></span><span style="display:flex;"><span>                               ))
+</span></span></code></pre></div><p>Let&rsquo;s take a look at the data.
 Here is some summarized information for this data</p>
 <ul>
 <li>8423 total rows</li>
@@ -370,249 +386,219 @@ Here is some summarized information for this data</p>
 <li>Feedback dates are from 2015-06-23 to 2017-06-05</li>
 </ul>
 <p>Summarized details</p>
-<pre><code>##     Vertical         TPY         Non.Profit       Sent           
-##  PeA    :2874   Min.   :   -40   N   :7024   Min.   :2015-06-23  
-##  UnPA   : 575   1st Qu.:  1799   Y   :1220   1st Qu.:2016-01-17  
-##  HiS    : 545   Median :  4816   NA&#39;s: 179   Median :2016-07-18  
-##  CoT    : 455   Mean   : 10101               Mean   :2016-07-04  
-##  CoV    : 195   3rd Qu.: 10535               3rd Qu.:2016-12-16  
-##  (Other):1287   Max.   :600000               Max.   :2017-06-05  
-##  NA&#39;s   :2492   NA&#39;s   :41                   NA&#39;s   :1632        
-##     Received              Score       
-##  Min.   :2015-06-23   Min.   : 0.000  
-##  1st Qu.:2015-12-31   1st Qu.: 7.000  
-##  Median :2016-06-22   Median : 9.000  
-##  Mean   :2016-06-17   Mean   : 7.824  
-##  3rd Qu.:2016-11-27   3rd Qu.:10.000  
-##  Max.   :2017-06-05   Max.   :10.000  
-##  NA&#39;s   :6824         NA&#39;s   :6824    
-##                               promoter.tags              detractor.tags
-##  Customer Service                    : 118   Product - General  :  23  
-##  User Experience                     :  82   Pricing            :  22  
-##  Customer Service | User Experience  :  79   Customer Service   :  12  
-##  Customer Service | Product - General:  55   User Experience    :  11  
-##  Product - General                   :  47   Product - Reporting:   8  
-##  (Other)                             : 158   (Other)            : 159  
-##  NA&#39;s                                :7884   NA&#39;s               :8188</code></pre>
-</div>
-<div id="nps" class="section level2">
-<h2>NPS</h2>
-<p>Let’s start by getting the NPS for this data. NPS scores can vary from -100 (all detractors) to 100 (all promoters).
+<pre tabindex="0"><code>##    Vertical              TPY          Non.Profit             Sent           
+##  Length:8423        Min.   :   -40   Length:8423        Min.   :2015-06-23  
+##  Class :character   1st Qu.:  1799   Class :character   1st Qu.:2016-01-17  
+##  Mode  :character   Median :  4816   Mode  :character   Median :2016-07-18  
+##                     Mean   : 10101                      Mean   :2016-07-04  
+##                     3rd Qu.: 10535                      3rd Qu.:2016-12-16  
+##                     Max.   :600000                      Max.   :2017-06-05  
+##                     NA&#39;s   :41                          NA&#39;s   :1632        
+##     Received              Score        promoter.tags      detractor.tags    
+##  Min.   :2015-06-23   Min.   : 0.000   Length:8423        Length:8423       
+##  1st Qu.:2015-12-31   1st Qu.: 7.000   Class :character   Class :character  
+##  Median :2016-06-22   Median : 9.000   Mode  :character   Mode  :character  
+##  Mean   :2016-06-17   Mean   : 7.824                                        
+##  3rd Qu.:2016-11-27   3rd Qu.:10.000                                        
+##  Max.   :2017-06-05   Max.   :10.000                                        
+##  NA&#39;s   :6824         NA&#39;s   :6824
+</code></pre><h2 id="nps">NPS</h2>
+<p>Let&rsquo;s start by getting the NPS for this data. NPS scores can vary from -100 (all detractors) to 100 (all promoters).
 Note that the while NPS is expressed as a number between -100 and 100, the CRAN NPS package returns results from [-1,1]. All plots use the returned results and ideally should be multiplied by 100 and rounded.
 Before we can calculate that number we will need to ensure that our data actually has scores.</p>
-<p>Let’s drop all rows that don’t have Scores.</p>
-<pre class="r"><code>nps &lt;- nps %&gt;% drop_na(Score)</code></pre>
-<p>That leaves us with 1599 rows.</p>
-<p>Let’s enrich this data just a little bit. We’ll add a column for the day of the week, month, year of received date and the days to respond. We have also added categories based on the Score. Respondents who score from 0 through 6 are considered <em>detractors</em> of the service, 7 - 8 are <em>passives</em> and 9 and 10s are considered <em>promorters</em>.</p>
-<pre class="r"><code>nps$year &lt;- as.factor(year(nps$Received))
-nps$month &lt;- cut(nps$Received, breaks = &quot;month&quot;)
-nps$days &lt;- nps$Received - nps$Sent
-nps$weekday &lt;- weekdays(nps$Received)
-nps$weekday &lt;- factor(nps$weekday, levels = c(&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, 
-    &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;))
-nps$cat &lt;- cut(nps$Score, breaks = c(-1, 6, 8, 10), labels = c(&quot;Detractor&quot;, 
-    &quot;Passive&quot;, &quot;Promoter&quot;))</code></pre>
-<div id="overall-nps-score" class="section level3">
-<h3>Overall NPS Score</h3>
-<p>What’s the overall NPS score?</p>
-<pre class="r"><code>nps(nps$Score,  breaks = list(0:6, 7:8, 9:10))
-## [1] 0.2826767</code></pre>
-</div>
-<div id="yearly-changes" class="section level3">
-<h3>Yearly changes</h3>
+<p>Let&rsquo;s drop all rows that don&rsquo;t have Scores.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps <span style="color:#f92672">&lt;-</span> nps <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">drop_na</span>(Score)
+</span></span></code></pre></div><p>That leaves us with 1599 rows.</p>
+<p>Let&rsquo;s enrich this data just a little bit. We&rsquo;ll add a column for the day of the week, month, year of received date and the days to respond. We have also added categories based on the Score. Respondents who score from 0 through 6 are considered <em>detractors</em> of the service, 7 - 8 are <em>passives</em> and 9 and 10s are considered <em>promorters</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps<span style="color:#f92672">$</span>year <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">as.factor</span>(<span style="color:#a6e22e">year</span>(nps<span style="color:#f92672">$</span>Received))
+</span></span><span style="display:flex;"><span>nps<span style="color:#f92672">$</span>month <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cut</span>(nps<span style="color:#f92672">$</span>Received, breaks <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;month&#34;</span>)
+</span></span><span style="display:flex;"><span>nps<span style="color:#f92672">$</span>days <span style="color:#f92672">&lt;-</span> nps<span style="color:#f92672">$</span>Received <span style="color:#f92672">-</span> nps<span style="color:#f92672">$</span>Sent
+</span></span><span style="display:flex;"><span>nps<span style="color:#f92672">$</span>weekday <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">weekdays</span>(nps<span style="color:#f92672">$</span>Received)
+</span></span><span style="display:flex;"><span>nps<span style="color:#f92672">$</span>weekday <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(nps<span style="color:#f92672">$</span>weekday, levels <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Sunday&#34;</span>, <span style="color:#e6db74">&#34;Monday&#34;</span>, <span style="color:#e6db74">&#34;Tuesday&#34;</span>, <span style="color:#e6db74">&#34;Wednesday&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Thursday&#34;</span>, <span style="color:#e6db74">&#34;Friday&#34;</span>, <span style="color:#e6db74">&#34;Saturday&#34;</span>))
+</span></span><span style="display:flex;"><span>nps<span style="color:#f92672">$</span>cat <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cut</span>(nps<span style="color:#f92672">$</span>Score, breaks <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">-1</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">10</span>), labels <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Detractor&#34;</span>, <span style="color:#e6db74">&#34;Passive&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Promoter&#34;</span>))
+</span></span></code></pre></div><h3 id="overall-nps-score">Overall NPS Score</h3>
+<p>What&rsquo;s the overall NPS score?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">nps</span>(nps<span style="color:#f92672">$</span>Score,  breaks <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## [1] 0.2826767</span>
+</span></span></code></pre></div><h3 id="yearly-changes">Yearly changes</h3>
 <p>Has there been any change in the score over time?</p>
-<pre class="r"><code>yearly &lt;- aggregate(nps$Score, list(nps$year), FUN = nps, nps$Score)
-
-ggplot(yearly) + 
-  geom_col(aes(x=as.factor(Group.1), y=x, fill=as.factor(Group.1)), width=0.5) +
-  xlab(&quot;Year&quot;) + 
-  ylab(&quot;NPS&quot;) + 
-  geom_text(aes(x=as.factor(Group.1), y=x, label=round(x,2)),  vjust = 1, hjust = 1)  +
-  coord_flip()  + 
-  scale_fill_brewer(&quot;Year&quot;, palette = &quot;Set1&quot;)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>yearly <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">aggregate</span>(nps<span style="color:#f92672">$</span>Score, <span style="color:#a6e22e">list</span>(nps<span style="color:#f92672">$</span>year), FUN <span style="color:#f92672">=</span> nps, nps<span style="color:#f92672">$</span>Score)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(yearly) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_col</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">as.factor</span>(Group.1), y<span style="color:#f92672">=</span>x, fill<span style="color:#f92672">=</span><span style="color:#a6e22e">as.factor</span>(Group.1)), width<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;Year&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;NPS&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_text</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">as.factor</span>(Group.1), y<span style="color:#f92672">=</span>x, label<span style="color:#f92672">=</span><span style="color:#a6e22e">round</span>(x,<span style="color:#ae81ff">2</span>)),  vjust <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, hjust <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)  <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_flip</span>()  <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_fill_brewer</span>(<span style="color:#e6db74">&#34;Year&#34;</span>, palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set1&#34;</span>)
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 <p>Looks like there has been a consistent improvement over the years.</p>
-</div>
-<div id="monthly-changes" class="section level3">
-<h3>Monthly changes</h3>
+<h3 id="monthly-changes">Monthly changes</h3>
 <p>Looking at the score monthly over time we can see that there is an upward trend but the growth is not consistent.</p>
-<pre class="r"><code>
-np &lt;- aggregate(nps$Score, list(nps$month), FUN = nps, nps$Score)
-
-ggplot(np, aes(x=as.Date( Group.1), y=x)) + 
-  geom_line(color = &quot;tomato&quot;) + 
-  geom_smooth(method = &quot;loess&quot;) + 
-  xlab(&quot;Year/Month&quot;) + 
-  ylab(&quot;NPS&quot;) + 
-  geom_text(aes( y=x, label=round(x,2)), position = position_dodge(width = 1), vjust = 0.5, hjust=1)  + 
-  theme_minimal() </code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-</div>
-</div>
-<div id="exploring-some-other-dimensions" class="section level2">
-<h2>Exploring some other dimensions</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>np <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">aggregate</span>(nps<span style="color:#f92672">$</span>Score, <span style="color:#a6e22e">list</span>(nps<span style="color:#f92672">$</span>month), FUN <span style="color:#f92672">=</span> nps, nps<span style="color:#f92672">$</span>Score)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(np, <span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">as.Date</span>( Group.1), y<span style="color:#f92672">=</span>x)) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_line</span>(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tomato&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_smooth</span>(method <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;loess&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;Year/Month&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;NPS&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_text</span>(<span style="color:#a6e22e">aes</span>( y<span style="color:#f92672">=</span>x, label<span style="color:#f92672">=</span><span style="color:#a6e22e">round</span>(x,<span style="color:#ae81ff">2</span>)), position <span style="color:#f92672">=</span> <span style="color:#a6e22e">position_dodge</span>(width <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>), vjust <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>, hjust<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)  <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">theme_minimal</span>() 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## `geom_smooth()` using formula = &#39;y ~ x&#39;</span>
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+<h2 id="exploring-some-other-dimensions">Exploring some other dimensions</h2>
 <p>Are there other dimensions that affect NPS?</p>
-<div id="day-of-the-week" class="section level3">
-<h3>Day of the week</h3>
+<h3 id="day-of-the-week">Day of the week</h3>
 <p>Does the day of the week affect the score?</p>
 <p>Looks like responses provided on Wednesday have a higher score. Might be something worth exploring to see if this is just random chance or if this is something real.</p>
-<pre class="r"><code>daily &lt;- aggregate(nps$Score, list(nps$weekday), FUN = nps, nps$Score)
-
-daily$Group.1 &lt;- factor(daily$Group.1, levels = c(&quot;Sunday&quot;, &quot;Monday&quot;,&quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;))
-
-ggplot(daily) + 
-  geom_col(aes(x=as.factor(Group.1), y=x, fill=as.factor(Group.1)), width=0.5) +
-  xlab(&quot;Day&quot;) + 
-  ylab(&quot;NPS&quot;) + 
-  geom_text(aes(x=as.factor(Group.1), y=x, label=round(x,2)),  vjust = 0.5, hjust = 1.5)  + 
-  coord_flip()  + 
-  scale_fill_brewer(&quot;Response Day&quot;, palette = &quot;Set1&quot;)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>daily <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">aggregate</span>(nps<span style="color:#f92672">$</span>Score, <span style="color:#a6e22e">list</span>(nps<span style="color:#f92672">$</span>weekday), FUN <span style="color:#f92672">=</span> nps, nps<span style="color:#f92672">$</span>Score)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>daily<span style="color:#f92672">$</span>Group.1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(daily<span style="color:#f92672">$</span>Group.1, levels <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Sunday&#34;</span>, <span style="color:#e6db74">&#34;Monday&#34;</span>,<span style="color:#e6db74">&#34;Tuesday&#34;</span>, <span style="color:#e6db74">&#34;Wednesday&#34;</span>, <span style="color:#e6db74">&#34;Thursday&#34;</span>, <span style="color:#e6db74">&#34;Friday&#34;</span>, <span style="color:#e6db74">&#34;Saturday&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(daily) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_col</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">as.factor</span>(Group.1), y<span style="color:#f92672">=</span>x, fill<span style="color:#f92672">=</span><span style="color:#a6e22e">as.factor</span>(Group.1)), width<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;Day&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;NPS&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_text</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">as.factor</span>(Group.1), y<span style="color:#f92672">=</span>x, label<span style="color:#f92672">=</span><span style="color:#a6e22e">round</span>(x,<span style="color:#ae81ff">2</span>)),  vjust <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>, hjust <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.5</span>)  <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_flip</span>()  <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_fill_brewer</span>(<span style="color:#e6db74">&#34;Response Day&#34;</span>, palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set1&#34;</span>)
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 <p>One more view of the scores by day; do respondents leave higher score on some days?</p>
-</div>
-<div id="day-of-week-vs-scores" class="section level3">
-<h3>Day of Week vs Scores</h3>
+<h3 id="day-of-week-vs-scores">Day of Week vs Scores</h3>
 <p>This plot shows the kernel density of the scores (0-10) received by day. It seems that respondents who leave scores on Wednesday seem to provide more 10s compared to Sunday. In fact, there seems to be a bi-modal distribution on Sunday with 5s and 10s.</p>
-<pre class="r"><code>ggplot(nps) + 
-  geom_density(aes( x = Score,  group = weekday, fill = weekday), alpha = 0.3) </code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
-<p>Here is a ridges plot for the score density by day. It’s harder to compare the relative heights of the score density compared to the density plot above. The bi-modal distribution of scores on Sunday is, however, quite clear here.</p>
-<pre class="r"><code>ggplot(nps) + 
-  geom_density_ridges(aes( x = Score, y = weekday, fill = weekday), scale = 3) +
-  scale_fill_brewer(&quot;Response Day&quot;, palette = &quot;Set1&quot;)
-## Picking joint bandwidth of 0.724</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
-</div>
-<div id="time-to-respond." class="section level3">
-<h3>Time to respond.</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(nps) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_density</span>(<span style="color:#a6e22e">aes</span>( x <span style="color:#f92672">=</span> Score,  group <span style="color:#f92672">=</span> weekday, fill <span style="color:#f92672">=</span> weekday), alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.3</span>) 
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<p>Here is a ridges plot for the score density by day. It&rsquo;s harder to compare the relative heights of the score density compared to the density plot above. The bi-modal distribution of scores on Sunday is, however, quite clear here.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(nps) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_density_ridges</span>(<span style="color:#a6e22e">aes</span>( x <span style="color:#f92672">=</span> Score, y <span style="color:#f92672">=</span> weekday, fill <span style="color:#f92672">=</span> weekday), scale <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_fill_brewer</span>(<span style="color:#e6db74">&#34;Response Day&#34;</span>, palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set1&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Picking joint bandwidth of 0.724</span>
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+<h3 id="time-to-respond">Time to respond.</h3>
 <p>How long are respondents taking to respond?</p>
 <p>It seems like most responses are received on the same day as the survey was sent. There is a peak on the 5th day as well. Given the fact that responses on Wednesday seems to generate higher scores, if requests are sent on Wednesday, it may skew towards more positive scores.</p>
-<pre class="r"><code>ggplot(nps) + 
-  geom_histogram(aes(as.numeric( days)), binwidth = 1, fill = &quot;tomato&quot;) + labs(title = &quot;Days to respond&quot;, x = &quot;Days to respond&quot;, y = &quot;Count of responses&quot;)  +
-  coord_cartesian(xlim = c(0,30)) </code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-</div>
-<div id="scores-over-the-years" class="section level3">
-<h3>Scores over the years</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(nps) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_histogram</span>(<span style="color:#a6e22e">aes</span>(<span style="color:#a6e22e">as.numeric</span>( days)), binwidth <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tomato&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Days to respond&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Days to respond&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Count of responses&#34;</span>)  <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_cartesian</span>(xlim <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">30</span>)) 
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+<h3 id="scores-over-the-years">Scores over the years</h3>
 <p>How have the scores changed over time?</p>
 <p>Has the median score shifted over the years?</p>
-<pre class="r"><code>ggplot(subset(nps, !is.na(year)), aes(y=Score, x=year)) + 
-  geom_boxplot() + 
-  geom_point( position = &quot;jitter&quot;, alpha = 0.4, aes(color=as.factor(Score))) + 
-  guides(color=FALSE) </code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">subset</span>(nps, <span style="color:#f92672">!</span><span style="color:#a6e22e">is.na</span>(year)), <span style="color:#a6e22e">aes</span>(y<span style="color:#f92672">=</span>Score, x<span style="color:#f92672">=</span>year)) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_boxplot</span>() <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_point</span>( position <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;jitter&#34;</span>, alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.4</span>, <span style="color:#a6e22e">aes</span>(color<span style="color:#f92672">=</span><span style="color:#a6e22e">as.factor</span>(Score))) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">guides</span>(color<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>) 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Warning: The `&lt;scale&gt;` argument of `guides()` cannot be `FALSE`. Use &#34;none&#34; instead as</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## of ggplot2 3.3.4.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## This warning is displayed once every 8 hours.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## generated.</span>
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 <p>We can see that 2017 seems to show a higher median score, but how much higher?
 This plot shows the kernel density of the scores.</p>
-<pre class="r"><code>ggplot(nps) + geom_density(aes(x=Score, fill = year, binwidth =1 ), alpha = 0.5) + coord_cartesian(xlim = c(0,10)) + 
-   scale_fill_brewer(&quot;Year&quot;, palette = &quot;Set1&quot;)
-## Warning: Ignoring unknown aesthetics: binwidth</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(nps) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_density</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>Score, fill <span style="color:#f92672">=</span> year, binwidth <span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ), alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">coord_cartesian</span>(xlim <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">10</span>)) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">scale_fill_brewer</span>(<span style="color:#e6db74">&#34;Year&#34;</span>, palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set1&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Warning in geom_density(aes(x = Score, fill = year, binwidth = 1), alpha =</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 0.5): Ignoring unknown aesthetics: binwidth</span>
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 <p>To see a percentage distribution, we can plot the cumulative frequency distribution of the Score categories grouped by year. The plot shows what percentage of Scores fall into which category groups.</p>
-<pre class="r"><code>ggplot(nps) + 
-  stat_ecdf(aes(x=cat, group = year, colour = year))</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(nps) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">stat_ecdf</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>cat, group <span style="color:#f92672">=</span> year, colour <span style="color:#f92672">=</span> year))
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-16-1.png" width="672" />
 <p>The table below shows the exact percentage of category groups by year. One can see that while the percentage of <em>detractors</em> has remained somewhat static over the years, some of the <em>passive</em> group has shifted to being <em>promorters</em>.</p>
-<pre class="r"><code>nps %&gt;% 
-  group_by(year, cat) %&gt;% 
-  summarise(cat_count = length(cat)) %&gt;% mutate(pct = round((cat_count/sum(cat_count)*100),2)) 
-## # A tibble: 9 x 4
-## # Groups:   year [3]
-##   year  cat       cat_count   pct
-##   &lt;fct&gt; &lt;fct&gt;         &lt;int&gt; &lt;dbl&gt;
-## 1 2015  Detractor        94  23.4
-## 2 2015  Passive         112  27.9
-## 3 2015  Promoter        195  48.6
-## 4 2016  Detractor       196  22.4
-## 5 2016  Passive         239  27.4
-## 6 2016  Promoter        439  50.2
-## 7 2017  Detractor        72  22.2
-## 8 2017  Passive          72  22.2
-## 9 2017  Promoter        180  55.6</code></pre>
-</div>
-<div id="tpy" class="section level3">
-<h3>TPY</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">group_by</span>(year, cat) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">summarise</span>(cat_count <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>(cat)) <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">mutate</span>(pct <span style="color:#f92672">=</span> <span style="color:#a6e22e">round</span>((cat_count<span style="color:#f92672">/</span><span style="color:#a6e22e">sum</span>(cat_count)<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>),<span style="color:#ae81ff">2</span>)) 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## `summarise()` has grouped output by &#39;year&#39;. You can override using the</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## `.groups` argument.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # A tibble: 9 × 4</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # Groups:   year [3]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##   year  cat       cat_count   pct</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##   &lt;fct&gt; &lt;fct&gt;         &lt;int&gt; &lt;dbl&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 1 2015  Detractor        94  23.4</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 2 2015  Passive         112  27.9</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 3 2015  Promoter        195  48.6</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 4 2016  Detractor       196  22.4</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 5 2016  Passive         239  27.4</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 6 2016  Promoter        439  50.2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 7 2017  Detractor        72  22.2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 8 2017  Passive          72  22.2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 9 2017  Promoter        180  55.6</span>
+</span></span></code></pre></div><h3 id="tpy">TPY</h3>
 <p>Recall that TPY is a measure of the widgets sold on the platform.
 Does the TPY affect score?
 We are going to create some groups based on the TPY number. It seems clear that the customers at 20,000 and below TPY levels are happier than the larger sized customers.</p>
-<pre class="r"><code># Add TPY levels
-nps$tp_level &lt;- cut(nps$TPY, breaks=c(-1,5000, 10000, 15000, 20000, 50000, +Inf), labels = c(&quot;0-5,000&quot;, &quot;10,000&quot;, &quot;15,000&quot;, &quot;20,000&quot;, &quot;50,000&quot;, &quot;50,000+&quot;))
-
-
-tix &lt;- aggregate(nps$Score, list(nps$tp_level), FUN = nps, nps$Score)
-
-ggplot(tix) + 
-  geom_col(aes(x=as.factor(Group.1), y=x, fill=as.factor(Group.1))) + 
-  xlab(&quot;TPY&quot;) + 
-  ylab(&quot;NPS&quot;) +
-  geom_text(aes(x=as.factor(Group.1), y=x, label=round(x,2)), position = position_dodge(width = 1), hjust=1.5) +
-  scale_fill_brewer(&quot;TPY&quot;, palette = &quot;Set1&quot;) + 
-  coord_flip()</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
-</div>
-<div id="for-profit-vs-non-profit-customers" class="section level3">
-<h3>For profit vs non-profit customers</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># Add TPY levels</span>
+</span></span><span style="display:flex;"><span>nps<span style="color:#f92672">$</span>tp_level <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cut</span>(nps<span style="color:#f92672">$</span>TPY, breaks<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">-1</span>,<span style="color:#ae81ff">5000</span>, <span style="color:#ae81ff">10000</span>, <span style="color:#ae81ff">15000</span>, <span style="color:#ae81ff">20000</span>, <span style="color:#ae81ff">50000</span>, <span style="color:#f92672">+</span><span style="color:#66d9ef">Inf</span>), labels <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;0-5,000&#34;</span>, <span style="color:#e6db74">&#34;10,000&#34;</span>, <span style="color:#e6db74">&#34;15,000&#34;</span>, <span style="color:#e6db74">&#34;20,000&#34;</span>, <span style="color:#e6db74">&#34;50,000&#34;</span>, <span style="color:#e6db74">&#34;50,000+&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tix <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">aggregate</span>(nps<span style="color:#f92672">$</span>Score, <span style="color:#a6e22e">list</span>(nps<span style="color:#f92672">$</span>tp_level), FUN <span style="color:#f92672">=</span> nps, nps<span style="color:#f92672">$</span>Score)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(tix) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_col</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">as.factor</span>(Group.1), y<span style="color:#f92672">=</span>x, fill<span style="color:#f92672">=</span><span style="color:#a6e22e">as.factor</span>(Group.1))) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;TPY&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;NPS&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_text</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">as.factor</span>(Group.1), y<span style="color:#f92672">=</span>x, label<span style="color:#f92672">=</span><span style="color:#a6e22e">round</span>(x,<span style="color:#ae81ff">2</span>)), position <span style="color:#f92672">=</span> <span style="color:#a6e22e">position_dodge</span>(width <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>), hjust<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_fill_brewer</span>(<span style="color:#e6db74">&#34;TPY&#34;</span>, palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set1&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_flip</span>()
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+<h3 id="for-profit-vs-non-profit-customers">For profit vs non-profit customers</h3>
 <p>There is a flag that shows if the respondent is a non-profit. It seems that for profit customers have higher satisfaction.</p>
-<pre class="r"><code>profit &lt;- nps %&gt;% 
-  filter(!is.na(Non.Profit)) %&gt;% 
-  group_by(Non.Profit) %&gt;% 
-  summarise(nps = nps(Score))
-
-ggplot(profit) + 
-  geom_col(aes(x=Non.Profit, y=nps, fill=Non.Profit), width=0.5) + 
-  xlab(&quot;For Profit&quot;) + 
-  ylab(&quot;NPS&quot;) + 
-  geom_text(aes(x=Non.Profit, y=nps, label=round(nps,2)), position = position_dodge(width = 1), hjust=1.5) +  
-  scale_fill_brewer(&quot;For Profit&quot;, palette = &quot;Set1&quot;) + 
-  coord_flip()</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
-</div>
-<div id="verticals" class="section level3">
-<h3>Verticals</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>profit <span style="color:#f92672">&lt;-</span> nps <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">filter</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.na</span>(Non.Profit)) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">group_by</span>(Non.Profit) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">summarise</span>(nps <span style="color:#f92672">=</span> <span style="color:#a6e22e">nps</span>(Score))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(profit) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_col</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>Non.Profit, y<span style="color:#f92672">=</span>nps, fill<span style="color:#f92672">=</span>Non.Profit), width<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;For Profit&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;NPS&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_text</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>Non.Profit, y<span style="color:#f92672">=</span>nps, label<span style="color:#f92672">=</span><span style="color:#a6e22e">round</span>(nps,<span style="color:#ae81ff">2</span>)), position <span style="color:#f92672">=</span> <span style="color:#a6e22e">position_dodge</span>(width <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>), hjust<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_fill_brewer</span>(<span style="color:#e6db74">&#34;For Profit&#34;</span>, palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set1&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_flip</span>()
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-19-1.png" width="672" />
+<h3 id="verticals">Verticals</h3>
 <p>The data has a column that shows the vertical of the respondent. This is an indicator of the category of widget being sold by the platform.</p>
 <p>The PrA vertical has the largest number of respondents.</p>
-<pre class="r"><code>vertical &lt;- nps %&gt;% 
-  filter(!is.na(Vertical)) %&gt;% 
-  group_by(Vertical) %&gt;% 
-  tally() %&gt;%  
-  top_n(10)
-## Selecting by n
-
-ggplot(vertical, aes(x=reorder(Vertical, n), y = n)) + 
-  geom_col(aes(fill = Vertical))  + 
-  guides(fill=FALSE) + 
-  ggtitle(&quot;Top 10 Verticals&quot;) + 
-  xlab(&quot;&quot;) +ylab(&quot;count&quot;) + 
-  coord_flip()</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
-</div>
-<div id="score-by-vertical" class="section level3">
-<h3>Score by Vertical</h3>
-<p>What’s the NPS score by Vertical? There seems to be a large variation of NPS by Vertical. Not sure if some connection should be derived from this. This may be something to explore further.</p>
-<pre class="r"><code>vert_score &lt;- nps  %&gt;% 
-  group_by(Vertical) %&gt;% 
-  summarise(nps = nps(Score))
-## Warning: Factor `Vertical` contains implicit NA, consider using
-## `forcats::fct_explicit_na`
-
-ggplot(vert_score) + 
-  geom_col(aes(x=reorder(Vertical, nps), y=nps, fill=Vertical)) + 
-  guides(fill=FALSE) +
-  coord_flip() +
-  scale_fill_discrete(name = &quot;Vertical&quot;) +
-  ylab(&quot;NPS&quot;) + xlab(&quot;Vertical&quot;) +
-  geom_text(aes(x=Vertical, y=nps, label=round(nps,2)), position = position_dodge(width = 1),vjust = 0.5, hjust=1) </code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>vertical <span style="color:#f92672">&lt;-</span> nps <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">filter</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.na</span>(Vertical)) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">group_by</span>(Vertical) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tally</span>() <span style="color:#f92672">%&gt;%</span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">top_n</span>(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Selecting by n</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(vertical, <span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">reorder</span>(Vertical, n), y <span style="color:#f92672">=</span> n)) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_col</span>(<span style="color:#a6e22e">aes</span>(fill <span style="color:#f92672">=</span> Vertical))  <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">guides</span>(fill<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ggtitle</span>(<span style="color:#e6db74">&#34;Top 10 Verticals&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#f92672">+</span><span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;count&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_flip</span>()
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-20-1.png" width="672" />
+<h3 id="score-by-vertical">Score by Vertical</h3>
+<p>What&rsquo;s the NPS score by Vertical? There seems to be a large variation of NPS by Vertical. Not sure if some connection should be derived from this. This may be something to explore further.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>vert_score <span style="color:#f92672">&lt;-</span> nps  <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">group_by</span>(Vertical) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">summarise</span>(nps <span style="color:#f92672">=</span> <span style="color:#a6e22e">nps</span>(Score))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(vert_score) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_col</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">reorder</span>(Vertical, nps), y<span style="color:#f92672">=</span>nps, fill<span style="color:#f92672">=</span>Vertical)) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">guides</span>(fill<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_fill_discrete</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Vertical&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ylab</span>(<span style="color:#e6db74">&#34;NPS&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">xlab</span>(<span style="color:#e6db74">&#34;Vertical&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_text</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>Vertical, y<span style="color:#f92672">=</span>nps, label<span style="color:#f92672">=</span><span style="color:#a6e22e">round</span>(nps,<span style="color:#ae81ff">2</span>)), position <span style="color:#f92672">=</span> <span style="color:#a6e22e">position_dodge</span>(width <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>),vjust <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>, hjust<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>) 
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-21-1.png" width="672" />
 <p>As evident from this that there are several dimensions to guide us about the respondents and what they like about the platform. The next steps here would be to try and perform classification and machine learning techniques to examine this data further.</p>
-<p>Before we get into ML, let’s perform some more exploration on the text included in the data.</p>
-</div>
-</div>
-</div>
-<div id="text-analysis" class="section level1">
-<h1>Text Analysis</h1>
-<p>This part will try to analyze the sentiment of the comments to perhaps try and understand what the detractors don’t like and what the promoters like.
+<p>Before we get into ML, let&rsquo;s perform some more exploration on the text included in the data.</p>
+<h1 id="text-analysis">Text Analysis</h1>
+<p>This part will try to analyze the sentiment of the comments to perhaps try and understand what the detractors don&rsquo;t like and what the promoters like.
 To do this we will try and perform the following tasks.</p>
-<div id="introduction" class="section level2">
-<h2>Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 <ul>
 <li>Tokenize the text comments. We will explore both with word and sentence level tokens.</li>
 <li>Perform sentiment analysis using three different sentiment lexicons. These are pre-scored dictionaries that have sentiment scores already assigned at word levels.</li>
@@ -620,322 +606,311 @@ To do this we will try and perform the following tasks.</p>
 <li>Try and explore n-grams to see relationship between words.</li>
 <li>Finally, try out the word2vec neural network to explore the corpus.</li>
 </ul>
-<div id="tokenization" class="section level3">
-<h3>Tokenization</h3>
+<h3 id="tokenization">Tokenization</h3>
 <p>We will keep the categories in place to see how the sentiment correlates to the scores.
-Let’s see how many comments we have from each category.</p>
-<pre class="r"><code>comments &lt;- nps %&gt;% 
-  filter(!is.na(Comment)) %&gt;% 
-  select(cat, Comment) %&gt;% 
-  group_by(row_number(), cat) 
-
-comments &lt;- comments %&gt;% ungroup()</code></pre>
-<p>Next we will use <em>unnest_tokens</em> from the tidytext package to tokenize the words while retaining the corresponding categories. We end up with about 24,000 words.</p>
-<pre class="r"><code>nps_words &lt;- comments %&gt;% unnest_tokens(word, Comment)
-nps_words
-## # A tibble: 24,460 x 3
-##    cat      `row_number()` word      
-##    &lt;fct&gt;             &lt;int&gt; &lt;chr&gt;     
-##  1 Promoter              1 customer  
-##  2 Promoter              1 service   
-##  3 Promoter              2 intuitive 
-##  4 Promoter              2 program   
-##  5 Promoter              2 and       
-##  6 Promoter              2 accessible
-##  7 Promoter              2 support   
-##  8 Promoter              3 easy      
-##  9 Promoter              3 to        
-## 10 Promoter              3 use       
-## # … with 24,450 more rows</code></pre>
-<p>Our next step is to remove some common words that are not useful for analysis. These include pronouns, articles and other common words. The tidytext package already includes a wide range of these in the <em>stop_words</em> dataset.</p>
+Let&rsquo;s see how many comments we have from each category.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>comments <span style="color:#f92672">&lt;-</span> nps <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">filter</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.na</span>(Comment)) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">select</span>(cat, Comment) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">group_by</span>(<span style="color:#a6e22e">row_number</span>(), cat) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>comments <span style="color:#f92672">&lt;-</span> comments <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">ungroup</span>()
+</span></span></code></pre></div><p>Next we will use <em>unnest_tokens</em> from the tidytext package to tokenize the words while retaining the corresponding categories. We end up with about 24,000 words.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps_words <span style="color:#f92672">&lt;-</span> comments <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">unnest_tokens</span>(word, Comment)
+</span></span><span style="display:flex;"><span>nps_words
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # A tibble: 24,460 × 3</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##    cat      `row_number()` word      </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##    &lt;fct&gt;             &lt;int&gt; &lt;chr&gt;     </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  1 Promoter              1 customer  </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  2 Promoter              1 service   </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  3 Promoter              2 intuitive </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  4 Promoter              2 program   </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  5 Promoter              2 and       </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  6 Promoter              2 accessible</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  7 Promoter              2 support   </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  8 Promoter              3 easy      </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  9 Promoter              3 to        </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 10 Promoter              3 use       </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # ℹ 24,450 more rows</span>
+</span></span></code></pre></div><p>Our next step is to remove some common words that are not useful for analysis. These include pronouns, articles and other common words. The tidytext package already includes a wide range of these in the <em>stop_words</em> dataset.</p>
 <p>We are left with about 2243 unique words with</p>
-<pre class="r"><code>nps_words &lt;-  nps_words %&gt;% anti_join(stop_words, by = c(&#39;word&#39;))
-nps_words %&gt;% count(word, sort = TRUE)
-## # A tibble: 2,244 x 2
-##    word         n
-##    &lt;chr&gt;    &lt;int&gt;
-##  1 platform   353
-##  2 service    280
-##  3 customer   229
-##  4 system     191
-##  5 support    187
-##  6 easy       155
-##  7 ease       142
-##  8 ticket      91
-##  9 friendly    89
-## 10 user        84
-## # … with 2,234 more rows</code></pre>
-</div>
-</div>
-<div id="sentiment-analysis" class="section level2">
-<h2>Sentiment Analysis</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps_words <span style="color:#f92672">&lt;-</span>  nps_words <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">anti_join</span>(stop_words, by <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;word&#39;</span>))
+</span></span><span style="display:flex;"><span>nps_words <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">count</span>(word, sort <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # A tibble: 2,244 × 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##    word         n</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##    &lt;chr&gt;    &lt;int&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  1 platform   353</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  2 service    280</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  3 customer   229</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  4 system     191</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  5 support    187</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  6 easy       155</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  7 ease       142</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  8 ticket      91</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  9 friendly    89</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 10 user        84</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # ℹ 2,234 more rows</span>
+</span></span></code></pre></div><h2 id="sentiment-analysis">Sentiment Analysis</h2>
 <p>We will be using three different sentiment dictionaries to test out the sentiments for each comment.</p>
 <p>The plot below shows the sentiments grouped by the category using the <em>Afinn</em> dictionary. The Afinn dictionary assigns a score from -5 to 5 with -5 being negative words and 5 being positive.
-It’s clear that the detractor comments are less positive than the promoters.</p>
-<pre class="r"><code>nps_words %&gt;% inner_join(get_sentiments(&quot;afinn&quot;), by = c(&#39;word&#39;)) %&gt;% 
-  group_by(cat) %&gt;% 
-  summarise(sentiment = sum(score)) %&gt;%
-  ggplot(aes(x=cat, y = sentiment, fill = cat)) + 
-  geom_col(width = 0.5) +
-  coord_flip() +
-  geom_text(aes(x=cat, y=sentiment, label=sentiment), position = position_dodge(width = 1), hjust=1.5) +  
-  scale_fill_brewer(palette = &quot;Set1&quot;) +
-  guides(fill=FALSE) +
-  labs(title = &quot;Sentiments from Comments by Category - Afinn&quot;, x = &quot;Category&quot;, y = &quot;Sentiment&quot;)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
-<p>Let’s try another lexicon. This one is called <em>Bing</em> and was produced by Bing Liu et
-al. This classifies words with a label signifying positive or negative. Here is a sample of words from this lexicon.</p>
-<pre class="r"><code>get_sentiments(&quot;bing&quot;)
-## # A tibble: 6,788 x 2
-##    word        sentiment
-##    &lt;chr&gt;       &lt;chr&gt;    
-##  1 2-faced     negative 
-##  2 2-faces     negative 
-##  3 a+          positive 
-##  4 abnormal    negative 
-##  5 abolish     negative 
-##  6 abominable  negative 
-##  7 abominably  negative 
-##  8 abominate   negative 
-##  9 abomination negative 
-## 10 abort       negative 
-## # … with 6,778 more rows</code></pre>
-<p>Next, let’s look at the sentiments for each category using the <em>Bing</em> dictionary.</p>
-<pre class="r"><code>nps_words %&gt;% 
-  inner_join(get_sentiments(&quot;bing&quot;), by = c(&#39;word&#39;)) %&gt;%
-  count(cat, sentiment) %&gt;%
-  spread(sentiment, n, fill = 0) %&gt;%
-  mutate(sentiment = positive - negative) %&gt;%
-ggplot(aes(x=cat, y = sentiment, fill = cat)) + 
-  geom_col(width = 0.5) +
-  coord_flip() +
-  geom_text(aes(x=cat, y=sentiment, label=sentiment), position = position_dodge(width = 1), hjust=1) +  
-  scale_fill_brewer(palette = &quot;Set1&quot;) +
-  guides(fill=FALSE) +
-  labs(title = &quot;Sentiments from Comments by Category - Bing&quot;, x = &quot;Category&quot;, y = &quot;Sentiment&quot;)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+It&rsquo;s clear that the detractor comments are less positive than the promoters.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps_words <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">inner_join</span>(<span style="color:#a6e22e">get_sentiments</span>(<span style="color:#e6db74">&#34;afinn&#34;</span>), by <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;word&#39;</span>)) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">group_by</span>(cat) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">summarise</span>(sentiment <span style="color:#f92672">=</span> <span style="color:#a6e22e">sum</span>(value)) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>cat, y <span style="color:#f92672">=</span> sentiment, fill <span style="color:#f92672">=</span> cat)) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_col</span>(width <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_text</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>cat, y<span style="color:#f92672">=</span>sentiment, label<span style="color:#f92672">=</span>sentiment), position <span style="color:#f92672">=</span> <span style="color:#a6e22e">position_dodge</span>(width <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>), hjust<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_fill_brewer</span>(palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set1&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">guides</span>(fill<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Sentiments from Comments by Category - Afinn&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Category&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Sentiment&#34;</span>)
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-27-1.png" width="672" />
+<p>Let&rsquo;s try another lexicon. This one is called <em>Bing</em> and was produced by Bing Liu et al.
+This classifies words with a label signifying positive or negative. Here is a sample of words from this lexicon.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">get_sentiments</span>(<span style="color:#e6db74">&#34;bing&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # A tibble: 6,786 × 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##    word        sentiment</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##    &lt;chr&gt;       &lt;chr&gt;    </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  1 2-faces     negative </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  2 abnormal    negative </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  3 abolish     negative </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  4 abominable  negative </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  5 abominably  negative </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  6 abominate   negative </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  7 abomination negative </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  8 abort       negative </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  9 aborted     negative </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 10 aborts      negative </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # ℹ 6,776 more rows</span>
+</span></span></code></pre></div><p>Next, let&rsquo;s look at the sentiments for each category using the <em>Bing</em> dictionary.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps_words <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">inner_join</span>(<span style="color:#a6e22e">get_sentiments</span>(<span style="color:#e6db74">&#34;bing&#34;</span>), by <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;word&#39;</span>)) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">count</span>(cat, sentiment) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">spread</span>(sentiment, n, fill <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(sentiment <span style="color:#f92672">=</span> positive <span style="color:#f92672">-</span> negative) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>cat, y <span style="color:#f92672">=</span> sentiment, fill <span style="color:#f92672">=</span> cat)) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_col</span>(width <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_text</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>cat, y<span style="color:#f92672">=</span>sentiment, label<span style="color:#f92672">=</span>sentiment), position <span style="color:#f92672">=</span> <span style="color:#a6e22e">position_dodge</span>(width <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>), hjust<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_fill_brewer</span>(palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set1&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">guides</span>(fill<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Sentiments from Comments by Category - Bing&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Category&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Sentiment&#34;</span>)
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-29-1.png" width="672" />
 <p>While both lexicons show the same relative trends and proportions, the absolute numbers vary significantly.
 It might be worth taking a quick look at the words that are contributing to each sentiment.</p>
 <p>This can be achieved by plotting the positive and negative words from the previous set.
-It’s clear from this list that if we had used some kind of stemmer before creating this list, some of the words with the same roots would have been eliminated, these are words like <em>ease</em> and <em>easy</em> and <em>issues</em> and <em>issue</em>.</p>
-<pre class="r"><code>nps_words %&gt;% 
-  inner_join(get_sentiments(&quot;bing&quot;), by = c(&#39;word&#39;)) %&gt;%
-  count(word, sentiment) %&gt;%
-  group_by(sentiment) %&gt;%
-  top_n(10) %&gt;%
-  ungroup() %&gt;%
-  ggplot(aes(x=reorder(word, n), y = n, fill = sentiment)) +
-  geom_col() +
-  facet_wrap( ~ sentiment, scales = &quot;free&quot;) + coord_flip() +
-  scale_fill_brewer(palette = &quot;Set1&quot;) +
-  labs(title = &quot;Word counts by Sentiment - Bing&quot;, x = &quot;Word&quot;, y = &quot;Count&quot;)
-## Selecting by n</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
-<p>Before we run the stemmer, let’s examine the top sentiment contributor words by category as well to illustrate one more potential gotcha.
+It&rsquo;s clear from this list that if we had used some kind of stemmer before creating this list, some of the words with the same roots would have been eliminated, these are words like <em>ease</em> and <em>easy</em> and <em>issues</em> and <em>issue</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps_words <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">inner_join</span>(<span style="color:#a6e22e">get_sentiments</span>(<span style="color:#e6db74">&#34;bing&#34;</span>), by <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;word&#39;</span>)) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">count</span>(word, sentiment) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">group_by</span>(sentiment) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">top_n</span>(<span style="color:#ae81ff">10</span>) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ungroup</span>() <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">reorder</span>(word, n), y <span style="color:#f92672">=</span> n, fill <span style="color:#f92672">=</span> sentiment)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_col</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">facet_wrap</span>( <span style="color:#f92672">~</span> sentiment, scales <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;free&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_fill_brewer</span>(palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set1&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Word counts by Sentiment - Bing&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Word&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Count&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Selecting by n</span>
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-30-1.png" width="672" />
+<p>Before we run the stemmer, let&rsquo;s examine the top sentiment contributor words by category as well to illustrate one more potential gotcha.
 A word like <em>helpful</em> in the detractors column could, depending on the context, have a negative connotation if preceded by the word <em>not</em>. In fact unigrams (word tokens) will have this issue with negation in most cases.</p>
-<pre class="r"><code>nps_words %&gt;% 
-  inner_join(get_sentiments(&quot;bing&quot;), by = c(&#39;word&#39;)) %&gt;%
-  count(cat, word, sentiment) %&gt;%
-  group_by(cat, sentiment) %&gt;%
-  top_n(7) %&gt;%
-  ungroup() %&gt;%
-  ggplot(aes(x=reorder(word, n), y = n, fill = sentiment)) +
-  geom_col() +
-  coord_flip() +
-  facet_wrap( ~cat, scales = &quot;free&quot;)  +
-  scale_fill_brewer(palette = &quot;Set1&quot;) +
-  labs(title = &quot;Word counts by Sentiment by Category - Bing&quot;, x = &quot;Words&quot;, y = &quot;Count&quot;)
-## Selecting by n</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
-<div id="stemming" class="section level3">
-<h3>Stemming</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps_words <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">inner_join</span>(<span style="color:#a6e22e">get_sentiments</span>(<span style="color:#e6db74">&#34;bing&#34;</span>), by <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;word&#39;</span>)) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">count</span>(cat, word, sentiment) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">group_by</span>(cat, sentiment) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">top_n</span>(<span style="color:#ae81ff">7</span>) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ungroup</span>() <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">reorder</span>(word, n), y <span style="color:#f92672">=</span> n, fill <span style="color:#f92672">=</span> sentiment)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_col</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">facet_wrap</span>( <span style="color:#f92672">~</span>cat, scales <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;free&#34;</span>)  <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_fill_brewer</span>(palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set1&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Word counts by Sentiment by Category - Bing&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Words&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Count&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Selecting by n</span>
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-31-1.png" width="672" />
+<h3 id="stemming">Stemming</h3>
 <p>We ran the Porter stemmer from the SnowballC package on both the comments and the sentiment lexicon to enable us to join on the same words. The words <em>issue</em> and <em>issues</em> have now been stemmed to the root word <em>issu</em>.</p>
-<pre class="r"><code>nps_words %&gt;% 
-  mutate(word = wordStem(word)) %&gt;% 
-  inner_join(get_sentiments(&quot;bing&quot;) %&gt;% mutate(word = wordStem(word)), by = c(&#39;word&#39;)) %&gt;%
-  count(word, sentiment) %&gt;%
-  group_by(sentiment) %&gt;%
-  top_n(10) %&gt;%
-  ungroup() %&gt;%
-  ggplot(aes(x=reorder(word, n), y = n, fill = sentiment)) +
-  geom_col() +
-  facet_wrap( ~ sentiment, scales = &quot;free&quot;) + coord_flip() +
-  scale_fill_brewer(palette = &quot;Set1&quot;) +
-  labs(title = &quot;Word counts by Sentiment - Bing (Stemmed)&quot;, x = &quot;Words&quot;, y = &quot;Count&quot;)
-## Selecting by n</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
-<p>Let’s try to group by catgory with stemming. It’s clear that there is a larger proportion of negative sentiment words in the <em>detractor</em> comments and a smaller proportion for <em>promorters</em>. This line of exploration has confirmed our belief that detractors are leaving negative comments and promorters are generally upbeat and positive.</p>
-<pre class="r"><code>nps_words %&gt;% 
-  mutate(word = wordStem(word)) %&gt;% 
-  inner_join(get_sentiments(&quot;bing&quot;) %&gt;% mutate(word = wordStem(word)), by = c(&#39;word&#39;)) %&gt;%
-  count(cat, word, sentiment) %&gt;%
-  group_by(cat, sentiment) %&gt;%
-  top_n(7) %&gt;%
-  ungroup() %&gt;%
-  ggplot(aes(x=reorder(word, n), y = n, fill = sentiment)) +
-  geom_col() +
-  coord_flip() +
-  facet_wrap( ~cat, scales = &quot;free&quot;)  +
-  scale_fill_brewer(palette = &quot;Set1&quot;) +
-  labs(title = &quot;Word counts by Sentiment by Category - Bing (Stemmed)&quot;, x = &quot;Words&quot;, y = &quot;Count&quot;)
-## Selecting by n</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
-</div>
-<div id="ngrams" class="section level3">
-<h3>ngrams</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps_words <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(word <span style="color:#f92672">=</span> <span style="color:#a6e22e">wordStem</span>(word)) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">inner_join</span>(<span style="color:#a6e22e">get_sentiments</span>(<span style="color:#e6db74">&#34;bing&#34;</span>) <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">mutate</span>(word <span style="color:#f92672">=</span> <span style="color:#a6e22e">wordStem</span>(word)), by <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;word&#39;</span>)) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">count</span>(word, sentiment) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">group_by</span>(sentiment) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">top_n</span>(<span style="color:#ae81ff">10</span>) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ungroup</span>() <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">reorder</span>(word, n), y <span style="color:#f92672">=</span> n, fill <span style="color:#f92672">=</span> sentiment)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_col</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">facet_wrap</span>( <span style="color:#f92672">~</span> sentiment, scales <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;free&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_fill_brewer</span>(palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set1&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Word counts by Sentiment - Bing (Stemmed)&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Words&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Count&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Selecting by n</span>
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-32-1.png" width="672" />
+<p>Let&rsquo;s try to group by catgory with stemming. It&rsquo;s clear that there is a larger proportion of negative sentiment words in the <em>detractor</em> comments and a smaller proportion for <em>promorters</em>. This line of exploration has confirmed our belief that detractors are leaving negative comments and promorters are generally upbeat and positive.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps_words <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(word <span style="color:#f92672">=</span> <span style="color:#a6e22e">wordStem</span>(word)) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">inner_join</span>(<span style="color:#a6e22e">get_sentiments</span>(<span style="color:#e6db74">&#34;bing&#34;</span>) <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">mutate</span>(word <span style="color:#f92672">=</span> <span style="color:#a6e22e">wordStem</span>(word)), by <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;word&#39;</span>)) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">count</span>(cat, word, sentiment) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">group_by</span>(cat, sentiment) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">top_n</span>(<span style="color:#ae81ff">7</span>) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ungroup</span>() <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">reorder</span>(word, n), y <span style="color:#f92672">=</span> n, fill <span style="color:#f92672">=</span> sentiment)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_col</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">facet_wrap</span>( <span style="color:#f92672">~</span>cat, scales <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;free&#34;</span>)  <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_fill_brewer</span>(palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set1&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Word counts by Sentiment by Category - Bing (Stemmed)&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Words&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Count&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Warning in inner_join(., get_sentiments(&#34;bing&#34;) %&gt;% mutate(word = wordStem(word)), : Detected an unexpected many-to-many relationship between `x` and `y`.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## ℹ Row 5 of `x` matches multiple rows in `y`.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## ℹ Row 5908 of `y` matches multiple rows in `x`.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## ℹ If a many-to-many relationship is expected, set `relationship =</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##   &#34;many-to-many&#34;` to silence this warning.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Selecting by n</span>
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-33-1.png" width="672" />
+<h3 id="ngrams">ngrams</h3>
 <p>Ngrams are series of words in sequence; bigrams are two words together and trigrams are three.
 Lets take a quick look at the bigrams in the comments to see what those phrases are.</p>
-<pre class="r"><code>comments %&gt;% 
-unnest_tokens(ngram, Comment, token = &quot;ngrams&quot;, n = 2) %&gt;%
-count(ngram, sort = TRUE)
-## # A tibble: 13,715 x 2
-##    ngram                n
-##    &lt;chr&gt;            &lt;int&gt;
-##  1 customer service   165
-##  2 ease of            134
-##  3 to use             122
-##  4 easy to            113
-##  5 of use             110
-##  6 of the              75
-##  7 i have              71
-##  8 the system          71
-##  9 user friendly       69
-## 10 it is               67
-## # … with 13,705 more rows</code></pre>
-<p>In this case we have not removed the stop words, let’s try looking at the trigrams to see if those provide more meaning. These are phrases that have the word <em>not</em> prefixed.</p>
-<pre class="r"><code>comments %&gt;% unnest_tokens(ngram, Comment, token = &quot;ngrams&quot;, n = 3) %&gt;% count(ngram, sort = TRUE) %&gt;% filter(str_detect(ngram, &#39;^not &#39;))
-## # A tibble: 182 x 2
-##    ngram                      n
-##    &lt;chr&gt;                  &lt;int&gt;
-##  1 not a 10                   3
-##  2 not been fixed             3
-##  3 not being able             3
-##  4 not able to                2
-##  5 not as flexible            2
-##  6 not been as                2
-##  7 not flexible enough        2
-##  8 not give a                 2
-##  9 not handle the             2
-## 10 not recommend platform     2
-## # … with 172 more rows</code></pre>
-<p>As a final step in this exploration, we will create a comparison word cloud</p>
-<pre class="r"><code>par(mar=rep(0, 4))
-plot.new()
-
-nps_words %&gt;% 
-  inner_join(get_sentiments(&quot;bing&quot;), by = c(&#39;word&#39;)) %&gt;%
-  count(word, sentiment, sort = TRUE) %&gt;%
-    acast(word ~ sentiment, value.var = &quot;n&quot;, fill = 0) %&gt;%
-  comparison.cloud( random.order=FALSE,title.size=1.5, max.words=150, colors = brewer.pal(8, &quot;Set1&quot;))</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>comments <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">unnest_tokens</span>(ngram, Comment, token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ngrams&#34;</span>, n <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">count</span>(ngram, sort <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # A tibble: 13,715 × 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##    ngram                n</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##    &lt;chr&gt;            &lt;int&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  1 customer service   165</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  2 ease of            134</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  3 to use             122</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  4 easy to            113</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  5 of use             110</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  6 of the              75</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  7 i have              71</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  8 the system          71</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  9 user friendly       69</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 10 it is               67</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # ℹ 13,705 more rows</span>
+</span></span></code></pre></div><p>In this case we have not removed the stop words, let&rsquo;s try looking at the trigrams to see if those provide more meaning. These are phrases that have the word <em>not</em> prefixed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>comments <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">unnest_tokens</span>(ngram, Comment, token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ngrams&#34;</span>, n <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">count</span>(ngram, sort <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>) <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">str_detect</span>(ngram, <span style="color:#e6db74">&#39;^not &#39;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # A tibble: 182 × 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##    ngram                      n</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##    &lt;chr&gt;                  &lt;int&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  1 not a 10                   3</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  2 not been fixed             3</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  3 not being able             3</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  4 not able to                2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  5 not as flexible            2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  6 not been as                2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  7 not flexible enough        2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  8 not give a                 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  9 not handle the             2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 10 not recommend platform     2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # ℹ 172 more rows</span>
+</span></span></code></pre></div><p>As a final step in this exploration, we will create a comparison word cloud</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">par</span>(mar<span style="color:#f92672">=</span><span style="color:#a6e22e">rep</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>))
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot.new</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nps_words <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">inner_join</span>(<span style="color:#a6e22e">get_sentiments</span>(<span style="color:#e6db74">&#34;bing&#34;</span>), by <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;word&#39;</span>)) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">count</span>(word, sentiment, sort <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">acast</span>(word <span style="color:#f92672">~</span> sentiment, value.var <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;n&#34;</span>, fill <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">comparison.cloud</span>( random.order<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>,title.size<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>, max.words<span style="color:#f92672">=</span><span style="color:#ae81ff">150</span>, colors <span style="color:#f92672">=</span> <span style="color:#a6e22e">brewer.pal</span>(<span style="color:#ae81ff">8</span>, <span style="color:#e6db74">&#34;Set1&#34;</span>))
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-36-1.png" width="672" />
 <p>And another one grouped by the categories.</p>
-<pre class="r"><code>par(mar=rep(0, 4))
-plot.new()
-
-nps_words %&gt;% 
-  count(word, cat, sort = TRUE) %&gt;%
-  acast(word ~ cat, value.var = &quot;n&quot;, fill = 0) %&gt;%
-  comparison.cloud( random.order=FALSE,title.size=1.5, max.words=250, colors = brewer.pal(8, &quot;Set1&quot;))</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
-</div>
-<div id="ranking-and-tf-idf" class="section level3">
-<h3>Ranking and tf-idf</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">par</span>(mar<span style="color:#f92672">=</span><span style="color:#a6e22e">rep</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>))
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot.new</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nps_words <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">count</span>(word, cat, sort <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">acast</span>(word <span style="color:#f92672">~</span> cat, value.var <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;n&#34;</span>, fill <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">comparison.cloud</span>( random.order<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>,title.size<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>, max.words<span style="color:#f92672">=</span><span style="color:#ae81ff">250</span>, colors <span style="color:#f92672">=</span> <span style="color:#a6e22e">brewer.pal</span>(<span style="color:#ae81ff">8</span>, <span style="color:#e6db74">&#34;Set1&#34;</span>))
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-37-1.png" width="672" />
+<h3 id="ranking-and-tf-idf">Ranking and tf-idf</h3>
 <p>A central question in text analysis deals with what the text is about, to explore that, we will try to do different things;</p>
 <ul>
 <li>Try and rank the terms using tf-idf (term frequency - inverse document frequency)</li>
 <li>Try to extract the topic or subject of the text using LDA (Latent Dirichlet allocation )</li>
 </ul>
-<p>The statsitic <em>tf-idf</em> measures how important a term is to a document in a collection of documents. So in our context we are trying to see if a term/word has special meaning in one respondent’s comments in relation to <em>all</em> other comments.</p>
+<p>The statsitic <em>tf-idf</em> measures how important a term is to a document in a collection of documents. So in our context we are trying to see if a term/word has special meaning in one respondent&rsquo;s comments in relation to <em>all</em> other comments.</p>
 <p>We will use the bind_tf_idf function to extract the statistic and sort based on the relative importance.</p>
-<pre class="r"><code>nps_tf_idf &lt;- comments %&gt;% 
-  unnest_tokens(word,Comment) %&gt;% 
-  count(cat, word, sort = TRUE) %&gt;% 
-  ungroup() %&gt;% 
-  bind_tf_idf(word, cat, n) %&gt;% 
-  arrange(desc(tf_idf))
-
-nps_tf_idf
-## # A tibble: 4,485 x 6
-##    cat       word                n       tf   idf   tf_idf
-##    &lt;fct&gt;     &lt;chr&gt;           &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
-##  1 Detractor lack               24 0.00258  0.405 0.00105 
-##  2 Promoter  reasonable          7 0.000843 1.10  0.000926
-##  3 Passive   smith               5 0.000730 1.10  0.000801
-##  4 Passive   under               5 0.000730 1.10  0.000801
-##  5 Detractor contract            6 0.000645 1.10  0.000708
-##  6 Detractor income              6 0.000645 1.10  0.000708
-##  7 Detractor won&#39;t               6 0.000645 1.10  0.000708
-##  8 Promoter  professionalism     5 0.000602 1.10  0.000662
-##  9 Promoter  respond             5 0.000602 1.10  0.000662
-## 10 Passive   part                4 0.000584 1.10  0.000641
-## # … with 4,475 more rows</code></pre>
-<p>Let’s plot this next by category.</p>
-<pre class="r"><code>nps_tf_idf %&gt;% 
-  group_by(cat) %&gt;% 
-  top_n(15) %&gt;% 
-  ungroup() %&gt;% 
-  ggplot(aes(reorder(as.factor(word), tf_idf), tf_idf, fill = cat )) +
-  geom_col(show.legend = FALSE) + 
-  coord_flip() + 
-  labs(title = &quot;TF-IDF by Category&quot;, x = &quot;words&quot;) +
-  scale_fill_brewer(palette = &quot;Set1&quot;) +
-  facet_wrap(~cat, scales = &quot;free&quot;)
-## Selecting by tf_idf</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps_tf_idf <span style="color:#f92672">&lt;-</span> comments <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">unnest_tokens</span>(word,Comment) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">count</span>(cat, word, sort <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ungroup</span>() <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">bind_tf_idf</span>(word, cat, n) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">arrange</span>(<span style="color:#a6e22e">desc</span>(tf_idf))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nps_tf_idf
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # A tibble: 4,485 × 6</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##    cat       word                n       tf   idf   tf_idf</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##    &lt;fct&gt;     &lt;chr&gt;           &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  1 Detractor lack               24 0.00258  0.405 0.00105 </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  2 Promoter  reasonable          7 0.000843 1.10  0.000926</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  3 Passive   smith               5 0.000730 1.10  0.000801</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  4 Passive   under               5 0.000730 1.10  0.000801</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  5 Detractor contract            6 0.000645 1.10  0.000708</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  6 Detractor income              6 0.000645 1.10  0.000708</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  7 Detractor won&#39;t               6 0.000645 1.10  0.000708</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  8 Promoter  professionalism     5 0.000602 1.10  0.000662</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  9 Promoter  respond             5 0.000602 1.10  0.000662</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 10 Passive   part                4 0.000584 1.10  0.000641</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # ℹ 4,475 more rows</span>
+</span></span></code></pre></div><p>Let&rsquo;s plot this next by category.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps_tf_idf <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">group_by</span>(cat) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">top_n</span>(<span style="color:#ae81ff">15</span>) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ungroup</span>() <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(<span style="color:#a6e22e">reorder</span>(<span style="color:#a6e22e">as.factor</span>(word), tf_idf), tf_idf, fill <span style="color:#f92672">=</span> cat )) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_col</span>(show.legend <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;TF-IDF by Category&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;words&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_fill_brewer</span>(palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set1&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">facet_wrap</span>(<span style="color:#f92672">~</span>cat, scales <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;free&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Selecting by tf_idf</span>
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-39-1.png" width="672" />
 <p>This shows some proper nouns and pronouns, which is to be expected as only few comments would have those relative to the others.</p>
-</div>
-<div id="tf-idf-with-bigrams" class="section level3">
-<h3>TF-IDF with bigrams</h3>
-<p>As a variation on this - let’s repeat this with bigrams to see if certain phrases are more important.</p>
-<pre class="r"><code>nps_tf_idf_bigram &lt;- comments %&gt;% 
-  unnest_tokens(ngram,Comment, token = &quot;ngrams&quot;, n = 2) %&gt;% 
-  count(cat, ngram, sort = TRUE) %&gt;% 
-  ungroup() %&gt;% 
-  bind_tf_idf(ngram, cat, n) %&gt;% 
-  arrange(desc(tf_idf))
-
-nps_tf_idf_bigram
-## # A tibble: 16,174 x 6
-##    cat       ngram              n       tf   idf   tf_idf
-##    &lt;fct&gt;     &lt;chr&gt;          &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
-##  1 Promoter  great customer    43 0.00557  0.405 0.00226 
-##  2 Detractor lack of           24 0.00265  0.405 0.00107 
-##  3 Promoter  friendly great     7 0.000907 1.10  0.000997
-##  4 Passive   would like        16 0.00243  0.405 0.000985
-##  5 Promoter  the staff          6 0.000778 1.10  0.000854
-##  6 Promoter  use great          6 0.000778 1.10  0.000854
-##  7 Promoter  very easy          6 0.000778 1.10  0.000854
-##  8 Detractor follow up          7 0.000773 1.10  0.000849
-##  9 Promoter  great product     16 0.00207  0.405 0.000841
-## 10 Passive   great but          5 0.000759 1.10  0.000834
-## # … with 16,164 more rows</code></pre>
-<p>Break this up by category.</p>
-<pre class="r"><code>nps_tf_idf_bigram %&gt;% group_by(cat) %&gt;% 
-  top_n(15) %&gt;% 
-  ungroup() %&gt;% 
-  ggplot(aes(reorder(as.factor(ngram), tf_idf), tf_idf, fill = cat )) +
-  geom_col(show.legend = FALSE) + 
-  coord_flip() + 
-  labs(title = &quot;TF-IDF by Category - Top bigrams&quot;, x = &quot;bigrams&quot;) +
-  scale_fill_brewer(palette = &quot;Set1&quot;) +
-  facet_wrap(~cat, scales = &quot;free&quot;, ncol = 3)
-## Selecting by tf_idf</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
-</div>
-</div>
-<div id="conclusion" class="section level2">
-<h2>Conclusion</h2>
+<h3 id="tf-idf-with-bigrams">TF-IDF with bigrams</h3>
+<p>As a variation on this - let&rsquo;s repeat this with bigrams to see if certain phrases are more important.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps_tf_idf_bigram <span style="color:#f92672">&lt;-</span> comments <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">unnest_tokens</span>(ngram,Comment, token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ngrams&#34;</span>, n <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">count</span>(cat, ngram, sort <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ungroup</span>() <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">bind_tf_idf</span>(ngram, cat, n) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">arrange</span>(<span style="color:#a6e22e">desc</span>(tf_idf))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nps_tf_idf_bigram
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # A tibble: 16,174 × 6</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##    cat       ngram              n       tf   idf   tf_idf</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##    &lt;fct&gt;     &lt;chr&gt;          &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  1 Promoter  great customer    43 0.00557  0.405 0.00226 </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  2 Detractor lack of           24 0.00265  0.405 0.00107 </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  3 Promoter  friendly great     7 0.000907 1.10  0.000997</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  4 Passive   would like        16 0.00243  0.405 0.000985</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  5 Promoter  the staff          6 0.000778 1.10  0.000854</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  6 Promoter  use great          6 0.000778 1.10  0.000854</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  7 Promoter  very easy          6 0.000778 1.10  0.000854</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  8 Detractor follow up          7 0.000773 1.10  0.000849</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##  9 Promoter  great product     16 0.00207  0.405 0.000841</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 10 Passive   great but          5 0.000759 1.10  0.000834</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## # ℹ 16,164 more rows</span>
+</span></span></code></pre></div><p>Break this up by category.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>nps_tf_idf_bigram <span style="color:#f92672">%&gt;%</span> <span style="color:#a6e22e">group_by</span>(cat) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">top_n</span>(<span style="color:#ae81ff">15</span>) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ungroup</span>() <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ggplot</span>(<span style="color:#a6e22e">aes</span>(<span style="color:#a6e22e">reorder</span>(<span style="color:#a6e22e">as.factor</span>(ngram), tf_idf), tf_idf, fill <span style="color:#f92672">=</span> cat )) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_col</span>(show.legend <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;TF-IDF by Category - Top bigrams&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bigrams&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_fill_brewer</span>(palette <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Set1&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">facet_wrap</span>(<span style="color:#f92672">~</span>cat, scales <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;free&#34;</span>, ncol <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Selecting by tf_idf</span>
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-08-28-nps-exploratory-analysis-in-r_files/figure-html/unnamed-chunk-41-1.png" width="672" />
+<h2 id="conclusion">Conclusion</h2>
 <p>Here are a few clear takeaways from this analysis</p>
 <ul>
 <li><em>Passive</em> respondents from prior years have become <em>Promorters</em>.</li>
 <li>Respondents seem to provide higher Scores on <em>Wednesday</em>.</li>
 <li><em>Customer Service</em> has a huge positve impact on the scores.</li>
-<li>Response rates are quite low - 19 percent</li>
+<li>Response rates are quite low - 19  percent</li>
 <li>Product is generally <em>user friendly</em>.</li>
 <li>Low and mid segment users are happier than higher sales respondents.</li>
 </ul>
-</div>
-</div>
 
               
 
@@ -992,6 +967,12 @@ nps_tf_idf_bigram
     
   
   
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
   <li class="post-action">
     
       <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
@@ -1004,6 +985,30 @@ nps_tf_idf_bigram
 
 
             
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/nitinahuja.github.io\/2017\/nps-exploratory-analysis-in-r\/';
+        
+          this.page.identifier = '\/2017\/nps-exploratory-analysis-in-r\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'viewstate-1';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
   
 
 
@@ -1051,6 +1056,12 @@ nps_tf_idf_bigram
     
   
   
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
   <li class="post-action">
     
       <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
@@ -1066,8 +1077,8 @@ nps_tf_idf_bigram
       
 
     </div>
-    
-    <div id="about">
+
+<div id="about">
   <div id="about-card">
     <div id="about-btn-close">
       <i class="fa fa-times"></i>
@@ -1096,9 +1107,9 @@ nps_tf_idf_bigram
   </div>
 </div>
 
-    
 
-    
+
+
   
     
       
@@ -1107,31 +1118,64 @@ nps_tf_idf_bigram
   
 
 
-    
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 
 
 <script src="https://nitinahuja.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
 
 
+  
+    <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/codefolding.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/collapse.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/transition.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/dropdown.js"></script>
+  
 
 
 
 
-     
+
+ 
   <script>
-  $(document).ready(function () {
+  $( document ).ready(function () {
     window.initializeCodeFolding("show" === "hide");
   });
-  </script>
-  <script src="https://nitinahuja.github.io/js/codefolding.js"></script>
+  
 
-    
-  </body>
+  </script>
+
+
+</body>
 </html>
 

@@ -6,13 +6,13 @@
     <description>Recent content in Visualization on A programmer&#39;s viewpoint</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://nitinahuja.github.io/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nitinahuja.github.io/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Let&#39;s explore Near Earth Orbit - exploratory analysis</title>
-      <link>https://nitinahuja.github.io/2022/low-earth-orbits-exploration/</link>
-      <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
+      <title>Low Earth Orbits - Exploration</title>
+      <link>https://nitinahuja.github.io/2023/low-earth-orbits-exploration/</link>
+      <pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://nitinahuja.github.io/2022/low-earth-orbits-exploration/</guid>
+      <guid>https://nitinahuja.github.io/2023/low-earth-orbits-exploration/</guid>
       <description>Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. We’ll look at some data from Jonathan McDowell’s Catalog site.
 This site has data about man-made objects launched into space and all the debris we have created in near earth orbits.
 We’ll try to load the file directly from the site. This allows us to get the most recent data from the internet.</description>

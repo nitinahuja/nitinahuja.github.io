@@ -6,13 +6,13 @@
     <description>Recent content in Posts on A programmer&#39;s viewpoint</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://nitinahuja.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nitinahuja.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Let&#39;s explore Near Earth Orbit - exploratory analysis</title>
-      <link>https://nitinahuja.github.io/2022/low-earth-orbits-exploration/</link>
-      <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
+      <title>Low Earth Orbits - Exploration</title>
+      <link>https://nitinahuja.github.io/2023/low-earth-orbits-exploration/</link>
+      <pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://nitinahuja.github.io/2022/low-earth-orbits-exploration/</guid>
+      <guid>https://nitinahuja.github.io/2023/low-earth-orbits-exploration/</guid>
       <description>Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. We’ll look at some data from Jonathan McDowell’s Catalog site.
 This site has data about man-made objects launched into space and all the debris we have created in near earth orbits.
 We’ll try to load the file directly from the site. This allows us to get the most recent data from the internet.</description>
@@ -24,8 +24,7 @@ We’ll try to load the file directly from the site. This allows us to get the m
       <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://nitinahuja.github.io/2021/generative-art/</guid>
-      <description>Introduction Just experimenting with some generated art in R. Code is heavily borrowed from the web.
-library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) library(deldir) disturbance = expand.grid(c = 1:25, r = 1:49) %&amp;gt;% mutate( c = ifelse(r %% 2 == 0, c + 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964) ) %&amp;gt;% filter(c &amp;lt;= 50) ggplot(disturbance) + geom_text(aes(c, r, label = &amp;quot;0&amp;quot;, angle = a, color = a), family = &amp;quot;Times&amp;quot;, size = 10, show.</description>
+      <description>library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) disturbance = expand.grid(c = 1:25, r = 1:49) %&amp;gt;% mutate( c = ifelse(r %% 2 == 0, c + 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.1, seed = 1964) ) %&amp;gt;% filter(c &amp;lt;= 50) ggplot(disturbance) + geom_text(aes(c, r, label = &amp;#34;0&amp;#34;, angle = a, color = a), family = &amp;#34;Times&amp;#34;, size = 16, show.legend = F) + coord_fixed(ratio = 0.5, expand = TRUE) + scale_color_gradient2(low = &amp;#34;orange&amp;#34;, high = &amp;#34;red&amp;#34;, mid = &amp;#34;tomato&amp;#34;) + theme_void() set.</description>
     </item>
     
     <item>
@@ -35,7 +34,7 @@ library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) librar
       
       <guid>https://nitinahuja.github.io/2018/vehicle-fuel-economy-exploratory-analysis/</guid>
       <description>Introduction In this post, we are going to look at some publicly available data to dig deeper into exploratory data analysis and machine learning techniques. I am going to start by fetching some data from the inter webs, this data is available at the FuelEconomy.gov site. This file has fuel economy data for all cars sold in the United States for several years.
-Let’s start by loading the libraries we need:</description>
+Let&amp;rsquo;s start by loading the libraries we need:</description>
     </item>
     
     <item>
@@ -44,7 +43,7 @@ Let’s start by loading the libraries we need:</description>
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://nitinahuja.github.io/2017/nps-exploratory-text-analysis/</guid>
-      <description>NPS analysis NPS - Comment analysis In an previous post we performed some EDA on the NPS data we have. Recall that as part of the question about the likelihood of recommending a service or business there is an optional text response about why they picked this score.
+      <description>NPS analysis NPS - Comment analysis In an [previous post](https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/) we performed some EDA on the NPS data we have. Recall that as part of the question about the likelihood of recommending a service or business there is an optional text response about why they picked this score.
 Let’s try and see what those responses are all about. We had already performed some sentiment analysis on this text we are now going to attempt to classify this text into topics.</description>
     </item>
     
@@ -55,8 +54,8 @@ Let’s try and see what those responses are all about. We had already performed
       
       <guid>https://nitinahuja.github.io/2017/heatmaps-in-r/</guid>
       <description>Heatmaps Heat maps are invaluable in displaying a large amount of continuous data contained in a 2d matrix. This post is meant to show a way to create a print worthy heat map in R.
-Let’s start by loading the required packages.
-suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like.</description>
+Let&amp;rsquo;s start by loading the required packages.
+suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let&amp;rsquo;s read and see what the data looks like. We have observations (count of calls) for each day of the week and each hour of the day.</description>
     </item>
     
     <item>
@@ -75,7 +74,8 @@ Your team learns by modeling you. There is little doubt that what you do, your t
       <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/</guid>
-      <description>NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question. &amp;gt; How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being “most likely” to recommend and 0 being “least likely”.
+      <description>NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question.
+How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being &amp;ldquo;most likely&amp;rdquo; to recommend and 0 being &amp;ldquo;least likely&amp;rdquo;.
 An additional optional question is asked about why they picked this score and the response to that is usually a text comment.</description>
     </item>
     
@@ -105,7 +105,7 @@ It turns out I was dealing with over 350 different query string params across th
       <pubDate>Mon, 09 May 2016 00:00:00 +0000</pubDate>
       
       <guid>https://nitinahuja.github.io/2016/revenue-forecast-for-seasonal-business/</guid>
-      <description>Revenue forecasting with linear methods. This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let’s dive into the data. Load up the required packages.
+      <description>Revenue forecasting with linear methods. This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let&amp;rsquo;s dive into the data. Load up the required packages.
 suppressPackageStartupMessages({ library(forecast) }) Load the data, we have two columns with weekly revenue numbers from two different sources. Online and Phone; these correspond to sales online and via phone call to the business.</description>
     </item>
     

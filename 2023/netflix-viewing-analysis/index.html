@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
+
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/nitinahuja.github.io\/",
+  "author": {
+    "@type": "Person",
+    "name": "Nitin Ahuja",
+    
+    "image": "https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d"
+    
+  },
+  "name":"A programmer\u0027s viewpoint",
+  "description":"Introduction In this post I want to take a look at my Netflix viewing habits.\nThe first step is getting the data and you can request your viewing data from the Accounts section in your Netflix account. Netflix will allow you to download a zip file with many different ways to slice this information.\n# Import the libraries import pandas as pd from pandas.api.types import CategoricalDtype import matplotlib.pyplot as plt from pathlib import Path # Configure Visualization plt.",
+  "url":"https:\/\/nitinahuja.github.io\/2023\/netflix-viewing-analysis\/",
+  "keywords":"[]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.118.2 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Nitin Ahuja">
+<meta name="keywords" content="">
+<meta name="description" content="Introduction In this post I want to take a look at my Netflix viewing habits.
+The first step is getting the data and you can request your viewing data from the Accounts section in your Netflix account. Netflix will allow you to download a zip file with many different ways to slice this information.
+# Import the libraries import pandas as pd from pandas.api.types import CategoricalDtype import matplotlib.pyplot as plt from pathlib import Path # Configure Visualization plt.">
+
+
+<meta property="og:description" content="Introduction In this post I want to take a look at my Netflix viewing habits.
+The first step is getting the data and you can request your viewing data from the Accounts section in your Netflix account. Netflix will allow you to download a zip file with many different ways to slice this information.
+# Import the libraries import pandas as pd from pandas.api.types import CategoricalDtype import matplotlib.pyplot as plt from pathlib import Path # Configure Visualization plt.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Netflix Viewing Analysis">
+<meta name="twitter:title" content="Netflix Viewing Analysis">
+<meta property="og:url" content="https://nitinahuja.github.io/2023/netflix-viewing-analysis/">
+<meta property="twitter:url" content="https://nitinahuja.github.io/2023/netflix-viewing-analysis/">
+<meta property="og:site_name" content="A programmer&#39;s viewpoint">
+<meta property="og:description" content="Introduction In this post I want to take a look at my Netflix viewing habits.
+The first step is getting the data and you can request your viewing data from the Accounts section in your Netflix account. Netflix will allow you to download a zip file with many different ways to slice this information.
+# Import the libraries import pandas as pd from pandas.api.types import CategoricalDtype import matplotlib.pyplot as plt from pathlib import Path # Configure Visualization plt.">
+<meta name="twitter:description" content="Introduction In this post I want to take a look at my Netflix viewing habits.
+The first step is getting the data and you can request your viewing data from the Accounts section in your Netflix account. Netflix will allow you to download a zip file with many different ways to slice this information.
+# Import the libraries import pandas as pd from pandas.api.types import CategoricalDtype import matplotlib.pyplot as plt from pathlib import Path # Configure Visualization plt.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2023-09-28T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2023-09-28T00:00:00">
+  
+  
+  
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@nitinahuja">
+
+
+  <meta name="twitter:creator" content="@nitinahuja">
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=640">
+
+
+
+
+
+
+    <title>Netflix Viewing Analysis</title>
+
+    <link rel="icon" href="https://nitinahuja.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://nitinahuja.github.io/2023/netflix-viewing-analysis/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://nitinahuja.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://nitinahuja.github.io/css/codefolding.css">
+      
+    
+      
+        <link rel="stylesheet"  crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+      
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-105634890-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://nitinahuja.github.io/" aria-label="Go to homepage">A programmer&#39;s viewpoint</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://nitinahuja.github.io/#about" aria-label="Open the link: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+  
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://nitinahuja.github.io/#about" aria-label="Read more about the author">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Nitin Ahuja</h4>
+        
+          <h5 class="sidebar-profile-bio">A programmer&rsquo;s viewpoint</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/nitinahuja" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://nitinahuja.github.io/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      Netflix Viewing Analysis
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2023-09-28T00:00:00Z">
+        
+  September 28, 2023
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <h1 id="introduction">Introduction</h1>
+<p>In this post I want to take a look at my Netflix viewing habits.</p>
+<p>The first step is getting the data and you can request your viewing data from the <strong>Accounts</strong> section in your Netflix account.
+Netflix will allow you to download a zip file with many different ways to slice this information.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Import the libraries</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pandas.api.types <span style="color:#f92672">import</span> CategoricalDtype
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configure Visualization</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>style<span style="color:#f92672">.</span>use(<span style="color:#e6db74">&#39;bmh&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configure Pandas and SKLearn</span>
+</span></span><span style="display:flex;"><span>pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#34;display.max_colwidth&#34;</span>, <span style="color:#ae81ff">20</span>)
+</span></span><span style="display:flex;"><span>pd<span style="color:#f92672">.</span>set_option(<span style="color:#e6db74">&#34;display.precision&#34;</span>, <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># File Specific Configurations</span>
+</span></span><span style="display:flex;"><span>DATA_DIR <span style="color:#f92672">=</span> Path<span style="color:#f92672">.</span>home() <span style="color:#f92672">/</span> <span style="color:#e6db74">&#39;data/netflix-report&#39;</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;figure.dpi&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>
+</span></span><span style="display:flex;"><span>START <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Timestamp<span style="color:#f92672">.</span>now()
+</span></span><span style="display:flex;"><span>SEED <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>
+</span></span></code></pre></div><h2 id="explore-the-structure-of-the-data">Explore the structure of the data</h2>
+<p>Let&rsquo;s see what the downloaded data looks like - there are some folders and files.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># prefix components:</span>
+</span></span><span style="display:flex;"><span>space <span style="color:#f92672">=</span>  <span style="color:#e6db74">&#39;    &#39;</span>
+</span></span><span style="display:flex;"><span>branch <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;│   &#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># pointers:</span>
+</span></span><span style="display:flex;"><span>tee <span style="color:#f92672">=</span>    <span style="color:#e6db74">&#39;├── &#39;</span>
+</span></span><span style="display:flex;"><span>last <span style="color:#f92672">=</span>   <span style="color:#e6db74">&#39;└── &#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tree</span>(dir_path: Path, prefix: str<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;A recursive generator, given a directory Path object
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    will yield a visual tree structure line by line
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    with each line prefixed by the same characters
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>    
+</span></span><span style="display:flex;"><span>    contents <span style="color:#f92672">=</span> list(dir_path<span style="color:#f92672">.</span>iterdir())
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># contents each get pointers that are ├── with a final └── :</span>
+</span></span><span style="display:flex;"><span>    pointers <span style="color:#f92672">=</span> [tee] <span style="color:#f92672">*</span> (len(contents) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> [last]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> pointer, path <span style="color:#f92672">in</span> zip(pointers, contents):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">yield</span> prefix <span style="color:#f92672">+</span> pointer <span style="color:#f92672">+</span> path<span style="color:#f92672">.</span>name
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> path<span style="color:#f92672">.</span>is_dir(): <span style="color:#75715e"># extend the prefix and recurse:</span>
+</span></span><span style="display:flex;"><span>            extension <span style="color:#f92672">=</span> branch <span style="color:#66d9ef">if</span> pointer <span style="color:#f92672">==</span> tee <span style="color:#66d9ef">else</span> space 
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># i.e. space because last, └── , above so no more |</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">yield from</span> tree(path, prefix<span style="color:#f92672">=</span>prefix<span style="color:#f92672">+</span>extension)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> tree(DATA_DIR):
+</span></span><span style="display:flex;"><span>    print(line)
+</span></span></code></pre></div><pre tabindex="0"><code>## ├── MESSAGES
+## │   └── MessagesSentByNetflix.csv
+## ├── CONTENT_INTERACTION
+## │   ├── MyList.csv
+## │   ├── Ratings.csv
+## │   ├── IndicatedPreferences.txt
+## │   ├── PlaybackRelatedEvents.csv
+## │   ├── ViewingActivity.csv
+## │   ├── InteractiveTitles.csv
+## │   └── SearchHistory.csv
+## ├── .DS_Store
+## ├── CUSTOMER_SERVICE
+## │   ├── CSContact.txt
+## │   └── ChatTranscripts.txt
+## ├── IP_ADDRESSES
+## │   ├── IpAddressesAccountCreation.txt
+## │   ├── IpAddressesLogin.csv
+## │   └── IpAddressesStreaming.csv
+## ├── PAYMENT_AND_BILLING
+## │   └── BillingHistory.csv
+## ├── CLICKSTREAM
+## │   └── Clickstream.csv
+## ├── Additional Information.pdf
+## ├── SURVEYS
+## │   └── ProductCancellationSurvey.txt
+## ├── PROFILES
+## │   ├── Profiles.csv
+## │   ├── AvatarHistory.csv
+## │   └── ParentalControlsRestrictedTitles.txt
+## ├── ACCOUNT
+## │   ├── SubscriptionHistory.csv
+## │   ├── ExtraMembers.txt
+## │   ├── TermsOfUse.csv
+## │   ├── AccountDetails.csv
+## │   └── AccessAndDevices.csv
+## ├── GAMES
+## │   └── GamePlaySession.txt
+## ├── Cover Sheet.pdf
+## └── DEVICES
+##     └── Devices.csv
+</code></pre><p>The file we are interested in is <code>ViewingActivity.csv</code></p>
+<p>Read the data</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(DATA_DIR <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;CONTENT_INTERACTION/ViewingActivity.csv&#34;</span>, parse_dates<span style="color:#f92672">=</span>[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>  df
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">.</span>assign(Duration <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x: pd<span style="color:#f92672">.</span>to_timedelta(x[<span style="color:#e6db74">&#39;Duration&#39;</span>]),
+</span></span><span style="display:flex;"><span>          Bookmark <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x: pd<span style="color:#f92672">.</span>to_timedelta(x[<span style="color:#e6db74">&#39;Bookmark&#39;</span>]))
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inspect_columns</span>(df):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># A helper function that does a better job than df.info() and df.describe()</span>
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame({
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;unique&#39;</span>: df<span style="color:#f92672">.</span>nunique() <span style="color:#f92672">==</span> len(df),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;cardinality&#39;</span>: df<span style="color:#f92672">.</span>nunique(),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;with_null&#39;</span>: df<span style="color:#f92672">.</span>isna()<span style="color:#f92672">.</span>any(),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;null_pct&#39;</span>: round((df<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.</span>sum() <span style="color:#f92672">/</span> len(df)) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;1st_row&#39;</span>: df<span style="color:#f92672">.</span>iloc[<span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;last_row&#39;</span>: df<span style="color:#f92672">.</span>iloc[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;dtype&#39;</span>: df<span style="color:#f92672">.</span>dtypes
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> result
+</span></span></code></pre></div><p>Let&rsquo;s inspect the data</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>head
+</span></span></code></pre></div><pre tabindex="0"><code>## &lt;bound method NDFrame.head of       Profile Name          Start Time  ...  Latest Bookmark             Country
+## 0            Guest 2023-08-26 00:23:06  ...         00:05:09  US (United States)
+## 1            Guest 2023-08-26 00:22:00  ...         00:00:05  US (United States)
+## 2            Guest 2023-08-25 23:59:09  ...         00:16:49  US (United States)
+## 3            Guest 2022-09-14 23:28:59  ...         00:00:02  US (United States)
+## 4            Guest 2022-09-14 22:03:41  ...         02:14:07  US (United States)
+## ...            ...                 ...  ...              ...                 ...
+## 26530          avi 2017-07-29 06:36:06  ...         00:36:40          IN (India)
+## 26531          avi 2017-07-29 06:22:57  ...  Not latest view          IN (India)
+## 26532          avi 2017-07-29 02:46:29  ...  Not latest view          IN (India)
+## 26533          avi 2017-07-29 02:45:55  ...  Not latest view          IN (India)
+## 26534          avi 2017-07-28 18:06:08  ...         00:49:42          IN (India)
+## 
+## [26535 rows x 10 columns]&gt;
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>inspect_columns(df)
+</span></span></code></pre></div><pre tabindex="0"><code>##                       unique  cardinality  ...             last_row            dtype
+## Profile Name           False            4  ...                  avi           object
+## Start Time             False        26492  ...  2017-07-28 18:06:08   datetime64[ns]
+## Duration               False         4319  ...      0 days 00:49:41  timedelta64[ns]
+## Attributes             False            6  ...                  NaN           object
+## Title                  False        12890  ...  MythBusters: Sea...           object
+## Supplemental Vide...   False            8  ...                  NaN           object
+## Device Type            False           32  ...     iPad Mini 2 WiFi           object
+## Bookmark               False         5334  ...      0 days 00:49:42  timedelta64[ns]
+## Latest Bookmark        False         3852  ...             00:49:42           object
+## Country                False           11  ...           IN (India)           object
+## 
+## [10 rows x 7 columns]
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># The column list</span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>dtypes
+</span></span></code></pre></div><pre tabindex="0"><code>## Profile Name                        object
+## Start Time                  datetime64[ns]
+## Duration                   timedelta64[ns]
+## Attributes                          object
+## Title                               object
+## Supplemental Video Type             object
+## Device Type                         object
+## Bookmark                   timedelta64[ns]
+## Latest Bookmark                     object
+## Country                             object
+## dtype: object
+</code></pre><p>The <code>Title</code> and <code>Supplemental Video Type</code> are useful data - but it does not have a video type associated with actual content, only Hooks, trailers etc are marked as such.
+We will fill in the <code>NaN</code> values with the word <code>CONTENT</code> and convert this to a <code>categorical</code> type to make it easier to analyze.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cats <span style="color:#f92672">=</span> [ <span style="color:#e6db74">&#39;Monday&#39;</span>, <span style="color:#e6db74">&#39;Tuesday&#39;</span>, <span style="color:#e6db74">&#39;Wednesday&#39;</span>, <span style="color:#e6db74">&#39;Thursday&#39;</span>, <span style="color:#e6db74">&#39;Friday&#39;</span>, <span style="color:#e6db74">&#39;Saturday&#39;</span>, <span style="color:#e6db74">&#39;Sunday&#39;</span>]
+</span></span><span style="display:flex;"><span>cat_type <span style="color:#f92672">=</span> CategoricalDtype(categories<span style="color:#f92672">=</span>cats, ordered<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;Supplemental Video Type&#39;</span>]<span style="color:#f92672">.</span>value_counts(dropna <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><pre tabindex="0"><code>## Supplemental Video Type
+## NaN               23807
+## HOOK               1988
+## TRAILER             592
+## TEASER_TRAILER      115
+## RECAP                17
+## PREVIEW               7
+## PROMOTIONAL           6
+## BIG_ROW               2
+## BUMPER                1
+## Name: count, dtype: int64
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> (df
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">.</span>assign(type <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x: x[<span style="color:#e6db74">&#39;Supplemental Video Type&#39;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">.</span>fillna(<span style="color:#e6db74">&#39;CONTENT&#39;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">.</span>astype(<span style="color:#e6db74">&#39;category&#39;</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">.</span>assign(dow <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x: x[<span style="color:#e6db74">&#39;Start Time&#39;</span>]<span style="color:#f92672">.</span>dt<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%A&#39;</span>)<span style="color:#f92672">.</span>astype(cat_type),
+</span></span><span style="display:flex;"><span>  hour <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x: x[<span style="color:#e6db74">&#39;Start Time&#39;</span>]<span style="color:#f92672">.</span>dt<span style="color:#f92672">.</span>hour,
+</span></span><span style="display:flex;"><span>  year <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x: x[<span style="color:#e6db74">&#39;Start Time&#39;</span>]<span style="color:#f92672">.</span>dt<span style="color:#f92672">.</span>year,
+</span></span><span style="display:flex;"><span>  month <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x: x[<span style="color:#e6db74">&#39;Start Time&#39;</span>]<span style="color:#f92672">.</span>dt<span style="color:#f92672">.</span>month )
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#e6db74">&#39;type&#39;</span>]<span style="color:#f92672">.</span>value_counts(dropna <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><pre tabindex="0"><code>## type
+## CONTENT           23807
+## HOOK               1988
+## TRAILER             592
+## TEASER_TRAILER      115
+## RECAP                17
+## PREVIEW               7
+## PROMOTIONAL           6
+## BIG_ROW               2
+## BUMPER                1
+## Name: count, dtype: int64
+</code></pre><p>We can see that we have watched <code>python df['Supplemental Video Type'].value_counts(dropna = False)['CONTENT']</code> real pieces of content. These include shows or movies that have been viewed multiple times or over more than 1 viewing session.</p>
+<p>The first thing we want to see is how many unique pieces of content have we watched.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>content_df <span style="color:#f92672">=</span> (df
+</span></span><span style="display:flex;"><span><span style="color:#f92672">.</span>query(<span style="color:#e6db74">&#39;type == &#34;CONTENT&#34;&#39;</span>)
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Number of unique content</span>
+</span></span><span style="display:flex;"><span>(df
+</span></span><span style="display:flex;"><span><span style="color:#f92672">.</span>filter([<span style="color:#e6db74">&#39;Title&#39;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#f92672">.</span>nunique()
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><pre tabindex="0"><code>## Title    12890
+## dtype: int64
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Total Number of hours watched</span>
+</span></span><span style="display:flex;"><span>(df
+</span></span><span style="display:flex;"><span><span style="color:#f92672">.</span>filter([<span style="color:#e6db74">&#39;Duration&#39;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#f92672">.</span>sum()
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><pre tabindex="0"><code>## Duration   361 days 04:38:22
+## dtype: timedelta64[ns]
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Length of membership</span>
+</span></span><span style="display:flex;"><span>days <span style="color:#f92672">=</span> (df[<span style="color:#e6db74">&#39;Start Time&#39;</span>]<span style="color:#f92672">.</span>max() <span style="color:#f92672">-</span> content_df[<span style="color:#e6db74">&#39;Start Time&#39;</span>]<span style="color:#f92672">.</span>min())<span style="color:#f92672">.</span>days
+</span></span><span style="display:flex;"><span>years <span style="color:#f92672">=</span> days<span style="color:#f92672">//</span><span style="color:#ae81ff">365</span>
+</span></span><span style="display:flex;"><span>months <span style="color:#f92672">=</span> (days <span style="color:#f92672">%</span> <span style="color:#ae81ff">365</span>)<span style="color:#f92672">//</span><span style="color:#ae81ff">30</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Length of Membership - </span><span style="color:#e6db74">{</span>years<span style="color:#e6db74">}</span><span style="color:#e6db74"> Years </span><span style="color:#e6db74">{</span>months<span style="color:#e6db74">}</span><span style="color:#e6db74"> Months&#34;</span>)
+</span></span></code></pre></div><pre tabindex="0"><code>## Length of Membership - 14 Years 9 Months
+</code></pre><p>Let&rsquo;s put some of this on a plot to see when we consume most content. This is over a 14 year period.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Add day of week to data and extract hour from start time.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>time_df <span style="color:#f92672">=</span> (content_df
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">.</span>groupby(content_df[<span style="color:#e6db74">&#39;Start Time&#39;</span>]<span style="color:#f92672">.</span>dt<span style="color:#f92672">.</span>year
+</span></span><span style="display:flex;"><span>  )[<span style="color:#e6db74">&#39;Duration&#39;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">.</span>sum()
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>)<span style="color:#f92672">.</span>reset_index()<span style="color:#f92672">.</span>assign(hours <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x: x[<span style="color:#e6db74">&#39;Duration&#39;</span>]<span style="color:#f92672">.</span>dt<span style="color:#f92672">.</span>total_seconds()<span style="color:#f92672">//</span><span style="color:#ae81ff">3600</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>time_df<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bar&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Start Time&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hours&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/netflix-analysis_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+<p>Looking at the plot above - it&rsquo;s clear that TV watching peaked during the pandemic and we averaged about 3 hours a day, but it had been trending upward steadily. We seem to be coming back down slowly.</p>
+<p>Next we want to see how many different pieces of content did we view, we want to see episodic shows vs movies. It&rsquo;s a shame that Netflix does not include any additional metadata around this data dump. We&rsquo;ll have to extract some information by cleaning this data set.</p>
+
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2023/low-earth-orbits-exploration/" data-tooltip="Low Earth Orbits - Exploration" aria-label="PREVIOUS: Low Earth Orbits - Exploration">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/nitinahuja.github.io\/2023\/netflix-viewing-analysis\/';
+        
+          this.page.identifier = '\/2023\/netflix-viewing-analysis\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'viewstate-1';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 Nitin Ahuja. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2023/low-earth-orbits-exploration/" data-tooltip="Low Earth Orbits - Exploration" aria-label="PREVIOUS: Low Earth Orbits - Exploration">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+
+    </div>
+
+<div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/2a9756e94950a1dabeb63034558f787d?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Nitin Ahuja</h4>
+    
+      <div id="about-card-bio">A programmer&rsquo;s viewpoint</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Forever learning
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        California
+      </div>
+    
+  </div>
+</div>
+
+
+
+
+  
+    
+      
+      <div id="cover" style="background-image:url('https://nitinahuja.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://nitinahuja.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/codefolding.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/collapse.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/transition.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/dropdown.js"></script>
+  
+
+
+
+
+
+ 
+  <script>
+  $( document ).ready(function () {
+    window.initializeCodeFolding("show" === "hide");
+  });
+  
+
+  </script>
+
+<pre class="mermaid">
+    graph LR
+        A --- B
+        B-->C[fa:fa-ban forbidden]
+        B-->D(fa:fa-spinner);
+      </pre>
+      <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      </script>
+</body>
+</html>
+

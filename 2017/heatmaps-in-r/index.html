@@ -2,6 +2,19 @@
 <html lang="en-us">
   <head>
     
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
     <script type="application/ld+json">
 
 {  
@@ -16,7 +29,7 @@
     
   },
   "name":"A programmer\u0027s viewpoint",
-  "description":"Heatmaps Heat maps are invaluable in displaying a large amount of continuous data contained in a 2d matrix. This post is meant to show a way to create a print worthy heat map in R.\nLet’s start by loading the required packages.\nsuppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like.",
+  "description":"Heatmaps Heat maps are invaluable in displaying a large amount of continuous data contained in a 2d matrix. This post is meant to show a way to create a print worthy heat map in R.\nLet\u0026rsquo;s start by loading the required packages.\nsuppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let\u0026rsquo;s read and see what the data looks like. We have observations (count of calls) for each day of the week and each hour of the day.",
   "url":"https:\/\/nitinahuja.github.io\/2017\/heatmaps-in-r\/",
   "keywords":"[]"
 }
@@ -25,17 +38,17 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.98.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.118.2 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Nitin Ahuja">
 <meta name="keywords" content="">
 <meta name="description" content="Heatmaps Heat maps are invaluable in displaying a large amount of continuous data contained in a 2d matrix. This post is meant to show a way to create a print worthy heat map in R.
-Let’s start by loading the required packages.
-suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like.">
+Let&rsquo;s start by loading the required packages.
+suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let&rsquo;s read and see what the data looks like. We have observations (count of calls) for each day of the week and each hour of the day.">
 
 
 <meta property="og:description" content="Heatmaps Heat maps are invaluable in displaying a large amount of continuous data contained in a 2d matrix. This post is meant to show a way to create a print worthy heat map in R.
-Let’s start by loading the required packages.
-suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like.">
+Let&rsquo;s start by loading the required packages.
+suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let&rsquo;s read and see what the data looks like. We have observations (count of calls) for each day of the week and each hour of the day.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Heat maps in R">
 <meta name="twitter:title" content="Heat maps in R">
@@ -43,11 +56,11 @@ suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viri
 <meta property="twitter:url" content="https://nitinahuja.github.io/2017/heatmaps-in-r/">
 <meta property="og:site_name" content="A programmer&#39;s viewpoint">
 <meta property="og:description" content="Heatmaps Heat maps are invaluable in displaying a large amount of continuous data contained in a 2d matrix. This post is meant to show a way to create a print worthy heat map in R.
-Let’s start by loading the required packages.
-suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like.">
+Let&rsquo;s start by loading the required packages.
+suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let&rsquo;s read and see what the data looks like. We have observations (count of calls) for each day of the week and each hour of the day.">
 <meta name="twitter:description" content="Heatmaps Heat maps are invaluable in displaying a large amount of continuous data contained in a 2d matrix. This post is meant to show a way to create a print worthy heat map in R.
-Let’s start by loading the required packages.
-suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like.">
+Let&rsquo;s start by loading the required packages.
+suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viridis) library(scales) library(tidyr) }) Data Our data is from a business that receives sales calls 24x7. Let&rsquo;s read and see what the data looks like. We have observations (count of calls) for each day of the week and each hour of the day.">
 <meta property="og:locale" content="en-us">
 
   
@@ -113,6 +126,14 @@ suppressPackageStartupMessages({ library(ggplot2) library(ggthemes) library(viri
     <link rel="stylesheet" href="https://nitinahuja.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
+      
+        <link rel="stylesheet"  href="https://nitinahuja.github.io/css/codefolding.css">
+      
+    
+      
+        <link rel="stylesheet"  crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+      
+    
 
     
       
@@ -129,10 +150,6 @@ if (!doNotTrack) {
 }
 </script>
     
-    
-    
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-      <link rel="stylesheet" href="https://nitinahuja.github.io/css/codefolding.css" />
     
   </head>
 
@@ -156,6 +173,20 @@ if (!doNotTrack) {
     
     </a>
   
+  
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
 </header>
 
       <nav id="sidebar" data-behavior="4">
@@ -289,20 +320,6 @@ if (!doNotTrack) {
 
   </div>
 
-  
-
-<div id="code-folding-buttons" class="dropdown btn-group pull-right">
-  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
-     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Code
-  </a>
-  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
-    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
-    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
-  </div>
-</div>
-
-
 </div>
     
   </div>
@@ -317,63 +334,56 @@ if (!doNotTrack) {
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              
-
-
-<div id="heatmaps" class="section level2">
-<h2>Heatmaps</h2>
+              <h2 id="heatmaps">Heatmaps</h2>
 <p>Heat maps are invaluable in displaying a large amount of continuous data contained in a 2d matrix. This post is meant to show a way to create a print worthy heat map in R.</p>
-<p>Let’s start by loading the required packages.</p>
-<pre class="r"><code>suppressPackageStartupMessages({
-  library(ggplot2)
-  library(ggthemes)
-  library(viridis)
-  library(scales)
-  library(tidyr)
-})</code></pre>
-<div id="data" class="section level3">
-<h3>Data</h3>
-<p>Our data is from a business that receives sales calls 24x7. Let’s read and see what the data looks like. We have observations (count of calls) for each day of the week and each hour of the day.
+<p>Let&rsquo;s start by loading the required packages.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">suppressPackageStartupMessages</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">library</span>(ggplot2)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">library</span>(ggthemes)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">library</span>(viridis)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">library</span>(scales)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">library</span>(tidyr)
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><h3 id="data">Data</h3>
+<p>Our data is from a business that receives sales calls 24x7. Let&rsquo;s read and see what the data looks like. We have observations (count of calls) for each day of the week and each hour of the day.
 If there is missing data, we can use the handy <code>complete()</code> function from the tidy universe to fill in values. Leaving the NA values creates an ugly column in the final heat map.</p>
-<pre class="r"><code>vendor &lt;- &quot;Tours 6/1/15 - 5/30/17&quot;
-calls &lt;- read.csv(&#39;~/data/calls.csv&#39;, header = TRUE)
-calls &lt;- complete(calls, day, call_hour,  fill = list(call = 0))
-str(calls)</code></pre>
-<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    168 obs. of  3 variables:
-##  $ day      : int  0 0 0 0 0 0 0 0 0 0 ...
-##  $ call_hour: int  0 1 2 3 4 5 6 7 8 9 ...
-##  $ call     : num  300 98 74 99 340 45 91 1500 604 531 ...</code></pre>
-<p>We can see that the day of the week is an integer and we will convert those to a factor with the day names as levels.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>vendor <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;Tours 6/1/15 - 5/30/17&#34;</span>
+</span></span><span style="display:flex;"><span>calls <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read.csv</span>(<span style="color:#e6db74">&#39;~/data/calls.csv&#39;</span>, header <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</span></span><span style="display:flex;"><span>calls <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">complete</span>(calls, day, call_hour,  fill <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(call <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">str</span>(calls)
+</span></span></code></pre></div><pre tabindex="0"><code>## tibble [168 × 3] (S3: tbl_df/tbl/data.frame)
+##  $ day      : int [1:168] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ call_hour: int [1:168] 0 1 2 3 4 5 6 7 8 9 ...
+##  $ call     : int [1:168] 300 98 74 99 340 45 91 1500 604 531 ...
+</code></pre><p>We can see that the day of the week is an integer and we will convert those to a factor with the day names as levels.</p>
 <p>Similarly, we will covert the hour of the day to a factor representation. We are only interested in business hours and this will also reorder the labels to start from 6 AM.</p>
-<pre class="r"><code>calls$day &lt;- factor(calls$day, ordered=TRUE, labels=c(&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;))
-calls$hr &lt;- factor(format(as.POSIXct(as.character(calls$call_hour), format = &quot;%H&quot;), &#39;%I %p&#39;) , levels = c(&quot;06 AM&quot;, &quot;07 AM&quot;, &quot;08 AM&quot;, &quot;09 AM&quot;, &quot;10 AM&quot;, &quot;11 AM&quot;, &quot;12 PM&quot;, &quot;01 PM&quot;, &quot;02 PM&quot;, &quot;03 PM&quot;, &quot;04 PM&quot;, &quot;05 PM&quot;, &quot;06 PM&quot;, &quot;07 PM&quot;, &quot;08 PM&quot;, &quot;09 PM&quot;, &quot;10 PM&quot;, &quot;11 PM&quot;, &quot;12 AM&quot;))
-str(calls)</code></pre>
-<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    168 obs. of  4 variables:
-##  $ day      : Ord.factor w/ 7 levels &quot;Sunday&quot;&lt;&quot;Monday&quot;&lt;..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ call_hour: int  0 1 2 3 4 5 6 7 8 9 ...
-##  $ call     : num  300 98 74 99 340 45 91 1500 604 531 ...
-##  $ hr       : Factor w/ 19 levels &quot;06 AM&quot;,&quot;07 AM&quot;,..: 19 NA NA NA NA NA 1 2 3 4 ...</code></pre>
-<p>Finally, we will use the <strong><a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis</a></strong> color palette to make this easier to interpret. The <strong>theme_tufte</strong> removes the border, axis and girds to make this look a lot cleaner, and I do like the <strong>plasma</strong> palette.</p>
-<p>It’s clear from this heat map that Monday, Tuesday and Wednesday mornings are peak times for calls and therefore staffing can be adjusted based on these numbers.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>calls<span style="color:#f92672">$</span>day <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(calls<span style="color:#f92672">$</span>day, ordered<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>, labels<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Sunday&#34;</span>, <span style="color:#e6db74">&#34;Monday&#34;</span>, <span style="color:#e6db74">&#34;Tuesday&#34;</span>, <span style="color:#e6db74">&#34;Wednesday&#34;</span>, <span style="color:#e6db74">&#34;Thursday&#34;</span>, <span style="color:#e6db74">&#34;Friday&#34;</span>, <span style="color:#e6db74">&#34;Saturday&#34;</span>))
+</span></span><span style="display:flex;"><span>calls<span style="color:#f92672">$</span>hr <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(<span style="color:#a6e22e">format</span>(<span style="color:#a6e22e">as.POSIXct</span>(<span style="color:#a6e22e">as.character</span>(calls<span style="color:#f92672">$</span>call_hour), format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;%H&#34;</span>), <span style="color:#e6db74">&#39;%I %p&#39;</span>) , levels <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;06 AM&#34;</span>, <span style="color:#e6db74">&#34;07 AM&#34;</span>, <span style="color:#e6db74">&#34;08 AM&#34;</span>, <span style="color:#e6db74">&#34;09 AM&#34;</span>, <span style="color:#e6db74">&#34;10 AM&#34;</span>, <span style="color:#e6db74">&#34;11 AM&#34;</span>, <span style="color:#e6db74">&#34;12 PM&#34;</span>, <span style="color:#e6db74">&#34;01 PM&#34;</span>, <span style="color:#e6db74">&#34;02 PM&#34;</span>, <span style="color:#e6db74">&#34;03 PM&#34;</span>, <span style="color:#e6db74">&#34;04 PM&#34;</span>, <span style="color:#e6db74">&#34;05 PM&#34;</span>, <span style="color:#e6db74">&#34;06 PM&#34;</span>, <span style="color:#e6db74">&#34;07 PM&#34;</span>, <span style="color:#e6db74">&#34;08 PM&#34;</span>, <span style="color:#e6db74">&#34;09 PM&#34;</span>, <span style="color:#e6db74">&#34;10 PM&#34;</span>, <span style="color:#e6db74">&#34;11 PM&#34;</span>, <span style="color:#e6db74">&#34;12 AM&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">str</span>(calls)
+</span></span></code></pre></div><pre tabindex="0"><code>## tibble [168 × 4] (S3: tbl_df/tbl/data.frame)
+##  $ day      : Ord.factor w/ 7 levels &#34;Sunday&#34;&lt;&#34;Monday&#34;&lt;..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ call_hour: int [1:168] 0 1 2 3 4 5 6 7 8 9 ...
+##  $ call     : int [1:168] 300 98 74 99 340 45 91 1500 604 531 ...
+##  $ hr       : Factor w/ 19 levels &#34;06 AM&#34;,&#34;07 AM&#34;,..: 19 NA NA NA NA NA 1 2 3 4 ...
+</code></pre><p>Finally, we will use the <strong><a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis</a></strong> color palette to make this easier to interpret. The <strong>theme_tufte</strong> removes the border, axis and girds to make this look a lot cleaner, and I do like the <strong>plasma</strong> palette.</p>
+<p>It&rsquo;s clear from this heat map that Monday, Tuesday and Wednesday mornings are peak times for calls and therefore staffing can be adjusted based on these numbers.</p>
 <p>To make it higher resolution for printing, use the <strong>ggsave()</strong> method.</p>
-<pre class="r"><code>  calls_business &lt;- calls %&gt;% 
-  dplyr::filter(call_hour &gt; 4, call_hour &lt; 21) %&gt;% 
-  dplyr::filter(!is.na(hr))
-
-  gg &lt;- ggplot(calls_business , aes(x=hr, y=day, fill = call)) + 
-    geom_tile(color = &quot;white&quot;, size = 0.1) + 
-    scale_x_discrete(expand=c(0,0)) + 
-    scale_y_discrete(expand=c(0,0)) + 
-    scale_fill_viridis(name=&quot;# of calls&quot;, option = &quot;plasma&quot;) + 
-    coord_equal() + 
-    labs(x=&quot;Call hour&quot;, y=NULL, title=sprintf(&quot;Calls per hour of day - %s&quot;, vendor)) + 
-    theme_tufte(base_family=&quot;Helvetica&quot;) +
-    theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))
-  
-  gg</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2017-09-11-heatmaps-in-r_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-</div>
-</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  calls_business <span style="color:#f92672">&lt;-</span> calls <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  dplyr<span style="color:#f92672">::</span><span style="color:#a6e22e">filter</span>(call_hour <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">4</span>, call_hour <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">21</span>) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  dplyr<span style="color:#f92672">::</span><span style="color:#a6e22e">filter</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.na</span>(hr))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  gg <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(calls_business , <span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>hr, y<span style="color:#f92672">=</span>day, fill <span style="color:#f92672">=</span> call)) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">geom_tile</span>(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;white&#34;</span>, linewidth <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scale_x_discrete</span>(expand<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scale_y_discrete</span>(expand<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scale_fill_viridis</span>(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;# of calls&#34;</span>, option <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;plasma&#34;</span>) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">coord_equal</span>() <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">labs</span>(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Call hour&#34;</span>, y<span style="color:#f92672">=</span><span style="color:#66d9ef">NULL</span>, title<span style="color:#f92672">=</span><span style="color:#a6e22e">sprintf</span>(<span style="color:#e6db74">&#34;Calls per hour of day - %s&#34;</span>, vendor)) <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">theme_tufte</span>(base_family<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Helvetica&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">theme</span>(axis.text.x <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(angle <span style="color:#f92672">=</span> <span style="color:#ae81ff">45</span>, vjust <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, hjust <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  gg
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2017-09-11-heatmaps-in-r_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
               
 
@@ -428,6 +438,12 @@ str(calls)</code></pre>
     
   
   
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
   <li class="post-action">
     
       <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
@@ -440,6 +456,30 @@ str(calls)</code></pre>
 
 
             
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/nitinahuja.github.io\/2017\/heatmaps-in-r\/';
+        
+          this.page.identifier = '\/2017\/heatmaps-in-r\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'viewstate-1';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
   
 
 
@@ -487,6 +527,12 @@ str(calls)</code></pre>
     
   
   
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
   <li class="post-action">
     
       <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
@@ -502,8 +548,8 @@ str(calls)</code></pre>
       
 
     </div>
-    
-    <div id="about">
+
+<div id="about">
   <div id="about-card">
     <div id="about-btn-close">
       <i class="fa fa-times"></i>
@@ -532,9 +578,9 @@ str(calls)</code></pre>
   </div>
 </div>
 
-    
 
-    
+
+
   
     
       
@@ -543,31 +589,64 @@ str(calls)</code></pre>
   
 
 
-    
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 
 
 <script src="https://nitinahuja.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
 
 
+  
+    <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/codefolding.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/collapse.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/transition.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/dropdown.js"></script>
+  
 
 
 
 
-     
+
+ 
   <script>
-  $(document).ready(function () {
+  $( document ).ready(function () {
     window.initializeCodeFolding("show" === "hide");
   });
-  </script>
-  <script src="https://nitinahuja.github.io/js/codefolding.js"></script>
+  
 
-    
-  </body>
+  </script>
+
+
+</body>
 </html>
 

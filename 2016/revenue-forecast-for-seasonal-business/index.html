@@ -2,6 +2,19 @@
 <html lang="en-us">
   <head>
     
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
     <script type="application/ld+json">
 
 {  
@@ -16,7 +29,7 @@
     
   },
   "name":"A programmer\u0027s viewpoint",
-  "description":"Revenue forecasting with linear methods. This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let’s dive into the data. Load up the required packages.\nsuppressPackageStartupMessages({ library(forecast) }) Load the data, we have two columns with weekly revenue numbers from two different sources. Online and Phone; these correspond to sales online and via phone call to the business.",
+  "description":"Revenue forecasting with linear methods. This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let\u0026rsquo;s dive into the data. Load up the required packages.\nsuppressPackageStartupMessages({ library(forecast) }) Load the data, we have two columns with weekly revenue numbers from two different sources. Online and Phone; these correspond to sales online and via phone call to the business.",
   "url":"https:\/\/nitinahuja.github.io\/2016\/revenue-forecast-for-seasonal-business\/",
   "keywords":"[]"
 }
@@ -25,14 +38,14 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.98.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.118.2 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Nitin Ahuja">
 <meta name="keywords" content="">
-<meta name="description" content="Revenue forecasting with linear methods. This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let’s dive into the data. Load up the required packages.
+<meta name="description" content="Revenue forecasting with linear methods. This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let&rsquo;s dive into the data. Load up the required packages.
 suppressPackageStartupMessages({ library(forecast) }) Load the data, we have two columns with weekly revenue numbers from two different sources. Online and Phone; these correspond to sales online and via phone call to the business.">
 
 
-<meta property="og:description" content="Revenue forecasting with linear methods. This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let’s dive into the data. Load up the required packages.
+<meta property="og:description" content="Revenue forecasting with linear methods. This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let&rsquo;s dive into the data. Load up the required packages.
 suppressPackageStartupMessages({ library(forecast) }) Load the data, we have two columns with weekly revenue numbers from two different sources. Online and Phone; these correspond to sales online and via phone call to the business.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Revenue forecast for seasonal business">
@@ -40,9 +53,9 @@ suppressPackageStartupMessages({ library(forecast) }) Load the data, we have two
 <meta property="og:url" content="https://nitinahuja.github.io/2016/revenue-forecast-for-seasonal-business/">
 <meta property="twitter:url" content="https://nitinahuja.github.io/2016/revenue-forecast-for-seasonal-business/">
 <meta property="og:site_name" content="A programmer&#39;s viewpoint">
-<meta property="og:description" content="Revenue forecasting with linear methods. This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let’s dive into the data. Load up the required packages.
+<meta property="og:description" content="Revenue forecasting with linear methods. This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let&rsquo;s dive into the data. Load up the required packages.
 suppressPackageStartupMessages({ library(forecast) }) Load the data, we have two columns with weekly revenue numbers from two different sources. Online and Phone; these correspond to sales online and via phone call to the business.">
-<meta name="twitter:description" content="Revenue forecasting with linear methods. This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let’s dive into the data. Load up the required packages.
+<meta name="twitter:description" content="Revenue forecasting with linear methods. This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let&rsquo;s dive into the data. Load up the required packages.
 suppressPackageStartupMessages({ library(forecast) }) Load the data, we have two columns with weekly revenue numbers from two different sources. Online and Phone; these correspond to sales online and via phone call to the business.">
 <meta property="og:locale" content="en-us">
 
@@ -109,6 +122,14 @@ suppressPackageStartupMessages({ library(forecast) }) Load the data, we have two
     <link rel="stylesheet" href="https://nitinahuja.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
+      
+        <link rel="stylesheet"  href="https://nitinahuja.github.io/css/codefolding.css">
+      
+    
+      
+        <link rel="stylesheet"  crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+      
+    
 
     
       
@@ -125,10 +146,6 @@ if (!doNotTrack) {
 }
 </script>
     
-    
-    
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-      <link rel="stylesheet" href="https://nitinahuja.github.io/css/codefolding.css" />
     
   </head>
 
@@ -152,6 +169,20 @@ if (!doNotTrack) {
     
     </a>
   
+  
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
 </header>
 
       <nav id="sidebar" data-behavior="4">
@@ -285,20 +316,6 @@ if (!doNotTrack) {
 
   </div>
 
-  
-
-<div id="code-folding-buttons" class="dropdown btn-group pull-right">
-  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
-     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Code
-  </a>
-  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
-    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
-    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
-  </div>
-</div>
-
-
 </div>
     
   </div>
@@ -313,116 +330,95 @@ if (!doNotTrack) {
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              
-
-
-<div id="revenue-forecasting-with-linear-methods." class="section level2">
-<h2>Revenue forecasting with linear methods.</h2>
-<p>This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let’s dive into the data.
+              <h2 id="revenue-forecasting-with-linear-methods">Revenue forecasting with linear methods.</h2>
+<p>This post highlights linear regression techniques on time series data. We have some weekly sales data from a small business that is expected to have seasonal trends. A bike rental business in a major tourist city. Let&rsquo;s dive into the data.
 Load up the required packages.</p>
-<pre class="r"><code>suppressPackageStartupMessages({
-  library(forecast)
-})</code></pre>
-<p>Load the data, we have two columns with weekly revenue numbers from two different sources. Online and Phone; these correspond to sales online and via phone call to the business.</p>
-<pre class="r"><code>  filename &lt;- &#39;~/data/BikeTours.csv&#39;
-
-    # Read up the data file - first line is the header
-    d &lt;- read.csv(filename, header = TRUE)
-
-    # Get the seller name
-    sellerName &lt;- gsub(&quot;/|~.*data|.csv&quot;, &quot;&quot;, filename)
-    str(d)</code></pre>
-<pre><code>## &#39;data.frame&#39;:    220 obs. of  2 variables:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">suppressPackageStartupMessages</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">library</span>(forecast)
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><p>Load the data, we have two columns with weekly revenue numbers from two different sources. Online and Phone; these correspond to sales online and via phone call to the business.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  filename <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#39;~/data/BikeTours.csv&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Read up the data file - first line is the header</span>
+</span></span><span style="display:flex;"><span>    d <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read.csv</span>(filename, header <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Get the seller name</span>
+</span></span><span style="display:flex;"><span>    sellerName <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">gsub</span>(<span style="color:#e6db74">&#34;/|~.*data|.csv&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, filename)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">str</span>(d)
+</span></span></code></pre></div><pre tabindex="0"><code>## &#39;data.frame&#39;:	220 obs. of  2 variables:
 ##  $ Online: num  0.001 0.001 104 442 156 52 312 0.001 0.001 854 ...
-##  $ Phone : num  0.001 0.001 0.001 0.001 44.5 0.001 0.001 141 0.001 0.001 ...</code></pre>
-</div>
-<div id="the-weekly-revenue-for-biketours" class="section level2">
-<h2>The weekly revenue for <em>BikeTours</em></h2>
-<div id="timeseries" class="section level3">
-<h3>Timeseries</h3>
+##  $ Phone : num  0.001 0.001 0.001 0.001 44.5 0.001 0.001 141 0.001 0.001 ...
+</code></pre><h2 id="the-weekly-revenue-for-_biketours_">The weekly revenue for <em>BikeTours</em></h2>
+<h3 id="timeseries">Timeseries</h3>
 <p>Let start by creating a timeseries object using the <code>ts()</code> function and has the signature <code>ts(vector, start=,end=,frequency)</code> where start and end are times of the first and last observation and frequency is the number of observations per unit time (1=annual, 4=quarterly, 12=monthly).
 In our case we have weekly data, therefore we will set our frequncy to 52.</p>
-<pre class="r"><code>  d_ts &lt;- ts(d, start = c(2012,1), frequency = 52)
-summary(d_ts)</code></pre>
-<pre><code>##      Online             Phone         
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  d_ts <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ts</span>(d, start <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">2012</span>,<span style="color:#ae81ff">1</span>), frequency <span style="color:#f92672">=</span> <span style="color:#ae81ff">52</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">summary</span>(d_ts)
+</span></span></code></pre></div><pre tabindex="0"><code>##      Online             Phone         
 ##  Min.   :   0.001   Min.   :   0.001  
 ##  1st Qu.: 211.000   1st Qu.:   0.001  
 ##  Median :1824.500   Median : 191.500  
 ##  Mean   :1959.751   Mean   : 333.967  
 ##  3rd Qu.:3112.500   3rd Qu.: 571.875  
-##  Max.   :8505.000   Max.   :1733.000</code></pre>
-</div>
-<div id="online-and-phone-revenue" class="section level3">
-<h3>Online and Phone revenue</h3>
-<p>Let’s look at the weekly sales split out by mode of purchase Online vs Phone. Online sales are the primary component of sales. For the next few sections we will focus on the Online component. The same analysis and forecast can be done for the Phone component.</p>
-<pre class="r"><code>  title &lt;- paste(&quot; Seasonal decompsition for &quot;, sellerName) 
-  ts.plot(d_ts, gpars = list(col=c(&quot;tomato&quot;, &quot;magenta&quot;), lwd=2, ylab=&quot;Gross Sales&quot;, xlab=&quot;year&quot;, main = title))
-    legend(&#39;topleft&#39; ,legend=c(&quot;Online&quot;, &quot;Phone&quot;), lty=1, col=c(&quot;tomato&quot;, &quot;magenta&quot;), bty=&#39;n&#39;, cex=.75)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-</div>
-<div id="online-revenue" class="section level3">
-<h3>Online Revenue</h3>
-<div id="seasonal-component-extraction." class="section level4">
-<h4>Seasonal component extraction.</h4>
+##  Max.   :8505.000   Max.   :1733.000
+</code></pre><h3 id="online-and-phone-revenue">Online and Phone revenue</h3>
+<p>Let&rsquo;s look at the weekly sales split out by mode of purchase Online vs Phone. Online sales are the primary component of sales. For the next few sections we will focus on the Online component. The same analysis and forecast can be done for the Phone component.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  title <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste</span>(<span style="color:#e6db74">&#34; Seasonal decompsition for &#34;</span>, sellerName) 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ts.plot</span>(d_ts, gpars <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(col<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;tomato&#34;</span>, <span style="color:#e6db74">&#34;magenta&#34;</span>), lwd<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, ylab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Gross Sales&#34;</span>, xlab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;year&#34;</span>, main <span style="color:#f92672">=</span> title))
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">legend</span>(<span style="color:#e6db74">&#39;topleft&#39;</span> ,legend<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Online&#34;</span>, <span style="color:#e6db74">&#34;Phone&#34;</span>), lty<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, col<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;tomato&#34;</span>, <span style="color:#e6db74">&#34;magenta&#34;</span>), bty<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;n&#39;</span>, cex<span style="color:#f92672">=</span><span style="color:#ae81ff">.75</span>)
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<h3 id="online-revenue">Online Revenue</h3>
+<h4 id="seasonal-component-extraction">Seasonal component extraction.</h4>
 <p>When a time series varies according to a periodic component, we can extract the periodicty using classical statistical methods. The <strong>stl()</strong> function in core R uses <em>loess</em> to effectively take the means of each period. The seasonal component is removed and the remainder is smoothed to find the trend.
 The sales are clearly seasonal with peaks in the middle of the year starting near spring break and ending near thanksgiving.</p>
 <p>Weekly revenue with the seasonal component extracted</p>
-<pre class="r"><code>  d_online &lt;- d$Online
-  d_ts_online &lt;- ts(d_online, start = c(2012,1), frequency = params$freq)
-  d_ts_comp_online &lt;- stl(d_ts_online, s.window = &quot;period&quot;, robust = TRUE)            
-
-  plot(d_ts_comp_online, main = title)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>Let’s combine this into a single plot. We have also extracted the seasonally adjusted numbers to show the actual variations and trends.</p>
-<pre class="r"><code>  plot(d_ts_online, ylab=&quot;Gross Revenue&quot;, main = &quot;Online gross revenue with trend and seasonal parts&quot;)
-  lines(d_ts_comp_online$time.series[,2], col=&quot;tomato&quot;)
-  lines(seasadj(d_ts_comp_online), col=&quot;green&quot;)
-  lines(d_ts_comp_online$time.series[,1], col=&quot;blue&quot;)
-  legend(&#39;topleft&#39; ,legend=c(&quot;Actual&quot;, &quot;trend&quot;, &quot;seasonal adj&quot;, &quot;seasonal&quot;), lty=1, col=c(&quot;black&quot;, &quot;tomato&quot;, &quot;green&quot;, &quot;blue&quot;), bty=&#39;n&#39;, cex=.75)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-</div>
-</div>
-<div id="forecast-using-linear-regression" class="section level3">
-<h3>Forecast using linear regression</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  d_online <span style="color:#f92672">&lt;-</span> d<span style="color:#f92672">$</span>Online
+</span></span><span style="display:flex;"><span>  d_ts_online <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ts</span>(d_online, start <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">2012</span>,<span style="color:#ae81ff">1</span>), frequency <span style="color:#f92672">=</span> params<span style="color:#f92672">$</span>freq)
+</span></span><span style="display:flex;"><span>  d_ts_comp_online <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">stl</span>(d_ts_online, s.window <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;period&#34;</span>, robust <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)            
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">plot</span>(d_ts_comp_online, main <span style="color:#f92672">=</span> title)
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<p>Let&rsquo;s combine this into a single plot. We have also extracted the seasonally adjusted numbers to show the actual variations and trends.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  <span style="color:#a6e22e">plot</span>(d_ts_online, ylab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Gross Revenue&#34;</span>, main <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Online gross revenue with trend and seasonal parts&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lines</span>(d_ts_comp_online<span style="color:#f92672">$</span>time.series[,<span style="color:#ae81ff">2</span>], col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tomato&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lines</span>(<span style="color:#a6e22e">seasadj</span>(d_ts_comp_online), col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;green&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lines</span>(d_ts_comp_online<span style="color:#f92672">$</span>time.series[,<span style="color:#ae81ff">1</span>], col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blue&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">legend</span>(<span style="color:#e6db74">&#39;topleft&#39;</span> ,legend<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Actual&#34;</span>, <span style="color:#e6db74">&#34;trend&#34;</span>, <span style="color:#e6db74">&#34;seasonal adj&#34;</span>, <span style="color:#e6db74">&#34;seasonal&#34;</span>), lty<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, col<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;black&#34;</span>, <span style="color:#e6db74">&#34;tomato&#34;</span>, <span style="color:#e6db74">&#34;green&#34;</span>, <span style="color:#e6db74">&#34;blue&#34;</span>), bty<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;n&#39;</span>, cex<span style="color:#f92672">=</span><span style="color:#ae81ff">.75</span>)
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<h3 id="forecast-using-linear-regression">Forecast using linear regression</h3>
 <p>This is the forecast for revenue taking seasonality into account. The function <strong>tslm()</strong> is the linear regression version for time series data.</p>
-<p>Note the red line shows the model’s predicted numbers.</p>
-<pre class="r"><code>    f_online&lt;-tslm(d_ts_online ~ trend + season, lambda = 0.5)
-    ff_online &lt;- forecast(f_online, h=params$freq)
-    plot(ff_online,  ylab=&quot;Online Gross Revenue&quot;)
-    lines(fitted(ff_online), col=&quot;red&quot;)
-    lines(d_ts_comp_online$time.series[,2], col=&quot;tomato&quot;)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-</div>
-<div id="forecast-using-arima-models" class="section level3">
-<h3>Forecast using ARIMA models</h3>
-<p>Let’s also use the <a href="https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average%20Wikipedia">ARIMA</a> model to get a forecast.
+<p>Note the red line shows the model&rsquo;s predicted numbers.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    f_online<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">tslm</span>(d_ts_online <span style="color:#f92672">~</span> trend <span style="color:#f92672">+</span> season, lambda <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>    ff_online <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">forecast</span>(f_online, h<span style="color:#f92672">=</span>params<span style="color:#f92672">$</span>freq)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">plot</span>(ff_online,  ylab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Online Gross Revenue&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lines</span>(<span style="color:#a6e22e">fitted</span>(ff_online), col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;red&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lines</span>(d_ts_comp_online<span style="color:#f92672">$</span>time.series[,<span style="color:#ae81ff">2</span>], col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tomato&#34;</span>)
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<h3 id="forecast-using-arima-models">Forecast using ARIMA models</h3>
+<p>Let&rsquo;s also use the [ARIMA](<a href="https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average">https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average</a> Wikipedia) model to get a forecast.
 Note that the <em>D=1</em> parameter forces the model to take seasonality into account.</p>
-<pre class="r"><code>    f_online_arima &lt;-auto.arima(d_ts_online, lambda = 0.5, D=1)
-    ff_online_arima &lt;- forecast(f_online_arima, h=params$freq)
-    plot(ff_online_arima,  ylab=&quot;Online Gross Revenue&quot;)
-    lines(fitted(ff_online_arima), col=&quot;red&quot;)
-    lines(d_ts_comp_online$time.series[,2], col=&quot;tomato&quot;)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-</div>
-<div id="residuals" class="section level3">
-<h3>Residuals</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    f_online_arima <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">auto.arima</span>(d_ts_online, lambda <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>, D<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    ff_online_arima <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">forecast</span>(f_online_arima, h<span style="color:#f92672">=</span>params<span style="color:#f92672">$</span>freq)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">plot</span>(ff_online_arima,  ylab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Online Gross Revenue&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lines</span>(<span style="color:#a6e22e">fitted</span>(ff_online_arima), col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;red&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lines</span>(d_ts_comp_online<span style="color:#f92672">$</span>time.series[,<span style="color:#ae81ff">2</span>], col<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tomato&#34;</span>)
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+<h3 id="residuals">Residuals</h3>
 <p>The residuals - the difference between the actual and predicted values back fitted. Low numbers are indicative of a good fit.
 A 0 mean is indicative of an unbiased forecast.</p>
-<pre class="r"><code>  res &lt;- residuals(ff_online)
-  plot(res, ylab=&quot;Residuals&quot;,xlab=&quot;Year&quot;, main = paste(&quot;Residuals for &quot;, sellerName) )</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/5.1-1.png" width="672" /></p>
-<pre class="r"><code>  summary(res)</code></pre>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-## -41.166  -9.406  -1.330   0.000   8.180  45.450</code></pre>
-</div>
-<div id="autocorrelation" class="section level3">
-<h3>Autocorrelation</h3>
-<p>The <em>autocorrelation</em> shows the correlation between seasonal data, peaks show positive correlation at the marked intervals. ( 52 weeks, so yearly correlation is statistically signficant - i.e. above the blue line)</p>
-<pre class="r"><code>  Acf(d_ts_online , main=&quot;ACF of revenue&quot;)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/5.2-1.png" width="672" /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  res <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">residuals</span>(ff_online)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">plot</span>(res, ylab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Residuals&#34;</span>,xlab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Year&#34;</span>, main <span style="color:#f92672">=</span> <span style="color:#a6e22e">paste</span>(<span style="color:#e6db74">&#34;Residuals for &#34;</span>, sellerName) )
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/5.1-1.png" width="672" />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  <span style="color:#a6e22e">summary</span>(res)
+</span></span></code></pre></div><pre tabindex="0"><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+## -41.166  -9.406  -1.330   0.000   8.180  45.450
+</code></pre><h3 id="autocorrelation">Autocorrelation</h3>
+<p>The <em>autocorrelation</em> shows the correlation between seasonal data, peaks show positive correlation at the marked intervals. ( 52 weeks, so yearly correlation is statistically signficant - i.e. above the blue line)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  <span style="color:#a6e22e">Acf</span>(d_ts_online , main<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ACF of revenue&#34;</span>)
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2016-05-09-revenue-forecast-for-seasonal-business_files/figure-html/5.2-1.png" width="672" />
 <p>This is the weekly revenue prediction using this model</p>
-<pre class="r"><code>  ff_online</code></pre>
-<pre><code>##          Point Forecast        Lo 80     Hi 80       Lo 95      Hi 95
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  ff_online
+</span></span></code></pre></div><pre tabindex="0"><code>##          Point Forecast        Lo 80     Hi 80       Lo 95      Hi 95
 ## 2016.231      932.32319  318.4182798 1868.2845  122.377409  2500.5504
 ## 2016.250     2578.50032 1450.7906998 4028.2664  980.153309  4935.1287
 ## 2016.269     2899.35343 1693.8126535 4426.9506 1181.579368  5375.4089
@@ -474,10 +470,8 @@ A 0 mean is indicative of an unbiased forecast.</p>
 ## 2017.154      577.11718  133.2230499 1332.5637   23.735368  1864.0487
 ## 2017.173      927.77902  323.2239800 1843.8865  127.873075  2461.2347
 ## 2017.192     1177.07497  476.4394082 2189.2630  229.739463  2857.9602
-## 2017.212     1031.06060  385.3014920 1988.3721  167.929587  2627.7414</code></pre>
-</div>
-</div>
-
+## 2017.212     1031.06060  385.3014920 1988.3721  167.929587  2627.7414
+</code></pre>
               
 
 
@@ -531,6 +525,12 @@ A 0 mean is indicative of an unbiased forecast.</p>
     
   
   
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
   <li class="post-action">
     
       <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
@@ -543,6 +543,30 @@ A 0 mean is indicative of an unbiased forecast.</p>
 
 
             
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/nitinahuja.github.io\/2016\/revenue-forecast-for-seasonal-business\/';
+        
+          this.page.identifier = '\/2016\/revenue-forecast-for-seasonal-business\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'viewstate-1';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
   
 
 
@@ -590,6 +614,12 @@ A 0 mean is indicative of an unbiased forecast.</p>
     
   
   
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
   <li class="post-action">
     
       <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
@@ -605,8 +635,8 @@ A 0 mean is indicative of an unbiased forecast.</p>
       
 
     </div>
-    
-    <div id="about">
+
+<div id="about">
   <div id="about-card">
     <div id="about-btn-close">
       <i class="fa fa-times"></i>
@@ -635,9 +665,9 @@ A 0 mean is indicative of an unbiased forecast.</p>
   </div>
 </div>
 
-    
 
-    
+
+
   
     
       
@@ -646,31 +676,64 @@ A 0 mean is indicative of an unbiased forecast.</p>
   
 
 
-    
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 
 
 <script src="https://nitinahuja.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
 
 
+  
+    <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/codefolding.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/collapse.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/transition.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/dropdown.js"></script>
+  
 
 
 
 
-     
+
+ 
   <script>
-  $(document).ready(function () {
+  $( document ).ready(function () {
     window.initializeCodeFolding("show" === "hide");
   });
-  </script>
-  <script src="https://nitinahuja.github.io/js/codefolding.js"></script>
+  
 
-    
-  </body>
+  </script>
+
+
+</body>
 </html>
 

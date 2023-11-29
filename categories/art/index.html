@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.98.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.118.2 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Nitin Ahuja">
 <meta name="keywords" content="">
 <meta name="description" content="Thoughts on technology and data.">
@@ -83,6 +83,14 @@
     <link rel="stylesheet" href="https://nitinahuja.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
+      
+        <link rel="stylesheet"  href="https://nitinahuja.github.io/css/codefolding.css">
+      
+    
+      
+        <link rel="stylesheet"  crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+      
+    
 
     
       
@@ -99,10 +107,6 @@ if (!doNotTrack) {
 }
 </script>
     
-    
-    
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-      <link rel="stylesheet" href="https://nitinahuja.github.io/css/codefolding.css" />
     
   </head>
 
@@ -125,6 +129,7 @@ if (!doNotTrack) {
       
     
     </a>
+  
   
 </header>
 
@@ -282,8 +287,7 @@ if (!doNotTrack) {
     </div>
     <div class="postShorten-excerpt">
       
-        Introduction Just experimenting with some generated art in R. Code is heavily borrowed from the web.
-library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) library(deldir) disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% mutate( c = ifelse(r %% 2 == 0, c + 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964) ) %&gt;% filter(c &lt;= 50) ggplot(disturbance) + geom_text(aes(c, r, label = &quot;0&quot;, angle = a, color = a), family = &quot;Times&quot;, size = 10, show.
+        library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% mutate( c = ifelse(r %% 2 == 0, c + 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.1, seed = 1964) ) %&gt;% filter(c &lt;= 50) ggplot(disturbance) + geom_text(aes(c, r, label = &#34;0&#34;, angle = a, color = a), family = &#34;Times&#34;, size = 16, show.legend = F) + coord_fixed(ratio = 0.5, expand = TRUE) + scale_color_gradient2(low = &#34;orange&#34;, high = &#34;red&#34;, mid = &#34;tomato&#34;) + theme_void() set.
       
       <p>
         
@@ -296,7 +300,7 @@ library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) librar
   
     <a href="https://nitinahuja.github.io/2021/generative-art/" aria-label="Open the post: Generative Art">
       <div class="postShorten-thumbnailimg">
-        <img alt="" src="https://nitinahuja.github.io/img/generative_thumb.jpg"/>
+        <img alt="" src="https://nitinahuja.github.io/img/car_thumb.jpg"/>
       </div>
     </a>
   
@@ -315,8 +319,8 @@ library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) librar
 
       </div>
     </div>
-    
-    <div id="about">
+
+<div id="about">
   <div id="about-card">
     <div id="about-btn-close">
       <i class="fa fa-times"></i>
@@ -345,9 +349,9 @@ library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) librar
   </div>
 </div>
 
-    
 
-    
+
+
   
     
       
@@ -356,24 +360,43 @@ library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) librar
   
 
 
-    
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 
 
 <script src="https://nitinahuja.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
 
 
+  
+    <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/codefolding.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/collapse.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/transition.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/dropdown.js"></script>
+  
 
 
 
 
-    
-    
-  </body>
+
+
+
+</body>
 </html>
 

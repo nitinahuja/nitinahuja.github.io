@@ -2,6 +2,19 @@
 <html lang="en-us">
   <head>
     
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
     <script type="application/ld+json">
 
 {  
@@ -16,7 +29,7 @@
     
   },
   "name":"A programmer\u0027s viewpoint",
-  "description":"Introduction Just experimenting with some generated art in R. Code is heavily borrowed from the web.\nlibrary(tidyverse) library(ambient) library(randomcoloR) library(ggforce) library(deldir) disturbance = expand.grid(c = 1:25, r = 1:49) %\u0026gt;% mutate( c = ifelse(r %% 2 == 0, c \u002b 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964) ) %\u0026gt;% filter(c \u0026lt;= 50) ggplot(disturbance) \u002b geom_text(aes(c, r, label = \u0026quot;0\u0026quot;, angle = a, color = a), family = \u0026quot;Times\u0026quot;, size = 10, show.",
+  "description":"library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) disturbance = expand.grid(c = 1:25, r = 1:49) %\u0026gt;% mutate( c = ifelse(r %% 2 == 0, c \u002b 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.1, seed = 1964) ) %\u0026gt;% filter(c \u0026lt;= 50) ggplot(disturbance) \u002b geom_text(aes(c, r, label = \u0026#34;0\u0026#34;, angle = a, color = a), family = \u0026#34;Times\u0026#34;, size = 16, show.legend = F) \u002b coord_fixed(ratio = 0.5, expand = TRUE) \u002b scale_color_gradient2(low = \u0026#34;orange\u0026#34;, high = \u0026#34;red\u0026#34;, mid = \u0026#34;tomato\u0026#34;) \u002b theme_void() set.",
   "url":"https:\/\/nitinahuja.github.io\/2021\/generative-art\/",
   "keywords":"[]"
 }
@@ -25,25 +38,21 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.98.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.118.2 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Nitin Ahuja">
 <meta name="keywords" content="">
-<meta name="description" content="Introduction Just experimenting with some generated art in R. Code is heavily borrowed from the web.
-library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) library(deldir) disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% mutate( c = ifelse(r %% 2 == 0, c &#43; 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964) ) %&gt;% filter(c &lt;= 50) ggplot(disturbance) &#43; geom_text(aes(c, r, label = &quot;0&quot;, angle = a, color = a), family = &quot;Times&quot;, size = 10, show.">
+<meta name="description" content="library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% mutate( c = ifelse(r %% 2 == 0, c &#43; 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.1, seed = 1964) ) %&gt;% filter(c &lt;= 50) ggplot(disturbance) &#43; geom_text(aes(c, r, label = &#34;0&#34;, angle = a, color = a), family = &#34;Times&#34;, size = 16, show.legend = F) &#43; coord_fixed(ratio = 0.5, expand = TRUE) &#43; scale_color_gradient2(low = &#34;orange&#34;, high = &#34;red&#34;, mid = &#34;tomato&#34;) &#43; theme_void() set.">
 
 
-<meta property="og:description" content="Introduction Just experimenting with some generated art in R. Code is heavily borrowed from the web.
-library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) library(deldir) disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% mutate( c = ifelse(r %% 2 == 0, c &#43; 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964) ) %&gt;% filter(c &lt;= 50) ggplot(disturbance) &#43; geom_text(aes(c, r, label = &quot;0&quot;, angle = a, color = a), family = &quot;Times&quot;, size = 10, show.">
+<meta property="og:description" content="library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% mutate( c = ifelse(r %% 2 == 0, c &#43; 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.1, seed = 1964) ) %&gt;% filter(c &lt;= 50) ggplot(disturbance) &#43; geom_text(aes(c, r, label = &#34;0&#34;, angle = a, color = a), family = &#34;Times&#34;, size = 16, show.legend = F) &#43; coord_fixed(ratio = 0.5, expand = TRUE) &#43; scale_color_gradient2(low = &#34;orange&#34;, high = &#34;red&#34;, mid = &#34;tomato&#34;) &#43; theme_void() set.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Generative Art">
 <meta name="twitter:title" content="Generative Art">
 <meta property="og:url" content="https://nitinahuja.github.io/2021/generative-art/">
 <meta property="twitter:url" content="https://nitinahuja.github.io/2021/generative-art/">
 <meta property="og:site_name" content="A programmer&#39;s viewpoint">
-<meta property="og:description" content="Introduction Just experimenting with some generated art in R. Code is heavily borrowed from the web.
-library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) library(deldir) disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% mutate( c = ifelse(r %% 2 == 0, c &#43; 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964) ) %&gt;% filter(c &lt;= 50) ggplot(disturbance) &#43; geom_text(aes(c, r, label = &quot;0&quot;, angle = a, color = a), family = &quot;Times&quot;, size = 10, show.">
-<meta name="twitter:description" content="Introduction Just experimenting with some generated art in R. Code is heavily borrowed from the web.
-library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) library(deldir) disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% mutate( c = ifelse(r %% 2 == 0, c &#43; 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964) ) %&gt;% filter(c &lt;= 50) ggplot(disturbance) &#43; geom_text(aes(c, r, label = &quot;0&quot;, angle = a, color = a), family = &quot;Times&quot;, size = 10, show.">
+<meta property="og:description" content="library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% mutate( c = ifelse(r %% 2 == 0, c &#43; 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.1, seed = 1964) ) %&gt;% filter(c &lt;= 50) ggplot(disturbance) &#43; geom_text(aes(c, r, label = &#34;0&#34;, angle = a, color = a), family = &#34;Times&#34;, size = 16, show.legend = F) &#43; coord_fixed(ratio = 0.5, expand = TRUE) &#43; scale_color_gradient2(low = &#34;orange&#34;, high = &#34;red&#34;, mid = &#34;tomato&#34;) &#43; theme_void() set.">
+<meta name="twitter:description" content="library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% mutate( c = ifelse(r %% 2 == 0, c &#43; 0.5, c), a = 180 * gen_cubic(c, r, frequency = 0.1, seed = 1964) ) %&gt;% filter(c &lt;= 50) ggplot(disturbance) &#43; geom_text(aes(c, r, label = &#34;0&#34;, angle = a, color = a), family = &#34;Times&#34;, size = 16, show.legend = F) &#43; coord_fixed(ratio = 0.5, expand = TRUE) &#43; scale_color_gradient2(low = &#34;orange&#34;, high = &#34;red&#34;, mid = &#34;tomato&#34;) &#43; theme_void() set.">
 <meta property="og:locale" content="en-us">
 
   
@@ -85,12 +94,12 @@ library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) librar
 
 
 
-  <meta property="og:image" content="https://nitinahuja.github.io/img/generative.jpg">
-  <meta property="twitter:image" content="https://nitinahuja.github.io/img/generative.jpg">
+  <meta property="og:image" content="https://nitinahuja.github.io/img/car.jpg">
+  <meta property="twitter:image" content="https://nitinahuja.github.io/img/car.jpg">
 
 
-  <meta property="og:image" content="https://nitinahuja.github.io/img/generative_thumb.jpg">
-  <meta property="twitter:image" content="https://nitinahuja.github.io/img/generative_thumb.jpg">
+  <meta property="og:image" content="https://nitinahuja.github.io/img/car_thumb.jpg">
+  <meta property="twitter:image" content="https://nitinahuja.github.io/img/car_thumb.jpg">
 
 
     <title>Generative Art</title>
@@ -111,6 +120,14 @@ library(tidyverse) library(ambient) library(randomcoloR) library(ggforce) librar
     <link rel="stylesheet" href="https://nitinahuja.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
     
     
+      
+        <link rel="stylesheet"  href="https://nitinahuja.github.io/css/codefolding.css">
+      
+    
+      
+        <link rel="stylesheet"  crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+      
+    
 
     
       
@@ -127,10 +144,6 @@ if (!doNotTrack) {
 }
 </script>
     
-    
-    
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-      <link rel="stylesheet" href="https://nitinahuja.github.io/css/codefolding.css" />
     
   </head>
 
@@ -154,6 +167,20 @@ if (!doNotTrack) {
     
     </a>
   
+  
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
 </header>
 
       <nav id="sidebar" data-behavior="4">
@@ -258,7 +285,7 @@ if (!doNotTrack) {
   <div class="post-header-cover
               text-left
               "
-       style="background-image:url('/img/generative.jpg')"
+       style="background-image:url('/img/car.jpg')"
        data-behavior="4">
     
       <div class="post-header main-content-wrap text-left">
@@ -289,20 +316,6 @@ if (!doNotTrack) {
 
   </div>
 
-  
-
-<div id="code-folding-buttons" class="dropdown btn-group pull-right">
-  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
-     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Code
-  </a>
-  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
-    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
-    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
-  </div>
-</div>
-
-
 </div>
     
   </div>
@@ -317,117 +330,108 @@ if (!doNotTrack) {
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              
-
-
-<div id="introduction" class="section level1">
-<h1>Introduction</h1>
-<p>Just experimenting with some generated art in R. Code is heavily borrowed from the web.</p>
-<pre class="r"><code>library(tidyverse)
-library(ambient)
-library(randomcoloR)
-library(ggforce)
-library(deldir)
-
-
-disturbance = expand.grid(c = 1:25, r = 1:49) %&gt;% 
-  mutate(
-    c = ifelse(r %% 2 == 0, c + 0.5, c),
-    a = 180 * gen_cubic(c, r, frequency = 0.12, seed = 1964)
-    ) %&gt;% 
-  filter(c &lt;= 50)
-  
-  
-ggplot(disturbance) +
-  geom_text(aes(c, r, label = &quot;0&quot;, angle = a, color = a), family = &quot;Times&quot;, size = 10, show.legend = F) +
-  coord_fixed(ratio = 0.5, expand = TRUE) +
-  scale_color_gradient2(low = &quot;orange&quot;, high = &quot;red&quot;, mid = &quot;tomato&quot;) +
-  theme_void()</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2021-03-07-generative-art_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<pre class="r"><code>set.seed(1993)
-
-nataraja &lt;- expand.grid(c = 1:20, r = 0:24) %&gt;% 
-  mutate(
-    short = if_else(row_number() %in% sample(1:500, 5), 0.3, 0)
-    # long = if_else(row_number() %in% sample(1:500, 5), 0.3, 0)
-  ) %&gt;% 
-  rowwise() %&gt;% 
-  mutate(
-    x = list(c(c + short, c + 1.01, c + 1.01, c + short)),
-    y = list(c(r + short, r + 1.01, r + 2.02, r + 1.01 + short)),
-    col = round(runif(1, 1, 13), 0)
-    ) %&gt;% 
-  ungroup() %&gt;% 
-  unnest(c(x, y))
-
-
-pal &lt;- c(
-  &quot;#C2644F&quot;, # dark orange
-  &quot;#A24D50&quot;, # brown
-  &quot;#DFA45B&quot;, # ochre
-  &quot;#E8DCB0&quot;, # light ochre
-  &quot;#4167A5&quot;, # dark blue
-  &quot;#639ED5&quot;, # light blue
-  &quot;#ABC0E2&quot;, # very light blue
-  &quot;#3F6854&quot;, # dark green
-  &quot;#70884F&quot;, # green
-  &quot;#86BA84&quot;, # light green
-  &quot;#C8C866&quot;, # green-yellow
-  &quot;#BD81AC&quot;, # pink
-  &quot;#7B76B6&quot; # purple
-  )
-
-ggplot(nataraja) +
-  geom_polygon(aes(x = x, y = y, fill = factor(col), group = interaction(c, r)), color = NA) +
-  scale_fill_manual(values = pal) +
-  coord_cartesian(xlim = c(1, 21), ylim = c(1.5, 19.8), expand = FALSE) +
-  theme_void() +
-  theme(
-    legend.position = &quot;none&quot;,
-    plot.margin = margin(2, 2, 2, 2)
-    ) </code></pre>
-<p><img src="https://nitinahuja.github.io/post/2021-03-07-generative-art_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<pre class="r"><code>fall &lt;- data.frame(n = 0:105) %&gt;% 
-  rowwise() %&gt;% 
-  mutate(
-    x = list(seq(2, 45, 0.1)),
-    s = runif(1, 0.35, 0.55)
-    ) %&gt;% 
-  ungroup() %&gt;% 
-  unnest(x) %&gt;% 
-  mutate(
-    y = n + 2.2 * sin(6 * pi * x^(1/4)),
-    s = abs(y - n)/5 + s
-    )
-
-ggplot(fall) +
-  geom_line(aes(x = x, y = y, group = n, size = s, color = x), lineend = &quot;round&quot;) +
- #scale_size_continuous(range = c(0.4, 0.8)) +
-  scale_size_identity() +
-  coord_flip(clip = &quot;off&quot;) +
-  ylim(5, 100) +
-  theme_void() +
-  scale_color_viridis_c() +
-  #scale_color_gradient2(low = &quot;yellow&quot;, high = &quot;purple&quot;, mid = &quot;tomato&quot;) +
-  theme(legend.position = &quot;none&quot;)</code></pre>
-<p><img src="https://nitinahuja.github.io/post/2021-03-07-generative-art_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<pre class="r"><code>del &lt;- data.frame(x = 1:250 * sin(1:50), y = 1:250 * cos(1:50)) %&gt;% 
-  mutate(n = row_number())
-
-ggplot(del, aes(x, y)) +
-  geom_delaunay_tile(fill = &quot;grey20&quot;) +
-  geom_delaunay_segment2(aes(color = -n)) +
-  scale_color_gradient(low = &quot;grey25&quot;, high = &quot;white&quot;) +
-  coord_fixed() +
-  xlim(-250, 250) +
-  ylim(-250, 250) +
-  theme_void() +
-  theme(
-    legend.position = &quot;none&quot;,
-    plot.background = element_rect(fill = &quot;grey65&quot;, color = NA)
-  ) </code></pre>
-<p><img src="https://nitinahuja.github.io/post/2021-03-07-generative-art_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-</div>
+              <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(tidyverse)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(ambient)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(randomcoloR)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(ggforce)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>disturbance <span style="color:#f92672">=</span> <span style="color:#a6e22e">expand.grid</span>(c <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">25</span>, r <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">49</span>) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(
+</span></span><span style="display:flex;"><span>    c <span style="color:#f92672">=</span> <span style="color:#a6e22e">ifelse</span>(r <span style="color:#f92672">%%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>, c <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.5</span>, c),
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> <span style="color:#ae81ff">180</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">gen_cubic</span>(c, r, frequency <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>, seed <span style="color:#f92672">=</span> <span style="color:#ae81ff">1964</span>)
+</span></span><span style="display:flex;"><span>    ) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">filter</span>(c <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">50</span>)
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(disturbance) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_text</span>(<span style="color:#a6e22e">aes</span>(c, r, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0&#34;</span>, angle <span style="color:#f92672">=</span> a, color <span style="color:#f92672">=</span> a), family <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Times&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>, show.legend <span style="color:#f92672">=</span> F) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_fixed</span>(ratio <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>, expand <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_color_gradient2</span>(low <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;orange&#34;</span>, high <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>, mid <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tomato&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">theme_void</span>()
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2021-03-07-generative-art_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">1993</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nataraja <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">expand.grid</span>(c <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">20</span>, r <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">24</span>) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(
+</span></span><span style="display:flex;"><span>    short <span style="color:#f92672">=</span> <span style="color:#a6e22e">if_else</span>(<span style="color:#a6e22e">row_number</span>() <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">sample</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">5</span>), <span style="color:#ae81ff">0.3</span>, <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># long = if_else(row_number() %in% sample(1:500, 5), 0.3, 0)</span>
+</span></span><span style="display:flex;"><span>  ) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">rowwise</span>() <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(<span style="color:#a6e22e">c</span>(c <span style="color:#f92672">+</span> short, c <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.01</span>, c <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.01</span>, c <span style="color:#f92672">+</span> short)),
+</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(<span style="color:#a6e22e">c</span>(r <span style="color:#f92672">+</span> short, r <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.01</span>, r <span style="color:#f92672">+</span> <span style="color:#ae81ff">2.02</span>, r <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.01</span> <span style="color:#f92672">+</span> short)),
+</span></span><span style="display:flex;"><span>    col <span style="color:#f92672">=</span> <span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">runif</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">13</span>), <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    ) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ungroup</span>() <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">unnest</span>(<span style="color:#a6e22e">c</span>(x, y))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pal <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#C2644F&#34;</span>, <span style="color:#75715e"># dark orange</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#A24D50&#34;</span>, <span style="color:#75715e"># brown</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#DFA45B&#34;</span>, <span style="color:#75715e"># ochre</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#E8DCB0&#34;</span>, <span style="color:#75715e"># light ochre</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#4167A5&#34;</span>, <span style="color:#75715e"># dark blue</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#639ED5&#34;</span>, <span style="color:#75715e"># light blue</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#ABC0E2&#34;</span>, <span style="color:#75715e"># very light blue</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#3F6854&#34;</span>, <span style="color:#75715e"># dark green</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#70884F&#34;</span>, <span style="color:#75715e"># green</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#86BA84&#34;</span>, <span style="color:#75715e"># light green</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#C8C866&#34;</span>, <span style="color:#75715e"># green-yellow</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#BD81AC&#34;</span>, <span style="color:#75715e"># pink</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#7B76B6&#34;</span> <span style="color:#75715e"># purple</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(nataraja) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_polygon</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> x, y <span style="color:#f92672">=</span> y, fill <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(col), group <span style="color:#f92672">=</span> <span style="color:#a6e22e">interaction</span>(c, r)), color <span style="color:#f92672">=</span> <span style="color:#66d9ef">NA</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_fill_manual</span>(values <span style="color:#f92672">=</span> pal) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_cartesian</span>(xlim <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">21</span>), ylim <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">19.8</span>), expand <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">theme_void</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">theme</span>(
+</span></span><span style="display:flex;"><span>    legend.position <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;none&#34;</span>,
+</span></span><span style="display:flex;"><span>    plot.margin <span style="color:#f92672">=</span> <span style="color:#a6e22e">margin</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    ) 
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2021-03-07-generative-art_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>fall <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(n <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">105</span>) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">rowwise</span>() <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(<span style="color:#a6e22e">seq</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">45</span>, <span style="color:#ae81ff">0.1</span>)),
+</span></span><span style="display:flex;"><span>    s <span style="color:#f92672">=</span> <span style="color:#a6e22e">runif</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0.35</span>, <span style="color:#ae81ff">0.55</span>)
+</span></span><span style="display:flex;"><span>    ) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ungroup</span>() <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">unnest</span>(x) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(
+</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">=</span> n <span style="color:#f92672">+</span> <span style="color:#ae81ff">2.2</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">sin</span>(<span style="color:#ae81ff">6</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">pi</span> <span style="color:#f92672">*</span> x<span style="color:#a6e22e">^</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>)),
+</span></span><span style="display:flex;"><span>    s <span style="color:#f92672">=</span> <span style="color:#a6e22e">abs</span>(y <span style="color:#f92672">-</span> n)<span style="color:#f92672">/</span><span style="color:#ae81ff">5</span> <span style="color:#f92672">+</span> s
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(fall) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_line</span>(<span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> x, y <span style="color:#f92672">=</span> y, group <span style="color:#f92672">=</span> n, size <span style="color:#f92672">=</span> s, color <span style="color:#f92672">=</span> x), lineend <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;round&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  scale_size_continuous(range = c(0.4, 0.8)) +</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_size_identity</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_flip</span>(clip <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;off&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ylim</span>(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">100</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">theme_void</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#scale_color_viridis_c() +</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_color_gradient2</span>(low <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yellow&#34;</span>, high <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;purple&#34;</span>, mid <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tomato&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">theme</span>(legend.position <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;none&#34;</span>)
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2021-03-07-generative-art_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>del <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">250</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">sin</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">50</span>), y <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">250</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">cos</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">50</span>)) <span style="color:#f92672">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mutate</span>(n <span style="color:#f92672">=</span> <span style="color:#a6e22e">row_number</span>())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(del, <span style="color:#a6e22e">aes</span>(x, y)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_delaunay_tile</span>(fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;grey20&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_delaunay_segment2</span>(<span style="color:#a6e22e">aes</span>(color <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>n)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_color_gradient</span>(low <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;grey25&#34;</span>, high <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;white&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_fixed</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">xlim</span>(<span style="color:#ae81ff">-250</span>, <span style="color:#ae81ff">250</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ylim</span>(<span style="color:#ae81ff">-250</span>, <span style="color:#ae81ff">250</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">theme_void</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">theme</span>(
+</span></span><span style="display:flex;"><span>    legend.position <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;none&#34;</span>,
+</span></span><span style="display:flex;"><span>    plot.background <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_rect</span>(fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;grey65&#34;</span>, color <span style="color:#f92672">=</span> <span style="color:#66d9ef">NA</span>)
+</span></span><span style="display:flex;"><span>  ) 
+</span></span></code></pre></div><img src="https://nitinahuja.github.io/post/2021-03-07-generative-art_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
               
 
@@ -455,7 +459,7 @@ ggplot(del, aes(x, y)) +
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2022/low-earth-orbits-exploration/" data-tooltip="Let&#39;s explore Near Earth Orbit - exploratory analysis" aria-label="NEXT: Let&#39;s explore Near Earth Orbit - exploratory analysis">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2023/low-earth-orbits-exploration/" data-tooltip="Low Earth Orbits - Exploration" aria-label="NEXT: Low Earth Orbits - Exploration">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -482,6 +486,12 @@ ggplot(del, aes(x, y)) +
     
   
   
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
   <li class="post-action">
     
       <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
@@ -494,6 +504,30 @@ ggplot(del, aes(x, y)) +
 
 
             
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/nitinahuja.github.io\/2021\/generative-art\/';
+        
+          this.page.identifier = '\/2021\/generative-art\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'viewstate-1';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
   
 
 
@@ -514,7 +548,7 @@ ggplot(del, aes(x, y)) +
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2022/low-earth-orbits-exploration/" data-tooltip="Let&#39;s explore Near Earth Orbit - exploratory analysis" aria-label="NEXT: Let&#39;s explore Near Earth Orbit - exploratory analysis">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://nitinahuja.github.io/2023/low-earth-orbits-exploration/" data-tooltip="Low Earth Orbits - Exploration" aria-label="NEXT: Low Earth Orbits - Exploration">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -541,6 +575,12 @@ ggplot(del, aes(x, y)) +
     
   
   
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
   <li class="post-action">
     
       <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
@@ -556,8 +596,8 @@ ggplot(del, aes(x, y)) +
       
 
     </div>
-    
-    <div id="about">
+
+<div id="about">
   <div id="about-card">
     <div id="about-btn-close">
       <i class="fa fa-times"></i>
@@ -586,9 +626,9 @@ ggplot(del, aes(x, y)) +
   </div>
 </div>
 
-    
 
-    
+
+
   
     
       
@@ -597,31 +637,64 @@ ggplot(del, aes(x, y)) +
   
 
 
-    
+
+<div id="code-folding-buttons" class="dropdown btn-group pull-right">
+  <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="allCodeToggleButton"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Code
+  </a>
+  <div class="dropdown-menu" aria-labelledby="allCodeToggleButton">
+    <a id="rmd-show-all-code" class="dropdown-item small" href="#">Show all</a>
+    <a id="rmd-hide-all-code" class="dropdown-item small" href="#">Hide all</a>
+  </div>
+</div>
+
+
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 
 
 <script src="https://nitinahuja.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
 
 
+  
+    <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/codefolding.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/collapse.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/transition.js"></script>
+  
+
+  
+    <script src="https://nitinahuja.github.io/js/dropdown.js"></script>
+  
 
 
 
 
-     
+
+ 
   <script>
-  $(document).ready(function () {
+  $( document ).ready(function () {
     window.initializeCodeFolding("show" === "hide");
   });
-  </script>
-  <script src="https://nitinahuja.github.io/js/codefolding.js"></script>
+  
 
-    
-  </body>
+  </script>
+
+
+</body>
 </html>
 

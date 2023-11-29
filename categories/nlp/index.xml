@@ -13,7 +13,7 @@
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://nitinahuja.github.io/2017/nps-exploratory-text-analysis/</guid>
-      <description>NPS analysis NPS - Comment analysis In an previous post we performed some EDA on the NPS data we have. Recall that as part of the question about the likelihood of recommending a service or business there is an optional text response about why they picked this score.
+      <description>NPS analysis NPS - Comment analysis In an [previous post](https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/) we performed some EDA on the NPS data we have. Recall that as part of the question about the likelihood of recommending a service or business there is an optional text response about why they picked this score.
 Let’s try and see what those responses are all about. We had already performed some sentiment analysis on this text we are now going to attempt to classify this text into topics.</description>
     </item>
     
@@ -23,7 +23,8 @@ Let’s try and see what those responses are all about. We had already performed
       <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://nitinahuja.github.io/2017/nps-exploratory-analysis-in-r/</guid>
-      <description>NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question. &amp;gt; How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being “most likely” to recommend and 0 being “least likely”.
+      <description>NPS analysis What is net promorter score (NPS)? Net Promoter Score or NPS is a customer loyalty metric and was developed by Fred Reichheld and it asks respondents to answer a single question.
+How likely are you to recommend this product? The respondents are asked to score between 0 and 10. 10 being &amp;ldquo;most likely&amp;rdquo; to recommend and 0 being &amp;ldquo;least likely&amp;rdquo;.
 An additional optional question is asked about why they picked this score and the response to that is usually a text comment.</description>
     </item>
     

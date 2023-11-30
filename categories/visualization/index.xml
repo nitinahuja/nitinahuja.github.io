@@ -6,7 +6,18 @@
     <description>Recent content in Visualization on A programmer&#39;s viewpoint</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nitinahuja.github.io/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nitinahuja.github.io/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Netflix Viewing Analysis</title>
+      <link>https://nitinahuja.github.io/2023/netflix-viewing-analysis/</link>
+      <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://nitinahuja.github.io/2023/netflix-viewing-analysis/</guid>
+      <description>Introduction In this post I want to take a look at my Netflix viewing habits.
+The first step is getting the data and you can request your viewing data from the Accounts section in your Netflix account. Netflix will allow you to download a zip file with many different ways to slice this information.
+# Import the libraries import pandas as pd import numpy as np import seaborn as sns from pandas.</description>
+    </item>
+    
     <item>
       <title>Low Earth Orbits - Exploration</title>
       <link>https://nitinahuja.github.io/2023/low-earth-orbits-exploration/</link>

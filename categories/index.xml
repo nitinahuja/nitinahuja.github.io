@@ -6,22 +6,31 @@
     <description>Recent content in Categories on A programmer&#39;s viewpoint</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nitinahuja.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nitinahuja.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>R</title>
-      <link>https://nitinahuja.github.io/categories/r/</link>
-      <pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
+      <title>Python</title>
+      <link>https://nitinahuja.github.io/categories/python/</link>
+      <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://nitinahuja.github.io/categories/r/</guid>
+      <guid>https://nitinahuja.github.io/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Visualization</title>
       <link>https://nitinahuja.github.io/categories/visualization/</link>
-      <pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://nitinahuja.github.io/categories/visualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://nitinahuja.github.io/categories/r/</link>
+      <pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://nitinahuja.github.io/categories/r/</guid>
       <description></description>
     </item>
     
@@ -58,15 +67,6 @@
       <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://nitinahuja.github.io/categories/learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://nitinahuja.github.io/categories/python/</link>
-      <pubDate>Wed, 03 Aug 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://nitinahuja.github.io/categories/python/</guid>
       <description></description>
     </item>
     
